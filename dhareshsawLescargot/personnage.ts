@@ -1,5 +1,6 @@
 class Character {
     // attributs de la classe personnage
+    // tslint:disable-next-line: variable-name
     private _id: string;
     private name: string;
     private avatar: string;
@@ -57,10 +58,10 @@ class Character {
     }
 
     public setEndurance(endurance: number) {
-        this.endurance = endurance
+        this.endurance = endurance;
     }
 
-    //Méthodes diverses
+    // Méthodes diverses
     public die() {
        // this.dead = true;
         console.log('Vous êtes mort');
@@ -79,7 +80,8 @@ class Hero extends Character {
         console.log('Vous avez perdu !');
     }
 
-    public rollDice() : number {
+    public rollDice(): number {
+        // tslint:disable-next-line: prefer-const
         let res = Math.floor(Math.random() * 6) + 1;
         return res;
     }
@@ -96,7 +98,7 @@ class Hero extends Character {
     }
 
     public useObject(myObj: number) {
-        
+
     }
 
     public removeObj(myObj: number) {
