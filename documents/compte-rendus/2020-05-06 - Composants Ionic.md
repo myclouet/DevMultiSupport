@@ -40,8 +40,9 @@ L'inventaire affiche également les caractéristiques du joueur, ce qui évite l
 :three: modifier l'attribut isFight par **needsDice** dans la classe Scene  
 :four: créer un booléen **battleWon** dans la classe Scene pour indiquer que l'adversaire a été vaincu, afin de permettre la restauration de l'histoire  
 :five: modifier la scène d'Yvan pour préciser le besoin d'un lancer de dé  
-:six: créer une tâche par composant dans le planning  
-:seven: les binômes choisissent leur(s) composant(s)  
+:six: supprimer le composant lancer de dé de la page des composants  
+:seven: créer une tâche par composant dans le planning  
+:eight: les binômes choisissent leur(s) composant(s)  
 
 ***
 ### Prochain point :
