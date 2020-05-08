@@ -1,7 +1,11 @@
 # DevMultiSupport
 ## Cours de développement multi-support
-- Chef de projet : Anabelle E Sousa
-- Chef de projet adjoint : Johann Marais
+Chefs de projet : 
+* Anabelle E Sousa (jusqu'au 5 mai)
+* Johann Marais (à partir du 5 mai)
+
+Chef de projet adjoint :
+* Johann Marais (jusqu'au 5 mai)
 
 [Planning du projet](https://docs.google.com/spreadsheets/d/1SAsa8jUNW-yLoutCmTzTejGANamgYi_k7XRsevLSwR8/edit?usp=sharing)
 
