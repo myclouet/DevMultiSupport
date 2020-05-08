@@ -30,7 +30,8 @@ Si lors du développemement un blocage technique empêchait ce mode de gestion d
 ### To do :
 :one: modifier le booléen needsDice en isBattle dans la classe Scene (fait par Johann 08/05)  
 :two: modifier la scène d'Yvan : elle devient un combat (fait par Johann 08/05)  
-:three: compléter les mockups
+:three: compléter les mockups  
+:four: @Hervé et JC : renommer la page Ionic et la branche Git "combat" en "scene" (git branch -m _feat_scenePage_)
 
 ***
 ### Prochain point :
