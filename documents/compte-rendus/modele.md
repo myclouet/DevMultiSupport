@@ -4,7 +4,7 @@
 
 | Animateurs | Participants | Destinataires |
 | --- | --- | --- |
-| Anabelle  Johann | Anabelle  Boris  Dhareshsaw  Elodie  Hervé  Jean-Christophe  Johann  Mathias  Noémie  Paula  Raphaël  Thierry  Vanessa  Yvan | Toute l'équipe |
+| Johann | Anabelle, Boris, Dhareshsaw, Elodie, Hervé, Jean-Christophe, Mathias, Noémie, Paula, Raphaël, Thierry, Vanessa, Yvan | Toute l'équipe |
 
 ### Ordre du jour :
 :arrow_forward: Sujet 1  
