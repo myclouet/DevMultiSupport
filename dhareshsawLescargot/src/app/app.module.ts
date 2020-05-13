@@ -9,6 +9,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SauvegardeService } from './services/sauvegarde.service';
+import { CharacterService } from './services/character.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +19,7 @@ import { SauvegardeService } from './services/sauvegarde.service';
     StatusBar,
     SplashScreen,
     SauvegardeService,
+    CharacterService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
