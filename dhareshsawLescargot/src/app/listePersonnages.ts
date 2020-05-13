@@ -1,4 +1,4 @@
-//import { Character } from './personnage';
+import { Character } from './personnage';
 
 export const PERSONNAGES: Character[] = [
   {

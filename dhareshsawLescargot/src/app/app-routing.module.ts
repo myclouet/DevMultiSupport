@@ -12,8 +12,8 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'combats',
-    loadChildren: () => import('./combats/combats.module').then( m => m.CombatsPageModule)
+    path: 'scene',
+    loadChildren: () => import('./scene/scene.module').then( m => m.ScenePageModule)
   },
 ];
 
