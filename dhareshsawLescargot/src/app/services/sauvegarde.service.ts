@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class SauvegardeService {
-  private heroInitial: Hero
+  //private heroInitial: Hero
   //private etatduJeu: {hero: Hero, scene: Scene}
   private histoire: {action:string , description:string}[]=[]
 
