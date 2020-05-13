@@ -1,0 +1,21 @@
+[
+    {
+        "nameObject": "épée",
+        "type": "weapon",
+        "description": "une jolie épée",
+        "strength": "+++",
+        "chance": "++",
+        "endurance": "+",
+        "image": "string"
+    },
+    {
+        "nameObject": "clé",
+        "type": "indice",
+        "description": "ouvre une porte magique",
+        "strength": "+",
+        "chance": "+++",
+        "endurance": "+",
+        "image": "string"
+    }
+    
+  ]
