@@ -12,15 +12,14 @@ export class ObjectInventoryService {
   inventoryObject: ObjectInventory[]= []
   
   constructor( private http: HttpClient) { }
-
+  
+  //methode pour récupérer la liste des objets
   getInventoryObjects() : Observable<ObjectInventory[]> {
     return this.http.get<ObjectInventory[]>(this.inventoryObjectUrl);
   }
-  // @Myriam//
-  //methode pour récupérer un objet par son id dés que l'on aura un storage, pour le moment les objets n'ont pas d'id
-  getInventoryObjectByID(id: string) : Observable<ObjectInventory> {
-    return this.http.get<ObjectInventory>(this.inventoryObjectUrl+ '/'+ id);
+ 
+  //methode pour récupérer un objet par son nom
+  getInventoryObjectByName(name: string) : Observable<ObjectInventory> {
+    return this.http.get<ObjectInventory>(this.inventoryObjectUrl+ '/'+ name);
   }
-
-
 }
