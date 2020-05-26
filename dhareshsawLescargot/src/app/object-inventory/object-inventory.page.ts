@@ -3,10 +3,10 @@ import { ObjectInventoryService } from './object-inventory.service';
 
 @Component({
   selector: 'app-object-inventory',
-  templateUrl: './object-inventory.component.html',
-  styleUrls: ['./object-inventory.component.scss'],
+  templateUrl: './object-inventory.page.html',
+  styleUrls: ['./object-inventory.page.scss'],
 })
-export class ObjectInventoryComponent implements OnInit {
+export class ObjectInventoryPage implements OnInit {
 
   objectInventory
 
@@ -18,3 +18,4 @@ export class ObjectInventoryComponent implements OnInit {
   }
   
 }
+
