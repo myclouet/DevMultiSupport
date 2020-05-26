@@ -16,6 +16,9 @@ export class ObjectInventoryPage implements OnInit {
     this.objectInventory = this.objectInventoryService.getInventoryObjects();
     console.log( JSON.stringify(this.objectInventory))
   }
+  fermer(){
+    
+  }
   
 }
 
