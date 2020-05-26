@@ -22,4 +22,8 @@ export class ObjectInventoryService {
   getInventoryObjectByName(name: string) : Observable<ObjectInventory> {
     return this.http.get<ObjectInventory>(this.inventoryObjectUrl+ '/'+ name);
   }
+  viewInventoryList(){
+  }
+  SelectItem(){}
+
 }
