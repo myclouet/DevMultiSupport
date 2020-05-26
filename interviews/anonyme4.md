@@ -1,27 +1,27 @@
 Quel âge as-tu ?  
-* 12 ans
+* 8 ans
 	
 Combien de temps veux-tu que ton jeu dure ?  
-* 2 jours
+* 1h15
 	
 Qu'est ce qui est le plus important pour toi ?  (Plusieurs choix possibles)  
-* Choisir tes personnages
-* Avoir l'option Multijoueurs
+* Jouer en ligne
 * Progresser rapidement
 	
 A quoi te sert le texte dans le jeu ?  (Plusieurs choix possibles)  
-* Le texte t'est très utile pour comprendre le jeu
-* Tu aimes bien pouvoir le passer
+* Tu préfères l'entendre que le lire
 	
 Quels sont tes univers de jeux préférés ?  
-* Combat
+* Guerre
+* Construction
 	
 Pourquoi choisis-tu un jeu ?  
-* j'aime ce qu'il faut faire dedans
+* Parce que le jeu est populaire et que je peux jouer avec plusieurs copains
 	
 Comment sais-tu qu'un jeu ne te plaira pas ?  
-* univers pas attractif
+* Car je n'aime pas l'univers exemple course, parcours, sport
 	
 Quels sont tes jeux préférés ?  
-* Brawl Stars
-* Fortnite
+* Fornite
+* Zelda 
+* pokemon bouclier
