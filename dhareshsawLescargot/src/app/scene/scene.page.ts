@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CharacterService } from '../services/character.service';
+import { Hero, Character } from '../personnage';
+
 
 @Component({
   selector: 'app-scene',
@@ -7,24 +10,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScenePage implements OnInit {
 
-  constructor() { }
+  heros: Hero;
+  adversaire: Character;
+
+  constructor(
+    private characterService : CharacterService
+  ) { }
 
   ngOnInit() {
     this.fightRandom();
+    this.heros = this.characterService.getPersonnageById("0");
+    this.characterService.heros = this.heros;
+    console.log(this.heros);
+    this.adversaire = this.getAdversaire();
+    this.characterService.character = this.adversaire;
   }
 
+  //initialisation adversaire
+  getAdversaire(){
+    return this.adversaire = this.characterService.getPersonnageById("1");
+  }
+
+
+  //combat
   fightRandom() {
-    var result = Math.floor(Math.random() * 2);
+   this.characterService.fight();
+  }
 
-    switch (result) {
-      case 0:
-        console.log("Automatic Fight");
-        break;
-
-      case 1:
-        console.log("Conditional Fight");
-        break;
-    }
+  //fuite
+  escape() {
+   this.characterService.escape();
   }
 
 }
