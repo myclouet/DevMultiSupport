@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'scene',
     loadChildren: () => import('./scene/scene.module').then( m => m.ScenePageModule)
   },
+  {
+    path: 'object-inventory',
+    loadChildren: () => import('./object-inventory/object-inventory.module').then( m => m.ObjectInventoryPageModule)
+  },
 ];
 
 @NgModule({
