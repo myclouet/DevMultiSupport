@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SauvegardeService } from './services/sauvegarde.service';
 import { CharacterService } from './services/character.service';
+import { SceneService } from './services/scene.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +21,7 @@ import { CharacterService } from './services/character.service';
     SplashScreen,
     SauvegardeService,
     CharacterService,
+    SceneService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
