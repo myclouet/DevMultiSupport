@@ -5,5 +5,9 @@
 </ion-header>
 
 <ion-content>
-
+  <img src="{{heros.avatar}}">
+  <img src="{{adversaire.avatar}}">
+  <button (click) = "fightRandom()">Fight !!!</button>
+  <button (click) = "escape()">Cours Forest, cooooooours</button>
+  <!--<button *ngIf = "characterService.conditionnalFightBool === true">Jeter le dé</button>-->
 </ion-content>
