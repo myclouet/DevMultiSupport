@@ -4,10 +4,19 @@ export const PERSONNAGES: Character[] = [
   {
     _id: '0',
     name: 'Dhareshsaw',
-    avatar: 'https://w1.pngwave.com/png/482/362/418/snails-and-slugs-snail-cartoon-png-clip-art.png',
-    strength: null,
-    luck: null,
-    endurance: null,
+    avatar: './assets/avatars/dhareshsaw.png',
+    strength: 4,
+    luck: 3,
+    endurance: 2,
+    items: null,
+  },
+  {
+    _id: '1',
+    name: 'Jojo le bourricot',
+    avatar: './assets/avatars/johann.png',
+    strength: 3,
+    luck: 2,
+    endurance: 4,
     items: null,
   }
 ]
