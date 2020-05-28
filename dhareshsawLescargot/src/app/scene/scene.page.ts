@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CharacterService } from '../services/character.service';
-import { Hero, Character } from '../personnage';
+import { Hero, Character } from '../classes/personnage';
+import { Scene } from '../classes/scene';
+import { SceneService } from '../services/scene.service';
+
 
 
 @Component({
@@ -12,9 +15,12 @@ export class ScenePage implements OnInit {
 
   heros: Hero;
   adversaire: Character;
+  scene: Scene;
+  id = '2';
 
   constructor(
-    private characterService : CharacterService
+    private characterService : CharacterService,
+    private sceneService : SceneService
   ) { }
 
   ngOnInit() {
@@ -24,6 +30,7 @@ export class ScenePage implements OnInit {
     console.log(this.heros);
     this.adversaire = this.getAdversaire();
     this.characterService.character = this.adversaire;
+    this.getScene();
   }
 
   //initialisation adversaire
@@ -40,6 +47,11 @@ export class ScenePage implements OnInit {
   //fuite
   escape() {
    this.characterService.escape();
+  }
+
+  //scene
+  getScene(){
+    return this.scene = this.sceneService.getSceneById(this.id);
   }
 
 }

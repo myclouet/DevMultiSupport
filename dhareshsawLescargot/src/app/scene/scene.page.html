@@ -1,13 +1,18 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>scene</ion-title>
+    <ion-title>{{scene.title}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <p>{{scene.description}}</p>
+  <!--<img src="{{scene.picture}}">-->
+</ion-content>
+
+<!--<ion-content>
   <img src="{{heros.avatar}}">
   <img src="{{adversaire.avatar}}">
   <button (click) = "fightRandom()">Fight !!!</button>
-  <button (click) = "escape()">Cours Forest, cooooooours</button>
+  <button (click) = "escape()">Cours Forest, cooooooours</button>-->
   <!--<button *ngIf = "characterService.conditionnalFightBool === true">Jeter le dé</button>-->
-</ion-content>
+<!--</ion-content>-->
