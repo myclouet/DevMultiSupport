@@ -5,9 +5,20 @@
 </ion-header>
 
 <ion-content>
-  <p>{{scene.description}}</p>
-  <!--<img src="{{scene.picture}}">-->
+  <div [ngStyle]="{'background': 'url(' + scene.picture + ')'}">
+    <ion-card>
+      <ion-card-content>{{scene.description}}</ion-card-content>
+      <ion-card-content>flèche
+      </ion-card-content>
+      <ion-card-content>flèche
+      </ion-card-content>
+      <ion-card-content>flèche
+      </ion-card-content>
+      <!--<img src="{{scene.picture}}">-->
+    </ion-card>
+  </div> 
 </ion-content>
+
 
 <!--<ion-content>
   <img src="{{heros.avatar}}">

@@ -5,7 +5,7 @@ export const SCENES: Scene[] = [
     _id : '2',
     title : 'Introduction',
     description : 'Vous vous déplacez tranquillement, lentement au bord du chemin par un temps ensoleillé. Vous êtes un jeune gastéropode et vous vous réjouissez. Une belle journée s’annonce. Tout est pour le mieux vous dites-vous. Un temps magnifique pour une journée que vous souhaitez fort agréable. Vous avez rendez-vous. Plusieurs de vos amis vous ont convié à la fête. Légumes à gogo, salade, chicorée, batavia, et tant d’autres. Ils ont tout prévu pour un repas vert gargantuesque. Vegan, c’est votre credo mais veggie avec des amis, c’est votre gimmick. Vous savez que vous avez un long chemin à parcourir pour atteindre ce champ rêvé. Semé d’embûches ? Sans doute mais vous avez promis. C’est parti.',
-    picture : '../assets/champLaitue.jpg',
+    picture : '../../assets/champLaitue.jpg',
     encounter : null,
     bonusObject : null,
     bonusPower : [null, null],
