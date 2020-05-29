@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CharacterService } from '../services/character.service';
-import { Hero, Character } from '../personnage';
+import { Hero, Character } from '../classes/personnage';
+import { Scene } from '../classes/scene';
+import { SceneService } from '../services/scene.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -10,36 +13,53 @@ import { Hero, Character } from '../personnage';
 })
 export class ScenePage implements OnInit {
 
+  //----------------------------------------------------------------------------------------------------
+  //ATTRIBUTS
+  //----------------------------------------------------------------------------------------------------
+
   heros: Hero;
   adversaire: Character;
+  scene: Scene;
 
-  constructor(
-    private characterService : CharacterService
-  ) { }
+  //----------------------------------------------------------------------------------------------------
+  //CONSTRUCTOR
+  //----------------------------------------------------------------------------------------------------
 
+  constructor (private characterService : CharacterService,private sceneService : SceneService,private route: ActivatedRoute) { }
+    
   ngOnInit() {
-    this.fightRandom();
-    this.heros = this.characterService.getPersonnageById("0");
-    this.characterService.heros = this.heros;
-    console.log(this.heros);
-    this.adversaire = this.getAdversaire();
-    this.characterService.character = this.adversaire;
+
+  this.scene = this.sceneService.getSceneById(this.route.snapshot.paramMap.get('id'))
+   
+  this.heros = this.characterService.getPersonnageById("0");
+  //this.characterService.heros = this.heros;
+  this.adversaire = this.getAdversaire(); 
+  //this.fightRandom(); ATTENTION PLANTAGE ALEATOIRE LORSQUE ACTIF
+  //this.characterService.character = this.adversaire;
   }
 
-  //initialisation adversaire
+  //----------------------------------------------------------------------------------------------------
+  //METHODS
+  //----------------------------------------------------------------------------------------------------
+
+  /**
+   * Initialisation adversaire
+  **/
   getAdversaire(){
     return this.adversaire = this.characterService.getPersonnageById("1");
   }
 
-
-  //combat
+  /**
+   * Combat
+  **/
   fightRandom() {
    this.characterService.fight();
   }
 
-  //fuite
+  /**
+   * Fuite
+  **/
   escape() {
    this.characterService.escape();
   }
-
 }
