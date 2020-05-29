@@ -8,8 +8,19 @@ export class SceneService {
 
   constructor() { }
 
-  getSceneById(id){
-    return SCENES.find(({_id})=> _id === id);
+  //----------------------------------------------------------------------------------------------------
+  //METHODS
+  //----------------------------------------------------------------------------------------------------
+
+  /**
+   * Obtention de la scene par son numéro id
+  **/
+  getSceneById(id: string) {
+    const scene = SCENES.find(
+      (sceneObject) => {
+        return sceneObject._id === id;
+      });
+    return scene;
   }
 
 }
