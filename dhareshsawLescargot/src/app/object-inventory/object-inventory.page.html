@@ -7,20 +7,27 @@
 
 <ion-content>
   <ion-card>
-    <p>
-      service:
-    </p>
-    <p>
-      endurance   
-    </p>
-    <p>
-      chance
-    </p>
+    <h3>
+  Liste de tous les objets possibles de l'inventaire
+  </h3>
+  <p *ngFor="let objectInventory of objectInventory">
+    {{ objectInventory.description}}
+  </p>
 </ion-card>
-<ion-card>
 
-</ion-card>
-<ion-button onclick="fermer()">
+  <!-- <ion-card>
+    <p>
+      force:
+    </p>
+    <p>
+      endurance:   
+    </p>
+    <p>
+      chance:
+    </p>
+</ion-card> -->
+
+<ion-button (click)="fermer()">
   <p>fermer</p>
 </ion-button>
 

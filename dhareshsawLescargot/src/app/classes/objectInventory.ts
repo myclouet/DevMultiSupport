@@ -1,8 +1,6 @@
-export interface ObjectInventory {
-
-    // un objet est composé d'un nom et d'un pouvoir ==> vu ac johann le 13MAI 
-    nameObject: string,
-    power: string,
-    image: string,
-    
+export class ObjectInventory {
+    _id: string;
+    description: string;
+    image: string;
+    bonusPower: [string, number];
   }
