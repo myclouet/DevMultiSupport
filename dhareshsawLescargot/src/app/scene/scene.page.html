@@ -1,13 +1,35 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>scene</ion-title>
+    <ion-title>{{scene.title}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="bgImage" [ngStyle]="{'background-image': 'url('+ scene.picture +')'}">
+  <style>
+    .bgImage {
+      --background: none;
+      --background-image: url("scene.picture") no-repeat center center fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+ 
+    <ion-card>
+      <ion-card-content>{{scene.description}}</ion-card-content>
+    </ion-card>
+
+      <ion-icon name="arrow-round-up"></ion-icon>
+    
+</ion-content>
+
+
+
+
+<!--<ion-content>
   <img src="{{heros.avatar}}">
   <img src="{{adversaire.avatar}}">
   <button (click) = "fightRandom()">Fight !!!</button>
-  <button (click) = "escape()">Cours Forest, cooooooours</button>
+  <button (click) = "escape()">Cours Forest, cooooooours</button>-->
   <!--<button *ngIf = "characterService.conditionnalFightBool === true">Jeter le dé</button>-->
-</ion-content>
+<!--</ion-content>-->
