@@ -1,15 +1,28 @@
 import { Injectable } from '@angular/core';
-import { Character, Hero } from '../personnage';
+import { Character, Hero } from '../classes/personnage';
+import { PERSONNAGES } from '../datas/listePersonnages';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CharacterService {
 character: Character;
-hero: Hero;
+heros: Hero;
+conditionnalFightBool: boolean = false;
 
   constructor() { }
 
+  // Liste de personnages
+  getPersonnages(){
+    return PERSONNAGES;
+  }
+
+  //Personnage par id
+  getPersonnageById(id){
+    return PERSONNAGES.find(({_id})=> _id === id);
+  }
+
+  /*
   // Liste des getters et setters communs
   public getId() {
     return this.character._id;
@@ -50,6 +63,7 @@ hero: Hero;
   public setEndurance(endurance: number) {
     this.character.endurance = endurance;
   }
+  */
 
   // Méthodes spécifiques au héro
   public die() {
@@ -70,16 +84,53 @@ hero: Hero;
 
   public rollDice(): number {
     // tslint:disable-next-line: prefer-const
-    let res = Math.floor(Math.random() * 6) + 1;
+    let res = 0;
+    res = Math.floor(Math.random() * 6) + 1;
     return res;
   }
 
+  //prise de decision du combat
   public fight() {
+    let result = 0;
+    result = Math.floor(Math.random() * 2);
 
+    switch (result) {
+      case 0:
+        console.log("Automatic Fight");
+        break;
+
+      case 1:
+        console.log("Conditional Fight");
+        this.conditionnalFight();
+        this.conditionnalFightBool = true;
+        break;
+    }
   }
 
-  public escape() {
+  //combat conditionnel
+  conditionnalFight() {
+    if(this.heros.strength + (this.heros.luck - this.rollDice())>this.character.endurance){
+      console.log("L'adversaire est mort !");
+    }
+    else if(this.character.strength + (this.character.luck - this.rollDice()) >= this.heros.endurance){
+      console.log("Le héros est mort");
+    }
+  }
 
+  //fuite
+  public escape() {
+    let resultatDe=this.rollDice();
+    if (resultatDe<this.heros.luck){
+      console.log("Je me suis échappé");
+      console.log("Dé : " + resultatDe);
+      console.log("Luck : " + this.heros.luck)
+    }
+    else {
+      console.log("tu n'as pas assez bavé, viens te battre mauviette");
+      console.log("Dé : " + resultatDe);
+      console.log("Luck : " + this.heros.luck)
+      this.fight();
+    }
   }
 
   public addObject(item: number) {
