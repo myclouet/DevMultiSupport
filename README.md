@@ -10,6 +10,6 @@ Chef de projet adjoint :
 
 :exclamation: Toute la gestion de projet est concentrée dans le [wiki](https://github.com/myclouet/DevMultiSupport/wiki)  
 
-:arrow_right: [Planning du projet](https://docs.google.com/spreadsheets/d/1SAsa8jUNW-yLoutCmTzTejGANamgYi_k7XRsevLSwR8/edit?usp=sharing)
+[:arrow_right: Planning du projet](https://docs.google.com/spreadsheets/d/1SAsa8jUNW-yLoutCmTzTejGANamgYi_k7XRsevLSwR8/edit?usp=sharing)
 
-:arrow_right: [Kanban board](https://github.com/myclouet/DevMultiSupport/projects/1)
+[:arrow_right: Kanban board](https://github.com/myclouet/DevMultiSupport/projects/1)
