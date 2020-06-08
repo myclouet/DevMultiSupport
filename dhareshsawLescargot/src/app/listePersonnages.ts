@@ -19,4 +19,4 @@ export const PERSONNAGES: Character[] = [
     endurance: 4,
     items: null,
   }
-]
+];
