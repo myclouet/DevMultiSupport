@@ -4,6 +4,7 @@ import { Hero, Character } from '../classes/personnage';
 import { Scene } from '../classes/scene';
 import { SceneService } from '../services/scene.service';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -25,7 +26,7 @@ export class ScenePage implements OnInit {
   //CONSTRUCTOR
   //----------------------------------------------------------------------------------------------------
 
-  constructor (private characterService : CharacterService,private sceneService : SceneService,private route: ActivatedRoute) { }
+  constructor (private characterService : CharacterService,private sceneService : SceneService,private route: ActivatedRoute, private router: Router) { }
     
   ngOnInit() {
 
@@ -39,7 +40,18 @@ export class ScenePage implements OnInit {
   }
 
   //----------------------------------------------------------------------------------------------------
-  //METHODS
+  //METHODS SCENES
+  //----------------------------------------------------------------------------------------------------
+
+  nextScene(indice: number) {
+    this.router.navigate(['scene/',this.scene.nextScenes[indice]]);
+  }
+
+
+
+
+  //----------------------------------------------------------------------------------------------------
+  //METHODS COMBATS
   //----------------------------------------------------------------------------------------------------
 
   /**

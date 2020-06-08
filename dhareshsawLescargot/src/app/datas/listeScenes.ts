@@ -6,7 +6,7 @@ export const SCENES: Scene[] = [
      title: 'Prologue',
      // tslint:disable-next-line: max-line-length
      description: 'Jeune escargot atteignant juste l’âge de \"partir chercher les salades\", vous vous prénommez Dhareshsaw. Vous habitez encore la maison familiale, enfouie sous un grand et vieux chêne. Vos parents sont aimants, votre foyer douillet et sur, cependant, un petit je ne sais quoi dans l\'air du dehors fait frétiller vos antennes. Dans 10 jours, c\'est la fête du potager, et les jeunes escargots se sont tous donnés rendez-vous au champ des salades. Cet évènement marque le début de l\’âge adulte pour les escargots. Vous sortez un œil de votre trou et l\'appel étant irrésistible, vous sortez.',
-     picture: '',
+     picture: '../assets/champLaitue.jpg',
      encounter: null,
      bonusObject: null,
      bonusPower: [null, null],
@@ -34,7 +34,7 @@ export const SCENES: Scene[] = [
      title: 'Vanessa le chat',
      // tslint:disable-next-line: max-line-length
      description: 'Vous êtes en pleine progression lorsque le ciel s\'assombrit. Une immense masse vous masque l’horizon. Gigantesque, poilue, vous n\'en voyez tout d’abord que les pattes griffues. Félines. Un chat. Votre première rencontre et vous tombez sur un chat. \n - « Bonjour, La limace ! » \n- « Je suis un escargot en fait » \n- « C’est pareil la spirale en plus. Sauf que toi on te mange ! » \n - « Oui, enfin pas tous » \n - « Je n’aime pas trop mais je peux me laisser tenter ce matin » \n La discussion est assez désagréable et le jeu est serré, il vous faut trouver de quoi occuper ce chat. Si vous souhaitez lui donner le trou d\'une famille de souris que vous avez repéré plus tôt, c\'est par la gauche. Si vous souhaitez le convaincre de ne pas vous manger grâce à votre rhétorique baveuse, c\'est par la droite. Enfin, si vous souhaitez attirer l\'attention d\'un lama...quoi ? un lama ??!! Oui, oui c\'est bien un lama qui broute nonchalamment de l\'herbe à 2 mètres de vous. Cliquez tout droit.',
-     picture: '',
+     picture: '../../assets/champLaitue.jpg',
      encounter: null,
      bonusObject: null,
      bonusPower: [null, null],
@@ -229,7 +229,7 @@ export const SCENES: Scene[] = [
      title: 'Badaboum',
      // tslint:disable-next-line: max-line-length
      description: 'C\'était moins une !!! L\'homme ne vous écrase pas, mais il tape votre carapace avec le bout de sa chaussure, ce qui vous envoie loin, très loin, le vol plané est interminable…',
-     picture: '',
+     picture: '../assets/champLaitue.jpg',
      encounter: null,
      bonusObject: null,
      bonusPower: [null, null],
@@ -243,7 +243,7 @@ export const SCENES: Scene[] = [
      title: 'Évitement',
      // tslint:disable-next-line: max-line-length
      description: 'Bravo !!! quelle anticipation, pour un escargot éviter un pied d\'homme, c\'est comme un poisson qui fait de la bicyclette !!! Vous vous en tirez avec brio, et franchissez la maison et sa cour sans autre encombre. Vous sortez et continuez votre chemin. Les alentours vous semblent familier et vous reconnaissez la route.',
-     picture: '',
+     picture: '../assets/champLaitue.jpg',
      encounter: null,
      bonusObject: null,
      bonusPower: [null, null],
@@ -257,7 +257,7 @@ export const SCENES: Scene[] = [
      title: 'Titou le tatoo',
      // tslint:disable-next-line: max-line-length
      description: 'La faim vous tenaille. Des images de plats commencent à défiler devant vos yeux. Vous avez une idée. Titou le tatou tient un petit camion à pizzas qui ont la réputation de recharger les batteries. Vous le connaissez bien et vous vous dites qu\'un petit détour vaudrait bien la peine. Le champ de salades est encore loin. Vous avez besoin d\'énergie car qui sait quels pièges vous allez encore rencontrer sur votre chemin ? Titou est là, fidèle au poste. Vous commandez une pizza Quatre-saisons bien garnie, avec un filet d\'huile piquante pour ramper plus vite. Vous gagnez de points de force Vous continuez à avancer après toutes ses aventures par là.',
-     picture: '',
+     picture: '../assets/champLaitue.jpg',
      encounter: null,
      bonusObject: null,
      bonusPower: [null, null],
@@ -271,7 +271,7 @@ export const SCENES: Scene[] = [
      title: 'JC le crapaud',
      // tslint:disable-next-line: max-line-length
      description: '- "Allez-vous faire voir avec vos concours débiles" vous exclamez-vous avant de tourner la coquille au crapaud. Vous vous dirigez vers la sortie lorsqu\'un choc contre votre coquille vous fait vaciller puis tomber sur le côté. JC est là, vert de rage, la langue pendante se répétant "me refuser le concours de bave à moi !!!". Le combat est inévitable. \n Si vous perdez c\'est par là. \n Si vous gagnez c\'est par ici.',
-     picture: '',
+     picture: '../assets/champLaitue.jpg',
      encounter: null,
      bonusObject: null,
      bonusPower: [null, null],
@@ -285,7 +285,7 @@ export const SCENES: Scene[] = [
      title: 'Après le crapaud',
      // tslint:disable-next-line: max-line-length
      description: 'Quel combat !!! Ce crapaud a bien failli vous faire rendre les armes. En attendant, la fête du potager vous attend toujours et il est temps de se remettre en route. Vous rassemblez vos esprits et prenez le petit chemin de campagne qui se trouve derrière le marais. Suivant.',
-     picture: '',
+     picture: '../assets/champLaitue.jpg',
      encounter: null,
      bonusObject: null,
      bonusPower: [null, null],
