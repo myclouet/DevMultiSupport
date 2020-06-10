@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Character, Hero } from '../personnage';
-import { PERSONNAGES } from '../listePersonnages';
+import { Character, Hero } from '../classes/personnage';
+import { PERSONNAGES } from '../datas/listePersonnages';
 
 @Injectable({
   providedIn: 'root'

@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Inventaire</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card>
+    <h3>
+  Liste de tous les objets possibles de l'inventaire
+  </h3>
+  <p *ngFor="let objectInventory of objectInventory">
+    {{ objectInventory.description}}
+  </p>
+</ion-card>
+
+  <!-- <ion-card>
+    <p>
+      force:
+    </p>
+    <p>
+      endurance:   
+    </p>
+    <p>
+      chance:
+    </p>
+</ion-card> -->
+
+<ion-button (click)="fermer()">
+  <p>fermer</p>
+</ion-button>
+
+</ion-content>

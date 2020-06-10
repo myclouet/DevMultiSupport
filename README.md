@@ -6,6 +6,7 @@ Chefs de projet :
 
 Chef de projet adjoint :
 * Johann Marais (jusqu'au 5 mai)
+* Jean-Christophe (à partir du 14 mai)
 
 Toute la gestion de projet est concentrée dans le [wiki](https://github.com/myclouet/DevMultiSupport/wiki)  
 

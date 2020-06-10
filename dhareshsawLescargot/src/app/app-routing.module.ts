@@ -12,8 +12,12 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'scene',
+    path: 'scene/:id',
     loadChildren: () => import('./scene/scene.module').then( m => m.ScenePageModule)
+  },
+  {
+    path: 'object-inventory',
+    loadChildren: () => import('./object-inventory/object-inventory.module').then( m => m.ObjectInventoryPageModule)
   },
 ];
 
