@@ -18,8 +18,12 @@
     <ion-card>
       <ion-card-content>{{scene.description}}</ion-card-content>
     </ion-card>
-
-      <ion-icon name="arrow-round-up"></ion-icon>
+    
+    <div>
+      <ion-icon *ngIf = "scene.nextScenes.length === 3 && scene.isBattle === false" (click)='nextScene(2)' name="arrow-back-circle"></ion-icon>
+      <ion-icon *ngIf = "scene.nextScenes.length >= 2 && scene.isBattle === false" (click)='nextScene(1)' name="arrow-up-circle"></ion-icon>
+      <ion-icon *ngIf = "scene.isBattle === false" (click)='nextScene(0)' name="arrow-forward-circle"></ion-icon>
+    </div> 
     
 </ion-content>
 
