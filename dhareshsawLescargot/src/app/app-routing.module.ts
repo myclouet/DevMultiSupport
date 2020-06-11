@@ -15,8 +15,8 @@ const routes: Routes = [
     path: 'scene/:id',
     loadChildren: () => import('./scene/scene.module').then( m => m.ScenePageModule)
   },
-  {
 
+  {
     path: 'leaderboard',
     loadChildren: () => import('./leaderboard/leaderboard.module').then( m => m.LeaderboardPageModule)
   },
