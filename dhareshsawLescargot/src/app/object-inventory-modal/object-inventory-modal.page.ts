@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ModalController, NavParams } from "@ionic/angular";
 import { Hero } from "../classes/personnage";
-import { ObjectInventory } from "../classes/objectInventory";
+import { ObjectInventory } from "../classes/object";
 import { ObjectInventoryService } from "../services/object-inventory.service";
 
 @Component({
@@ -33,13 +33,13 @@ export class ObjectInventoryModalPage implements OnInit {
       nameItemSelected
     );
 
-    if (this.modalItemSelected.bonusPower[0] === "endurance") {
+    if (this.modalItemSelected.bonusPower[0] === 'endurance') {
       this.modalHero.endurance = this.modalItemSelected.bonusPower[1];
     } else {
-      if (this.modalItemSelected.bonusPower[0] === "luck") {
+      if (this.modalItemSelected.bonusPower[0] === 'luck') {
         this.modalHero.luck = this.modalItemSelected.bonusPower[1];
       } else {
-        if (this.modalItemSelected.bonusPower[0] === "strength") {
+        if (this.modalItemSelected.bonusPower[0] === 'strength') {
           this.modalHero.strength = this.modalItemSelected.bonusPower[1];
         }
       }
