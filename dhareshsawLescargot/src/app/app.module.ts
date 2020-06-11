@@ -13,10 +13,12 @@ import { CharacterService } from './services/character.service';
 import { SceneService } from './services/scene.service';
 import { ObjectInventoryService } from './services/object-inventory.service';
 
+import { IonicStorageModule } from '@ionic/storage';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, IonicStorageModule.forRoot()],
   providers: [
     StatusBar,
     SplashScreen,
