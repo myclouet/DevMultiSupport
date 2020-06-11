@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { ObjectInventoryPage } from './object-inventory.page';
+import { ObjectInventoryModalPage } from './object-inventory-modal.page';
 
-describe('ObjectInventoryPage', () => {
-  let component: ObjectInventoryPage;
-  let fixture: ComponentFixture<ObjectInventoryPage>;
+describe('ObjectInventoryModalPage', () => {
+  let component: ObjectInventoryModalPage;
+  let fixture: ComponentFixture<ObjectInventoryModalPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ObjectInventoryPage ],
+      declarations: [ ObjectInventoryModalPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ObjectInventoryPage);
+    fixture = TestBed.createComponent(ObjectInventoryModalPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

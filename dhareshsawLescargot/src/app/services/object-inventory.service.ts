@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ObjectInventory } from '../classes/objectInventory';
+import { ObjectInventory } from '../classes/object';
 import { OBJECTINVENTORY } from '../datas/listeObjectInventory';
 // import { HttpClient } from '@angular/common/http';
 // import { Observable } from 'rxjs';
