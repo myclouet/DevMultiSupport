@@ -1,17 +1,17 @@
-import { ObjectInventory } from '../classes/objectInventory';
+import { ObjectInventory } from '../classes/object';
 
 export const OBJECTINVENTORY: ObjectInventory[] = [
   {
     _id: '1',
     description: 'potion de chance',
     image: '',
-    bonusPower: ['chance', 2]
+    bonusPower: ['luck', 2]
   },
   {
     _id: '2',
     description: 'bière',
     image: '',
-    bonusPower: ['force', 1]
+    bonusPower: ['strength', 1]
   },
   {
     _id: '3',
