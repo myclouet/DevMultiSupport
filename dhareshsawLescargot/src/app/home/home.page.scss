@@ -10,7 +10,7 @@
 }
 
 .flb {
-  background-color: #68F561 ;
+  background-color: #04471c ;
   height:100%;
   width:100%;
   animation: pulse 1s linear forwards;
@@ -43,7 +43,9 @@
     opacity: 1;
   }
 }
-
+ion-button{
+  color: rgba(255, 255, 255, 0.9) ;
+}
 ion-card {
   background-color: rgba(255, 255, 255, 0.9);
   display: flex;
