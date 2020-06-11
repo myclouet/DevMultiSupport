@@ -1,5 +1,7 @@
 {
   "name": "dhareshsawLescargot",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
