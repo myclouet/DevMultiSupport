@@ -1,5 +1,5 @@
 import { Character } from './personnage';
-import { ObjectInventory } from './objectInventory';
+import { ObjectInventory } from './object';
 
 export class Scene {
     _id : string;

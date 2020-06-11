@@ -17,17 +17,27 @@ const routes: Routes = [
   },
   {
     path: 'object-inventory',
-    loadChildren: () => import('./object-inventory/object-inventory.module').then( m => m.ObjectInventoryPageModule)
-  },  {
-    path: 'leaderboard',
-    loadChildren: () => import('./src/app/leaderboard/leaderboard.module').then( m => m.LeaderboardPageModule)
+    loadChildren: () => import('./object-inventory-modal/object-inventory-modal.module').then( m => m.ObjectInventoryModalPageModule)
   },
   {
     path: 'leaderboard',
     loadChildren: () => import('./leaderboard/leaderboard.module').then( m => m.LeaderboardPageModule)
   },
+  {
+
+    path: 'leaderboard',
+    loadChildren: () => import('./leaderboard/leaderboard.module').then( m => m.LeaderboardPageModule)
+  },
+
+  {
+    path: 'object-inventory-modal',
+    loadChildren: () => import('./object-inventory-modal/object-inventory-modal.module').then( m => m.ObjectInventoryModalPageModule)
+  },
 
 ];
+
+
+
 
 @NgModule({
   imports: [
