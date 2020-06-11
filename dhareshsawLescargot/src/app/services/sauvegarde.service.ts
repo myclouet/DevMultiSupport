@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Hero } from '../classes/personnage';
 import { Scene } from '../classes/scene';
+import { Storage } from '@ionic/storage';
 
 @Injectable({
   providedIn: 'root'

@@ -33,6 +33,7 @@ export class HomePage implements OnInit{
   loadGame() {
     this.sauvegardeService.restoreGame();
     this.characterService.heros=this.sauvegardeService.getStateGame().hero;
+    console.log(this.characterService.heros);
     //this.sceneService.currentScene=this.sauvegardeService.getStateGame().scene;
   }
 }
