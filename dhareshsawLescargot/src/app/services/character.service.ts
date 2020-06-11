@@ -8,18 +8,18 @@ import { PERSONNAGES } from '../datas/listePersonnages';
 export class CharacterService {
 character: Character;
 heros: Hero;
-conditionnalFightBool: boolean = false;
+conditionnalFightBool = false;
 
   constructor() { }
 
   // Liste de personnages
-  getPersonnages(){
+  getPersonnages() {
     return PERSONNAGES;
   }
 
-  //Personnage par id
-  getPersonnageById(id){
-    return PERSONNAGES.find(({_id})=> _id === id);
+  // Personnage par id
+  getPersonnageById(id) {
+    return PERSONNAGES.find(({_id}) => _id === id);
   }
 
   /*
@@ -89,46 +89,44 @@ conditionnalFightBool: boolean = false;
     return res;
   }
 
-  //prise de decision du combat
+  // prise de decision du combat
   public fight() {
     let result = 0;
     result = Math.floor(Math.random() * 2);
 
     switch (result) {
       case 0:
-        console.log("Automatic Fight");
+        console.log('Automatic Fight');
         break;
 
       case 1:
-        console.log("Conditional Fight");
+        console.log('Conditional Fight');
         this.conditionnalFight();
         this.conditionnalFightBool = true;
         break;
     }
   }
 
-  //combat conditionnel
+  // combat conditionnel
   conditionnalFight() {
-    if(this.heros.strength + (this.heros.luck - this.rollDice())>this.character.endurance){
-      console.log("L'adversaire est mort !");
-    }
-    else if(this.character.strength + (this.character.luck - this.rollDice()) >= this.heros.endurance){
-      console.log("Le héros est mort");
+    if (this.heros.strength + (this.heros.luck - this.rollDice()) > this.character.endurance) {
+      console.log('L\'adversaire est mort !');
+    } else if (this.character.strength + (this.character.luck - this.rollDice()) >= this.heros.endurance) {
+      console.log('Le héros est mort');
     }
   }
 
-  //fuite
+  // fuite
   public escape() {
-    let resultatDe=this.rollDice();
-    if (resultatDe<this.heros.luck){
-      console.log("Je me suis échappé");
-      console.log("Dé : " + resultatDe);
-      console.log("Luck : " + this.heros.luck)
-    }
-    else {
-      console.log("tu n'as pas assez bavé, viens te battre mauviette");
-      console.log("Dé : " + resultatDe);
-      console.log("Luck : " + this.heros.luck)
+    const resultatDe = this.rollDice();
+    if (resultatDe < this.heros.luck) {
+      console.log('Je me suis échappé');
+      console.log('Dé : ' + resultatDe);
+      console.log('Luck : ' + this.heros.luck);
+    } else {
+      console.log('tu n\'as pas assez bavé, viens te battre mauviette');
+      console.log('Dé : ' + resultatDe);
+      console.log('Luck : ' + this.heros.luck);
       this.fight();
     }
   }
