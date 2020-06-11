@@ -1,9 +1,37 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Object-inventory-modal</ion-title>
+    <ion-title>Je ne sais pas quel titre mettre</ion-title>
   </ion-toolbar>
 </ion-header>
 
+
+
 <ion-content>
+    <ion-card>
+      <h3>Caractéristiques</h3>
+    <p>
+      force: {{ this.modalHero.strength}}
+    </p>
+    <p>
+      endurance: {{ this.modalHero.endurance}}
+    </p>
+    <p>
+      chance: {{ this.modalHero.luck}}
+    </p>
+</ion-card>
+
+  <ion-card>
+    <h3>Inventaire</h3>
+  <p *ngFor="let heroObjectInventory of modalHero.items">
+    {{ heroObjectInventory.description}}
+  </p>
+</ion-card>
+
+
+<ion-footer>
+  <ion-button expand="full" (click)="closeObjectInventoryModal()">
+    Fermer
+  </ion-button>
+</ion-footer>
 
 </ion-content>
