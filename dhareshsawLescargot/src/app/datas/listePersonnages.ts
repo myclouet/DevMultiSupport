@@ -67,7 +67,7 @@ export const PERSONNAGES: Character[] = [
   {
     _id: '7',
     name: 'Mathias la limace',
-    avatar: '',
+    avatar: './assets/avatars/mathias.png',
     strength: null,
     luck: null,
     endurance: null,
@@ -76,7 +76,7 @@ export const PERSONNAGES: Character[] = [
   {
     _id: '8',
     name: 'Noémie la fourmi',
-    avatar: '',
+    avatar: './assets/avatars/noemie.png',
     strength: null,
     luck: null,
     endurance: null,
