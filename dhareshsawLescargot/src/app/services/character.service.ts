@@ -8,12 +8,12 @@ import { PERSONNAGES } from '../datas/listePersonnages';
 export class CharacterService {
 character: Character;
 heros: Hero;
-conditionnalFightBool: boolean = false;
+conditionnalFightBool = false;
 
   constructor() { }
 
   // Liste de personnages
-  getPersonnages(){
+  getPersonnages() {
     return PERSONNAGES;
   }
 
@@ -109,9 +109,9 @@ conditionnalFightBool: boolean = false;
 
   // combat conditionnel
   conditionnalFight() {
-    if (this.heros.strength + (this.heros.luck - this.rollDice()) > this.character.endurance){
-      console.log("L'adversaire est mort !");
-    } else if (this.character.strength + (this.character.luck - this.rollDice()) >= this.heros.endurance){
+    if (this.heros.strength + (this.heros.luck - this.rollDice()) > this.character.endurance) {
+      console.log('L\'adversaire est mort !');
+    } else if (this.character.strength + (this.character.luck - this.rollDice()) >= this.heros.endurance) {
       console.log('Le héros est mort');
     }
   }
@@ -124,7 +124,7 @@ conditionnalFightBool: boolean = false;
       console.log('Dé : ' + resultatDe);
       console.log('Luck : ' + this.heros.luck);
     } else {
-      console.log("tu n'as pas assez bavé, viens te battre mauviette");
+      console.log('tu n\'as pas assez bavé, viens te battre mauviette');
       console.log('Dé : ' + resultatDe);
       console.log('Luck : ' + this.heros.luck);
       this.fight();
