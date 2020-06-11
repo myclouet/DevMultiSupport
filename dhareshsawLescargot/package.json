@@ -26,6 +26,7 @@
     "@ionic/storage": "^2.2.0",
     "cordova-android": "8.1.0",
     "core-js": "^2.5.4",
+    "lint": "^0.7.0",
     "rxjs": "~6.5.1",
     "tslib": "^1.13.0",
     "zone.js": "~0.9.1"
