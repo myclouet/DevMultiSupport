@@ -57,13 +57,8 @@ export class ObjectInventoryModalPage implements OnInit {
     // }
   }
 
-  // method called with the cancel button when no item is selected
-  backToHome() {
-    this.modalController.dismiss();
-  }
-
   // method enabling to close the modal and send the pictureName to newPicturePage
-  async closePictureNameModal() {
+  async closeObjectInventoryModal() {
     await this.modalController.dismiss(this.modalHero);
   }
 }
