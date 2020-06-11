@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ObjectInventoryPage } from './object-inventory.page';
+import { ObjectInventoryModalPage } from './object-inventory-modal.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: ObjectInventoryPage
+    component: ObjectInventoryModalPage
   }
 ];
 
@@ -14,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ObjectInventoryPageRoutingModule {}
+export class ObjectInventoryModalPageRoutingModule {}
