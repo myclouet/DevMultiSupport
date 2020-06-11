@@ -18,7 +18,11 @@ const routes: Routes = [
   {
     path: 'object-inventory',
     loadChildren: () => import('./object-inventory/object-inventory.module').then( m => m.ObjectInventoryPageModule)
+  },  {
+    path: 'object-inventory-modal',
+    loadChildren: () => import('./object-inventory-modal/object-inventory-modal.module').then( m => m.ObjectInventoryModalPageModule)
   },
+
 ];
 
 @NgModule({
