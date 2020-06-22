@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { SCENES } from '../datas/listeScenes';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SceneService {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   //----------------------------------------------------------------------------------------------------
   //METHODS
@@ -21,6 +22,10 @@ export class SceneService {
         return sceneObject._id === id;
       });
     return scene;
+  }
+
+  newGame() {
+    this.router.navigate(['/scene/1']);
   }
 
 }

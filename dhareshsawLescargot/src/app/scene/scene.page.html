@@ -17,14 +17,15 @@
  
     <ion-card>
       <ion-content>
-        <ion-card-content><img src="./assets/avatars/jc.png" class ="imgScene"/>{{scene.description}}</ion-card-content>
+        <ion-card-content><img *ngIf = "scene.idCharacter !== null" [src]="adversaire.avatar" class ="imgScene"/>{{scene.description}}</ion-card-content>
       </ion-content>  
     </ion-card>
     
     <div class="arrowsArea">
-      <ion-icon *ngIf = "scene.nextScenes.length === 3" (click)='nextScene(2)' name="arrow-back-circle"></ion-icon>
-      <ion-icon *ngIf = "scene.nextScenes.length >= 2" (click)='nextScene(1)' name="arrow-up-circle"></ion-icon>
-      <ion-icon (click)='nextScene(0)' name="arrow-forward-circle"></ion-icon>
+      <ion-icon *ngIf = "scene.nextScenes.length >= 2" (click)='nextScene(1)' name="arrow-back-circle"></ion-icon>
+      <ion-icon *ngIf = "scene.nextScenes.length === 3" (click)='nextScene(2)' name="arrow-up-circle"></ion-icon>
+      <ion-icon *ngIf = "scene.nextScenes.length !== 0"(click)='nextScene(0)' name="arrow-forward-circle"></ion-icon>
+      <ion-button *ngIf = "scene.nextScenes.length === 0" expand="block" color="success" (click)="sceneService.newGame()">Nouvelle Partie</ion-button>
     </div> 
     
 </ion-content>
@@ -44,8 +45,8 @@
   </style>
 
   <div class="imgFightArea">
-    <img src="{{heros.avatar}}" class="imgFight">
-    <img src="{{adversaire.avatar}}"class="imgFight">
+    <img [src]="heros.avatar" class="imgFight">
+    <img *ngIf = "scene.idCharacter !== null" [src]="adversaire.avatar"class="imgFight"><!--ngIf a retirer lorsque liste complete des avatars-->
   </div>
 
   <ion-card class="fightCard">

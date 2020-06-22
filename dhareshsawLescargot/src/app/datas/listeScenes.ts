@@ -36,7 +36,7 @@ export const SCENES: Scene[] = [
      title: 'Vanessa le chat',
      idCharacter: '12',
      // tslint:disable-next-line: max-line-length
-     description: 'Vous êtes en pleine progression lorsque le ciel s\'assombrit. Une immense masse vous masque l’horizon. Gigantesque, poilue, vous n\'en voyez tout d’abord que les pattes griffues. Félines. Un chat. Votre première rencontre et vous tombez sur un chat. \n - « Bonjour, La limace ! » \n- « Je suis un escargot en fait » \n- « C’est pareil la spirale en plus. Sauf que toi on te mange ! » \n - « Oui, enfin pas tous » \n - « Je n’aime pas trop mais je peux me laisser tenter ce matin » \n La discussion est assez désagréable et le jeu est serré, il vous faut trouver de quoi occuper ce chat. Si vous souhaitez lui donner le trou d\'une famille de souris que vous avez repéré plus tôt, c\'est par la gauche. Si vous souhaitez le convaincre de ne pas vous manger grâce à votre rhétorique baveuse, c\'est par la droite. Enfin, si vous souhaitez attirer l\'attention d\'un lama...quoi ? un lama ??!! Oui, oui c\'est bien un lama qui broute nonchalamment de l\'herbe à 2 mètres de vous. Cliquez tout droit.',
+     description: 'Vous êtes en pleine progression lorsque le ciel s\'assombrit. Une immense masse vous masque l’horizon. Gigantesque, poilue, vous n\'en voyez tout d’abord que les pattes griffues. Félines. Un chat. Votre première rencontre et vous tombez sur un chat. \n - « Bonjour, La limace ! » \n- « Je suis un escargot en fait » \n- « C’est pareil la spirale en plus. Sauf que toi on te mange ! » \n - « Oui, enfin pas tous » \n - « Je n’aime pas trop mais je peux me laisser tenter ce matin » \n La discussion est assez désagréable et le jeu est serré, il vous faut trouver de quoi occuper ce chat. Si vous souhaitez lui donner le trou d\'une famille de souris que vous avez repéré plus tôt, c\'est par la droite. Si vous souhaitez le convaincre de ne pas vous manger grâce à votre rhétorique baveuse, c\'est par la gauche. Enfin, si vous souhaitez attirer l\'attention d\'un lama...quoi ? un lama ??!! Oui, oui c\'est bien un lama qui broute nonchalamment de l\'herbe à 2 mètres de vous. Allez tout droit.',
      picture: '../../assets/champLaitue.jpg',
      encounter: null,
      bonusObject: null,
@@ -96,7 +96,7 @@ export const SCENES: Scene[] = [
      title: 'Honte sur vous',
      idCharacter: null,
      // tslint:disable-next-line: max-line-length
-     description: 'Vous continuez votre route et vous ne savez pas pourquoi, vous vous sentez observé. Vous sentez des milliers de petits yeux vous scruter depuis leur cachette. Des yeux de souris, de rats, de mulots...vous avez du remords, mais c\'est trop tard, le massacre dont vous êtes à l\'origine vous suivra jusque dans votre dernière coquille. En attendant une bande de rats s\'est regroupée devant vous, à environ 4 mètres. Les ennuis sérieux commencent. Si vous décidez de prendre votre courage à deux antennes, et d\'aller au-devant du gang de rats, c\'est ici. À droite il y a une maison que vous pouvez utiliser pour vous cacher de ces maudits rongeurs c\'est par là. À gauche il y a un chemin de fer, mais les trains qui y passent pourraient vous broyer en moins de temps qu\'il n\'en faut pour se recroqueviller dans sa coquille, c\'est quand même par ici.',
+     description: 'Vous continuez votre route et vous ne savez pas pourquoi, vous vous sentez observé. Vous sentez des milliers de petits yeux vous scruter depuis leur cachette. Des yeux de souris, de rats, de mulots...vous avez du remords, mais c\'est trop tard, le massacre dont vous êtes à l\'origine vous suivra jusque dans votre dernière coquille. En attendant une bande de rats s\'est regroupée devant vous, à environ 4 mètres. Les ennuis sérieux commencent. Si vous décidez de prendre votre courage à deux antennes, et d\'aller au-devant du gang de rats, allez tout droit. À droite il y a une maison que vous pouvez utiliser pour vous cacher de ces maudits rongeurs. À gauche il y a un chemin de fer, mais les trains qui y passent pourraient vous broyer en moins de temps qu\'il n\'en faut pour se recroqueviller dans sa coquille',
      picture: '../assets/champLaitue.jpg',
      encounter: null,
      bonusObject: null,
@@ -156,7 +156,7 @@ export const SCENES: Scene[] = [
      title: 'Gang des rats',
      idCharacter: null,
      // tslint:disable-next-line: max-line-length
-     description: 'Ils ne sont pas vraiment rassurants, mais vous décidez d\'affronter votre destinée. Les rats se dressent devant vous, le poil hirsutes, l\'air brutal avec leurs cicatrices et leurs oreilles trouées. L\'un d\'entre eux, qui a l\'air plus costaud que les autres et dont un œil est caché par un bandeau noir, s\'avance vers vous. -"Qu\'est-ce que tu viens faire ici ? microbe." -"Je...je suis en route vers le champ des salades" répondez-vous d\'une voix tremblante. -"Passe par un autre chemin, par ici tu vas tout saloper avec ta bave". Il vous reste deux solutions maintenant que vous êtes là...Forcer le passage, en passant par ici. Darwin Award ou écouter ce gros rat menaçant en passant par là.',
+     description: 'Ils ne sont pas vraiment rassurants, mais vous décidez d\'affronter votre destinée. Les rats se dressent devant vous, le poil hirsutes, l\'air brutal avec leurs cicatrices et leurs oreilles trouées. L\'un d\'entre eux, qui a l\'air plus costaud que les autres et dont un œil est caché par un bandeau noir, s\'avance vers vous. -"Qu\'est-ce que tu viens faire ici ? microbe." -"Je...je suis en route vers le champ des salades" répondez-vous d\'une voix tremblante. -"Passe par un autre chemin, par ici tu vas tout saloper avec ta bave". Il vous reste deux solutions maintenant que vous êtes là...Forcer le passage, en passant par la droite ou écouter ce gros rat menaçant en allant à gauche.',
      picture: '../assets/champLaitue.jpg',
      encounter: null,
      bonusObject: null,
@@ -201,7 +201,7 @@ export const SCENES: Scene[] = [
      title: 'Yvan l’habitant',
      idCharacter: '13',
      // tslint:disable-next-line: max-line-length
-     description: 'Vous commencez à traverser la cour. Jolie pour les humains mais pour vous c\'est relativement aride. Aride, gris avec en prime sol en bitume. En parlant des humains, en voilà un ! Pourquoi sont-ils si grands et si rapides ! Il arrive à grand pas devant vous. Il vous faut l\'éviter à tout prix. A vous de jouer : Si vous décidez de vous arrêter en espérant qu\'il vous évitera : c\'est par là. Si vous décidez de prendre vers la gauche de toutes vos forces afin de tenter d\'éviter à tout prix ces pieds menaçants c\'est par ici Si vous souhaitez prendre à droite en gardant les yeux grands ouverts et en tentant de calculer votre trajectoire pour éviter l\'écrabouillement, c\'est par là.',
+     description: 'Vous commencez à traverser la cour. Jolie pour les humains mais pour vous c\'est relativement aride. Aride, gris avec en prime sol en bitume. En parlant des humains, en voilà un ! Pourquoi sont-ils si grands et si rapides ! Il arrive à grand pas devant vous. Il vous faut l\'éviter à tout prix. A vous de jouer : Si vous décidez de vous arrêter en espérant qu\'il vous évitera : c\'est par la droite. Si vous décidez de tenter d\'éviter à tout prix ces pieds menaçants c\'est à gauche. Prenez tout droit en gardant les yeux grands ouverts et en tentant de calculer votre trajectoire pour éviter l\'écrabouillement.',
      picture: '../assets/champLaitue.jpg',
      encounter: null,
      bonusObject: null,
@@ -289,7 +289,7 @@ export const SCENES: Scene[] = [
    {
      _id: '20',
      title: 'JC le crapaud',
-     idCharacter: null,
+     idCharacter: '6',
      // tslint:disable-next-line: max-line-length
      description: '- "Allez-vous faire voir avec vos concours débiles" vous exclamez-vous avant de tourner la coquille au crapaud. Vous vous dirigez vers la sortie lorsqu\'un choc contre votre coquille vous fait vaciller puis tomber sur le côté. JC est là, vert de rage, la langue pendante se répétant "me refuser le concours de bave à moi !!!". Le combat est inévitable. \n Si vous perdez c\'est par là. \n Si vous gagnez c\'est par ici.',
      picture: '../assets/champLaitue.jpg',
@@ -380,7 +380,7 @@ export const SCENES: Scene[] = [
      title: 'Après le koala',
      idCharacter: null,
      // tslint:disable-next-line: max-line-length
-     description: 'C\'est tout de même étrange de rencontrer un koala ici...mais elle était très sympa, pensez-vous en continuant votre route. Le champ de salades est encore relativement loin même si vous pensez avoir fait la moitié du chemin. Droit devant vous, il y a la route, dangereuse à cause des voitures mais praticable et le chemin le plus rapide vers le champ si vous voulez prendre par-là cliquez ici. En suivant le ruisseau à droite, vous pouvez arriver assez rapidement à bon port mais les abords des ruisseaux grouillent de bêtes adorant les escargots, si vous souhaitez braver la chaine alimentaire, cliquez là !',
+     description: 'C\'est tout de même étrange de rencontrer un koala ici...mais elle était très sympa, pensez-vous en continuant votre route. Le champ de salades est encore relativement loin même si vous pensez avoir fait la moitié du chemin. A droite, il y a la route, dangereuse à cause des voitures mais praticable et le chemin le plus rapide vers le champ. En suivant le ruisseau à gauche, vous pouvez arriver assez rapidement à bon port mais les abords des ruisseaux grouillent de bêtes adorant les escargots, si vous souhaitez braver la chaine alimentaire',
      picture: '../assets/champLaitue.jpg',
      encounter: null,
      bonusObject: null,
@@ -425,7 +425,7 @@ export const SCENES: Scene[] = [
      title: 'Chassé',
      idCharacter: null,
      // tslint:disable-next-line: max-line-length
-     description: 'Vous décidez donc de prendre le chemin en direction du ruisseau. Le chemin est agréable, frais et bucolique, cependant vous entendez au loin des cris d\'oiseau et de temps à autre, une ombre assombrit les alentours. Vous accélérez, conscient que de nombreux oiseaux raffolent des escargots, surtout jeunes comme vous. Soudain, alors que vous passez sous une branche morte, un bec s\'enfonce juste à côté de vous ! La chasse a commencé. La seule solution pour échapper aux oiseaux bien plus rapide que vous, c\'est de rentrer dans votre coquille et de rouler. Vous avez deux possibilités : rouler vers un épais buisson de framboise : par ici ou rouler vers la rivière par là.',
+     description: 'Vous décidez donc de prendre le chemin en direction du ruisseau. Le chemin est agréable, frais et bucolique, cependant vous entendez au loin des cris d\'oiseau et de temps à autre, une ombre assombrit les alentours. Vous accélérez, conscient que de nombreux oiseaux raffolent des escargots, surtout jeunes comme vous. Soudain, alors que vous passez sous une branche morte, un bec s\'enfonce juste à côté de vous ! La chasse a commencé. La seule solution pour échapper aux oiseaux bien plus rapide que vous, c\'est de rentrer dans votre coquille et de rouler. Vous avez deux possibilités : rouler vers un épais buisson de framboise en prenant à droite ou rouler vers la rivière en prenant à gauche.',
      picture: '../assets/champLaitue.jpg',
      encounter: null,
      bonusObject: null,
@@ -485,7 +485,7 @@ export const SCENES: Scene[] = [
      title: 'Framboises',
      idCharacter: null,
      // tslint:disable-next-line: max-line-length
-     description: 'Vous rentrez aussi vite que vous pouvez dans votre coquille et donnez un à-coup pour rouler vers le buisson. Formidable, ça marche !!! Vous passez sous les ronces et entendez les cris de rage des oiseaux qui n\'ont pu faire de vous leur encas. Le terrain est en pente, aucune ronce n\'entrave votre avancée. Vous allez trop vite !!! et traversez le buisson sans vous arrêter. Vous prenez encore de la vitesse et commencez à avoir peur de briser votre coquille. Souhaitez-vous sortir de votre coquille pour ralentir votre course, par ici ou laisser le hasard décider par là.',
+     description: 'Vous rentrez aussi vite que vous pouvez dans votre coquille et donnez un à-coup pour rouler vers le buisson. Formidable, ça marche !!! Vous passez sous les ronces et entendez les cris de rage des oiseaux qui n\'ont pu faire de vous leur encas. Le terrain est en pente, aucune ronce n\'entrave votre avancée. Vous allez trop vite !!! et traversez le buisson sans vous arrêter. Vous prenez encore de la vitesse et commencez à avoir peur de briser votre coquille. Souhaitez-vous sortir de votre coquille pour ralentir votre course en allant à droite ou laisser le hasard décider en prenant à gauche ?.',
      picture: '../assets/champLaitue.jpg',
      encounter: null,
      bonusObject: null,
@@ -528,7 +528,7 @@ export const SCENES: Scene[] = [
      _id: '36',
      title: 'Pré du sanglier',
      idCharacter: null,
-     description: 'Si clé alors par-là, si pas clé alors par ici',
+     description: 'Si clé alors à gauche sinon à droite',
      picture: '../assets/champLaitue.jpg',
      encounter: null,
      bonusObject: null,

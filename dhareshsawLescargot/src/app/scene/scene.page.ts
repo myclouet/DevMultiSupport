@@ -32,7 +32,7 @@ export class ScenePage implements OnInit {
 
   this.scene = this.sceneService.getSceneById(this.route.snapshot.paramMap.get('id'))
    
-  this.heros = this.characterService.getPersonnageById("0");
+  this.heros = this.characterService.getPersonnageById('0');
   //this.characterService.heros = this.heros;
   this.adversaire = this.getAdversaire(); 
   //this.fightRandom(); ATTENTION PLANTAGE ALEATOIRE LORSQUE ACTIF
@@ -47,9 +47,6 @@ export class ScenePage implements OnInit {
     this.router.navigate(['scene/',this.scene.nextScenes[indice]]);
   }
 
-
-
-
   //----------------------------------------------------------------------------------------------------
   //METHODS COMBATS
   //----------------------------------------------------------------------------------------------------
@@ -58,7 +55,7 @@ export class ScenePage implements OnInit {
    * Initialisation adversaire
   **/
   getAdversaire(){
-    return this.adversaire = this.characterService.getPersonnageById("1");
+    return this.adversaire = this.characterService.getPersonnageById(this.scene.idCharacter);// Attention doublon idCharactere et encounter
   }
 
   /**
