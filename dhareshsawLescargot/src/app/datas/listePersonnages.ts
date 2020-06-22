@@ -58,7 +58,7 @@ export const PERSONNAGES: Character[] = [
   {
     _id: '6',
     name: 'Jean-Christo le crapaud',
-    avatar: '',
+    avatar: './assets/avatars/jc.png',
     strength: null,
     luck: null,
     endurance: null,
