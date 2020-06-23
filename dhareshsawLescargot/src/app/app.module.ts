@@ -12,11 +12,13 @@ import { SauvegardeService } from './services/sauvegarde.service';
 import { CharacterService } from './services/character.service';
 import { SceneService } from './services/scene.service';
 import { ObjectInventoryService } from './services/object-inventory.service';
+import { FooterComponent } from './footer/footer.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, SharedModule],
   providers: [
     StatusBar,
     SplashScreen,

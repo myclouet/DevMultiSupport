@@ -1,3 +1,5 @@
+import { ObjectInventory } from './objectInventory';
+
 export class Character {
     // attributs de la classe personnage
     // tslint:disable-next-line: variable-name
@@ -7,7 +9,7 @@ export class Character {
     strength: number;
     luck: number;
     endurance: number;
-    items: Array<number>;
+    items: ObjectInventory;
     // private dead: boolean = false;
 }
 
@@ -19,5 +21,5 @@ export class Hero extends Character {
     strength: number;
     luck: number;
     endurance: number;
-    items: Array<number>;
+    items: ObjectInventory;
 }
