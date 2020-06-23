@@ -5,7 +5,6 @@ import { Scene } from '../classes/scene';
 import { SceneService } from '../services/scene.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
-import { ObjectInventoryService } from '../services/object-inventory.service';
 
 
 @Component({
@@ -15,54 +14,48 @@ import { ObjectInventoryService } from '../services/object-inventory.service';
 })
 export class ScenePage implements OnInit {
 
-  // ----------------------------------------------------------------------------------------------------
-  // ATTRIBUTS
-  // ----------------------------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------------------------------
+  //ATTRIBUTS
+  //----------------------------------------------------------------------------------------------------
 
   heros: Hero;
   adversaire: Character;
   scene: Scene;
 
-  // ----------------------------------------------------------------------------------------------------
-  // CONSTRUCTOR
-  // ----------------------------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------------------------------
+  //CONSTRUCTOR
+  //----------------------------------------------------------------------------------------------------
 
-  constructor(
-    private characterService: CharacterService,
-    private sceneService: SceneService,
-    private route: ActivatedRoute,
-    private router: Router,
-    private objectInventoryService: ObjectInventoryService
-    ) { }
-
+  constructor (private characterService : CharacterService,private sceneService : SceneService,private route: ActivatedRoute, private router: Router) { }
+    
   ngOnInit() {
 
-  this.scene = this.sceneService.getSceneById(this.route.snapshot.paramMap.get('id'));
-
+  this.scene = this.sceneService.getSceneById(this.route.snapshot.paramMap.get('id'))
+   
   this.heros = this.characterService.getPersonnageById('0');
-  // this.characterService.heros = this.heros;
+  //this.characterService.heros = this.heros;
   this.adversaire = this.getAdversaire(); 
-  // this.fightRandom(); ATTENTION PLANTAGE ALEATOIRE LORSQUE ACTIF
-  // this.characterService.character = this.adversaire;
+  //this.fightRandom(); ATTENTION PLANTAGE ALEATOIRE LORSQUE ACTIF
+  //this.characterService.character = this.adversaire;
   }
 
-  // ----------------------------------------------------------------------------------------------------
-  // METHODS SCENES
-  // ----------------------------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------------------------------
+  //METHODS SCENES
+  //----------------------------------------------------------------------------------------------------
 
   nextScene(indice: number) {
-    this.router.navigate(['scene/', this.scene.nextScenes[indice]]);
+    this.router.navigate(['scene/',this.scene.nextScenes[indice]]);
   }
 
-  // ----------------------------------------------------------------------------------------------------
-  // METHODS COMBATS
-  // ----------------------------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------------------------------
+  //METHODS COMBATS
+  //----------------------------------------------------------------------------------------------------
 
   /**
    * Initialisation adversaire
   **/
-  getAdversaire() {
-    return this.adversaire = this.characterService.getPersonnageById(this.scene.idCharacter); // Attention doublon idCharactere et encounter
+  getAdversaire(){
+    return this.adversaire = this.characterService.getPersonnageById(this.scene.idCharacter);// Attention doublon idCharactere et encounter
   }
 
   /**
@@ -75,7 +68,6 @@ export class ScenePage implements OnInit {
   /**
    * Fuite
   **/
-
   escape() {
    this.characterService.escape();
   }
