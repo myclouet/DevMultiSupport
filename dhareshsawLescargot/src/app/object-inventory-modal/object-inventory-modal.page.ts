@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { ModalController, NavParams } from '@ionic/angular';
-import { Hero } from '../classes/personnage';
-import { ObjectInventory } from '../classes/object';
-import { ObjectInventoryService } from '../services/object-inventory.service';
+import { Component, OnInit } from "@angular/core";
+import { ModalController, NavParams } from "@ionic/angular";
+import { Hero } from "../classes/personnage";
+import { ObjectInventory } from "../classes/object";
+import { ObjectInventoryService } from "../services/object-inventory.service";
 
 @Component({
-  selector: 'app-object-inventory-modal',
-  templateUrl: './object-inventory-modal.page.html',
-  styleUrls: ['./object-inventory-modal.page.scss'],
+  selector: "app-object-inventory-modal",
+  templateUrl: "./object-inventory-modal.page.html",
+  styleUrls: ["./object-inventory-modal.page.scss"],
 })
 export class ObjectInventoryModalPage implements OnInit {
   // ---------- ATTRIBUTES ------------ //
