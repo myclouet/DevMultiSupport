@@ -1,4 +1,4 @@
-import { ObjectInventory } from './objectInventory';
+import { ObjectInventory } from './object';
 
 export class Character {
     // attributs de la classe personnage
