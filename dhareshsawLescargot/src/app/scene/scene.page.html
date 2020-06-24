@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{scene.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf = "scene.isBattle===false" class="bgImage" [ngStyle]="{'background-image': 'url('+ scene.picture +')'}">
+  <style>
+    .bgImage {
+      --background: none;
+      --background-image: url("scene.picture") no-repeat center center fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+ 
+    <ion-card>
+      <ion-content>
+        <ion-card-content><img *ngIf = "scene.idCharacter !== null" [src]="adversaire.avatar" class ="imgScene"/>{{scene.description}}</ion-card-content>
+      </ion-content>  
+    </ion-card>
+    
+    <div class="arrowsArea">
+      <ion-icon *ngIf = "scene.nextScenes.length >= 2" (click)='nextScene(1)' name="arrow-back-circle"></ion-icon>
+      <ion-icon *ngIf = "scene.nextScenes.length === 3" (click)='nextScene(2)' name="arrow-up-circle"></ion-icon>
+      <ion-icon *ngIf = "scene.nextScenes.length !== 0"(click)='nextScene(0)' name="arrow-forward-circle"></ion-icon>
+      <ion-button *ngIf = "scene.nextScenes.length === 0" expand="block" color="success" (click)="sceneService.newGame()">Nouvelle Partie</ion-button>
+    </div> 
+    
+</ion-content>
+
+
+
+
+<ion-content *ngIf = "scene.isBattle===true" class="bgImage" [ngStyle]="{'background-image': 'url('+ scene.picture +')'}">
+  <style>
+    .bgImage {
+      --background: none;
+      --background-image: url("scene.picture") no-repeat center center fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+
+  <div class="imgFightArea">
+    <img [src]="heros.avatar" class="imgFight">
+    <img *ngIf = "scene.idCharacter !== null" [src]="adversaire.avatar"class="imgFight"><!--ngIf a retirer lorsque liste complete des avatars-->
+  </div>
+
+  <ion-card class="fightCard">
+    <ion-content>
+      <ion-card-content>
+        {{scene.description}}
+      </ion-card-content>
+    </ion-content>  
+  </ion-card>
+
+  
+  <div class="buttonsArea">
+    <ion-button (click) = "fightRandom()">Attaquer</ion-button>
+    <ion-button (click) = "escape()">Fuir</ion-button>
+  </div>
+  <!--<button *ngIf = "characterService.conditionnalFightBool === true">Jeter le dé</button>-->
+</ion-content>

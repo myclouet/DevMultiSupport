@@ -6,9 +6,19 @@ Chefs de projet :
 
 Chef de projet adjoint :
 * Johann Marais (jusqu'au 5 mai)
+* Jean-Christophe (à partir du 14 mai)
 
-[Planning du projet](https://docs.google.com/spreadsheets/d/1SAsa8jUNW-yLoutCmTzTejGANamgYi_k7XRsevLSwR8/edit?usp=sharing)
+### Constitution des binômes/trinômes initiaux :
+1. JC / Hervé
+2. Boris / Vanessa
+3. Yvan / Thierry
+4. Noémie / Raphaël
+5. Paula / Dhareshsaw
+6. Mathias / Johann
+7. Anabelle / Elodie 
 
-[Kanban board](https://github.com/myclouet/DevMultiSupport/projects/1)
+:exclamation: Toute la gestion de projet est concentrée dans le [wiki](https://github.com/myclouet/DevMultiSupport/wiki)  
 
-[Storyboard](http://twinery.org/2/#!/stories) (+ fichier html)
+:small_blue_diamond: [ Planning du projet](https://docs.google.com/spreadsheets/d/1SAsa8jUNW-yLoutCmTzTejGANamgYi_k7XRsevLSwR8/edit?usp=sharing)
+
+:small_blue_diamond: [ Kanban board](https://github.com/myclouet/DevMultiSupport/projects/1)

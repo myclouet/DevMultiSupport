@@ -1,20 +1,26 @@
+<div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+  <div class="flb">
+    <div class="Aligner-item Aligner-item--top"></div>
+    <img src="assets/CagouilleWhite.svg">
+    <div class="Aligner-item Aligner-item--bottom"></div>
+  </div>
+</div>
+
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
+    <ion-title mode="ios">
+      Dhareshsaw L'escargot
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <img src="assets/champLaitue.jpg">
+      <ion-button expand="block" color="success" (click)="sceneService.newGame()">Nouvelle Partie</ion-button>
+      <ion-button expand="block" color="success" (click)="loadGame()" >Reprendre Partie en cours</ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
+
