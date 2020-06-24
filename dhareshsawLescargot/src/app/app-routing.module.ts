@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
@@ -16,24 +15,17 @@ const routes: Routes = [
     path: 'scene/:id',
     loadChildren: () => import('./scene/scene.module').then( m => m.ScenePageModule)
   },
-  {
-    path: 'object-inventory',
-    loadChildren: () => import('./object-inventory-modal/object-inventory-modal.module').then( m => m.ObjectInventoryModalPageModule)
-  },
+
   {
     path: 'leaderboard',
     loadChildren: () => import('./leaderboard/leaderboard.module').then( m => m.LeaderboardPageModule)
   },
-
   {
     path: 'object-inventory-modal',
     loadChildren: () => import('./object-inventory-modal/object-inventory-modal.module').then( m => m.ObjectInventoryModalPageModule)
   },
 
 ];
-
-
-
 
 @NgModule({
   imports: [
