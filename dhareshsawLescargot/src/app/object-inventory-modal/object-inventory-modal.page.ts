@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController, NavParams } from '@ionic/angular';
+import { ModalController, NavParams, AlertController } from '@ionic/angular';
 import { Hero } from '../classes/personnage';
 import { ObjectInventory } from '../classes/object';
 
@@ -16,7 +16,8 @@ export class ObjectInventoryModalPage implements OnInit {
   // ---------- CONSTRUCTOR ------------ //
   constructor(
     private modalController: ModalController,
-    private navParams: NavParams
+    private navParams: NavParams,
+    private alertController: AlertController
   ) {}
 
   // -------- LIFECYCLE METHODS --------- //
