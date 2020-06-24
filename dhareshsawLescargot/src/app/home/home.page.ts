@@ -26,9 +26,7 @@ export class HomePage implements OnInit{
       }, 4000);
     }
 
-  newGame() {
-    this.router.navigate(['/scene/1']);
-  }
+  
 
   loadGame() {
     this.sauvegardeService.restoreGame();
