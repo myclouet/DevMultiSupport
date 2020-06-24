@@ -48,7 +48,6 @@ export class ObjectInventoryModalPage implements OnInit {
     // METTRE A JOUR L INVENTAIRE DU HERO LORSQUE LA CLASSE PERSONNAGE SERA OK
     // this.modalHero.find{((items[0])) => item[] ===
     // this.modalHero.items.splice(i,1);
-
     // METHODE FRIGO DES FOURMIS POUR SUPPRIMER UN ELEMENT DU TABLEAU
     // addToCart(i, id_member: number, id_ingredient: number, qty: number) {
     //   this.tableauPossesseurs.splice(i, 1);

@@ -16,6 +16,7 @@ export class SauvegardeService {
   saveGame() {
     this.storage.set('stateGame',this.stateGame);
     this.storage.set('story',this.story);
+    console.log('Partie sauvegardée');
   }
 
   restoreGame() {

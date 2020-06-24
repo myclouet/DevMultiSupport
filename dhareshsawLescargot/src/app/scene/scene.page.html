@@ -77,7 +77,7 @@
         </ion-col>
         <ion-col style="padding: 0; height: 100%">
           <ion-buttons style="background-color: #04471c;">
-            <ion-button routerLink="/object-inventory">
+            <ion-button (click)="openModal()">
               <ion-icon  style="color: white;" slot="icon-only" name="person-circle"></ion-icon>
             </ion-button>
             <ion-button>
@@ -86,7 +86,7 @@
             <ion-button>
               <ion-icon style="color: white;" slot="icon-only" name="document"></ion-icon>
             </ion-button>
-            <ion-button>
+            <ion-button (click)="quitter()">
               <ion-icon  style="color: white;" slot="icon-only" name="exit"></ion-icon>
             </ion-button>
           </ion-buttons>
