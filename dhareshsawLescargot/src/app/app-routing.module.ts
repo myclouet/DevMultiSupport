@@ -15,6 +15,11 @@ const routes: Routes = [
     path: 'scene/:id',
     loadChildren: () => import('./scene/scene.module').then( m => m.ScenePageModule)
   },
+
+  {
+    path: 'leaderboard',
+    loadChildren: () => import('./leaderboard/leaderboard.module').then( m => m.LeaderboardPageModule)
+  },
   {
     path: 'object-inventory-modal',
     loadChildren: () => import('./object-inventory-modal/object-inventory-modal.module').then( m => m.ObjectInventoryModalPageModule)

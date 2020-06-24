@@ -58,7 +58,7 @@ export const PERSONNAGES: Character[] = [
   {
     _id: '6',
     name: 'Jean-Christo le crapaud',
-    avatar: '',
+    avatar: './assets/avatars/jc.png',
     strength: null,
     luck: null,
     endurance: null,
@@ -67,7 +67,7 @@ export const PERSONNAGES: Character[] = [
   {
     _id: '7',
     name: 'Mathias la limace',
-    avatar: '',
+    avatar: './assets/avatars/mathias.png',
     strength: null,
     luck: null,
     endurance: null,
@@ -76,7 +76,7 @@ export const PERSONNAGES: Character[] = [
   {
     _id: '8',
     name: 'Noémie la fourmi',
-    avatar: '',
+    avatar: './assets/avatars/noemie.png',
     strength: null,
     luck: null,
     endurance: null,
@@ -85,7 +85,7 @@ export const PERSONNAGES: Character[] = [
   {
     _id: '9',
     name: 'Paula le koala',
-    avatar: '',
+    avatar: './assets/avatars/paula.png',
     strength: null,
     luck: null,
     endurance: null,
@@ -94,7 +94,7 @@ export const PERSONNAGES: Character[] = [
   {
     _id: '10',
     name: 'Rapha le lama',
-    avatar: '',
+    avatar: './assets/avatars/raph.png',
     strength: null,
     luck: null,
     endurance: null,
@@ -103,7 +103,7 @@ export const PERSONNAGES: Character[] = [
   {
     _id: '11',
     name: 'Titou le tatou',
-    avatar: '',
+    avatar: './assets/avatars/titou.png',
     strength: null,
     luck: null,
     endurance: null,
@@ -112,7 +112,7 @@ export const PERSONNAGES: Character[] = [
   {
     _id: '12',
     name: 'Vanessa le chat',
-    avatar: '',
+    avatar: './assets/avatars/vanessa.png',
     strength: null,
     luck: null,
     endurance: null,
