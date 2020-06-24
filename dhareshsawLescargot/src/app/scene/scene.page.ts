@@ -8,7 +8,9 @@ import { Router } from '@angular/router';
 import { ModalController, AlertController } from '@ionic/angular';
 import { ObjectInventoryModalPage } from '../object-inventory-modal/object-inventory-modal.page';
 import { SauvegardeService } from '../services/sauvegarde.service';
-import { App } from '@capacitor/core';
+import { Platform } from '@ionic/angular';
+import { Plugins } from '@capacitor/core';
+const { App } = Plugins;
 
 
 @Component({
@@ -38,7 +40,8 @@ export class ScenePage implements OnInit {
     private router: Router,
     private modalController: ModalController,
     public alertController: AlertController,
-    private sauvegarde: SauvegardeService
+    private sauvegarde: SauvegardeService,
+    private platform: Platform
     ) { }
     
   ngOnInit() {
@@ -128,7 +131,7 @@ export class ScenePage implements OnInit {
             handler: () => {
               this.sauvegarde.saveGame();
               console.log('Je quitte!');
-              // App.exitApp();
+              App.exitApp();
             }
           }
         ]
