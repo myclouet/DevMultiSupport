@@ -109,9 +109,28 @@ export class ScenePage implements OnInit {
   }
 
   // -----------------------------------------------------------------------------------------------
-  // Quitter l'application
+  // Sauvegarder partie
   // -----------------------------------------------------------------------------------------------
 
+  sauvegarder() {
+    this.sauvegarde.saveGame();
+    this.saveAlert();
+  }
+
+  async saveAlert() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Sauvegarde',
+      message: 'Partie sauvegardée',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
+  // -----------------------------------------------------------------------------------------------
+  // Quitter l'application
+  // -----------------------------------------------------------------------------------------------
 
   async quitter() {
       const alert = await this.alertController.create({
