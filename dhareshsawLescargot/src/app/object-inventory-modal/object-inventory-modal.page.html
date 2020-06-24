@@ -22,9 +22,9 @@
 
   <ion-card>
     <h3>Inventaire</h3>
-  <p *ngFor="let heroObjectInventory of modalHero.items">
-    {{ heroObjectInventory.description}}
-  </p>
+  <div *ngFor="let heroObjectInventory of modalHero.items">
+    <p (click)="updateHeroInventory(heroObjectInventory.description)">{{ heroObjectInventory.description}}</p>
+  </div>
 </ion-card>
 
 
