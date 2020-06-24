@@ -33,12 +33,12 @@ export class ScenePage implements OnInit {
   this.scene = this.sceneService.getSceneById(this.route.snapshot.paramMap.get('id'))
    
   this.heros = this.characterService.getPersonnageById('0');
-  //this.characterService.heros = this.heros;
+  this.characterService.heros = this.heros;
   this.adversaire = this.getAdversaire(); 
-  /*if (this.scene.isBattle === true){
+  if (this.scene.isBattle === true){
     this.fightRandom();
-  };*/
-  //this.characterService.character = this.adversaire;
+  };
+  this.characterService.character = this.adversaire;
   }
 
   //----------------------------------------------------------------------------------------------------
