@@ -4,10 +4,9 @@ import { ObjectInventory } from './object';
 export class Scene {
     _id : string;
     title : string;
-    idCharacter: string;
     description : string;
     picture : string;
-    encounter : Character;
+    encounter : string;
     bonusObject : ObjectInventory;
     bonusPower : [string, number];
     isBattle : boolean;
