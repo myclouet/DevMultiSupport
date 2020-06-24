@@ -33,10 +33,12 @@ export class ScenePage implements OnInit {
   this.scene = this.sceneService.getSceneById(this.route.snapshot.paramMap.get('id'))
    
   this.heros = this.characterService.getPersonnageById('0');
-  //this.characterService.heros = this.heros;
+  this.characterService.heros = this.heros;
   this.adversaire = this.getAdversaire(); 
-  //this.fightRandom(); ATTENTION PLANTAGE ALEATOIRE LORSQUE ACTIF
-  //this.characterService.character = this.adversaire;
+  if (this.scene.isBattle === true){
+    this.fightRandom();
+  };
+  this.characterService.character = this.adversaire;
   }
 
   //----------------------------------------------------------------------------------------------------

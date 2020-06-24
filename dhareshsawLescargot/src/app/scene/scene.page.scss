@@ -4,12 +4,18 @@ ion-icon {
 }
 
 ion-card {
-    background-color: rgba(255, 255, 255, 0.9);
+    opacity: 0.9;
     height: 65%;
+    padding-bottom: 10px;
 }
 
 ion-content {
     height: 100%;
+    --background : transparent;
+}
+
+ion-card-content {
+    --background : transparent;
 }
 
 .fightCard {
