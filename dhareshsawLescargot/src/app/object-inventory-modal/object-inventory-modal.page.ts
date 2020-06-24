@@ -1,13 +1,12 @@
-import { Component, OnInit } from "@angular/core";
-import { ModalController, NavParams } from "@ionic/angular";
-import { Hero } from "../classes/personnage";
-import { ObjectInventory } from "../classes/object";
-import { ObjectInventoryService } from "../services/object-inventory.service";
+import { Component, OnInit } from '@angular/core';
+import { ModalController, NavParams } from '@ionic/angular';
+import { Hero } from '../classes/personnage';
+import { ObjectInventory } from '../classes/object';
 
 @Component({
-  selector: "app-object-inventory-modal",
-  templateUrl: "./object-inventory-modal.page.html",
-  styleUrls: ["./object-inventory-modal.page.scss"],
+  selector: 'app-object-inventory-modal',
+  templateUrl: './object-inventory-modal.page.html',
+  styleUrls: ['./object-inventory-modal.page.scss'],
 })
 export class ObjectInventoryModalPage implements OnInit {
   // ---------- ATTRIBUTES ------------ //
@@ -17,8 +16,7 @@ export class ObjectInventoryModalPage implements OnInit {
   // ---------- CONSTRUCTOR ------------ //
   constructor(
     private modalController: ModalController,
-    private navParams: NavParams,
-    private objectInventoryService: ObjectInventoryService
+    private navParams: NavParams
   ) {}
 
   // -------- LIFECYCLE METHODS --------- //
@@ -29,8 +27,8 @@ export class ObjectInventoryModalPage implements OnInit {
   // ---------- METHOD ------------ //
   // method called by the view to update the hero Object Inventory
   updateHeroInventory(nameItemSelected: string) {
-    this.modalItemSelected = this.objectInventoryService.getInventoryObjectByName(
-      nameItemSelected
+    this.modalItemSelected = this.modalHero.items.find(
+      ({ description }) => description === nameItemSelected
     );
 
     if (this.modalItemSelected.bonusPower[0] === 'endurance') {
