@@ -10,7 +10,9 @@ character: Character;
 heros: Hero;
 conditionnalFightBool = false;
 
-  constructor() { }
+  constructor() {
+    this.heros = this.getPersonnageById('0'); // initialisation du héro
+   }
 
   // Liste de personnages
   getPersonnages() {
