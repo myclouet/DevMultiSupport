@@ -35,7 +35,9 @@ export class ScenePage implements OnInit {
   this.heros = this.characterService.getPersonnageById('0');
   //this.characterService.heros = this.heros;
   this.adversaire = this.getAdversaire(); 
-  //this.fightRandom(); ATTENTION PLANTAGE ALEATOIRE LORSQUE ACTIF
+  /*if (this.scene.isBattle === true){
+    this.fightRandom();
+  };*/
   //this.characterService.character = this.adversaire;
   }
 
