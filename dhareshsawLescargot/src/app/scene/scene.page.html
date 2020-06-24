@@ -17,7 +17,7 @@
  
     <ion-card>
       <ion-content>
-        <ion-card-content><img *ngIf = "scene.idCharacter !== null" [src]="adversaire.avatar" class ="imgScene"/>{{scene.description}}</ion-card-content>
+        <ion-card-content><img *ngIf = "scene.encounter !== null" [src]="adversaire.avatar" class ="imgScene"/>{{scene.description}}</ion-card-content>
       </ion-content>  
     </ion-card>
     
@@ -46,7 +46,7 @@
 
   <div class="imgFightArea">
     <img [src]="heros.avatar" class="imgFight">
-    <img *ngIf = "scene.idCharacter !== null" [src]="adversaire.avatar"class="imgFight"><!--ngIf a retirer lorsque liste complete des avatars-->
+    <img *ngIf = "scene.encounter !== null" [src]="adversaire.avatar"class="imgFight"><!--ngIf a retirer lorsque liste complete des avatars-->
   </div>
 
   <ion-card class="fightCard">

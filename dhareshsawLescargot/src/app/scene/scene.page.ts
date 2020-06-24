@@ -57,7 +57,7 @@ export class ScenePage implements OnInit {
    * Initialisation adversaire
   **/
   getAdversaire(){
-    return this.adversaire = this.characterService.getPersonnageById(this.scene.idCharacter);// Attention doublon idCharactere et encounter
+    return this.adversaire = this.characterService.getPersonnageById(this.scene.encounter);// Attention doublon idCharactere et encounter
   }
 
   /**
