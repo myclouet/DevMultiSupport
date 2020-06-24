@@ -5,10 +5,44 @@ ion-icon {
 
 ion-card {
     background-color: rgba(255, 255, 255, 0.9);
+    height: 65%;
 }
 
-div {
+ion-content {
+    height: 100%;
+}
+
+.fightCard {
+    height: 25%;
+}
+
+.arrowsArea {
     display: flex;
     background-color: transparent;
     justify-content: center;
+}
+
+.imgScene {
+    float: left;
+    width: 40%;
+    margin-right: 10px;
+}
+
+.imgFight {
+    width: 40%;
+}
+
+.imgFightArea {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5%;
+}
+
+.buttonsArea {
+    display: flex;
+    justify-content: space-around;
+
+    ion-button {
+       --background: #bc4749;
+    }
 }

@@ -1,7 +1,7 @@
 <div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
   <div class="flb">
     <div class="Aligner-item Aligner-item--top"></div>
-    <img src="assets/Cagouille.svg">
+    <img src="assets/CagouilleWhite.svg">
     <div class="Aligner-item Aligner-item--bottom"></div>
   </div>
 </div>
@@ -18,8 +18,8 @@
   <ion-card>
     <ion-card-content>
       <img src="assets/champLaitue.jpg">
-      <ion-button expand="block" color="success" (click)="newGame()">Nouvelle Partie</ion-button>
-      <ion-button expand="block" color="success" (click)="savedGame()" >Reprendre Partie en cours</ion-button>
+      <ion-button expand="block" color="success" (click)="sceneService.newGame()">Nouvelle Partie</ion-button>
+      <ion-button expand="block" color="success" (click)="loadGame()" >Reprendre Partie en cours</ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>
