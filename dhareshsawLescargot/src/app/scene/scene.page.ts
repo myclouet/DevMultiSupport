@@ -65,8 +65,15 @@ export class ScenePage implements OnInit {
    * Combat
   **/
   fightRandom() {
-   this.characterService.fight();
+   if (this.characterService.fight() === true) {
+      this.scene.battleWon = true;
+   } 
+   else this.scene.battleWon = false; // à retirer après les tests
+   console.log(this.scene.battleWon);
+
+   //ouverture modale victoire ou défaite
   }
+
 
   /**
    * Fuite
