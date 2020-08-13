@@ -21,6 +21,7 @@ export class ScenePage implements OnInit {
   heros: Hero;
   adversaire: Character;
   scene: Scene;
+  title: String;
 
   //----------------------------------------------------------------------------------------------------
   //CONSTRUCTOR
@@ -31,14 +32,14 @@ export class ScenePage implements OnInit {
   ngOnInit() {
 
   this.scene = this.sceneService.getSceneById(this.route.snapshot.paramMap.get('id'))
+
+  this.sceneTitle();
    
   this.heros=this.characterService.heros; // mise à jour du héro avec le héro du service
   //console.log(this.heros);
 
   this.adversaire = this.getAdversaire(); 
-  if (this.scene.isBattle === true){
-    this.fightRandom();
-  };
+
   this.characterService.character = this.adversaire;
   }
 
@@ -74,6 +75,18 @@ export class ScenePage implements OnInit {
    //ouverture modale victoire ou défaite
   }
 
+  /**
+   * Affichage du Header
+  **/
+  sceneTitle(){
+    if(this.scene.encounter === null){
+      this.title = "EN ROUTE"
+    } else if(this.scene.isBattle === true) {
+this.title = "COMBAT"
+    } else {
+      this.title = "RENCONTRE";
+    }
+  }
 
   /**
    * Fuite
