@@ -14,6 +14,7 @@ import { SceneService } from './services/scene.service';
 
 import { IonicStorageModule } from '@ionic/storage';
 
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
