@@ -11,7 +11,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { SauvegardeService } from './services/sauvegarde.service';
 import { CharacterService } from './services/character.service';
 import { SceneService } from './services/scene.service';
-import { ObjectInventoryService } from './services/object-inventory.service';
 
 import { IonicStorageModule } from '@ionic/storage';
 import { ObjectInventoryModalPageModule } from './object-inventory-modal/object-inventory-modal.module';
@@ -25,7 +24,6 @@ import { ObjectInventoryModalPageModule } from './object-inventory-modal/object-
     SplashScreen,
     SauvegardeService,
     CharacterService,
-    ObjectInventoryService,
     SceneService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

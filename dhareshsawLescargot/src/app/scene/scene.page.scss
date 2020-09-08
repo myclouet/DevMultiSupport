@@ -1,15 +1,21 @@
 ion-icon {
     font-size: 80px;
-    color : rgba(255, 255, 255, 0.8);
+    color :#a7c957;
 }
 
 ion-card {
-    background-color: rgba(255, 255, 255, 0.9);
-    height: 65%;
+    opacity: 0.9;
+   
+   
 }
 
 ion-content {
     height: 100%;
+    --background : transparent;
+}
+
+ion-card-content {
+    --background : transparent;
 }
 
 .fightCard {
@@ -18,14 +24,25 @@ ion-content {
 
 .arrowsArea {
     display: flex;
-    background-color: transparent;
-    justify-content: center;
+    justify-content: space-around;
+    padding: 5px;
+
+}
+.arrowsAreaText {
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.description {
+     height: 41%;
+    padding-bottom: 11px;
 }
 
 .imgScene {
     float: left;
     width: 40%;
     margin-right: 10px;
+    padding-bottom: 20px
 }
 
 .imgFight {
