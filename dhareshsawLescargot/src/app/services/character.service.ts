@@ -8,9 +8,11 @@ import { PERSONNAGES } from '../datas/listePersonnages';
 export class CharacterService {
 character: Character;
 heros: Hero;
-conditionnalFightBool = false;
+battleWon: boolean;
 
-  constructor() { }
+  constructor() {
+    this.heros = this.getPersonnageById('0'); // initialisation du héro
+   }
 
   // Liste de personnages
   getPersonnages() {
@@ -76,10 +78,12 @@ conditionnalFightBool = false;
 
   public winGame() {
     console.log('Vous avez gagné !');
+    this.battleWon = true;
   }
 
   public looseGame() {
     console.log('Vous avez perdu !');
+    this.battleWon = false;
   }
 
   public rollDice(): number {
@@ -93,27 +97,68 @@ conditionnalFightBool = false;
   public fight() {
     let result = 0;
     result = Math.floor(Math.random() * 2);
+    let res: boolean = false;
 
     switch (result) {
       case 0:
         console.log('Automatic Fight');
+        if (this.automaticFight() == true) {
+        res = true;
+      }
         break;
 
       case 1:
         console.log('Conditional Fight');
-        this.conditionnalFight();
-        this.conditionnalFightBool = true;
+        if (this.conditionnalFight() === true) { 
+        res = true;
+        }
         break;
     }
+    return res;
   }
 
   // combat conditionnel
   conditionnalFight() {
     if (this.heros.strength + (this.heros.luck - this.rollDice()) > this.character.endurance) {
-      console.log('L\'adversaire est mort !');
+      this.winGame();
+      return true;
     } else if (this.character.strength + (this.character.luck - this.rollDice()) >= this.heros.endurance) {
-      console.log('Le héros est mort');
+      this.looseGame();
+      return false;
     }
+    else console.log("vainqueur non déterminé");
+  }
+
+  // combat automatique
+  automaticFight(){
+    let result = 0;
+    result = Math.floor(Math.random() * 4);
+    let res: boolean = false;
+
+    switch (result) {
+      case 0:
+        this.heros.strength = this.heros.strength - 1;
+        console.log("strength : " + this.heros.strength);
+        res = true;
+        break;
+      
+      case 1:
+        this.heros.endurance = this.heros.endurance - 1;
+        console.log("endurance : " +this.heros.endurance);
+        res = true;
+        break;
+      
+      case 2:
+        this.heros.luck = this.heros.luck - 1;
+        console.log("luck : " +this.heros.luck);
+        res = true;
+        break;
+
+      case 3:
+        this.die();
+        break;
+    }
+    return res;
   }
 
   // fuite

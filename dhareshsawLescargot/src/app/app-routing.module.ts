@@ -20,11 +20,6 @@ const routes: Routes = [
     path: 'leaderboard',
     loadChildren: () => import('./leaderboard/leaderboard.module').then( m => m.LeaderboardPageModule)
   },
-  {
-    path: 'object-inventory-modal',
-    loadChildren: () => import('./object-inventory-modal/object-inventory-modal.module').then( m => m.ObjectInventoryModalPageModule)
-  },
-
 ];
 
 @NgModule({

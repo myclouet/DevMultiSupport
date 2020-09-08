@@ -11,9 +11,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { SauvegardeService } from './services/sauvegarde.service';
 import { CharacterService } from './services/character.service';
 import { SceneService } from './services/scene.service';
-import { ObjectInventoryService } from './services/object-inventory.service';
 
 import { IonicStorageModule } from '@ionic/storage';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,7 +24,6 @@ import { IonicStorageModule } from '@ionic/storage';
     SplashScreen,
     SauvegardeService,
     CharacterService,
-    ObjectInventoryService,
     SceneService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
