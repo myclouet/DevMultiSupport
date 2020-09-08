@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>{{scene.title}}</ion-title>
+    <ion-title>{{title}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -16,24 +16,27 @@
   </style>
  
     <ion-card>
+    <ion-card-header>
+        <img *ngIf = "scene.encounter !== null" [src]="adversaire.avatar" class ="imgScene"/>
+        <ion-card-title>{{scene.title}}</ion-card-title>
+    </ion-card-header>
+    </ion-card>
+    <ion-card class="description">
       <ion-content>
-        <ion-card-content><img *ngIf = "scene.idCharacter !== null" [src]="adversaire.avatar" class ="imgScene"/>{{scene.description}}</ion-card-content>
+        <ion-card-content>{{scene.description}}</ion-card-content>
       </ion-content>  
     </ion-card>
     
-    <div class="arrowsArea">
+    <ion-card>
+      <ion-card-header class="arrowsArea">
       <ion-icon *ngIf = "scene.nextScenes.length >= 2" (click)='nextScene(1)' name="arrow-back-circle"></ion-icon>
       <ion-icon *ngIf = "scene.nextScenes.length === 3" (click)='nextScene(2)' name="arrow-up-circle"></ion-icon>
       <ion-icon *ngIf = "scene.nextScenes.length !== 0"(click)='nextScene(0)' name="arrow-forward-circle"></ion-icon>
       <ion-button *ngIf = "scene.nextScenes.length === 0" expand="block" color="success" (click)="sceneService.newGame()">Nouvelle Partie</ion-button>
-    </div> 
-    
-
-    
+    </ion-card-header>
+      <ion-card-content *ngIf = "scene.nextScenes.length > 1" class="arrowsAreaText">Choisis une direction</ion-card-content>
+    </ion-card> 
 </ion-content>
-
-
-
 
 <ion-content *ngIf = "scene.isBattle===true" class="bgImage" [ngStyle]="{'background-image': 'url('+ scene.picture +')'}">
   <style>
@@ -48,7 +51,7 @@
 
   <div class="imgFightArea">
     <img [src]="heros.avatar" class="imgFight">
-    <img *ngIf = "scene.idCharacter !== null" [src]="adversaire.avatar"class="imgFight"><!--ngIf a retirer lorsque liste complete des avatars-->
+    <img *ngIf = "scene.encounter !== null" [src]="adversaire.avatar"class="imgFight"><!--ngIf a retirer lorsque liste complete des avatars-->
   </div>
 
   <ion-card class="fightCard">
@@ -66,8 +69,6 @@
   </div>
   <!--<button *ngIf = "characterService.conditionnalFightBool === true">Jeter le dé</button>-->
 </ion-content>
-
-
 <!--Footer de l'application-->
 <ion-footer >
   <ion-toolbar color="secondary" style="text-align: center">
@@ -77,10 +78,7 @@
         </ion-col>
         <ion-col style="padding: 0; height: 100%">
           <ion-buttons style="background-color: #04471c;">
-            <ion-button (click)="sauvegarder()">
-              <ion-icon  style="color: white;" slot="icon-only" name="save-outline"></ion-icon>
-            </ion-button>
-            <ion-button (click)="openModal()">
+            <ion-button routerLink="/object-inventory">
               <ion-icon  style="color: white;" slot="icon-only" name="person-circle"></ion-icon>
             </ion-button>
             <ion-button>
@@ -89,9 +87,9 @@
             <ion-button>
               <ion-icon style="color: white;" slot="icon-only" name="document"></ion-icon>
             </ion-button>
-            <!--<ion-button (click)="quitter()">
+            <ion-button>
               <ion-icon  style="color: white;" slot="icon-only" name="exit"></ion-icon>
-            </ion-button>-->
+            </ion-button>
           </ion-buttons>
         </ion-col>
         <ion-col style="padding: 0; height: 100%">
