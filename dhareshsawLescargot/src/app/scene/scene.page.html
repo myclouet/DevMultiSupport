@@ -49,9 +49,20 @@
     }
   </style>
 
-  <div class="imgFightArea">
-    <img [src]="heros.avatar" class="imgFight">
-    <img *ngIf = "scene.encounter !== null" [src]="adversaire.avatar"class="imgFight"><!--ngIf a retirer lorsque liste complete des avatars-->
+  <div class="fightArea">
+    <ion-card>
+      <ion-card-title>Dhareshsaw l'escargot</ion-card-title>
+      <img [src]="heros.avatar" class="imgFight">
+      <ion-card-subtitle>Endurance : {{heros.endurance}}</ion-card-subtitle>
+      <ion-card-subtitle>Force : {{heros.strength}}</ion-card-subtitle>
+      <ion-card-subtitle>Chance : {{heros.luck}}</ion-card-subtitle>
+    </ion-card> 
+    <ion-card>
+      <ion-card-title>{{scene.title}}</ion-card-title>
+      <img *ngIf = "scene.encounter !== null" [src]="adversaire.avatar"class="imgFight"><!--ngIf a retirer lorsque liste complete des avatars-->
+      <ion-card-subtitle>Difficulté : </ion-card-subtitle>
+      <!-- rajouter image de difficulté -->
+    </ion-card> 
   </div>
 
   <ion-card class="fightCard">
@@ -64,7 +75,7 @@
 
   
   <div class="buttonsArea">
-    <ion-button (click) = "fightRandom()">Attaquer</ion-button>
+    <ion-button (click) = "fightSelection()">Attaquer</ion-button>
     <ion-button (click) = "escape()">Fuir</ion-button>
   </div>
   <!--<button *ngIf = "characterService.conditionnalFightBool === true">Jeter le dé</button>-->

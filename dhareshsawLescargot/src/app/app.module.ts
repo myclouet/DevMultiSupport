@@ -15,6 +15,7 @@ import { SceneService } from './services/scene.service';
 import { IonicStorageModule } from '@ionic/storage';
 import { ObjectInventoryModalPageModule } from './object-inventory-modal/object-inventory-modal.module';
 
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],

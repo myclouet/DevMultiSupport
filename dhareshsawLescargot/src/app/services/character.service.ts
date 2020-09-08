@@ -8,6 +8,7 @@ import { PERSONNAGES } from '../datas/listePersonnages';
 export class CharacterService {
 character: Character;
 heros: Hero;
+battleWon: boolean;
 
   constructor() {
     this.heros = this.getPersonnageById('0'); // initialisation du héro
@@ -77,10 +78,12 @@ heros: Hero;
 
   public winGame() {
     console.log('Vous avez gagné !');
+    this.battleWon = true;
   }
 
   public looseGame() {
     console.log('Vous avez perdu !');
+    this.battleWon = false;
   }
 
   public rollDice(): number {
