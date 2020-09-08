@@ -18,8 +18,7 @@ import { ObjectInventoryModalPageModule } from './object-inventory-modal/object-
 
 @NgModule({
   declarations: [AppComponent],
-  entryComponents: [
-  ],
+  entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ObjectInventoryModalPageModule, IonicStorageModule.forRoot()],
   providers: [
     StatusBar,
