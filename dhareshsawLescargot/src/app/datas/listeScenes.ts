@@ -272,7 +272,7 @@ export const SCENES: Scene[] = [
      title: 'JC le crapaud',
      // tslint:disable-next-line: max-line-length
      description: '- "Allez-vous faire voir avec vos concours débiles" vous exclamez-vous avant de tourner la coquille au crapaud. Vous vous dirigez vers la sortie lorsqu\'un choc contre votre coquille vous fait vaciller puis tomber sur le côté. JC est là, vert de rage, la langue pendante se répétant "me refuser le concours de bave à moi !!!". Le combat est inévitable. \n Si vous perdez c\'est par là. \n Si vous gagnez c\'est par ici.',
-     picture: '../assets/champLaitue.jpg',
+     picture: '../assets/champCombat.jpg',
      encounter: null,
      bonusObject: null,
      bonusPower: [null, null],
@@ -300,7 +300,7 @@ export const SCENES: Scene[] = [
      title: 'Yoyo le bourricot',
      // tslint:disable-next-line: max-line-length
      description: 'Vous voilà à l\'orée d\'une forêt. Un peu de calme et d\'ombre vous feront le plus grand bien après toutes ces aventures. Un équidé semble aussi trouver le coin idyllique. Méthodiquement employé à manger des carottes dont la vue vous fait saliver. Vous décidez d\'engager la conversation. Vous l\'accostez d\'un "Salut l\'âne" dynamique et que vous espérez engageant " Mouais salut le baveux" " Je pourrais avoir une de ces jolies carottes ?" " Tu peux toujours rêver. Je n\'ai pas risqué ma vie en les volant pour les refourguer à un distributeur de glue ambulant " " Alors, dis-moi ou tu les as trouvées ? Que j\'aille voir s\'il en reste" " Je les ai dérobées sur le pas d\'une maison dans le village qu\'on aperçoit au loin. Tu seras mort avant d\'y arriver. Maintenant dégage !" Vous n\'avez pas le choix, vous devez vous battre. \n Gagné, Avec les jolies carottes, vous reprenez votre chemin dans cette direction. \n Et par là c\'est la MORT.',
-     picture: '../assets/champLaitue.jpg',
+     picture: '../assets/champCombat.jpg',
      encounter: '1',
      bonusObject: null,
      bonusPower: [null, null],
@@ -369,7 +369,7 @@ export const SCENES: Scene[] = [
      title: 'La route',
      // tslint:disable-next-line: max-line-length
      description: 'La route est encore longue et dangereuse, il semble qu\'elle soit semée d\'embuches, rien de rassurant à droite ici ou à gauche là. \n Il faut que tu récupères la clé du champ auprès d\'Annabelle la sauterelle ! \n Prépare-toi au combat !',
-     picture: '../assets/champLaitue.jpg',
+     picture: '../assets/champCombat.jpg',
      encounter: '2',
      bonusObject: null,
      bonusPower: [null, null],
@@ -383,7 +383,7 @@ export const SCENES: Scene[] = [
      title: 'Mathias la limace',
      // tslint:disable-next-line: max-line-length
      description: 'Dhareshsaw combat Mathias la limace qui refuse de le laisser partir sans payer parce qu\'il a utilisé sa partie de ruisseau \n Si victoire alors ici \n Si échec alors ici.',
-     picture: '../assets/champLaitue.jpg',
+     picture: '../assets/champCombat.jpg',
      encounter: '7',
      bonusObject: null,
      bonusPower: [null, null],
@@ -411,7 +411,7 @@ export const SCENES: Scene[] = [
      title: 'Élodie la pie',
      // tslint:disable-next-line: max-line-length
      description: 'Prépare-toi à livrer un combat épique face à Elodie la pie \n Elle fait beaucoup de bruit et vas te casser les oreilles et tu t\'éloigneras de ton chemin \n Bonne chance (taken) \n Si victoire alors ici \n Si échec alors ici',
-     picture: '../assets/champLaitue.jpg',
+     picture: '../assets/champCombat.jpg',
      encounter: '4',
      bonusObject: null,
      bonusPower: [null, null],
@@ -439,7 +439,7 @@ export const SCENES: Scene[] = [
      title: 'Bobo le corbeau',
      // tslint:disable-next-line: max-line-length
      description: 'Vous tentez de vous arrêter en tentant de faire la ventouse avec toutes les feuilles que vous pouvez croiser. Vous vous égratignez plus ou moins violemment sur quelques branches et deux ou trois cailloux, mais vous finissez par réussir à vous arrêter sur une vieille feuille de chêne, étourdi et hors d\'haleine. C\'est là que le cri retentit, deux pattes griffues avancent vers vous, il vous a suivi pendant tout votre trajet. Le redoutable Bobo le corbeau vous fait face et il va falloir se sortir de cette terrible situation. Ici. Si défaite ici.',
-     picture: '../assets/champLaitue.jpg',
+     picture: '../assets/champCombat.jpg',
      encounter: '3',
      bonusObject: null,
      bonusPower: [null, null],
@@ -506,7 +506,7 @@ export const SCENES: Scene[] = [
      _id: '37',
      title: 'Hervé le sanglier',
      description: 'Si victoire : ici',
-     picture: '../assets/champLaitue.jpg',
+     picture: '../assets/champCombat.jpg',
      encounter: null,
      bonusObject: null,
      bonusPower: [null, null],

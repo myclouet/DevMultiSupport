@@ -5,6 +5,8 @@ import { Scene } from '../classes/scene';
 import { SceneService } from '../services/scene.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
+import { AlertController } from '@ionic/angular';
 
 
 @Component({
@@ -27,7 +29,12 @@ export class ScenePage implements OnInit {
   //CONSTRUCTOR
   //----------------------------------------------------------------------------------------------------
 
-  constructor (private characterService : CharacterService,private sceneService : SceneService,private route: ActivatedRoute, private router: Router) { }
+  constructor (private characterService : CharacterService,
+              private sceneService : SceneService,
+              private route: ActivatedRoute, 
+              private router: Router,
+              public modalController: ModalController,
+              public alertController: AlertController) { }
     
   ngOnInit() {
 
@@ -62,18 +69,33 @@ export class ScenePage implements OnInit {
     return this.adversaire = this.characterService.getPersonnageById(this.scene.encounter);// Attention doublon idCharactere et encounter
   }
 
-  /**
-   * Combat
-  **/
-  fightRandom() {
-   if (this.characterService.fight() === true) {
-      this.scene.battleWon = true;
-   } 
-   else this.scene.battleWon = false; // à retirer après les tests
-   console.log(this.scene.battleWon);
+  /* Choix combat */
+  async fightSelection() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Choix du combat',
+      message: "À vous de faire le meilleur choix !!!<br>L'issue d'un combat automatique est aléatoire, mais si vous désirez jeter le dé, vous devez obtenir un X pour gagner.",
+      buttons: [
+        {
+          text: 'Aléatoire',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {
+            this.characterService.automaticFight();
+            this.scene.battleWon = this.characterService.battleWon;
+          }
+        }, {
+          text: 'Jet de dé',
+          handler: () => {
+            this.characterService.conditionnalFight();
+            this.scene.battleWon = this.characterService.battleWon;
+          }
+        }
+      ]
+    });
+    await alert.present();
+  } 
 
-   //ouverture modale victoire ou défaite
-  }
 
   /**
    * Affichage du Header
