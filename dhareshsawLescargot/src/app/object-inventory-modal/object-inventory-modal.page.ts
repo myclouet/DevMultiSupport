@@ -45,7 +45,7 @@ export class ObjectInventoryModalPage implements OnInit {
         }
       }
     }
-    
+
     // METTRE A JOUR L INVENTAIRE DU HERO LORSQUE LA CLASSE PERSONNAGE SERA OK
     // this.modalHero.find{((items[0])) => item[] ===
     // tslint:disable-next-line: radix
