@@ -12,6 +12,8 @@ export class ObjectInventoryModalPage implements OnInit {
   // ---------- ATTRIBUTES ------------ //
   modalHero: Hero;
   modalItemSelected: ObjectInventory;
+  // Hero item's id selected by the player
+  modalItemId: number;
 
   // ---------- CONSTRUCTOR ------------ //
   constructor(
@@ -33,21 +35,24 @@ export class ObjectInventoryModalPage implements OnInit {
     );
 
     if (this.modalItemSelected.bonusPower[0] === 'endurance') {
-      this.modalHero.endurance = this.modalItemSelected.bonusPower[1];
+      this.modalHero.endurance = this.modalHero.endurance + this.modalItemSelected.bonusPower[1];
     } else {
       if (this.modalItemSelected.bonusPower[0] === 'luck') {
-        this.modalHero.luck = this.modalItemSelected.bonusPower[1];
+        this.modalHero.luck = this.modalHero.luck + this.modalItemSelected.bonusPower[1];
       } else {
         if (this.modalItemSelected.bonusPower[0] === 'strength') {
-          this.modalHero.strength = this.modalItemSelected.bonusPower[1];
+          this.modalHero.strength = this.modalHero.strength + this.modalItemSelected.bonusPower[1];
         }
       }
     }
 
     // METTRE A JOUR L INVENTAIRE DU HERO LORSQUE LA CLASSE PERSONNAGE SERA OK
     // this.modalHero.find{((items[0])) => item[] ===
-    // this.modalHero.items.splice(i,1);
-    
+    // tslint:disable-next-line: radix
+    // FINIR LE CODE CI DESSOUS - modif faites le 08/09/20
+    // this.modalItemId = parseInt(this.modalHero._id);
+    // this.modalHero.items.splice(this.modalItemId , 1);
+
     // METHODE FRIGO DES FOURMIS POUR SUPPRIMER UN ELEMENT DU TABLEAU
     // addToCart(i, id_member: number, id_ingredient: number, qty: number) {
     //   this.tableauPossesseurs.splice(i, 1);

@@ -7,7 +7,6 @@ import { IonicModule } from '@ionic/angular';
 import { ScenePageRoutingModule } from './scene-routing.module';
 
 import { ScenePage } from './scene.page';
-import { ObjectInventoryModalPage } from '../object-inventory-modal/object-inventory-modal.page';
 
 @NgModule({
   imports: [
@@ -15,8 +14,6 @@ import { ObjectInventoryModalPage } from '../object-inventory-modal/object-inven
     FormsModule,
     IonicModule,
     ScenePageRoutingModule
-  ],
-  entryComponents: [
   ],
   declarations: [
     ScenePage,
