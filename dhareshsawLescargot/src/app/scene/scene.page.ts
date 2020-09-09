@@ -5,6 +5,7 @@ import { Scene } from '../classes/scene';
 import { SceneService } from '../services/scene.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { SauvegardeService } from '../services/sauvegarde.service';
 
 
 @Component({
@@ -26,7 +27,7 @@ export class ScenePage implements OnInit {
   //CONSTRUCTOR
   //----------------------------------------------------------------------------------------------------
 
-  constructor (private characterService : CharacterService,private sceneService : SceneService,private route: ActivatedRoute, private router: Router) { }
+  constructor (private characterService : CharacterService,private sceneService : SceneService,private route: ActivatedRoute, private router: Router, private sauvegardeService: SauvegardeService) { }
     
   ngOnInit() {
 
@@ -74,4 +75,11 @@ export class ScenePage implements OnInit {
   escape() {
    this.characterService.escape();
   }
+
+  /* Sauvegarder */
+  sauvegarder() {
+    this.sauvegardeService.setStateGame(this.heros,this.scene);
+    this.sauvegardeService.saveGame();
+  }
+
 }
