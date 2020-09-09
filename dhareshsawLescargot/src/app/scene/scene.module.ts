@@ -17,11 +17,9 @@ import { ObjectInventoryModalPage } from '../object-inventory-modal/object-inven
     ScenePageRoutingModule
   ],
   entryComponents: [
-    ObjectInventoryModalPage
   ],
   declarations: [
     ScenePage,
-    ObjectInventoryModalPage
   ]
 })
 export class ScenePageModule {}

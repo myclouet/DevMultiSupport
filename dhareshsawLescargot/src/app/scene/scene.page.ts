@@ -7,6 +7,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
+import { ObjectInventoryModalPage } from '../object-inventory-modal/object-inventory-modal.page';
+import { SauvegardeService } from '../services/sauvegarde.service';
 
 
 @Component({
@@ -24,26 +26,29 @@ export class ScenePage implements OnInit {
   adversaire: Character;
   scene: Scene;
   title: String;
+  dataReturned: any;
 
   //----------------------------------------------------------------------------------------------------
   //CONSTRUCTOR
   //----------------------------------------------------------------------------------------------------
 
-  constructor (private characterService : CharacterService,
-              private sceneService : SceneService,
-              private route: ActivatedRoute, 
-              private router: Router,
-              public modalController: ModalController,
-              public alertController: AlertController) { }
-    
+  constructor(
+    private characterService: CharacterService,
+    private sceneService: SceneService,
+    private route: ActivatedRoute,
+    private sauvegarde: SauvegardeService,
+    private router: Router,
+    public modalController: ModalController,
+    public alertController: AlertController) { }
+
   ngOnInit() {
 
-  this.scene = this.sceneService.getSceneById(this.route.snapshot.paramMap.get('id'))
+  this.scene = this.sceneService.getSceneById(this.route.snapshot.paramMap.get('id'));
 
   this.sceneTitle();
-   
-  this.heros=this.characterService.heros; // mise à jour du héro avec le héro du service
-  //console.log(this.heros);
+
+  this.heros = this.characterService.heros; // mise à jour du héro avec le héro du service
+  // console.log(this.heros);
 
   this.adversaire = this.getAdversaire(); 
 
@@ -179,7 +184,7 @@ this.title = "COMBAT"
             handler: () => {
               this.sauvegarde.saveGame();
               console.log('Je quitte!');
-              App.exitApp();
+              //App.exitApp();
             }
           }
         ]
