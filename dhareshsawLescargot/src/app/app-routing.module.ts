@@ -19,7 +19,7 @@ const routes: Routes = [
   {
     path: 'leaderboard',
     loadChildren: () => import('./leaderboard/leaderboard.module').then( m => m.LeaderboardPageModule)
-  }
+  },
 ];
 
 @NgModule({

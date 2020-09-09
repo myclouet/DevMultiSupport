@@ -10,7 +10,7 @@ Chef de projet adjoint :
 
 ### Constitution des binômes/trinômes initiaux :
 1. JC / Hervé
-2. Boris / Vanessa
+2. Boriss / Vanessa
 3. Yvan / Thierry
 4. Noémie / Raphaël
 5. Paula / Dhareshsaw
