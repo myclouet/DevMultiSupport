@@ -74,7 +74,7 @@ export class ScenePage implements OnInit {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'Choix du combat',
-      message: "À vous de faire le meilleur choix !!!<br>L'issue d'un combat automatique est aléatoire, mais si vous désirez jeter le dé, vous devez obtenir un X pour gagner.",
+      message: "À vous de faire le meilleur choix !!!<br>L'issue d'un combat automatique est aléatoire, mais si vous désirez vous pouvez combattre avec un jet de dé",
       buttons: [
         {
           text: 'Aléatoire',
@@ -102,7 +102,7 @@ export class ScenePage implements OnInit {
   **/
   sceneTitle(){
     if(this.scene.encounter === null){
-      this.title = "EN ROUTE"
+      this.title = "EN CHEMIN"
     } else if(this.scene.isBattle === true) {
 this.title = "COMBAT"
     } else {
