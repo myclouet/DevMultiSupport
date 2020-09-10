@@ -81,14 +81,17 @@
   <!--<button *ngIf = "characterService.conditionnalFightBool === true">Jeter le dé</button>-->
 </ion-content>
 <!--Footer de l'application-->	
-<ion-footer color="secondary" >	
-  <ion-toolbar color="secondary" style="text-align: center">	
+<ion-footer style="background-color: #04471c;" >	
+  <ion-toolbar color="secondary" style="text-align: center" class="padding-0">	
     <ion-grid style="padding: 0; margin: 0; height: 100%">	
       <ion-row style="height: 100%">	
         <ion-col style="padding: 0; height: 100%">	
         </ion-col>	
         <ion-col style="padding: 0; height: 100%">	
-          <ion-buttons style="background-color: #04471c;">	
+          <ion-buttons style="background-color: #04471c;">
+            <ion-button>
+              <ion-icon  style="color: white;" slot="icon-only" name="save-outline"></ion-icon>	
+            </ion-button>	
             <ion-button (click)="openModal()">
               <ion-icon  style="color: white;" slot="icon-only" name="person-circle"></ion-icon>	
             </ion-button>	
