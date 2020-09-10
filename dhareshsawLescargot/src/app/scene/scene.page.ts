@@ -124,10 +124,10 @@ this.title = "COMBAT"
   }
 
   /* Sauvegarder */
-  sauvegarder() {
+/*   sauvegarder() {
     this.sauvegardeService.setStateGame(this.heros,this.scene);
     this.sauvegardeService.saveGame();
-  }
+  } */
 
   // --------------------------------------------------------------------------------------------------
   // Ouverture modale
@@ -153,10 +153,11 @@ this.title = "COMBAT"
   // Sauvegarder partie
   // -----------------------------------------------------------------------------------------------
 
-/*   sauvegarder() {        // code Boris
-    this.sauvegarde.saveGame();
+   save() {      
+    this.sauvegardeService.setStateGame(this.heros,this.scene);
+    this.sauvegardeService.saveGame();
     this.saveAlert();
-  } */
+  } 
 
   async saveAlert() {
     const alert = await this.alertController.create({

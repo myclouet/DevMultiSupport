@@ -50,7 +50,7 @@ export class SauvegardeService {
 
   setStateGame(hero:Hero,scene:Scene) {
     this.stateGame={hero,scene};
-    console.log(this.stateGame);
+    //console.log(this.stateGame);
   }
 
   getStateGame() {
