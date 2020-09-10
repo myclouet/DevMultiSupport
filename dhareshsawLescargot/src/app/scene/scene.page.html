@@ -80,6 +80,7 @@
   </div>
   <!--<button *ngIf = "characterService.conditionnalFightBool === true">Jeter le dé</button>-->
 </ion-content>
+
 <!--Footer de l'application-->	
 <ion-footer color="secondary" >	
   <ion-toolbar color="secondary" style="text-align: center">	
@@ -88,7 +89,10 @@
         <ion-col style="padding: 0; height: 100%">	
         </ion-col>	
         <ion-col style="padding: 0; height: 100%">	
-          <ion-buttons style="background-color: #04471c;">	
+          <ion-buttons style="background-color: #04471c;">
+            <ion-button (click)="save()">
+              <ion-icon  style="color: white;" slot="icon-only" name="save-outline"></ion-icon>	
+            </ion-button>	
             <ion-button (click)="openModal()">
               <ion-icon  style="color: white;" slot="icon-only" name="person-circle"></ion-icon>	
             </ion-button>	

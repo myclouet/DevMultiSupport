@@ -32,11 +32,12 @@ export class ScenePage implements OnInit {
   //CONSTRUCTOR
   //----------------------------------------------------------------------------------------------------
 
+   
   constructor(
     private characterService: CharacterService,
     private sceneService: SceneService,
     private route: ActivatedRoute,
-    private sauvegarde: SauvegardeService,
+    private sauvegardeService: SauvegardeService,
     private router: Router,
     public modalController: ModalController,
     public alertController: AlertController) { }
@@ -122,6 +123,12 @@ this.title = "COMBAT"
    this.characterService.escape();
   }
 
+  /* Sauvegarder */
+/*   sauvegarder() {
+    this.sauvegardeService.setStateGame(this.heros,this.scene);
+    this.sauvegardeService.saveGame();
+  } */
+
   // --------------------------------------------------------------------------------------------------
   // Ouverture modale
   // --------------------------------------------------------------------------------------------------
@@ -146,10 +153,11 @@ this.title = "COMBAT"
   // Sauvegarder partie
   // -----------------------------------------------------------------------------------------------
 
-  sauvegarder() {
-    this.sauvegarde.saveGame();
+   save() {      
+    this.sauvegardeService.setStateGame(this.heros,this.scene);
+    this.sauvegardeService.saveGame();
     this.saveAlert();
-  }
+  } 
 
   async saveAlert() {
     const alert = await this.alertController.create({
@@ -182,7 +190,7 @@ this.title = "COMBAT"
           }, {
             text: 'Quitter',
             handler: () => {
-              this.sauvegarde.saveGame();
+              //this.sauvegarde.saveGame(); // code Boris
               console.log('Je quitte!');
               //App.exitApp();
             }
