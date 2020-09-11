@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Character, Hero } from '../classes/personnage';
 import { PERSONNAGES } from '../datas/listePersonnages';
+import { AlertController } from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +10,9 @@ export class CharacterService {
 character: Character;
 heros: Hero;
 battleWon: boolean;
+neutralFight: boolean = false;
 
-  constructor() {
+  constructor(private alertController: AlertController) {
     this.heros = this.getPersonnageById('0'); // initialisation du héro
    }
 
@@ -90,11 +92,13 @@ battleWon: boolean;
     // tslint:disable-next-line: prefer-const
     let res = 0;
     res = Math.floor(Math.random() * 6) + 1;
+    console.log(res);
+    
     return res;
   }
 
   // prise de decision du combat
-  public fight() {
+  /*public fight() {
     let result = 0;
     result = Math.floor(Math.random() * 2);
     let res: boolean = false;
@@ -115,18 +119,35 @@ battleWon: boolean;
         break;
     }
     return res;
-  }
+  }*/
 
   // combat conditionnel
-  conditionnalFight() {
-    if (this.heros.strength + (this.heros.luck - this.rollDice()) > this.character.endurance) {
+  async conditionnalFight() {
+    let value = this.rollDice();
+    if (this.heros.strength + (this.heros.luck - value) > this.character.endurance) {
       this.winGame();
       return true;
-    } else if (this.character.strength + (this.character.luck - this.rollDice()) >= this.heros.endurance) {
+    } else if (this.character.strength + (this.character.luck - value) >= this.heros.endurance) {
       this.looseGame();
       return false;
     }
-    else console.log("vainqueur non déterminé");
+    else {
+      const alert = await this.alertController.create({
+        cssClass: 'my-custom-class',
+        header: 'Egalité',
+        message: "Vous vous defendez tous les 2 correctement, continuez!",
+        buttons: [
+          {
+            text: 'Jet de dé',
+            handler: () => {
+              this.conditionnalFight();
+           
+            }
+          }, 
+        ]
+      });
+      await alert.present();
+    }
   }
 
   // combat automatique
@@ -172,7 +193,7 @@ battleWon: boolean;
       console.log('tu n\'as pas assez bavé, viens te battre mauviette');
       console.log('Dé : ' + resultatDe);
       console.log('Luck : ' + this.heros.luck);
-      this.fight();
+      //this.fight();
     }
   }
 

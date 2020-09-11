@@ -14,10 +14,7 @@ export class HomePage implements OnInit{
   splash = true;
 
 
-  constructor(private router: Router,
-              private sauvegardeService: SauvegardeService,
-              private characterService: CharacterService,
-              private sceneService: SceneService) {
+  constructor(private router: Router, private sauvegardeService: SauvegardeService) {
   }
 
   ngOnInit() {
@@ -26,12 +23,13 @@ export class HomePage implements OnInit{
       }, 4000);
     }
 
-  
+  newGame() {
+    this.router.navigate(['/scene/1']);
+  }
 
   loadGame() {
     this.sauvegardeService.restoreGame();
-    this.characterService.heros=this.sauvegardeService.getStateGame().hero;
-    console.log(this.characterService.heros);
-    //this.sceneService.currentScene=this.sauvegardeService.getStateGame().scene;
-  }
+  }  
+
+
 }

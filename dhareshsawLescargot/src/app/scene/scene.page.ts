@@ -32,11 +32,12 @@ export class ScenePage implements OnInit {
   //CONSTRUCTOR
   //----------------------------------------------------------------------------------------------------
 
+   
   constructor(
     private characterService: CharacterService,
     private sceneService: SceneService,
     private route: ActivatedRoute,
-    private sauvegarde: SauvegardeService,
+    private sauvegardeService: SauvegardeService,
     private router: Router,
     public modalController: ModalController,
     public alertController: AlertController) { }
@@ -79,7 +80,7 @@ export class ScenePage implements OnInit {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'Choix du combat',
-      message: "À vous de faire le meilleur choix !!!<br>L'issue d'un combat automatique est aléatoire, mais si vous désirez jeter le dé, vous devez obtenir un X pour gagner.",
+      message: "À vous de faire le meilleur choix !!!<br>L'issue d'un combat automatique est aléatoire, mais si vous désirez vous pouvez combattre avec un jet de dé",
       buttons: [
         {
           text: 'Aléatoire',
@@ -107,7 +108,7 @@ export class ScenePage implements OnInit {
   **/
   sceneTitle(){
     if(this.scene.encounter === null){
-      this.title = "EN ROUTE"
+      this.title = "EN CHEMIN"
     } else if(this.scene.isBattle === true) {
 this.title = "COMBAT"
     } else {
@@ -121,6 +122,12 @@ this.title = "COMBAT"
   escape() {
    this.characterService.escape();
   }
+
+  /* Sauvegarder */
+/*   sauvegarder() {
+    this.sauvegardeService.setStateGame(this.heros,this.scene);
+    this.sauvegardeService.saveGame();
+  } */
 
   // --------------------------------------------------------------------------------------------------
   // Ouverture modale
@@ -146,10 +153,11 @@ this.title = "COMBAT"
   // Sauvegarder partie
   // -----------------------------------------------------------------------------------------------
 
-  sauvegarder() {
-    this.sauvegarde.saveGame();
+   save() {      
+    this.sauvegardeService.setStateGame(this.heros,this.scene);
+    this.sauvegardeService.saveGame();
     this.saveAlert();
-  }
+  } 
 
   async saveAlert() {
     const alert = await this.alertController.create({
@@ -182,7 +190,7 @@ this.title = "COMBAT"
           }, {
             text: 'Quitter',
             handler: () => {
-              this.sauvegarde.saveGame();
+              //this.sauvegarde.saveGame(); // code Boris
               console.log('Je quitte!');
               //App.exitApp();
             }
