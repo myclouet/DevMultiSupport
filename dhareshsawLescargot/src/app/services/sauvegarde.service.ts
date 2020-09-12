@@ -4,6 +4,7 @@ import { Scene } from '../classes/scene';
 import { Storage } from '@ionic/storage';
 import { CharacterService } from './character.service';
 import {Router} from "@angular/router";
+import { AlertController } from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,10 @@ export class SauvegardeService {
   private stateGame: {hero: Hero, scene: Scene}
   private story: {action:string , description:string}[]=[]
 
-  constructor(public storage: Storage, private characterService: CharacterService, private router: Router) { }
+  constructor(public storage: Storage,
+              private characterService: CharacterService,
+              private router: Router,
+              public alertController: AlertController) { }
 
   saveGame() {
     this.storage.set('stateGame',this.stateGame);
@@ -35,17 +39,29 @@ export class SauvegardeService {
       this.characterService.heros=this.stateGame.hero;  // on affecte le héro du service character avec le héro récupéré
       //console.log(this.characterService.heros);
       const idSceneToRestore=this.stateGame.scene._id;  // on récupère l'id de la scène à restaurer
-      this.router.navigate(['/scene/'+idSceneToRestore]); // on restaure la scène    
+      this.router.navigate(['/scene/'+idSceneToRestore]); // on restaure la scène
+      this.restoreAlert();    
     });
     this.storage.get('story').then((story)=>{
       this.story=story;
     });
-
     // test des clés sauvegardées
 /*     this.storage.get('stateGame').then((state)=>{
       this.stateGame=state;
       console.log(this.stateGame);
     }); */
+  }
+  
+  async restoreAlert() {
+    const sceneTitleToRestore=this.stateGame.scene.title;
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Restauration',
+      message: 'Reprise de la partie à la scène \n'+sceneTitleToRestore,
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
 
   setStateGame(hero:Hero,scene:Scene) {
