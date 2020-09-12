@@ -7,7 +7,7 @@ export const SCENES: Scene[] = [
      // tslint:disable-next-line: max-line-length
      description: 'Jeune escargot atteignant juste l’âge de \"partir chercher les salades\", vous vous prénommez Dhareshsaw. Vous habitez encore la maison familiale, enfouie sous un grand et vieux chêne. Vos parents sont aimants, votre foyer douillet et sur, cependant, un petit je ne sais quoi dans l\'air du dehors fait frétiller vos antennes. Dans 10 jours, c\'est la fête du potager, et les jeunes escargots se sont tous donnés rendez-vous au champ des salades. Cet évènement marque le début de l\’âge adulte pour les escargots. Vous sortez un œil de votre trou et l\'appel étant irrésistible, vous sortez.',
      picture: '../assets/champLaitue.jpg',
-     encounter: null,
+     encounter: '0',
      bonusObject: null,
      bonusPower: [null, null],
      isBattle: false,
@@ -21,7 +21,7 @@ export const SCENES: Scene[] = [
      // tslint:disable-next-line: max-line-length
      description: 'Vous vous déplacez tranquillement, lentement au bord du chemin par un temps ensoleillé. \n Vous êtes un jeune gastéropode et vous vous réjouissez. Une belle journée s’annonce. Tout est pour le mieux vous dites-vous. Un temps magnifique pour une journée que vous souhaitez fort agréable. Vous avez rendez-vous. Plusieurs de vos amis vous ont convié à la fête. Légumes à gogo, salade, chicorée, batavia, et tant d’autres. Ils ont tout prévu pour un repas vert gargantuesque. Végan, c’est votre credo mais veggie avec des amis, c’est votre gimmick. Vous savez que vous avez un long chemin à parcourir pour atteindre ce champ rêvé. Semé d’embûches ? Sans doute mais vous avez promis. C’est parti.',
      picture: '../../assets/champLaitue.jpg',
-     encounter: null,
+     encounter: '0',
      bonusObject: null,
      bonusPower: [null, null],
      isBattle: false,
@@ -299,7 +299,7 @@ export const SCENES: Scene[] = [
      _id: '22',
      title: 'Yoyo le bourricot',
      // tslint:disable-next-line: max-line-length
-     description: 'Vous voilà à l\'orée d\'une forêt. Un peu de calme et d\'ombre vous feront le plus grand bien après toutes ces aventures. Un équidé semble aussi trouver le coin idyllique. Méthodiquement employé à manger des carottes dont la vue vous fait saliver. Vous décidez d\'engager la conversation. Vous l\'accostez d\'un "Salut l\'âne" dynamique et que vous espérez engageant " Mouais salut le baveux" " Je pourrais avoir une de ces jolies carottes ?" " Tu peux toujours rêver. Je n\'ai pas risqué ma vie en les volant pour les refourguer à un distributeur de glue ambulant " " Alors, dis-moi ou tu les as trouvées ? Que j\'aille voir s\'il en reste" " Je les ai dérobées sur le pas d\'une maison dans le village qu\'on aperçoit au loin. Tu seras mort avant d\'y arriver. Maintenant dégage !" Vous n\'avez pas le choix, vous devez vous battre. \n Gagné, Avec les jolies carottes, vous reprenez votre chemin dans cette direction. \n Et par là c\'est la MORT.',
+     description: 'Vous voilà à l\'orée d\'une forêt. Un peu de calme et d\'ombre vous feront le plus grand bien après toutes ces aventures. Un équidé semble aussi trouver le coin idyllique. Méthodiquement employé à manger des carottes dont la vue vous fait saliver. Vous décidez d\'engager la conversation. Vous l\'accostez d\'un "Salut l\'âne" dynamique et que vous espérez engageant " Mouais salut le baveux" " Je pourrais avoir une de ces jolies carottes ?" " Tu peux toujours rêver. Je n\'ai pas risqué ma vie en les volant pour les refourguer à un distributeur de glue ambulant " " Alors, dis-moi ou tu les as trouvées ? Que j\'aille voir s\'il en reste" " Je les ai dérobées sur le pas d\'une maison dans le village qu\'on aperçoit au loin. Tu seras mort avant d\'y arriver. Maintenant dégage !" Vous n\'avez pas le choix, vous devez vous battre.',
      picture: '../assets/champCombat.jpg',
      encounter: '1',
      bonusObject: null,
