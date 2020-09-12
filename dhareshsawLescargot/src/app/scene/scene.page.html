@@ -4,7 +4,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content *ngIf = "scene.isBattle===false" class="bgImage" [ngStyle]="{'background-image': 'url('+ scene.picture +')'}">
+<ion-content *ngIf="scene.isBattle===false" class="bgImage"
+  [ngStyle]="{'background-image': 'url('+ scene.picture +')'}">
   <style>
     .bgImage {
       --background: none;
@@ -14,31 +15,34 @@
       background-size: cover;
     }
   </style>
- 
-    <ion-card>
+
+  <ion-card>
     <ion-card-header>
-        <img *ngIf = "scene.encounter !== null" [src]="adversaire.avatar" class ="imgScene"/>
-        <ion-card-title>{{scene.title}}</ion-card-title>
+      <img *ngIf="scene.encounter !== null" [src]="adversaire.avatar" class="imgScene" />
+      <ion-card-title>{{scene.title}}</ion-card-title>
     </ion-card-header>
-    </ion-card>
-    <ion-card class="description">
-      <ion-content>
-        <ion-card-content class="sceneDescription">{{scene.description}}</ion-card-content>
-      </ion-content>  
-    </ion-card>
-    
-    <ion-card>
-      <ion-card-header class="arrowsArea">
-        <ion-icon *ngIf = "scene.nextScenes.length >= 2" (click)='nextScene(1)' name="arrow-back-circle"></ion-icon>
-        <ion-icon id="arrowUp" *ngIf = "scene.nextScenes.length === 3" (click)='nextScene(2)' name="arrow-up-circle"></ion-icon>
-        <ion-icon *ngIf = "scene.nextScenes.length !== 0"(click)='nextScene(0)' name="arrow-forward-circle"></ion-icon>
-        <ion-button *ngIf = "scene.nextScenes.length === 0" expand="block" color="success" (click)="sceneService.newGame()">Nouvelle Partie</ion-button>
-      </ion-card-header>
-      <ion-card-content *ngIf = "scene.nextScenes.length > 1" class="arrowsAreaText">Choisis une direction</ion-card-content>
-    </ion-card> 
+  </ion-card>
+  <ion-card class="description">
+    <ion-content>
+      <ion-card-content class="sceneDescription">{{scene.description}}</ion-card-content>
+    </ion-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header class="arrowsArea">
+      <ion-icon *ngIf="scene.nextScenes.length >= 2" (click)='nextScene(1)' name="arrow-back-circle"></ion-icon>
+      <ion-icon id="arrowUp" *ngIf="scene.nextScenes.length === 3" (click)='nextScene(2)' name="arrow-up-circle">
+      </ion-icon>
+      <ion-icon *ngIf="scene.nextScenes.length !== 0" (click)='nextScene(0)' name="arrow-forward-circle"></ion-icon>
+      <ion-button *ngIf="scene.nextScenes.length === 0" expand="block" color="success" (click)="sceneService.newGame()">
+        Nouvelle Partie</ion-button>
+    </ion-card-header>
+    <ion-card-content *ngIf="scene.nextScenes.length > 1" class="arrowsAreaText">Choisis une direction
+    </ion-card-content>
+  </ion-card>
 </ion-content>
 
-<ion-content *ngIf = "scene.isBattle===true" class="bgImage" [ngStyle]="{'background-image': 'url('+ scene.picture +')'}">
+<ion-content *ngIf="scene.isBattle===true" class="bgImage" [ngStyle]="{'background-image': 'url('+ scene.picture +')'}">
   <style>
     .bgImage {
       --background: none;
@@ -56,13 +60,14 @@
       <ion-card-subtitle>Endurance : {{heros.endurance}}</ion-card-subtitle>
       <ion-card-subtitle>Force : {{heros.strength}}</ion-card-subtitle>
       <ion-card-subtitle>Chance : {{heros.luck}}</ion-card-subtitle>
-    </ion-card> 
+    </ion-card>
     <ion-card>
       <ion-card-title>{{scene.title}}</ion-card-title>
-      <img *ngIf = "scene.encounter !== null" [src]="adversaire.avatar"class="imgFight"><!--ngIf a retirer lorsque liste complete des avatars-->
+      <img *ngIf="scene.encounter !== null" [src]="adversaire.avatar" class="imgFight">
+      <!--ngIf a retirer lorsque liste complete des avatars-->
       <ion-card-subtitle>Difficulté : </ion-card-subtitle>
       <!-- rajouter image de difficulté -->
-    </ion-card> 
+    </ion-card>
   </div>
 
   <ion-card class="fightCard">
@@ -70,46 +75,49 @@
       <ion-card-content class="sceneDescription">
         {{scene.description}}
       </ion-card-content>
-    </ion-content>  
+    </ion-content>
   </ion-card>
 
-  
+
   <div class="buttonsArea">
-    <ion-button (click) = "fightSelection()">Attaquer<img src="assets/icon/crossedSwords.png"/></ion-button>
-    <ion-button (click) = "escape()">Fuir<img src="assets/icon/turboSnail.png"/></ion-button>
+    <ion-button (click)="fightSelection()">Attaquer<img src="assets/icon/crossedSwords.png" /></ion-button>
+    <ion-button (click)="escape()">Fuir<img src="assets/icon/turboSnail.png" /></ion-button>
   </div>
   <!--<button *ngIf = "characterService.conditionnalFightBool === true">Jeter le dé</button>-->
 </ion-content>
 
-<!--Footer de l'application-->	
-<ion-footer color="secondary" >	
-  <ion-toolbar color="secondary" style="text-align: center">	
-    <ion-grid style="padding: 0; margin: 0; height: 100%">	
-      <ion-row style="height: 100%">	
-        <ion-col style="padding: 0; height: 100%">	
-        </ion-col>	
-        <ion-col style="padding: 0; height: 100%">	
+<!--Footer de l'application-->
+<ion-footer color="secondary">
+  <ion-toolbar color="secondary" style="text-align: center">
+    <ion-grid style="padding: 0; margin: 0; height: 100%">
+      <ion-row style="height: 100%">
+        <ion-col style="padding: 0; height: 100%">
+        </ion-col>
+        <ion-col style="padding: 0; height: 100%">
           <ion-buttons style="background-color: #04471c;">
             <ion-button (click)="save()">
-              <ion-icon  style="color: white;" slot="icon-only" name="save-outline"></ion-icon>	
-            </ion-button>	
+              <ion-icon style="color: white;" slot="icon-only" name="save-outline"></ion-icon>
+            </ion-button>
             <ion-button (click)="openModal()">
-              <ion-icon  style="color: white;" slot="icon-only" name="person-circle"></ion-icon>	
-            </ion-button>	
-            <ion-button>	
-              <ion-icon style="color: white;" slot="icon-only" name="git-network"></ion-icon>	
-            </ion-button>	
-            <ion-button>	
-              <ion-icon style="color: white;" slot="icon-only" name="document"></ion-icon>	
-            </ion-button>	
-            <!--><ion-button>	
-              <ion-icon  style="color: white;" slot="icon-only" name="exit"></ion-icon>	
-            </ion-button><-->	
-          </ion-buttons>	
-        </ion-col>	
-        <ion-col style="padding: 0; height: 100%">	
-        </ion-col>	
-      </ion-row>	
-    </ion-grid>	
-  </ion-toolbar>	
+              <ion-icon style="color: white;" slot="icon-only" name="person-circle"></ion-icon>
+            </ion-button>
+            <ion-button>
+              <ion-icon style="color: white;" slot="icon-only" name="git-network"></ion-icon>
+            </ion-button>
+            <ion-button>
+              <ion-icon style="color: white;" slot="icon-only" name="document"></ion-icon>
+            </ion-button>
+            <ion-button (click)="stopAudio()" *ngIf="audioBtn === true">
+              <ion-icon style="color: white;" slot="icon-only" name="mic-off-outline"></ion-icon>
+            </ion-button>
+            <ion-button (click)="startAudio()" *ngIf="audioBtn === false">
+              <ion-icon style="color: white;" slot="icon-only" name="mic-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-col>
+        <ion-col style="padding: 0; height: 100%">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
 </ion-footer>

@@ -9,6 +9,7 @@ import { ModalController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 import { ObjectInventoryModalPage } from '../object-inventory-modal/object-inventory-modal.page';
 import { SauvegardeService } from '../services/sauvegarde.service';
+import { AudioService } from '../services/audio.service';
 
 
 @Component({
@@ -27,12 +28,12 @@ export class ScenePage implements OnInit {
   scene: Scene;
   title: String;
   dataReturned: any;
+  audioBtn: Boolean = true;
 
   //----------------------------------------------------------------------------------------------------
   //CONSTRUCTOR
   //----------------------------------------------------------------------------------------------------
 
-   
   constructor(
     private characterService: CharacterService,
     private sceneService: SceneService,
@@ -40,7 +41,8 @@ export class ScenePage implements OnInit {
     private sauvegardeService: SauvegardeService,
     private router: Router,
     public modalController: ModalController,
-    public alertController: AlertController) { }
+    public alertController: AlertController,
+    private audioService: AudioService) { }
 
   ngOnInit() {
 
@@ -199,6 +201,20 @@ this.title = "COMBAT"
       });
       await alert.present();
     }
+
+     // -----------------------------------------------------------------------------------------------
+     // AUDIO
+     // -----------------------------------------------------------------------------------------------
+
+      startAudio() {
+        this.audioService.startAudioService();
+        this.audioBtn = true;
+      }
+
+      stopAudio() {
+        this.audioService.stopAudioService();
+        this.audioBtn = false;
+      }
 
 
 }
