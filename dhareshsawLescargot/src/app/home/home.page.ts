@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import { SauvegardeService } from '../services/sauvegarde.service';
-import { CharacterService } from '../services/character.service';
-import { SceneService } from '../services/scene.service';
 
 @Component({
   selector: 'app-home',
@@ -29,7 +27,6 @@ export class HomePage implements OnInit{
 
   loadGame() {
     this.sauvegardeService.restoreGame();
-  }  
-
+  }
 
 }
