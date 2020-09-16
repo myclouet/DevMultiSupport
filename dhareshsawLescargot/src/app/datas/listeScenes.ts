@@ -273,12 +273,12 @@ export const SCENES: Scene[] = [
      // tslint:disable-next-line: max-line-length
      description: '- "Allez-vous faire voir avec vos concours débiles" vous exclamez-vous avant de tourner la coquille au crapaud. Vous vous dirigez vers la sortie lorsqu\'un choc contre votre coquille vous fait vaciller puis tomber sur le côté. JC est là, vert de rage, la langue pendante se répétant "me refuser le concours de bave à moi !!!". Le combat est inévitable. \n Si vous perdez c\'est par là. \n Si vous gagnez c\'est par ici.',
      picture: '../assets/champCombat.jpg',
-     encounter: null,
+     encounter: '6',
      bonusObject: null,
      bonusPower: [null, null],
      isBattle: true,
      battleWon: false,
-     nextScenes: ['21', '23'],
+     nextScenes: ['23', '21'],
      previousScene: '16'
    },
    {
@@ -307,7 +307,7 @@ export const SCENES: Scene[] = [
      isBattle: true,
      battleWon: false,
      nextScenes: ['23', '25'],
-     previousScene: null
+     previousScene: '21'
    },
    {
      _id: '23',
@@ -507,7 +507,7 @@ export const SCENES: Scene[] = [
      title: 'Hervé le sanglier',
      description: 'Si victoire : ici',
      picture: '../assets/champCombat.jpg',
-     encounter: null,
+     encounter: '5',
      bonusObject: null,
      bonusPower: [null, null],
      isBattle: true,

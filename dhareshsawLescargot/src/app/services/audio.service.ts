@@ -9,28 +9,28 @@ export class AudioService {
 
   audio:Boolean = false;
 
-  constructor(private nativeAudio: NativeAudio, private platform:Platform ) { }
+  constructor(private nativeAudio: NativeAudio, private platform: Platform) { }
 
 
     // -----------------------------------------------------------------------------------------------
     // AUDIO
     // -----------------------------------------------------------------------------------------------
 
-      startAudioService() {
-        this.platform.ready().then(() => {	
-          this.nativeAudio.preloadComplex('uniqueKey1', 'assets/audio/audioDhareshsaw.mp3', 1, 1, 0).then(() => {     
-            this.nativeAudio.play('uniqueKey1');
-          });
-        });
-      }
+    startAudioService() {
+       this.platform.ready().then(() => {  
+         this.nativeAudio.preloadComplex('uniqueKey1', 'assets/audio/audioDhareshsaw.mp3', 1, 1, 0).then(() => {     
+           this.nativeAudio.loop('uniqueKey1');
+         });
+       });
+     }
 
-      stopAudioService() {
-        this.nativeAudio.stop('uniqueKey1');
-        this.audio = false;
-      }
+    stopAudioService() {
+       this.nativeAudio.stop('uniqueKey1');
+       this.audio = false;
+     }
 
-      restartAudioService() {
-        this.nativeAudio.play('uniqueKey1');
-        this.audio = false;
-      }
-}
+    restartAudioService() {
+       this.nativeAudio.loop('uniqueKey1');
+       this.audio = false;
+     }
+  }
