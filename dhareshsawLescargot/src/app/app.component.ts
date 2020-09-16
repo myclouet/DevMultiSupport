@@ -10,7 +10,8 @@ import { AudioService } from './services/audio.service';
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss']
 })
-export class AppComponent {
+export class AppComponent  {
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -18,13 +19,15 @@ export class AppComponent {
     private audioService: AudioService
   ) {
     this.initializeApp();
-    this.audioService.startAudioService();
   }
+    
+
 
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      this.audioService.startAudioService();
     });
   }
 }

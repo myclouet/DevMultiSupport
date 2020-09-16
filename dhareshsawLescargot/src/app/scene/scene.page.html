@@ -108,10 +108,10 @@
               <ion-icon style="color: white;" slot="icon-only" name="document"></ion-icon>
             </ion-button>
             <ion-button (click)="stopAudio()" *ngIf="audioBtn === true">
-              <ion-icon style="color: white;" slot="icon-only" name="mic-off-outline"></ion-icon>
+              <ion-icon style="color: white;" slot="icon-only" name="volume-high-outline"></ion-icon>
             </ion-button>
-            <ion-button (click)="startAudio()" *ngIf="audioBtn === false">
-              <ion-icon style="color: white;" slot="icon-only" name="mic-outline"></ion-icon>
+            <ion-button (click)="restartAudio()" *ngIf="audioBtn === false">
+              <ion-icon style="color: white;" slot="icon-only" name="volume-mute-outline"></ion-icon>
             </ion-button>
           </ion-buttons>
         </ion-col>

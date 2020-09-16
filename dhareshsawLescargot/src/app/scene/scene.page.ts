@@ -66,6 +66,10 @@ export class ScenePage implements OnInit {
     this.router.navigate(['scene/',this.scene.nextScenes[indice]]);
   }
 
+  prevScene() {
+    this.router.navigate(['scene/',this.scene.previousScene]);
+  }
+
   //----------------------------------------------------------------------------------------------------
   //METHODS COMBATS
   //----------------------------------------------------------------------------------------------------
@@ -79,23 +83,34 @@ export class ScenePage implements OnInit {
 
   /* Choix combat */
   async fightSelection() {
+    const value = this.heros.strength + this.heros.luck - this.adversaire.endurance;
+    let message: any;
+    if(value <= 1) {
+      message = "À vous de faire le meilleur choix !!!<br>L'issue d'un combat automatique est aléatoire, mais si vous désirez vous pouvez combattre avec un jet de dé. <br> Vous devez obtenir 1 pour gagner le combat";
+    }
+    else if (value >6) {
+      message = "À vous de faire le meilleur choix !!!<br>L'issue d'un combat automatique est aléatoire, mais si vous désirez vous pouvez combattre avec un jet de dé. <br> Vous devez obtenir 6 ou moins pour gagner le combat";
+    }
+    else {
+      message = `À vous de faire le meilleur choix !!!<br>L'issue d'un combat automatique est aléatoire, mais si vous désirez vous pouvez combattre avec un jet de dé. <br> Vous devez obtenir moins que ${value} pour gagner le combat`;
+    }
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'Choix du combat',
-      message: "À vous de faire le meilleur choix !!!<br>L'issue d'un combat automatique est aléatoire, mais si vous désirez vous pouvez combattre avec un jet de dé",
+      message: `${message}`,
       buttons: [
         {
           text: 'Aléatoire',
           role: 'cancel',
           cssClass: 'secondary',
           handler: () => {
-            this.characterService.automaticFight();
+            this.characterService.automaticFight(this.scene);
             this.scene.battleWon = this.characterService.battleWon;
           }
         }, {
           text: 'Jet de dé',
           handler: () => {
-            this.characterService.conditionnalFight();
+            this.characterService.conditionnalFight(this.scene);
             this.scene.battleWon = this.characterService.battleWon;
           }
         }
@@ -118,11 +133,56 @@ this.title = "COMBAT"
     }
   }
 
-  /**
-   * Fuite
-  **/
-  escape() {
-   this.characterService.escape();
+  // ---------------------------------------------------------------------------------------------
+  // Fuite
+  //------------------------------------------------------------------------------------------------
+  async escape() {
+    const value = this.heros.strength + this.heros.luck - this.adversaire.endurance;
+    let message: any;
+    if(value <= 1) {
+      message = "Tu n'as pas bavé assez pour fuir !!! Le combat est inévitable <br> Tu dois obtenir 1 pour gagner le combat";
+    }
+    else if (value >6) {
+      message = "Tu n'as pas bavé assez pour fuir !!! Le combat est inévitable <br>Tu dois obtenir 6 ou moins pour gagner le combat";
+    }
+    else {
+      message = `Tu n'as pas bavé assez pour fuir !!! Le combat est inévitable <br> Tu dois obtenir moins que ${value} pour gagner le combat`;
+    };
+
+    if(this.characterService.escape()) {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'FUITE',
+      message: "Bravo, tu as échappé au combat, tu retournes à la scène précédente !",
+      buttons: [
+        {
+          text: 'OK',
+          handler: () => {
+            this.prevScene();
+          }
+        }
+      ]
+    });
+    await alert.present();
+    } 
+    else { const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'FUITE',
+      message: `${message}`,
+      buttons: [
+        {
+          text: 'Jet de dé',
+          handler: () => {
+            this.adversaire = this.getAdversaire(); 
+            this.characterService.character = this.adversaire;
+            this.characterService.conditionnalFight(this.scene);
+            this.scene.battleWon = this.characterService.battleWon;
+          }
+        }
+      ]
+    });
+    await alert.present();
+    }
   }
 
   /* Sauvegarder */
@@ -206,15 +266,21 @@ this.title = "COMBAT"
      // AUDIO
      // -----------------------------------------------------------------------------------------------
 
-      startAudio() {
-        this.audioService.startAudioService();
-        this.audioBtn = true;
-      }
+     startAudio() {
+      this.audioService.startAudioService();
+      this.audioBtn = true;
+    }
 
-      stopAudio() {
-        this.audioService.stopAudioService();
-        this.audioBtn = false;
-      }
+    restartAudio() {
+      this.audioService.restartAudioService();
+      this.audioBtn = true;
+    }
+
+    stopAudio() {
+      this.audioService.stopAudioService();
+      this.audioBtn = false;
+    }
+
 
 
 }
