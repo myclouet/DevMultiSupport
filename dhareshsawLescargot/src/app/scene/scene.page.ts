@@ -211,6 +211,11 @@ this.title = "COMBAT"
         this.audioBtn = true;
       }
 
+      restartAudio() {
+        this.audioService.restartAudioService();
+        this.audioBtn = true;
+      }
+
       stopAudio() {
         this.audioService.stopAudioService();
         this.audioBtn = false;
