@@ -14,6 +14,7 @@ import { SceneService } from './services/scene.service';
 
 import { IonicStorageModule } from '@ionic/storage';
 import { ObjectInventoryModalPageModule } from './object-inventory-modal/object-inventory-modal.module';
+import { NativeAudio } from '@ionic-native/native-audio/ngx';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { ObjectInventoryModalPageModule } from './object-inventory-modal/object-
     SauvegardeService,
     CharacterService,
     SceneService,
+    NativeAudio,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
