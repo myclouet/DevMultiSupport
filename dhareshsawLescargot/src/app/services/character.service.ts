@@ -86,7 +86,7 @@ neutralFight: boolean = false;
     console.log('Vous avez gagné !');
     this.battleWon = true;
     //TMP jusqu'à modale réalisée - uniquement pour tests
-    if(scene._id !== 37) {
+    if(scene._id !== '37') {
       this.router.navigate(['scene/',scene.nextScenes[1]]);
     }
     else {
@@ -207,7 +207,7 @@ neutralFight: boolean = false;
       const alert = await this.alertController.create({
         cssClass: 'my-custom-class',
         header: `${value}`,
-        message: `<img src="${this.pathDiceIcon(value)}" alt="dice" style="border-radius: 2px"> </br> Vous vous defendez tous les 2 correctement, continuez!`,
+        message: `<img src="${this.pathDiceIcon(value)}" alt="dice" style="border-radius: 2px"> </br> Vous vous défendez tous les 2 correctement, continuez !`,
         buttons: [
           {
             text: 'Jet de dé',
