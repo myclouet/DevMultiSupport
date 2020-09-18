@@ -14,7 +14,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['2'],
      previousScene: null,
-     audioText : '../assets/audio/prologue.mp3.mp3',
+     audioText : 'assets/audio/prologue.mp3',
    },
    {
      _id: '2',
@@ -29,7 +29,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['3'],
      previousScene: '1',
-     audioText : '../assets/audio/introduction.mp3',
+     audioText : 'assets/audio/introduction.mp3',
    },
    {
      _id: '3',
