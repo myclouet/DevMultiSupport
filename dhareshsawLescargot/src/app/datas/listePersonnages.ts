@@ -23,7 +23,7 @@ export const PERSONNAGES: Character[] = [
   {
     _id: '2',
     name: 'Anabelle la sauterelle',
-    avatar: './assets/avatars/anabelle.png',
+    avatar: './assets/avatars/annabelle.png',
     strength: 5,
     luck: 2,
     endurance: 4,
