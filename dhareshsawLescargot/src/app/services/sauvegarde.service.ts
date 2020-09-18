@@ -12,7 +12,10 @@ import { AlertController } from '@ionic/angular';
 export class SauvegardeService {
   //private initialHero: Hero
   private stateGame: {hero: Hero, scene: Scene}
-  private story: {action:string , description:string}[]=[]
+  //private story: {action:string , description:string}[]=[]
+  private story=[];
+    
+    
 
   constructor(public storage: Storage,
               private characterService: CharacterService,
@@ -63,6 +66,13 @@ export class SauvegardeService {
 
     await alert.present();
   }
+
+   saveChooseScene (scene,hero) {
+    const description= "tu as choisi de ";
+   // const element={action:chooseScene,description:description];
+  //  this.story.push(element);
+    } 
+    
 
   setStateGame(hero:Hero,scene:Scene) {
     this.stateGame={hero,scene};

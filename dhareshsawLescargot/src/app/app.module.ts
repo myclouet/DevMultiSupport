@@ -14,12 +14,13 @@ import { SceneService } from './services/scene.service';
 
 import { IonicStorageModule } from '@ionic/storage';
 import { ObjectInventoryModalPageModule } from './object-inventory-modal/object-inventory-modal.module';
-
+import {HistoryModalPageModule} from './history-modal/history-modal.module';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ObjectInventoryModalPageModule, IonicStorageModule.forRoot()],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ObjectInventoryModalPageModule, 
+    IonicStorageModule.forRoot(), HistoryModalPageModule],
   providers: [
     StatusBar,
     SplashScreen,

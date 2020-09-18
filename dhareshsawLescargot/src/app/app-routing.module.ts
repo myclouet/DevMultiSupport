@@ -20,6 +20,10 @@ const routes: Routes = [
     path: 'leaderboard',
     loadChildren: () => import('./leaderboard/leaderboard.module').then( m => m.LeaderboardPageModule)
   },
+  {
+    path: 'history-modal',
+    loadChildren: () => import('./history-modal/history-modal.module').then( m => m.HistoryModalPageModule)
+  },
 ];
 
 @NgModule({

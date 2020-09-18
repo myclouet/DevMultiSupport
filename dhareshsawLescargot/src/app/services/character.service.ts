@@ -76,6 +76,7 @@ neutralFight: boolean = false;
   }
 
   public chooseScene(myScene) {
+    
   }
 
   public winGame() {

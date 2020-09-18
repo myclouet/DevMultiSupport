@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar text-center>
+    <ion-title>{{modalTitle}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  ID : {{modelId}}
+  
+  <ion-card>
+  <div *ngFor="let element of modalScene.items"> 
+
+    <p>   {{element._id}} </p>  
+    <p>    {{element.title}} </p>
+    <p>    {{element.description}} </p>
+ 
+   
+  </div> 
+</ion-card>
+
+  <ion-button	(click)="closeModalHistory()">CloseModal</ion-button>	
+
+</ion-content>

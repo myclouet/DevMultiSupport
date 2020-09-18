@@ -9,6 +9,7 @@ import { ModalController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 import { ObjectInventoryModalPage } from '../object-inventory-modal/object-inventory-modal.page';
 import { SauvegardeService } from '../services/sauvegarde.service';
+import { HistoryModalPage } from '../history-modal/history-modal.page';
 
 
 @Component({
@@ -27,6 +28,7 @@ export class ScenePage implements OnInit {
   scene: Scene;
   title: String;
   dataReturned: any;
+  //story: Story;
 
   //----------------------------------------------------------------------------------------------------
   //CONSTRUCTOR
@@ -54,6 +56,7 @@ export class ScenePage implements OnInit {
   this.adversaire = this.getAdversaire(); 
 
   this.characterService.character = this.adversaire;
+
   }
 
   //----------------------------------------------------------------------------------------------------
@@ -140,6 +143,7 @@ this.title = "COMBAT"
       }
     });
 
+
     modal.onDidDismiss().then((dataReturned) => {
       if (dataReturned !== null) {
         this.dataReturned = dataReturned.data;
@@ -148,6 +152,29 @@ this.title = "COMBAT"
 
     return await modal.present();
   }
+
+
+  async openModalHistory() {
+    const modal = await this.modalController.create({
+      component: HistoryModalPage,
+      componentProps: {
+       "paramID": 123,
+       "paramTitle": "TEST TITLE",
+       "paramStory": this.scene,
+       scene: this.scene
+      }
+    });  
+
+    modal.onDidDismiss().then((dataReturned) => {
+      if (dataReturned !== null) {
+        this.dataReturned = dataReturned.data;
+      }
+    });
+
+    return await modal.present();
+  }
+
+
 
   // -----------------------------------------------------------------------------------------------
   // Sauvegarder partie
