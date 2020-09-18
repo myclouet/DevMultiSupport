@@ -23,7 +23,7 @@ export const PERSONNAGES: Character[] = [
   {
     _id: '2',
     name: 'Anabelle la sauterelle',
-    avatar: '',
+    avatar: './assets/avatars/anabelle.png',
     strength: 5,
     luck: 2,
     endurance: 4,
@@ -32,7 +32,7 @@ export const PERSONNAGES: Character[] = [
   {
     _id: '3',
     name: 'Bobo le corbeau',
-    avatar: '',
+    avatar: './assets/avatars/boris.png',
     strength: 4,
     luck: 4,
     endurance: 5,
@@ -41,7 +41,7 @@ export const PERSONNAGES: Character[] = [
   {
     _id: '4',
     name: 'Élodie la pie',
-    avatar: '',
+    avatar: './assets/avatars/elodie.png',
     strength: 2,
     luck: 6,
     endurance: 4,
@@ -50,7 +50,7 @@ export const PERSONNAGES: Character[] = [
   {
     _id: '5',
     name: 'Hervé le sanglier',
-    avatar: '',
+    avatar: './assets/avatars/herve.png',
     strength: 5,
     luck: 5,
     endurance: 5,
@@ -95,7 +95,7 @@ export const PERSONNAGES: Character[] = [
   {
     _id: '10',
     name: 'Rapha le lama',
-    avatar: './assets/avatars/raph.png',
+    avatar: './assets/avatars/raphael.png',
     strength: 5,
     luck: 3,
     endurance: 4,
@@ -122,10 +122,10 @@ export const PERSONNAGES: Character[] = [
   {
     _id: '13',
     name: 'Yvan l\'habitant',
-    avatar: '',
+    avatar: './assets/avatars/yvan.png',
     strength: 4,
     luck: 4,
     endurance: 5,
     items: null,
-  },
+  }
 ];
