@@ -7,7 +7,7 @@ import { Platform } from '@ionic/angular';
 })
 export class AudioService {
 
-  audio:Boolean = false;
+  audio:Boolean;
 
   constructor(private nativeAudio: NativeAudio, private platform: Platform) { }
 
@@ -20,6 +20,7 @@ export class AudioService {
        this.platform.ready().then(() => {  
          this.nativeAudio.preloadComplex('uniqueKey1', 'assets/audio/audioDhareshsaw.mp3', 1, 1, 0).then(() => {     
            this.nativeAudio.loop('uniqueKey1');
+           this.audio = true;
          });
        });
      }
@@ -31,6 +32,6 @@ export class AudioService {
 
     restartAudioService() {
        this.nativeAudio.loop('uniqueKey1');
-       this.audio = false;
+       this.audio = true;
      }
   }
