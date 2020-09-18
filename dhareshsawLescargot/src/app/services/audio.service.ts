@@ -8,6 +8,7 @@ import { Platform } from '@ionic/angular';
 export class AudioService {
 
   audio:Boolean;
+  audioVoice: Boolean;
 
   constructor(private nativeAudio: NativeAudio, private platform: Platform) { }
 
@@ -34,4 +35,33 @@ export class AudioService {
        this.nativeAudio.loop('uniqueKey1');
        this.audio = true;
      }
+
+
+
+    // TEST AUDIO TEXTES
+
+    startAudioVoiceService(scene) { 
+      this.nativeAudio.stop('uniqueKey2');
+      this.nativeAudio.setVolumeForComplexAsset('uniqueKey1', 0.1);
+      this.platform.ready().then(() => {  
+        this.nativeAudio.preloadComplex('uniqueKey2', scene.audioText, 1, 1, 0).then(() => {
+          if(this.audioVoice === true) {
+            this.nativeAudio.play('uniqueKey2');
+            this.audioVoice = true;
+          }      
+        });
+      });
+    }
+
+   stopAudioVoiceService() {
+      this.nativeAudio.stop('uniqueKey2');
+      this.audioVoice = false;
+    }
+
+   restartAudioVoiceService() {
+      this.nativeAudio.play('uniqueKey2');
+      this.audioVoice = true;
+    }
+
   }
+

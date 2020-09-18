@@ -29,6 +29,7 @@ export class ScenePage implements OnInit {
   title: String;
   dataReturned: any;
   audioBtn: Boolean = this.audioService.audio;
+  audioVoiceBtn: Boolean = this.audioService.audioVoice;
 
   //----------------------------------------------------------------------------------------------------
   //CONSTRUCTOR
@@ -46,16 +47,25 @@ export class ScenePage implements OnInit {
 
   ngOnInit() {
 
-  this.scene = this.sceneService.getSceneById(this.route.snapshot.paramMap.get('id'));
+    this.scene = this.sceneService.getSceneById(this.route.snapshot.paramMap.get('id'));
 
-  this.sceneTitle();
+    this.sceneTitle();
 
-  this.heros = this.characterService.heros; // mise à jour du héro avec le héro du service
-  // console.log(this.heros);
+    this.heros = this.characterService.heros; // mise à jour du héro avec le héro du service
+    // console.log(this.heros);
 
-  this.adversaire = this.getAdversaire(); 
+    this.adversaire = this.getAdversaire(); 
 
-  this.characterService.character = this.adversaire;
+    this.characterService.character = this.adversaire;
+
+    if (this.scene._id === '1') {
+      this.audioService.audioVoice = true;
+    }
+    
+    this.startVoice();
+
+    
+
   }
 
   //----------------------------------------------------------------------------------------------------
@@ -280,4 +290,24 @@ this.title = "COMBAT"
       this.audioService.stopAudioService();
       this.audioBtn = this.audioService.audio;
     }
+
+    // TEST AUDIO VOICE
+
+    startVoice() {
+      this.audioService.startAudioVoiceService(this.scene);
+      this.audioVoiceBtn = this.audioService.audioVoice;
+      console.log('audioService : ', this.audioService.audioVoice);
+    }
+
+    restartVoice() {
+      this.audioService.restartAudioVoiceService();
+      this.audioVoiceBtn = this.audioService.audioVoice;
+    }
+
+    stopVoice() {
+      this.audioService.stopAudioVoiceService();
+      this.audioVoiceBtn = this.audioService.audioVoice;
+    }
+
+
 }

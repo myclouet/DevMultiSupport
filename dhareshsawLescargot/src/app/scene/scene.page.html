@@ -113,6 +113,12 @@
             <ion-button (click)="restartAudio()" *ngIf="audioBtn === false">
               <ion-icon style="color: white;" slot="icon-only" name="volume-mute-outline"></ion-icon>
             </ion-button>
+            <ion-button (click)="stopVoice()" *ngIf="audioVoiceBtn === true">
+              <ion-icon style="color: white;" slot="icon-only" name="mic-outline"></ion-icon>
+            </ion-button>
+            <ion-button (click)="restartVoice()" *ngIf="audioVoiceBtn === false">
+              <ion-icon style="color: white;" slot="icon-only" name="mic-off-outline"></ion-icon>
+            </ion-button>
           </ion-buttons>
         </ion-col>
         <ion-col style="padding: 0; height: 100%">
