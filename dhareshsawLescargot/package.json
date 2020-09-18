@@ -25,6 +25,7 @@
     "@ionic/angular": "^5.2.1",
     "@ionic/storage": "^2.2.0",
     "cordova-browser": "6.0.0",
+    "cordova-ios": "^5.1.1",
     "core-js": "^2.5.4",
     "lint": "^0.7.0",
     "rxjs": "~6.5.1",
@@ -74,7 +75,8 @@
       "cordova-plugin-ionic-keyboard": {}
     },
     "platforms": [
-      "browser"
+      "browser",
+      "ios"
     ]
   }
 }
