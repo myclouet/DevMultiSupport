@@ -28,7 +28,7 @@ export class ScenePage implements OnInit {
   scene: Scene;
   title: String;
   dataReturned: any;
-  audioBtn: Boolean = true;
+  audioBtn: Boolean = this.audioService.audio;
 
   //----------------------------------------------------------------------------------------------------
   //CONSTRUCTOR
@@ -268,16 +268,16 @@ this.title = "COMBAT"
 
      startAudio() {
       this.audioService.startAudioService();
-      this.audioBtn = true;
+      this.audioBtn = this.audioService.audio;
     }
 
     restartAudio() {
       this.audioService.restartAudioService();
-      this.audioBtn = true;
+      this.audioBtn = this.audioService.audio;
     }
 
     stopAudio() {
       this.audioService.stopAudioService();
-      this.audioBtn = false;
+      this.audioBtn = this.audioService.audio;
     }
 }
