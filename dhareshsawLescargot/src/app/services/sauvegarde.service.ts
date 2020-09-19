@@ -33,6 +33,7 @@ export class SauvegardeService {
     
   }
 
+  // restoreGame et restoreAlert à retirer car déplacé dans le homepage pour corriger les circular dependancies
   restoreGame() {
     this.storage.get('stateGame').then((state)=>{
       this.stateGame=state; // on récupère l'état du jeu
@@ -71,6 +72,14 @@ export class SauvegardeService {
 
   getStateGame() {
     return this.stateGame;
+  }
+
+  setStory(story:{action:string , description:string}[]) {
+    this.story=story;
+  }
+
+  getStory() {
+    return this.story;
   }
 
 }
