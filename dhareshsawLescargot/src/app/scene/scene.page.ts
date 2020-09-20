@@ -9,11 +9,8 @@ import { ModalController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 import { ObjectInventoryModalPage } from '../object-inventory-modal/object-inventory-modal.page';
 import { SauvegardeService } from '../services/sauvegarde.service';
-<<<<<<< HEAD
 import { HistoryModalPage } from '../history-modal/history-modal.page';
-=======
 import { AudioService } from '../services/audio.service';
->>>>>>> f03ebbfbdf7a32c1f903fc2c47aaaf54d8a1a1e6
 
 
 @Component({
@@ -32,11 +29,8 @@ export class ScenePage implements OnInit {
   scene: Scene;
   title: String;
   dataReturned: any;
-<<<<<<< HEAD
   //story: Story;
-=======
   audioBtn: Boolean = true;
->>>>>>> f03ebbfbdf7a32c1f903fc2c47aaaf54d8a1a1e6
 
   //----------------------------------------------------------------------------------------------------
   //CONSTRUCTOR
