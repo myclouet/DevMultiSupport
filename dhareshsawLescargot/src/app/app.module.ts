@@ -14,7 +14,12 @@ import { SceneService } from './services/scene.service';
 
 import { IonicStorageModule } from '@ionic/storage';
 import { ObjectInventoryModalPageModule } from './object-inventory-modal/object-inventory-modal.module';
+<<<<<<< HEAD
 import {HistoryModalPageModule} from './history-modal/history-modal.module';
+=======
+import { NativeAudio } from '@ionic-native/native-audio/ngx';
+
+>>>>>>> f03ebbfbdf7a32c1f903fc2c47aaaf54d8a1a1e6
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,6 +32,7 @@ import {HistoryModalPageModule} from './history-modal/history-modal.module';
     SauvegardeService,
     CharacterService,
     SceneService,
+    NativeAudio,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
