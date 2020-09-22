@@ -295,7 +295,6 @@ this.title = "COMBAT"
     startVoice() {
       this.audioService.startAudioVoiceService(this.scene);
       this.audioVoiceBtn = true;
-      console.log('audioService : ', this.audioService.audioVoice);
     }
 
     stopVoice() {
