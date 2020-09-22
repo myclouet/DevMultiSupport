@@ -14,6 +14,8 @@ export class ObjectInventoryModalPage implements OnInit {
   modalItemSelected: ObjectInventory;
   // Hero item's id selected by the player
   modalItemId: number;
+  modalTabWithoutKey: ObjectInventory[];
+  keyToAppear: boolean;
 
   // ---------- CONSTRUCTOR ------------ //
   constructor(
@@ -25,6 +27,12 @@ export class ObjectInventoryModalPage implements OnInit {
   // -------- LIFECYCLE METHODS --------- //
   ngOnInit() {
     this.modalHero = this.navParams.data.hero;
+    // if hero has the key, it will appear in a separate ion-card otherwise it won't appear
+    if (this.modalHero.key !== undefined) {
+      this.keyToAppear = true;
+    } else {
+      this.keyToAppear = false;
+    }
   }
 
   // ---------- METHOD ------------ //
@@ -34,14 +42,18 @@ export class ObjectInventoryModalPage implements OnInit {
       ({ description }) => description === nameItemSelected
     );
 
+    // update of the hero's bonusPower
     if (this.modalItemSelected.bonusPower[0] === 'endurance') {
-      this.modalHero.endurance = this.modalHero.endurance + this.modalItemSelected.bonusPower[1];
+      this.modalHero.endurance =
+        this.modalHero.endurance + this.modalItemSelected.bonusPower[1];
     } else {
       if (this.modalItemSelected.bonusPower[0] === 'luck') {
-        this.modalHero.luck = this.modalHero.luck + this.modalItemSelected.bonusPower[1];
+        this.modalHero.luck =
+          this.modalHero.luck + this.modalItemSelected.bonusPower[1];
       } else {
         if (this.modalItemSelected.bonusPower[0] === 'strength') {
-          this.modalHero.strength = this.modalHero.strength + this.modalItemSelected.bonusPower[1];
+          this.modalHero.strength =
+            this.modalHero.strength + this.modalItemSelected.bonusPower[1];
         }
       }
     }

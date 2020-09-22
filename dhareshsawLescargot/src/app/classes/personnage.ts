@@ -10,6 +10,7 @@ export class Character {
     luck: number;
     endurance: number;
     items: ObjectInventory[];
+    key: ObjectInventory;
     // private dead: boolean = false;
 }
 
@@ -22,4 +23,5 @@ export class Hero extends Character {
     luck: number;
     endurance: number;
     items: ObjectInventory[];
+    key: ObjectInventory;
 }
