@@ -1,6 +1,6 @@
 ## Projet Dhareshsaw l'escargot :snail: Compte-rendu
 
-#### :date: /06/2020 :clock3: 00:00 :hourglass: 1:00
+#### :date: /09/2020 :clock3: 00:00 :hourglass: 1:00
 
 | Animateurs | Participants | Destinataires |
 | --- | --- | --- |
@@ -24,4 +24,4 @@
 
 ***
 ### Prochain point :
-:date: /06/2020 :clock3: 00:00 :hourglass: 1:00
+:date: /10/2020 :clock3: 00:00 :hourglass: 1:00
