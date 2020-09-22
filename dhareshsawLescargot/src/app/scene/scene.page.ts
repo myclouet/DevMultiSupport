@@ -58,13 +58,7 @@ export class ScenePage implements OnInit {
 
     this.characterService.character = this.adversaire;
 
-    /*
-    if (this.scene._id === '1') {
-      this.audioService.audioVoice = true;
-    }
-    
-    this.startVoice();   
-    */
+    this.audioService.unloadVoice();
   }
 
   //----------------------------------------------------------------------------------------------------

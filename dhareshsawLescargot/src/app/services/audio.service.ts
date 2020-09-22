@@ -41,8 +41,6 @@ export class AudioService {
 
   startAudioVoiceService(scene) {
     this.platform.ready().then(() => {
-      this.nativeAudio.stop('uniqueKey2');
-      this.nativeAudio.unload('uniqueKey2');
       this.nativeAudio.setVolumeForComplexAsset('uniqueKey1', 0.4);
       this.nativeAudio.preloadComplex('uniqueKey2', scene.audioText, 1, 1, 0).then(() => {
           this.nativeAudio.play('uniqueKey2');
@@ -53,6 +51,11 @@ export class AudioService {
   stopAudioVoiceService() {
     this.nativeAudio.stop('uniqueKey2');
     this.nativeAudio.setVolumeForComplexAsset('uniqueKey1', 1);
+  }
+
+  unloadVoice() {
+    this.nativeAudio.stop('uniqueKey2');
+    this.nativeAudio.unload('uniqueKey2');
   }
 
 }
