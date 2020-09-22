@@ -7,30 +7,56 @@ import { Platform } from '@ionic/angular';
 })
 export class AudioService {
 
-  audio:Boolean = false;
+  audio: Boolean;
 
   constructor(private nativeAudio: NativeAudio, private platform: Platform) { }
 
 
-    // -----------------------------------------------------------------------------------------------
-    // AUDIO
-    // -----------------------------------------------------------------------------------------------
+  // -----------------------------------------------------------------------------------------------
+  // AUDIO
+  // -----------------------------------------------------------------------------------------------
 
-    startAudioService() {
-       this.platform.ready().then(() => {  
-         this.nativeAudio.preloadComplex('uniqueKey1', 'assets/audio/audioDhareshsaw.mp3', 1, 1, 0).then(() => {     
-           this.nativeAudio.loop('uniqueKey1');
-         });
-       });
-     }
-
-    stopAudioService() {
-       this.nativeAudio.stop('uniqueKey1');
-       this.audio = false;
-     }
-
-    restartAudioService() {
-       this.nativeAudio.loop('uniqueKey1');
-       this.audio = false;
-     }
+  startAudioService() {
+    this.platform.ready().then(() => {
+      this.nativeAudio.preloadComplex('uniqueKey1', 'assets/audio/audioDhareshsaw.mp3', 1, 1, 0).then(() => {
+        this.nativeAudio.loop('uniqueKey1');
+        this.audio = true;
+      });
+    });
   }
+
+  stopAudioService() {
+    this.nativeAudio.stop('uniqueKey1');
+    this.audio = false;
+  }
+
+  restartAudioService() {
+    this.nativeAudio.loop('uniqueKey1');
+    this.audio = true;
+  }
+
+
+
+  // TEST AUDIO TEXTES
+
+  startAudioVoiceService(scene) {
+    this.platform.ready().then(() => {
+      this.nativeAudio.setVolumeForComplexAsset('uniqueKey1', 0.4);
+      this.nativeAudio.preloadComplex('uniqueKey2', scene.audioText, 1, 1, 0).then(() => {
+          this.nativeAudio.play('uniqueKey2');
+      });
+    });
+  }
+
+  stopAudioVoiceService() {
+    this.nativeAudio.stop('uniqueKey2');
+    this.nativeAudio.setVolumeForComplexAsset('uniqueKey1', 1);
+  }
+
+  unloadVoice() {
+    this.nativeAudio.stop('uniqueKey2');
+    this.nativeAudio.unload('uniqueKey2');
+  }
+
+}
+
