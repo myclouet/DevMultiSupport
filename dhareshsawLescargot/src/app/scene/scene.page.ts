@@ -10,6 +10,7 @@ import { AlertController } from '@ionic/angular';
 import { ObjectInventoryModalPage } from '../object-inventory-modal/object-inventory-modal.page';
 import { SauvegardeService } from '../services/sauvegarde.service';
 import { AudioService } from '../services/audio.service';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 
 @Component({
@@ -19,20 +20,22 @@ import { AudioService } from '../services/audio.service';
 })
 export class ScenePage implements OnInit {
 
-  //----------------------------------------------------------------------------------------------------
-  //ATTRIBUTS
-  //----------------------------------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------------------------------
+  // ATTRIBUTS
+  // ----------------------------------------------------------------------------------------------------
 
   heros: Hero;
   adversaire: Character;
   scene: Scene;
-  title: String;
+  title: string;
   dataReturned: any;
   audioBtn: Boolean = true;
+  progressionBar: number;
+  progressionBuffer: number;
 
-  //----------------------------------------------------------------------------------------------------
-  //CONSTRUCTOR
-  //----------------------------------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------------------------------
+  // CONSTRUCTOR
+  // ----------------------------------------------------------------------------------------------------
 
   constructor(
     private characterService: CharacterService,
@@ -53,32 +56,36 @@ export class ScenePage implements OnInit {
   this.heros = this.characterService.heros; // mise à jour du héro avec le héro du service
   // console.log(this.heros);
 
-  this.adversaire = this.getAdversaire(); 
+  this.adversaire = this.getAdversaire();
 
   this.characterService.character = this.adversaire;
+
+  this.progressionBar = this.scene.progressionIndex / 100;
+  this.progressionBuffer = this.scene.progressionIndex / 100;
+  console.log(this.progressionBar);
   }
 
-  //----------------------------------------------------------------------------------------------------
-  //METHODS SCENES
-  //----------------------------------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------------------------------
+  // METHODS SCENES
+  // ----------------------------------------------------------------------------------------------------
 
   nextScene(indice: number) {
-    this.router.navigate(['scene/',this.scene.nextScenes[indice]]);
+    this.router.navigate(['scene/', this.scene.nextScenes[indice]]);
   }
 
   prevScene() {
-    this.router.navigate(['scene/',this.scene.previousScene]);
+    this.router.navigate(['scene/', this.scene.previousScene]);
   }
 
-  //----------------------------------------------------------------------------------------------------
-  //METHODS COMBATS
-  //----------------------------------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------------------------------
+  // METHODS COMBATS
+  // ----------------------------------------------------------------------------------------------------
 
   /**
    * Initialisation adversaire
   **/
-  getAdversaire(){
-    return this.adversaire = this.characterService.getPersonnageById(this.scene.encounter);// Attention doublon idCharactere et encounter
+  getAdversaire() {
+    return this.adversaire = this.characterService.getPersonnageById(this.scene.encounter); // Attention doublon idCharactere et encounter
   }
 
   /* Choix combat */
@@ -117,43 +124,43 @@ export class ScenePage implements OnInit {
       ]
     });
     await alert.present();
-  } 
+  }
 
 
   /**
    * Affichage du Header
   **/
-  sceneTitle(){
-    if(this.scene.encounter === null){
-      this.title = "EN CHEMIN"
-    } else if(this.scene.isBattle === true) {
-this.title = "COMBAT"
+  sceneTitle() {
+    if (this.scene.encounter === null) {
+      this.title = 'EN CHEMIN';
+    } else if (this.scene.isBattle === true) {
+this.title = 'COMBAT';
     } else {
-      this.title = "RENCONTRE";
+      this.title = 'RENCONTRE';
     }
   }
 
   // ---------------------------------------------------------------------------------------------
   // Fuite
-  //------------------------------------------------------------------------------------------------
+  // ------------------------------------------------------------------------------------------------
   async escape() {
     const value = this.heros.strength + this.heros.luck - this.adversaire.endurance;
     let message: any;
-    if(value <= 1) {
+    if (value <= 1) {
       message = "Tu n'as pas bavé assez pour fuir !!! Le combat est inévitable <br> Tu dois obtenir 1 pour gagner le combat";
     }
-    else if (value >6) {
+    else if (value > 6) {
       message = "Tu n'as pas bavé assez pour fuir !!! Le combat est inévitable <br>Tu dois obtenir 6 ou moins pour gagner le combat";
     }
     else {
       message = `Tu n'as pas bavé assez pour fuir !!! Le combat est inévitable <br> Tu dois obtenir moins que ${value} pour gagner le combat`;
     };
 
-    if(this.characterService.escape()) {
+    if (this.characterService.escape()) {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'FUITE',
-      message: "Bravo, tu as échappé au combat, tu retournes à la scène précédente !",
+      message: 'Bravo, tu as échappé au combat, tu retournes à la scène précédente !',
       buttons: [
         {
           text: 'OK',
@@ -164,7 +171,7 @@ this.title = "COMBAT"
       ]
     });
     await alert.present();
-    } 
+    }
     else { const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'FUITE',
@@ -173,7 +180,7 @@ this.title = "COMBAT"
         {
           text: 'Jet de dé',
           handler: () => {
-            this.adversaire = this.getAdversaire(); 
+            this.adversaire = this.getAdversaire();
             this.characterService.character = this.adversaire;
             this.characterService.conditionnalFight(this.scene);
             this.scene.battleWon = this.characterService.battleWon;

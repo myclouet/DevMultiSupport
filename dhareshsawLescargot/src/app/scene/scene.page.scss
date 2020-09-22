@@ -93,3 +93,10 @@ ion-card-content {
        }
     }
 }
+
+ion-progress-bar {
+    height: 10px;
+    border-radius: 2px;
+    --background:#5de48c;
+    --progress-background: #04471c;
+  }
