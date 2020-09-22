@@ -29,7 +29,7 @@ export class ScenePage implements OnInit {
   title: String;
   dataReturned: any;
   audioBtn: Boolean = this.audioService.audio;
-  audioVoiceBtn: Boolean = this.audioService.audioVoice;
+  audioVoiceBtn: Boolean = false;
 
   //----------------------------------------------------------------------------------------------------
   //CONSTRUCTOR
@@ -58,14 +58,13 @@ export class ScenePage implements OnInit {
 
     this.characterService.character = this.adversaire;
 
+    /*
     if (this.scene._id === '1') {
       this.audioService.audioVoice = true;
     }
     
-    this.startVoice();
-
-    
-
+    this.startVoice();   
+    */
   }
 
   //----------------------------------------------------------------------------------------------------
@@ -295,19 +294,30 @@ this.title = "COMBAT"
 
     startVoice() {
       this.audioService.startAudioVoiceService(this.scene);
-      this.audioVoiceBtn = this.audioService.audioVoice;
+      this.audioVoiceBtn = true;
       console.log('audioService : ', this.audioService.audioVoice);
-    }
-
-    restartVoice() {
-      this.audioService.restartAudioVoiceService();
-      this.audioVoiceBtn = this.audioService.audioVoice;
     }
 
     stopVoice() {
       this.audioService.stopAudioVoiceService();
-      this.audioVoiceBtn = this.audioService.audioVoice;
+      this.audioVoiceBtn = false;
     }
 
 
+    //-----------------------------------------------------------------------------------
+    // DIFFICULTE DU COMBAT
+    //-----------------------------------------------------------------------------------
+
+    difficulte() {
+      let difficulte: String;
+      let value: number = this.heros.strength + this.heros.luck - this.adversaire.endurance;
+      if (value <=1) {
+          difficulte = "hard";
+        }
+      else if  (value > 6) {
+        difficulte = "easy";
+      }
+      else difficulte = "normal";
+      return difficulte;
+    }
 }

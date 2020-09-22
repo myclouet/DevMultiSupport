@@ -67,6 +67,9 @@
       <!--ngIf a retirer lorsque liste complete des avatars-->
       <ion-card-subtitle>Difficulté : </ion-card-subtitle>
       <!-- rajouter image de difficulté -->
+        <img *ngIf="difficulte() === 'easy'" src="assets/difficulte-facile.png" class="difficultIcon">
+        <img *ngIf="difficulte() === 'normal'" src="assets/difficulte-moyenne.png" class="difficultIcon">
+        <img *ngIf="difficulte() === 'hard'" src="assets/difficulte-difficile.png" class="difficultIcon">
     </ion-card>
   </div>
 
@@ -116,7 +119,7 @@
             <ion-button (click)="stopVoice()" *ngIf="audioVoiceBtn === true">
               <ion-icon style="color: white;" slot="icon-only" name="mic-outline"></ion-icon>
             </ion-button>
-            <ion-button (click)="restartVoice()" *ngIf="audioVoiceBtn === false">
+            <ion-button (click)="startVoice()" *ngIf="audioVoiceBtn === false">
               <ion-icon style="color: white;" slot="icon-only" name="mic-off-outline"></ion-icon>
             </ion-button>
           </ion-buttons>
