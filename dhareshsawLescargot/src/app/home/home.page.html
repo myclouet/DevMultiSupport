@@ -18,8 +18,16 @@
   <ion-card>
     <ion-card-content>
       <img src="assets/champLaitue.jpg">
-      <ion-button expand="block" color="success" (click)="newGame()">Nouvelle Partie</ion-button>
-      <ion-button expand="block" color="success" (click)="loadGame()" >Reprendre Partie en cours</ion-button>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button expand="block" color="success" (click)="newGame()">Nouvelle Partie</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button expand="block" color="success" (click)="loadGame()" >Reprendre Partie en cours</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </ion-card-content>
   </ion-card>
 </ion-content>

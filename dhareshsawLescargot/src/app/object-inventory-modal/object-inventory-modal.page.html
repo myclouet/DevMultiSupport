@@ -1,14 +1,12 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Je ne sais pas quel titre mettre</ion-title>
+    <ion-title>Tes infos persos</ion-title>
   </ion-toolbar>
 </ion-header>
 
-
-
 <ion-content>
-    <ion-card>
-      <h3>Caractéristiques</h3>
+  <ion-card>
+    <h3>Caractéristiques</h3>
     <p>
       force: {{ this.modalHero.strength}}
     </p>
@@ -18,20 +16,28 @@
     <p>
       chance: {{ this.modalHero.luck}}
     </p>
-</ion-card>
+  </ion-card>
 
   <ion-card>
     <h3>Inventaire</h3>
-  <div *ngFor="let heroObjectInventory of modalHero.items">
-    <p (click)="updateHeroInventory(heroObjectInventory.description)">{{ heroObjectInventory.description}}</p>
-  </div>
-</ion-card>
+    <div *ngFor="let heroObjectInventory of modalHero.items">
+      <p (click)="updateHeroInventory(heroObjectInventory.description)">
+        {{ heroObjectInventory.description}}
+      </p>
+      <!-- comment isoler la clé pour qu'elle n'apparaisse que si *ngIf='keyToAppear'-->
+    </div>
+  </ion-card>
 
+  <ion-card *ngIf="keyToAppear">
+    <h3>Le Graal</h3>
+    <div>
+      <p>Clé du champ</p>
+    </div>
+  </ion-card>
 
-<ion-footer>
-  <ion-button expand="full" (click)="closeObjectInventoryModal()">
-    Fermer
-  </ion-button>
-</ion-footer>
-
+  <ion-footer>
+    <ion-button expand="full" (click)="closeObjectInventoryModal()">
+      Fermer
+    </ion-button>
+  </ion-footer>
 </ion-content>

@@ -49,20 +49,20 @@ export class ScenePage implements OnInit {
 
   ngOnInit() {
 
-  this.scene = this.sceneService.getSceneById(this.route.snapshot.paramMap.get('id'));
+    this.scene = this.sceneService.getSceneById(this.route.snapshot.paramMap.get('id'));
 
-  this.sceneTitle();
+    this.sceneTitle();
 
-  this.heros = this.characterService.heros; // mise à jour du héro avec le héro du service
-  // console.log(this.heros);
+    this.heros = this.characterService.heros; // mise à jour du héro avec le héro du service
+    // console.log(this.heros);
 
-  this.adversaire = this.getAdversaire();
+    this.adversaire = this.getAdversaire();
 
-  this.characterService.character = this.adversaire;
+    this.characterService.character = this.adversaire;
 
-  this.progressionBar = this.scene.progressionIndex / 100;
-  this.progressionBuffer = this.scene.progressionIndex / 100;
-  console.log(this.progressionBar);
+    this.progressionBar = this.scene.progressionIndex / 100;
+    this.progressionBuffer = this.scene.progressionIndex / 100;
+    console.log(this.progressionBar);
   }
 
   // ----------------------------------------------------------------------------------------------------
@@ -275,16 +275,46 @@ this.title = 'COMBAT';
 
      startAudio() {
       this.audioService.startAudioService();
-      this.audioBtn = true;
+      this.audioBtn = this.audioService.audio;
     }
 
     restartAudio() {
       this.audioService.restartAudioService();
-      this.audioBtn = true;
+      this.audioBtn = this.audioService.audio;
     }
 
     stopAudio() {
       this.audioService.stopAudioService();
-      this.audioBtn = false;
+      this.audioBtn = this.audioService.audio;
+    }
+
+    // TEST AUDIO VOICE
+
+    startVoice() {
+      this.audioService.startAudioVoiceService(this.scene);
+      this.audioVoiceBtn = true;
+    }
+
+    stopVoice() {
+      this.audioService.stopAudioVoiceService();
+      this.audioVoiceBtn = false;
+    }
+
+
+    //-----------------------------------------------------------------------------------
+    // DIFFICULTE DU COMBAT
+    //-----------------------------------------------------------------------------------
+
+    difficulte() {
+      let difficulte: String;
+      let value: number = this.heros.strength + this.heros.luck - this.adversaire.endurance;
+      if (value <=1) {
+          difficulte = "hard";
+        }
+      else if  (value > 6) {
+        difficulte = "easy";
+      }
+      else difficulte = "normal";
+      return difficulte;
     }
 }
