@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, NavParams, AlertController } from '@ionic/angular';
 import { SauvegardeService } from '../services/sauvegarde.service';
-import { Scene } from '../classes/scene';
+
 
 
 @Component({
@@ -11,13 +11,8 @@ import { Scene } from '../classes/scene';
 })
 export class HistoryModalPage implements OnInit {
 
-  modalTitle:String;
-  modelId:number;
-  //story: {action:string , description:string}[]=[]
-  story: string[] =[];
-  modalScene: Scene;
+  story =[];
   
-
   constructor( 
     private modalController: ModalController,
     private navParams: NavParams,
@@ -26,12 +21,10 @@ export class HistoryModalPage implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.navParams);
-    this.modelId = this.navParams.data.paramID;
-    this.modalTitle = this.navParams.data.paramTitle;
-    this.story = this.navParams.data.paramStory;
-    this.modalScene = this.navParams.data.scene;
-    console.log(this.modelId, this.modalTitle, this.story);
+     console.log(this.navParams);
+     this.story = this.sauvegardeService.getStory();
+     console.log(this.story);
+     this.story = this.navParams.data.paramStory;
   }
 
 

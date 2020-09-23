@@ -5,6 +5,7 @@ import { Storage } from '@ionic/storage';
 import { CharacterService } from './character.service';
 import {Router} from "@angular/router";
 import { AlertController } from '@ionic/angular';
+import { Action } from 'rxjs/internal/scheduler/Action';
 
 @Injectable({
   providedIn: 'root'
@@ -12,13 +13,14 @@ import { AlertController } from '@ionic/angular';
 export class SauvegardeService {
   //private initialHero: Hero
   private stateGame: {hero: Hero, scene: Scene}
-  //private story: {action:string , description:string}[]=[]
-  private story=[];
+  scene: Scene;
+  story =[];
+  action: any;
     
     
 
   constructor(public storage: Storage,
-              private characterService: CharacterService,
+             // private characterService: CharacterService,
               private router: Router,
               public alertController: AlertController) { }
 
@@ -39,7 +41,7 @@ export class SauvegardeService {
   restoreGame() {
     this.storage.get('stateGame').then((state)=>{
       this.stateGame=state; // on récupère l'état du jeu
-      this.characterService.heros=this.stateGame.hero;  // on affecte le héro du service character avec le héro récupéré
+     // this.characterService.heros=this.stateGame.hero;  // on affecte le héro du service character avec le héro récupéré
       //console.log(this.characterService.heros);
       const idSceneToRestore=this.stateGame.scene._id;  // on récupère l'id de la scène à restaurer
       this.router.navigate(['/scene/'+idSceneToRestore]); // on restaure la scène
@@ -67,11 +69,20 @@ export class SauvegardeService {
     await alert.present();
   }
 
-   saveChooseScene (scene,hero) {
+   saveChooseScene (hero:Hero,scene:Scene) {
     const description= "tu as choisi de ";
-   // const element={action:chooseScene,description:description];
-  //  this.story.push(element);
     } 
+
+    saveStory(scene, action){
+      this.story.push(
+        {
+            scene: scene,
+            action: action,
+        }
+      )
+      this.storage.set('story',this.story);
+      console.log(this.story);
+    }
     
 
   setStateGame(hero:Hero,scene:Scene) {
@@ -81,6 +92,11 @@ export class SauvegardeService {
 
   getStateGame() {
     return this.stateGame;
+  }
+
+  getStory(){
+    return this.story;
+    console.log(this.story);
   }
 
 }

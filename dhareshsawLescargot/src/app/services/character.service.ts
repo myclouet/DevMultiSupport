@@ -3,6 +3,9 @@ import { Character, Hero } from '../classes/personnage';
 import { PERSONNAGES } from '../datas/listePersonnages';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { Scene } from '../classes/scene';
+import { SauvegardeService } from './sauvegarde.service';
+
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +19,7 @@ neutralFight: boolean = false;
   constructor(
     private alertController: AlertController,
     private router: Router,
+    private sauvegardeService : SauvegardeService,
     ) {
     this.heros = this.getPersonnageById('0'); // initialisation du héro
    }
@@ -79,13 +83,14 @@ neutralFight: boolean = false;
     console.log('Vous êtes mort');
   }
 
-  public chooseScene(myScene) {
-    
+  public chooseScene(myScene) { 
   }
 
   public winGame(scene) {
     console.log('Vous avez gagné !');
     this.battleWon = true;
+    const action = "tu as gagné le combat ! en route pour la scène ";
+    this.sauvegardeService.saveStory(scene, action)
     //TMP jusqu'à modale réalisée - uniquement pour tests
     if(scene._id !== '37') {
       this.router.navigate(['scene/',scene.nextScenes[1]]);
@@ -99,6 +104,8 @@ neutralFight: boolean = false;
   public looseGame(scene) {
     console.log('Vous avez perdu !');
     this.battleWon = false;
+    const action = "tu as perdu le combat ! en route pour la scène  ";
+    this.sauvegardeService.saveStory(scene, action)
     //TMP jusqu'à modale réalisée - uniquement pour tests
     this.router.navigate(['scene/',scene.nextScenes[0]]);
   }
@@ -289,7 +296,7 @@ neutralFight: boolean = false;
   public escape() {
     const resultatDe = this.rollDice();
     if (resultatDe < this.heros.luck) {
-      console.log('Je me suis échappé');
+      console.log('Je me suis échappé');  
       console.log('Dé : ' + resultatDe);
       console.log('Luck : ' + this.heros.luck);
       return true;

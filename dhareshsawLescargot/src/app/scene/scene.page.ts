@@ -13,6 +13,7 @@ import { HistoryModalPage } from '../history-modal/history-modal.page';
 import { AudioService } from '../services/audio.service';
 
 
+
 @Component({
   selector: 'app-scene',
   templateUrl: './scene.page.html',
@@ -29,7 +30,6 @@ export class ScenePage implements OnInit {
   scene: Scene;
   title: String;
   dataReturned: any;
-  //story: Story;
   audioBtn: Boolean = true;
 
   //----------------------------------------------------------------------------------------------------
@@ -49,7 +49,7 @@ export class ScenePage implements OnInit {
   ngOnInit() {
 
   this.scene = this.sceneService.getSceneById(this.route.snapshot.paramMap.get('id'));
-
+  
   this.sceneTitle();
 
   this.heros = this.characterService.heros; // mise à jour du héro avec le héro du service
@@ -66,11 +66,17 @@ export class ScenePage implements OnInit {
   //----------------------------------------------------------------------------------------------------
 
   nextScene(indice: number) {
+    const action = "tu as choisi cette direction : scène ";
     this.router.navigate(['scene/',this.scene.nextScenes[indice]]);
+    console.log(this.scene);
+    this.sauvegardeService.saveStory(this.scene, action);
+    
+    
   }
 
   prevScene() {
     this.router.navigate(['scene/',this.scene.previousScene]);
+    
   }
 
   //----------------------------------------------------------------------------------------------------
@@ -134,12 +140,15 @@ this.title = "COMBAT"
     } else {
       this.title = "RENCONTRE";
     }
+    
   }
 
   // ---------------------------------------------------------------------------------------------
   // Fuite
   //------------------------------------------------------------------------------------------------
   async escape() {
+    const action = "tu as fui vers la scène ";
+    this.sauvegardeService.saveStory(this.scene, action);
     const value = this.heros.strength + this.heros.luck - this.adversaire.endurance;
     let message: any;
     if(value <= 1) {
@@ -220,10 +229,8 @@ this.title = "COMBAT"
     const modal = await this.modalController.create({
       component: HistoryModalPage,
       componentProps: {
-       "paramID": 123,
-       "paramTitle": "TEST TITLE",
-       "paramStory": this.scene,
-       scene: this.scene
+       //"paramScene": this.scene, 
+        "paramStory": this.sauvegardeService.getStory(), 
       }
     });  
 
