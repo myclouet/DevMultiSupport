@@ -9,8 +9,10 @@ import { ModalController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 import { ObjectInventoryModalPage } from '../object-inventory-modal/object-inventory-modal.page';
 import { SauvegardeService } from '../services/sauvegarde.service';
+import { HistoryModalPage } from '../history-modal/history-modal.page';
 import { AudioService } from '../services/audio.service';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+
 
 
 @Component({
@@ -71,11 +73,17 @@ export class ScenePage implements OnInit {
   // ----------------------------------------------------------------------------------------------------
 
   nextScene(indice: number) {
-    this.router.navigate(['scene/', this.scene.nextScenes[indice]]);
+    const action = "tu as choisi cette direction : scène ";
+    this.router.navigate(['scene/',this.scene.nextScenes[indice]]);
+    console.log(this.scene);
+    this.sauvegardeService.saveStory(this.scene, action);
+    
+    
   }
 
   prevScene() {
-    this.router.navigate(['scene/', this.scene.previousScene]);
+    this.router.navigate(['scene/',this.scene.previousScene]);
+    
   }
 
   // ----------------------------------------------------------------------------------------------------
@@ -139,12 +147,15 @@ this.title = 'COMBAT';
     } else {
       this.title = 'RENCONTRE';
     }
+    
   }
 
   // ---------------------------------------------------------------------------------------------
   // Fuite
   // ------------------------------------------------------------------------------------------------
   async escape() {
+    const action = "tu as fui vers la scène ";
+    this.sauvegardeService.saveStory(this.scene, action);
     const value = this.heros.strength + this.heros.luck - this.adversaire.endurance;
     let message: any;
     if (value <= 1) {
@@ -210,6 +221,7 @@ this.title = 'COMBAT';
       }
     });
 
+
     modal.onDidDismiss().then((dataReturned) => {
       if (dataReturned !== null) {
         this.dataReturned = dataReturned.data;
@@ -218,6 +230,27 @@ this.title = 'COMBAT';
 
     return await modal.present();
   }
+
+
+  async openModalHistory() {
+    const modal = await this.modalController.create({
+      component: HistoryModalPage,
+      componentProps: {
+       //"paramScene": this.scene, 
+        "paramStory": this.sauvegardeService.getStory(), 
+      }
+    });  
+
+    modal.onDidDismiss().then((dataReturned) => {
+      if (dataReturned !== null) {
+        this.dataReturned = dataReturned.data;
+      }
+    });
+
+    return await modal.present();
+  }
+
+
 
   // -----------------------------------------------------------------------------------------------
   // Sauvegarder partie
