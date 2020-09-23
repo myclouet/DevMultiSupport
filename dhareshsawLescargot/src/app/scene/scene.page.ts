@@ -29,7 +29,8 @@ export class ScenePage implements OnInit {
   scene: Scene;
   title: string;
   dataReturned: any;
-  audioBtn: Boolean = true;
+  audioBtn: Boolean = this.audioService.audio;
+  audioVoiceBtn: Boolean = false;
   progressionBar: number;
   progressionBuffer: number;
 
