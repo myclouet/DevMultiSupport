@@ -10,6 +10,7 @@ export const PERSONNAGES: Character[] = [
     luck: 4,
     endurance: 3,
     items: null,
+    key: null,
   },
   {
     _id: '1',
@@ -19,15 +20,17 @@ export const PERSONNAGES: Character[] = [
     luck: 5,
     endurance: 4,
     items: null,
+    key: null,
   },
   {
     _id: '2',
     name: 'Anabelle la sauterelle',
-    avatar: './assets/avatars/anabelle.png',
+    avatar: './assets/avatars/annabelle.png',
     strength: 5,
     luck: 2,
     endurance: 4,
     items: null,
+    key: null,
   },
   {
     _id: '3',
@@ -37,6 +40,7 @@ export const PERSONNAGES: Character[] = [
     luck: 4,
     endurance: 5,
     items: null,
+    key: null,
   },
   {
     _id: '4',
@@ -46,6 +50,7 @@ export const PERSONNAGES: Character[] = [
     luck: 6,
     endurance: 4,
     items: null,
+    key: null,
   },
   {
     _id: '5',
@@ -55,6 +60,7 @@ export const PERSONNAGES: Character[] = [
     luck: 5,
     endurance: 5,
     items: null,
+    key: null,
   },
   {
     _id: '6',
@@ -64,6 +70,7 @@ export const PERSONNAGES: Character[] = [
     luck: 3,
     endurance: 4,
     items: null,
+    key: null,
   },
   {
     _id: '7',
@@ -73,6 +80,7 @@ export const PERSONNAGES: Character[] = [
     luck: 3,
     endurance: 4,
     items: null,
+    key: null,
   },
   {
     _id: '8',
@@ -82,6 +90,7 @@ export const PERSONNAGES: Character[] = [
     luck: 4,
     endurance: 4,
     items: null,
+    key: null,
   },
   {
     _id: '9',
@@ -91,6 +100,7 @@ export const PERSONNAGES: Character[] = [
     luck: 4,
     endurance: 5,
     items: null,
+    key: null,
   },
   {
     _id: '10',
@@ -100,6 +110,7 @@ export const PERSONNAGES: Character[] = [
     luck: 3,
     endurance: 4,
     items: null,
+    key: null,
   },
   {
     _id: '11',
@@ -109,6 +120,7 @@ export const PERSONNAGES: Character[] = [
     luck: 4,
     endurance: 4,
     items: null,
+    key: null,
   },
   {
     _id: '12',
@@ -118,6 +130,7 @@ export const PERSONNAGES: Character[] = [
     luck: 5,
     endurance: 4,
     items: null,
+    key: null,
   },
   {
     _id: '13',
@@ -127,5 +140,6 @@ export const PERSONNAGES: Character[] = [
     luck: 4,
     endurance: 5,
     items: null,
+    key: null,
   }
 ];

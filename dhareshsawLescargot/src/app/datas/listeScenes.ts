@@ -13,7 +13,8 @@ export const SCENES: Scene[] = [
      isBattle: false,
      battleWon: false,
      nextScenes: ['2'],
-     previousScene: null
+     previousScene: null,
+     progressionIndex: 0
    },
    {
      _id: '2',
@@ -27,7 +28,8 @@ export const SCENES: Scene[] = [
      isBattle: false,
      battleWon: false,
      nextScenes: ['3'],
-     previousScene: '1'
+     previousScene: '1',
+     progressionIndex: 5
    },
    {
      _id: '3',
@@ -41,7 +43,8 @@ export const SCENES: Scene[] = [
      isBattle: false,
      battleWon: false,
      nextScenes: ['4', '5', '6'],
-     previousScene: '2'
+     previousScene: '2',
+     progressionIndex: 10
    },
    {
      _id: '4',
@@ -55,7 +58,8 @@ export const SCENES: Scene[] = [
      isBattle: false,
      battleWon: false,
      nextScenes: ['7'],
-     previousScene: '3'
+     previousScene: '3',
+     progressionIndex: 12
    },
    {
      _id: '5',
@@ -69,7 +73,8 @@ export const SCENES: Scene[] = [
      isBattle: false,
      battleWon: false,
      nextScenes: ['3'],
-     previousScene: '3'
+     previousScene: '3',
+     progressionIndex: 14
    },
    {
      _id: '6',
@@ -83,7 +88,8 @@ export const SCENES: Scene[] = [
      isBattle: false,
      battleWon: false,
      nextScenes: ['9'],
-     previousScene: '3'
+     previousScene: '3',
+     progressionIndex: 15
    },
    {
      _id: '7',
@@ -97,7 +103,8 @@ export const SCENES: Scene[] = [
      isBattle: false,
      battleWon: false,
      nextScenes: ['8', '10', '11'],
-     previousScene: '4'
+     previousScene: '4',
+     progressionIndex: 14
    },
    {
      _id: '8',
@@ -111,7 +118,8 @@ export const SCENES: Scene[] = [
      isBattle: false,
      battleWon: false,
      nextScenes: ['14'],
-     previousScene: null
+     previousScene: null,
+     progressionIndex: 18
    },
    {
      _id: '9',
@@ -125,7 +133,8 @@ export const SCENES: Scene[] = [
      isBattle: false,
      battleWon: false,
      nextScenes: ['19'],
-     previousScene: '6'
+     previousScene: '6',
+     progressionIndex: 20
    },
    {
      _id: '10',
@@ -139,7 +148,8 @@ export const SCENES: Scene[] = [
      isBattle: false,
      battleWon: false,
      nextScenes: ['16'],
-     previousScene: '7'
+     previousScene: '7',
+     progressionIndex: 16
    },
    {
      _id: '11',
@@ -153,7 +163,8 @@ export const SCENES: Scene[] = [
      isBattle: false,
      battleWon: false,
      nextScenes: ['12', '13'],
-     previousScene: '7'
+     previousScene: '7',
+     progressionIndex: 16
    },
    {
      _id: '12',
@@ -167,7 +178,8 @@ export const SCENES: Scene[] = [
      isBattle: false,
      battleWon: false,
      nextScenes: ['23'],
-     previousScene: '11'
+     previousScene: '11',
+     progressionIndex: 100
    },
    {
      _id: '13',
@@ -181,7 +193,8 @@ export const SCENES: Scene[] = [
      isBattle: false,
      battleWon: false,
      nextScenes: ['8'],
-     previousScene: '11'
+     previousScene: '11',
+     progressionIndex: 17
    },
    {
      _id: '14',
@@ -195,7 +208,8 @@ export const SCENES: Scene[] = [
      isBattle: false,
      battleWon: false,
      nextScenes: ['15', '17', '18'],
-     previousScene: '8'
+     previousScene: '8',
+     progressionIndex: 25
    },
    {
      _id: '15',
@@ -209,7 +223,8 @@ export const SCENES: Scene[] = [
      isBattle: false,
      battleWon: false,
      nextScenes: ['23'],
-     previousScene: '14'
+     previousScene: '14',
+     progressionIndex: 100
    },
    {
      _id: '16',
@@ -223,7 +238,8 @@ export const SCENES: Scene[] = [
      isBattle: false,
      battleWon: false,
      nextScenes: ['20'],
-     previousScene: null
+     previousScene: null,
+     progressionIndex: 20
    },
    {
      _id: '17',
@@ -237,7 +253,8 @@ export const SCENES: Scene[] = [
      isBattle: false,
      battleWon: false,
      nextScenes: ['16'],
-     previousScene: '14'
+     previousScene: '14',
+     progressionIndex: 22
    },
    {
      _id: '18',
@@ -251,7 +268,8 @@ export const SCENES: Scene[] = [
      isBattle: false,
      battleWon: false,
      nextScenes: ['19'],
-     previousScene: '14'
+     previousScene: '14',
+     progressionIndex: 30
    },
    {
      _id: '19',
@@ -265,7 +283,8 @@ export const SCENES: Scene[] = [
      isBattle: false,
      battleWon: false,
      nextScenes: ['22'],
-     previousScene: null
+     previousScene: null,
+     progressionIndex: 35
    },
    {
      _id: '20',
@@ -279,7 +298,8 @@ export const SCENES: Scene[] = [
      isBattle: true,
      battleWon: false,
      nextScenes: ['23', '21'],
-     previousScene: '16'
+     previousScene: '16',
+     progressionIndex: 30
    },
    {
      _id: '21',
@@ -293,7 +313,8 @@ export const SCENES: Scene[] = [
      isBattle: false,
      battleWon: false,
      nextScenes: ['22'],
-     previousScene: '20'
+     previousScene: '20',
+     progressionIndex: 40
    },
    {
      _id: '22',
@@ -307,7 +328,8 @@ export const SCENES: Scene[] = [
      isBattle: true,
      battleWon: false,
      nextScenes: ['23', '25'],
-     previousScene: '21'
+     previousScene: '21',
+     progressionIndex: 50
    },
    {
      _id: '23',
@@ -321,7 +343,8 @@ export const SCENES: Scene[] = [
      isBattle: false,
      battleWon: false,
      nextScenes: [],
-     previousScene: null
+     previousScene: null,
+     progressionIndex: 100
    },
    {
      _id: '24', // DEVELOPPEMENT EN COURS...
@@ -334,7 +357,8 @@ export const SCENES: Scene[] = [
      isBattle: false,
      battleWon: false,
      nextScenes: [],
-     previousScene: null
+     previousScene: null,
+     progressionIndex: 0
    },
    {
      _id: '25',
@@ -348,7 +372,8 @@ export const SCENES: Scene[] = [
      isBattle: false,
      battleWon: false,
      nextScenes: ['26'],
-     previousScene: '22'
+     previousScene: '22',
+     progressionIndex: 60
    },
    {
      _id: '26',
@@ -362,7 +387,8 @@ export const SCENES: Scene[] = [
      isBattle: false,
      battleWon: false,
      nextScenes: ['27', '29'],
-     previousScene: null
+     previousScene: null,
+     progressionIndex: 63
    },
    {
      _id: '27',
@@ -376,7 +402,8 @@ export const SCENES: Scene[] = [
      isBattle: true,
      battleWon: false,
      nextScenes: ['28', '30'],
-     previousScene: '26'
+     previousScene: '26',
+     progressionIndex: 66
    },
    {
      _id: '28',
@@ -390,7 +417,8 @@ export const SCENES: Scene[] = [
      isBattle: true,
      battleWon: false,
      nextScenes: ['23', '31'],
-     previousScene: '27'
+     previousScene: '27',
+     progressionIndex: 70
    },
    {
      _id: '29',
@@ -404,7 +432,8 @@ export const SCENES: Scene[] = [
      isBattle: false,
      battleWon: false,
      nextScenes: ['33', '34'],
-     previousScene: '26'
+     previousScene: '26',
+     progressionIndex: 70
    },
    {
      _id: '30',
@@ -418,7 +447,8 @@ export const SCENES: Scene[] = [
      isBattle: true,
      battleWon: false,
      nextScenes: ['23', '31'],
-     previousScene: '27'
+     previousScene: '27',
+     progressionIndex: 70
    },
    {
      _id: '31',
@@ -432,7 +462,8 @@ export const SCENES: Scene[] = [
      isBattle: false,
      battleWon: false,
      nextScenes: ['36'],
-     previousScene: '28'
+     previousScene: '28',
+     progressionIndex: 80
    },
    {
      _id: '32',
@@ -446,7 +477,8 @@ export const SCENES: Scene[] = [
      isBattle: true,
      battleWon: false,
      nextScenes: ['23', '36'],
-     previousScene: '33'
+     previousScene: '33',
+     progressionIndex: 80
    },
    {
      _id: '33',
@@ -460,7 +492,8 @@ export const SCENES: Scene[] = [
      isBattle: false,
      battleWon: false,
      nextScenes: ['32', '36'],
-     previousScene: '29'
+     previousScene: '29',
+     progressionIndex: 75
    },
    {
      _id: '34',
@@ -474,7 +507,8 @@ export const SCENES: Scene[] = [
      isBattle: false,
      battleWon: false,
      nextScenes: ['36'],
-     previousScene: '29'
+     previousScene: '29',
+     progressionIndex: 80
    },
    { // A VERIFIER A PARTIR D'ICI CAR LES SCENES PAS ENCORE TERMINEES
      _id: '35',
@@ -487,7 +521,8 @@ export const SCENES: Scene[] = [
      isBattle: false,
      battleWon: false,
      nextScenes: ['26'],
-     previousScene: '36'
+     previousScene: '36',
+     progressionIndex: 75
    },
    {
      _id: '36',
@@ -500,7 +535,8 @@ export const SCENES: Scene[] = [
      isBattle: false,
      battleWon: false,
      nextScenes: ['35', '37'],
-     previousScene: null
+     previousScene: null,
+     progressionIndex: 85
    },
    {
      _id: '37',
@@ -513,7 +549,8 @@ export const SCENES: Scene[] = [
      isBattle: true,
      battleWon: false,
      nextScenes: ['38'],
-     previousScene: '36'
+     previousScene: '36',
+     progressionIndex: 90
    },
    {
      _id: '38',
@@ -526,6 +563,7 @@ export const SCENES: Scene[] = [
      isBattle: false,
      battleWon: false,
      nextScenes: [],
-     previousScene: '37'
+     previousScene: '37',
+     progressionIndex: 100
    },
  ];
