@@ -23,7 +23,11 @@ const routes: Routes = [
   {
     path: 'history-modal',
     loadChildren: () => import('./history-modal/history-modal.module').then( m => m.HistoryModalPageModule)
+  },  {
+    path: 'win-loose-modal',
+    loadChildren: () => import('./win-loose-modal/win-loose-modal.module').then( m => m.WinLooseModalPageModule)
   },
+
 ];
 
 @NgModule({
