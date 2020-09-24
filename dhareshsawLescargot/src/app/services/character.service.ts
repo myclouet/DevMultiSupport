@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Character, Hero } from '../classes/personnage';
-import { PERSONNAGES } from '../datas/listePersonnages';
+import { PERSONNAGES, HERO } from '../datas/listePersonnages';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { Scene } from '../classes/scene';
@@ -21,7 +21,7 @@ neutralFight: boolean = false;
     private router: Router,
     private sauvegardeService : SauvegardeService,
     ) {
-    this.heros = this.getPersonnageById('0'); // initialisation du héro
+    this.heros = this.getHero() ; // initialisation du héro
    }
 
   // Liste de personnages
@@ -32,6 +32,11 @@ neutralFight: boolean = false;
   // Personnage par id
   getPersonnageById(id) {
     return PERSONNAGES.find(({_id}) => _id === id);
+  }
+
+  // Heros 
+  getHero() {
+    return HERO;
   }
 
   /*
@@ -89,8 +94,7 @@ neutralFight: boolean = false;
   public winGame(scene) {
     console.log('Vous avez gagné !');
     this.battleWon = true;
-    const action = "tu as gagné le combat ! en route pour la scène ";
-    this.sauvegardeService.saveStory(scene, action)
+    this.sauvegardeService.saveAction("tu as gagné le combat !");
     //TMP jusqu'à modale réalisée - uniquement pour tests
     if(scene._id !== '37') {
       this.router.navigate(['scene/',scene.nextScenes[1]]);
@@ -104,8 +108,7 @@ neutralFight: boolean = false;
   public looseGame(scene) {
     console.log('Vous avez perdu !');
     this.battleWon = false;
-    const action = "tu as perdu le combat ! en route pour la scène  ";
-    this.sauvegardeService.saveStory(scene, action)
+    this.sauvegardeService.saveAction("tu as perdu le combat !")
     //TMP jusqu'à modale réalisée - uniquement pour tests
     this.router.navigate(['scene/',scene.nextScenes[0]]);
   }

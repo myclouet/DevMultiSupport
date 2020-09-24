@@ -67,6 +67,10 @@ export class ScenePage implements OnInit {
     this.progressionBar = this.scene.progressionIndex / 100;
     this.progressionBuffer = this.scene.progressionIndex / 100;
 
+  }
+
+  ionViewDidEnter() { // initialisation d'un element dans cette méthode pour corriger le bug d'un routage d'une scene précédente
+    this.sauvegardeService.saveScene(this.scene);
     this.moveImage();
   }
 
@@ -75,14 +79,11 @@ export class ScenePage implements OnInit {
   // ----------------------------------------------------------------------------------------------------
 
   nextScene(indice: number) {
-    const action = "tu as choisi cette direction : scène ";
     this.router.navigate(['scene/', this.scene.nextScenes[indice]]);
-    console.log(this.scene);
-    this.sauvegardeService.saveStory(this.scene, action);
   }
 
   prevScene() {
-    this.router.navigate(['scene/',this.scene.previousScene]);
+    this.router.navigate(['scene/', this.scene.previousScene]);
   }
 
   // ----------------------------------------------------------------------------------------------------
@@ -153,8 +154,7 @@ this.title = 'COMBAT';
   // Fuite
   // ------------------------------------------------------------------------------------------------
   async escape() {
-    const action = "tu as fui vers la scène ";
-    this.sauvegardeService.saveStory(this.scene, action);
+    this.sauvegardeService.saveAction("tu as fui le combat ");
     const value = this.heros.strength + this.heros.luck - this.adversaire.endurance;
     let message: any;
     if (value <= 1) {
@@ -203,12 +203,6 @@ this.title = 'COMBAT';
     }
   }
 
-  /* Sauvegarder */
-/*   sauvegarder() {
-    this.sauvegardeService.setStateGame(this.heros,this.scene);
-    this.sauvegardeService.saveGame();
-  } */
-
   // --------------------------------------------------------------------------------------------------
   // Ouverture modale
   // --------------------------------------------------------------------------------------------------
@@ -234,10 +228,10 @@ this.title = 'COMBAT';
   async openModalHistory() {
     const modal = await this.modalController.create({
       component: HistoryModalPage,
-      componentProps: {
+      /*componentProps: {
        //"paramScene": this.scene, 
-        "paramStory": this.sauvegardeService.getStory(), 
-      }
+        //"paramStory": this.sauvegardeService.getStory(), 
+      }*/
     });  
 
     modal.onDidDismiss().then((dataReturned) => {
