@@ -13,5 +13,6 @@ export class Scene {
     battleWon: boolean;
     nextScenes: string [];
     previousScene: string;
+    audioText: string;
     progressionIndex: number;
 }
