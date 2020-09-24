@@ -36,6 +36,7 @@ export class ScenePage implements OnInit {
   progressionBar: number;
   progressionBuffer: number;
   marginVar: string;
+  marginNum: number;
 
   // ----------------------------------------------------------------------------------------------------
   // CONSTRUCTOR
@@ -66,12 +67,12 @@ export class ScenePage implements OnInit {
 
     this.progressionBar = this.scene.progressionIndex / 100;
     this.progressionBuffer = this.scene.progressionIndex / 100;
-
+    this.marginNum = this.scene.progressionIndex - 5;
+    this.marginVar = this.marginNum + '%';
   }
 
   ionViewDidEnter() { // initialisation d'un element dans cette méthode pour corriger le bug d'un routage d'une scene précédente
     this.sauvegardeService.saveScene(this.scene);
-    this.moveImage();
   }
 
   // ----------------------------------------------------------------------------------------------------
@@ -80,6 +81,7 @@ export class ScenePage implements OnInit {
 
   nextScene(indice: number) {
     this.router.navigate(['scene/', this.scene.nextScenes[indice]]);
+
   }
 
   prevScene() {
@@ -101,10 +103,10 @@ export class ScenePage implements OnInit {
   async fightSelection() {
     const value = this.heros.strength + this.heros.luck - this.adversaire.endurance;
     let message: any;
-    if(value <= 1) {
+    if (value <= 1) {
       message = "À vous de faire le meilleur choix !!!<br>L'issue d'un combat automatique est aléatoire, mais si vous désirez vous pouvez combattre avec un jet de dé. <br> Vous devez obtenir 1 pour gagner le combat";
     }
-    else if (value >6) {
+    else if (value > 6) {
       message = "À vous de faire le meilleur choix !!!<br>L'issue d'un combat automatique est aléatoire, mais si vous désirez vous pouvez combattre avec un jet de dé. <br> Vous devez obtenir 6 ou moins pour gagner le combat";
     }
     else {
@@ -147,7 +149,7 @@ this.title = 'COMBAT';
     } else {
       this.title = 'RENCONTRE';
     }
-    
+
   }
 
   // ---------------------------------------------------------------------------------------------
@@ -232,7 +234,7 @@ this.title = 'COMBAT';
        //"paramScene": this.scene, 
         //"paramStory": this.sauvegardeService.getStory(), 
       }*/
-    });  
+    });
 
     modal.onDidDismiss().then((dataReturned) => {
       if (dataReturned !== null) {
@@ -243,17 +245,15 @@ this.title = 'COMBAT';
     return await modal.present();
   }
 
-
-
   // -----------------------------------------------------------------------------------------------
   // Sauvegarder partie
   // -----------------------------------------------------------------------------------------------
 
-   save() {      
+   save() {
     this.sauvegardeService.setStateGame(this.heros,this.scene);
     this.sauvegardeService.saveGame();
     this.saveAlert();
-  } 
+  }
 
   async saveAlert() {
     const alert = await this.alertController.create({
@@ -349,10 +349,10 @@ this.title = 'COMBAT';
     // Barre de progression
     // ---------------------------------------------------------------------------------
 
-    moveImage() {
+    /*moveImage() {
 	    let element = document.getElementById('margin');
-      element.style.marginLeft = this.scene.progressionIndex + '%';
+      element.style.marginLeft = ;
       let maVar = element.style.marginLeft;
       console.log(maVar);
-	  }
+	  }*/
 }

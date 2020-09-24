@@ -5,14 +5,8 @@
         <ion-title>{{title}}</ion-title>
       </ion-row>
       <ion-row>
-      <ion-img id="margin" src="./assets/icon/snail_logo.png"></ion-img>
+      <ion-img *ngIf="marginNum >= 0" id="margin" src="./assets/icon/snail_logo.png" [style.marginLeft]=marginVar></ion-img>
           <ion-progress-bar color="primary" value="{{progressionBar}}" buffer="{{progressionBuffer}}"></ion-progress-bar>
-        <!--<ion-col size="3" style="margin: auto;">
-          <ion-img src="./assets/icon/snail_logo.png" style="width: 50%; margin: auto"></ion-img>
-        </ion-col>-->
-        <!--<ion-col size="9" style="margin: auto;">
-          
-        </ion-col> --> 
       </ion-row>
       <ion-row>
         <ion-label style="margin: auto">Avancement : {{scene.progressionIndex}} %</ion-label>
