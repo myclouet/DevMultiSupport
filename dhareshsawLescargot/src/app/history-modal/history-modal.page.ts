@@ -21,10 +21,10 @@ export class HistoryModalPage implements OnInit {
   }
 
   ngOnInit() {
-     console.log(this.navParams);
+     //console.log(this.navParams);
      this.story = this.sauvegardeService.getStory();
-     console.log(this.story);
-     this.story = this.navParams.data.paramStory;
+     //console.log(this.story);
+     //this.story = this.navParams.data.paramStory;
   }
 
 
