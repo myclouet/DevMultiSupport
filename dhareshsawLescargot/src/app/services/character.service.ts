@@ -94,8 +94,7 @@ neutralFight: boolean = false;
   public winGame(scene) {
     console.log('Vous avez gagné !');
     this.battleWon = true;
-    const action = "tu as gagné le combat ! en route pour la scène ";
-    this.sauvegardeService.saveStory(scene, action)
+    this.sauvegardeService.saveAction("tu as gagné le combat !");
     //TMP jusqu'à modale réalisée - uniquement pour tests
     if(scene._id !== '37') {
       this.router.navigate(['scene/',scene.nextScenes[1]]);
@@ -109,8 +108,7 @@ neutralFight: boolean = false;
   public looseGame(scene) {
     console.log('Vous avez perdu !');
     this.battleWon = false;
-    const action = "tu as perdu le combat ! en route pour la scène  ";
-    this.sauvegardeService.saveStory(scene, action)
+    this.sauvegardeService.saveAction("tu as perdu le combat !")
     //TMP jusqu'à modale réalisée - uniquement pour tests
     this.router.navigate(['scene/',scene.nextScenes[0]]);
   }
