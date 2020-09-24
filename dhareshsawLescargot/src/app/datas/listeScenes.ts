@@ -14,6 +14,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['2'],
      previousScene: null,
+     audioText: 'assets/audio/prologue.mp3',
      progressionIndex: 0
    },
    {
@@ -29,6 +30,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['3'],
      previousScene: '1',
+     audioText: 'assets/audio/introduction.mp3',
      progressionIndex: 5
    },
    {
@@ -44,6 +46,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['4', '5', '6'],
      previousScene: '2',
+     audioText: null,
      progressionIndex: 10
    },
    {
@@ -59,6 +62,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['7'],
      previousScene: '3',
+     audioText: null,
      progressionIndex: 12
    },
    {
@@ -74,6 +78,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['3'],
      previousScene: '3',
+     audioText: null,
      progressionIndex: 14
    },
    {
@@ -83,12 +88,17 @@ export const SCENES: Scene[] = [
      description: 'Vous criez de toutes vos forces pour appeler à l\'aide, c\'est à dire que vous ne faites quasiment aucun bruit. Mais contre toute attente, le lama toujours aussi nonchalant tourne la tête vers le chat avec un air agacé. Le chat lui est agacé par votre comportement commence à faire le dos rond hérisse son poil. Ça ne fait pas un pli, le lama envoie un crachat si puissant et si fourni qu\'il balaye le chat et divise par deux son volume, tout mouillé qu\'il est par la bave du ruminant.',
      picture: '../assets/fond-rencontre.png',
      encounter: null,
-     bonusObject: null,
+     bonusObject: {
+      description: 'bière',
+      image: '',
+      bonusPower: ['strength', 1]
+    },
      bonusPower: [null, null],
      isBattle: false,
      battleWon: false,
      nextScenes: ['9'],
      previousScene: '3',
+     audioText: null,
      progressionIndex: 15
    },
    {
@@ -104,6 +114,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['8', '10', '11'],
      previousScene: '4',
+     audioText: null,
      progressionIndex: 14
    },
    {
@@ -119,6 +130,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['14'],
      previousScene: null,
+     audioText: null,
      progressionIndex: 18
    },
    {
@@ -134,6 +146,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['19'],
      previousScene: '6',
+     audioText: null,
      progressionIndex: 20
    },
    {
@@ -149,6 +162,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['16'],
      previousScene: '7',
+     audioText: null,
      progressionIndex: 16
    },
    {
@@ -164,6 +178,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['12', '13'],
      previousScene: '7',
+     audioText: null,
      progressionIndex: 16
    },
    {
@@ -179,6 +194,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['23'],
      previousScene: '11',
+     audioText: null,
      progressionIndex: 100
    },
    {
@@ -194,6 +210,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['8'],
      previousScene: '11',
+     audioText: null,
      progressionIndex: 17
    },
    {
@@ -209,6 +226,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['15', '17', '18'],
      previousScene: '8',
+     audioText: null,
      progressionIndex: 25
    },
    {
@@ -224,6 +242,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['23'],
      previousScene: '14',
+     audioText: null,
      progressionIndex: 100
    },
    {
@@ -239,6 +258,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['20'],
      previousScene: null,
+     audioText: null,
      progressionIndex: 20
    },
    {
@@ -254,6 +274,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['16'],
      previousScene: '14',
+     audioText: null,
      progressionIndex: 22
    },
    {
@@ -269,6 +290,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['19'],
      previousScene: '14',
+     audioText: null,
      progressionIndex: 30
    },
    {
@@ -284,6 +306,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['22'],
      previousScene: null,
+     audioText: null,
      progressionIndex: 35
    },
    {
@@ -299,6 +322,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['23', '21'],
      previousScene: '16',
+     audioText: null,
      progressionIndex: 30
    },
    {
@@ -314,6 +338,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['22'],
      previousScene: '20',
+     audioText: null,
      progressionIndex: 40
    },
    {
@@ -329,6 +354,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['23', '25'],
      previousScene: '21',
+     audioText: null,
      progressionIndex: 50
    },
    {
@@ -344,6 +370,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: [],
      previousScene: null,
+     audioText: null,
      progressionIndex: 100
    },
    {
@@ -358,6 +385,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: [],
      previousScene: null,
+     audioText: null,
      progressionIndex: 0
    },
    {
@@ -373,6 +401,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['26'],
      previousScene: '22',
+     audioText: null,
      progressionIndex: 60
    },
    {
@@ -388,6 +417,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['27', '29'],
      previousScene: null,
+     audioText: null,
      progressionIndex: 63
    },
    {
@@ -403,6 +433,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['28', '30'],
      previousScene: '26',
+     audioText: null,
      progressionIndex: 66
    },
    {
@@ -418,6 +449,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['23', '31'],
      previousScene: '27',
+     audioText: null,
      progressionIndex: 70
    },
    {
@@ -433,6 +465,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['33', '34'],
      previousScene: '26',
+     audioText: null,
      progressionIndex: 70
    },
    {
@@ -448,6 +481,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['23', '31'],
      previousScene: '27',
+     audioText: null,
      progressionIndex: 70
    },
    {
@@ -463,6 +497,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['36'],
      previousScene: '28',
+     audioText: null,
      progressionIndex: 80
    },
    {
@@ -478,6 +513,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['23', '36'],
      previousScene: '33',
+     audioText: null,
      progressionIndex: 80
    },
    {
@@ -493,6 +529,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['32', '36'],
      previousScene: '29',
+     audioText: null,
      progressionIndex: 75
    },
    {
@@ -508,6 +545,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['36'],
      previousScene: '29',
+     audioText: null,
      progressionIndex: 80
    },
    { // A VERIFIER A PARTIR D'ICI CAR LES SCENES PAS ENCORE TERMINEES
@@ -522,6 +560,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['26'],
      previousScene: '36',
+     audioText: null,
      progressionIndex: 75
    },
    {
@@ -536,6 +575,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['35', '37'],
      previousScene: null,
+     audioText: null,
      progressionIndex: 85
    },
    {
@@ -550,6 +590,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['38'],
      previousScene: '36',
+     audioText: null,
      progressionIndex: 90
    },
    {
@@ -564,6 +605,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: [],
      previousScene: '37',
+     audioText: null,
      progressionIndex: 100
    },
  ];

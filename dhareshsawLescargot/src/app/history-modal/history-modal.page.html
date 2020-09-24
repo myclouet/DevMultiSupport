@@ -6,12 +6,12 @@
 
 <ion-content padding>
 <ion-card>
-    <div *ngFor="let element of sauvegardeService.story; let i = index">
+    <div *ngFor="let element of sauvegardeService.story">
+      <p>  Arrivée dans la scène : {{element.scene._id}} </p>
+      <p>  {{element.scene.title}} </p>
+      <p>  {{element.scene.description}} </p>
+      <p *ngFor="let action of element.actions">  {{action}} </p>
     
-      <p>  Titre de la scène : {{element.scene.title}} </p>
-      <p>  Description de la scène : {{element.scene.description}} </p>
-      <p>  {{element.action}} {{element.scene._id}} </p>
-     
     </div>
   </ion-card>
 
