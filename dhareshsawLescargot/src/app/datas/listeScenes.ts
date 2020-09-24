@@ -5,7 +5,7 @@ export const SCENES: Scene[] = [
      _id: '1',
      title: 'Prologue',
      // tslint:disable-next-line: max-line-length
-     description: 'Jeune escargot atteignant juste l’âge de \"partir chercher les salades\", vous vous prénommez Dhareshsaw. Vous habitez encore la maison familiale, enfouie sous un grand et vieux chêne. Vos parents sont aimants, votre foyer douillet et sur, cependant, un petit je ne sais quoi dans l\'air du dehors fait frétiller vos antennes. Dans 10 jours, c\'est la fête du potager, et les jeunes escargots se sont tous donnés rendez-vous au champ des salades. Cet évènement marque le début de l\’âge adulte pour les escargots. Vous sortez un œil de votre trou et l\'appel étant irrésistible, vous sortez.',
+     description: 'Vous etes un jeune escargot et vous vous prénommez Dhareshsaw. Vos parents sont aimants, votre foyer douillet et sur, cependant dans 10 jours c\'est la fête du potager, et les jeunes escargots se sont tous donnés rendez-vous au champ des salades. Cet évènement marque le début de l\’âge adulte pour les escargots. Vous étendez un œil de votre trou et sortez.',
      picture: '../assets/fond-rencontre.png',
      encounter: '0',
      bonusObject: null,
@@ -20,7 +20,7 @@ export const SCENES: Scene[] = [
      _id: '2',
      title: 'Introduction',
      // tslint:disable-next-line: max-line-length
-     description: 'Vous vous déplacez tranquillement, lentement au bord du chemin par un temps ensoleillé. \n Vous êtes un jeune gastéropode et vous vous réjouissez. Une belle journée s’annonce. Tout est pour le mieux vous dites-vous. Un temps magnifique pour une journée que vous souhaitez fort agréable. Vous avez rendez-vous. Plusieurs de vos amis vous ont convié à la fête. Légumes à gogo, salade, chicorée, batavia, et tant d’autres. Ils ont tout prévu pour un repas vert gargantuesque. Végan, c’est votre credo mais veggie avec des amis, c’est votre gimmick. Vous savez que vous avez un long chemin à parcourir pour atteindre ce champ rêvé. Semé d’embûches ? Sans doute mais vous avez promis. C’est parti.',
+     description: 'Vous vous déplacez tranquillement par un temps ensoleillé. \n  Une belle journée s’annonce. Vous avez rendez-vous. Plusieurs de vos amis vous ont convié à la fête. Légumes à gogo, salade, chicorée, batavia, et tant d’autres. Vous savez que vous avez un long chemin à parcourir pour atteindre ce champ rêvé. Semé d’embûches ? Sans doute mais vous avez promis. Vous vous mettez en route.',
      picture: '../../assets/fond-rencontre.png',
      encounter: '0',
      bonusObject: null,
@@ -35,7 +35,7 @@ export const SCENES: Scene[] = [
      _id: '3',
      title: 'Vanessa le chat',
      // tslint:disable-next-line: max-line-length
-     description: 'Vous êtes en pleine progression lorsque le ciel s\'assombrit. Une immense masse vous masque l’horizon. Gigantesque, poilue, vous n\'en voyez tout d’abord que les pattes griffues. Félines. Un chat. Votre première rencontre et vous tombez sur un chat. \n - « Bonjour, La limace ! » \n- « Je suis un escargot en fait » \n- « C’est pareil la spirale en plus. Sauf que toi on te mange ! » \n - « Oui, enfin pas tous » \n - « Je n’aime pas trop mais je peux me laisser tenter ce matin » \n La discussion est assez désagréable et le jeu est serré, il vous faut trouver de quoi occuper ce chat. Si vous souhaitez lui donner le trou d\'une famille de souris que vous avez repéré plus tôt, c\'est par la droite. Si vous souhaitez le convaincre de ne pas vous manger grâce à votre rhétorique baveuse, c\'est par la gauche. Enfin, si vous souhaitez attirer l\'attention d\'un lama...quoi ? un lama ??!! Oui, oui c\'est bien un lama qui broute nonchalamment de l\'herbe à 2 mètres de vous. Allez tout droit.',
+     description: 'Vous êtes en pleine progression lorsque le ciel s\'assombrit. Une immense masse vous masque l’horizon. Un chat. Votre première rencontre et vous tombez sur un chat. \n - « Bonjour, La limace ! » \n- « Je suis un escargot en fait » \n- « C’est pareil la spirale en plus. Sauf que toi on te mange ! » \n - « Oui, enfin pas tous » \n - « Je n’aime pas trop mais je peux me laisser tenter ce matin » \n Le jeu est serré, il vous faut trouver de quoi occuper ce chat. Si vous souhaitez lui donner le trou d\'une famille de souris que vous avez repéré plus tôt, c\'est par la droite. Si vous souhaitez le convaincre de ne pas vous manger grâce à votre rhétorique baveuse, c\'est par la gauche. Enfin, si vous souhaitez attirer l\'attention d\'un lama qui broute nonchalamment de l\'herbe à 2 mètres de vous. Allez tout droit.',
      picture: '../../assets/fond-rencontre.png',
      encounter: '12',
      bonusObject: null,
