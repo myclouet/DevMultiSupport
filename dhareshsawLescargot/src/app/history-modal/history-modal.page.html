@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar text-center>
+    <ion-title>Déroulement de l'histoire</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<ion-card>
+    <div *ngFor="let element of sauvegardeService.story; let i = index">
+    
+      <p>  Titre de la scène : {{element.scene.title}} </p>
+      <p>  Description de la scène : {{element.scene.description}} </p>
+      <p>  {{element.action}} {{element.scene._id}} </p>
+     
+    </div>
+  </ion-card>
+
+  <ion-button  expand="full" 	(click)="closeModalHistory()">Fermer </ion-button>	
+
+</ion-content>
