@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵCodegenComponentFactoryResolver } from '@angular/core';
 import { CharacterService } from '../services/character.service';
 import { Hero, Character } from '../classes/personnage';
 import { Scene } from '../classes/scene';
@@ -12,6 +12,8 @@ import { SauvegardeService } from '../services/sauvegarde.service';
 import { HistoryModalPage } from '../history-modal/history-modal.page';
 import { AudioService } from '../services/audio.service';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { isLoweredSymbol } from '@angular/compiler';
+import { ObjectInventory } from '../classes/object';
 
 
 
@@ -69,6 +71,12 @@ export class ScenePage implements OnInit {
     this.progressionBuffer = this.scene.progressionIndex / 100;
     this.marginNum = this.scene.progressionIndex - 5;
     this.marginVar = this.marginNum + '%';
+
+    this.getObject();
+    if(this.scene._id === '1'){
+      this.alertSoundButtons();
+    }
+
   }
 
   ionViewDidEnter() { // initialisation d'un element dans cette méthode pour corriger le bug d'un routage d'une scene précédente
@@ -87,6 +95,30 @@ export class ScenePage implements OnInit {
   prevScene() {
     this.router.navigate(['scene/', this.scene.previousScene]);
   }
+
+  getObject() {
+    if(this.scene.bonusObject !== null) {
+      this.heros.items = this.heros.items || [];
+      this.heros.items.push(this.scene.bonusObject);
+      console.log(this.heros.items);
+    }
+  }
+
+  async alertSoundButtons() {
+      const alert = await this.alertController.create({
+        cssClass: '',
+        header: 'Contrôle du son',
+        message: `Vous pouvez couper le fond sonore en appuyant sur </br><img class="imgSound" src="../assets/icon/volume-mute-outline.svg" alt="dice"></br></br>Vous pouvez activer la lecture audio des scènes en appuyant sur</br> <img src="../assets/icon/play-circle-outline.svg" alt="dice" style="border-radius: 2px"> `,
+        buttons: [
+          {
+            text: 'OK',
+          }
+        ]
+    });
+    await alert.present();
+  }
+
+
 
   // ----------------------------------------------------------------------------------------------------
   // METHODS COMBATS
@@ -145,7 +177,7 @@ export class ScenePage implements OnInit {
     if (this.scene.encounter === null) {
       this.title = 'EN CHEMIN';
     } else if (this.scene.isBattle === true) {
-this.title = 'COMBAT';
+      this.title = 'COMBAT';
     } else {
       this.title = 'RENCONTRE';
     }
