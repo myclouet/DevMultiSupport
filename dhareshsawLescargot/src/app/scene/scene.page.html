@@ -5,12 +5,17 @@
         <ion-title>{{title}}</ion-title>
       </ion-row>
       <ion-row>
-        <ion-col size="3" style="margin: auto;">
-          <ion-label style="font-size: 70%; margin: auto;">Progression</ion-label>
-        </ion-col>
-        <ion-col size="9" style="margin: auto;">
+      <ion-img id="margin" src="./assets/icon/snail_logo.png"></ion-img>
           <ion-progress-bar color="primary" value="{{progressionBar}}" buffer="{{progressionBuffer}}"></ion-progress-bar>
-        </ion-col>  
+        <!--<ion-col size="3" style="margin: auto;">
+          <ion-img src="./assets/icon/snail_logo.png" style="width: 50%; margin: auto"></ion-img>
+        </ion-col>-->
+        <!--<ion-col size="9" style="margin: auto;">
+          
+        </ion-col> --> 
+      </ion-row>
+      <ion-row>
+        <ion-label style="margin: auto">Avancement : {{scene.progressionIndex}} %</ion-label>
       </ion-row>
     </ion-grid> 
   </ion-toolbar>

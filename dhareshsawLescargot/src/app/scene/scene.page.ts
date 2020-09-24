@@ -35,6 +35,7 @@ export class ScenePage implements OnInit {
   audioVoiceBtn: Boolean = false;
   progressionBar: number;
   progressionBuffer: number;
+  marginVar: string;
 
   // ----------------------------------------------------------------------------------------------------
   // CONSTRUCTOR
@@ -65,7 +66,8 @@ export class ScenePage implements OnInit {
 
     this.progressionBar = this.scene.progressionIndex / 100;
     this.progressionBuffer = this.scene.progressionIndex / 100;
-    console.log(this.progressionBar);
+
+    this.moveImage();
   }
 
   // ----------------------------------------------------------------------------------------------------
@@ -74,16 +76,13 @@ export class ScenePage implements OnInit {
 
   nextScene(indice: number) {
     const action = "tu as choisi cette direction : scène ";
-    this.router.navigate(['scene/',this.scene.nextScenes[indice]]);
+    this.router.navigate(['scene/', this.scene.nextScenes[indice]]);
     console.log(this.scene);
     this.sauvegardeService.saveStory(this.scene, action);
-    
-    
   }
 
   prevScene() {
     this.router.navigate(['scene/',this.scene.previousScene]);
-    
   }
 
   // ----------------------------------------------------------------------------------------------------
@@ -351,4 +350,15 @@ this.title = 'COMBAT';
       else difficulte = "normal";
       return difficulte;
     }
+
+    // ---------------------------------------------------------------------------------
+    // Barre de progression
+    // ---------------------------------------------------------------------------------
+
+    moveImage() {
+	    let element = document.getElementById('margin');
+      element.style.marginLeft = this.scene.progressionIndex + '%';
+      let maVar = element.style.marginLeft;
+      console.log(maVar);
+	  }
 }
