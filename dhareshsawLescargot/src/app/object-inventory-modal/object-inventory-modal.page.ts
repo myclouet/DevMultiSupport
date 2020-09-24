@@ -28,7 +28,7 @@ export class ObjectInventoryModalPage implements OnInit {
   ngOnInit() {
     this.modalHero = this.navParams.data.hero;
     // if hero has the key, it will appear in a separate ion-card otherwise it won't appear
-    if (this.modalHero.key !== undefined) {
+    if (this.modalHero.key !== null) {
       this.keyToAppear = true;
     } else {
       this.keyToAppear = false;
