@@ -32,10 +32,7 @@ export class HomePage implements OnInit{
     this.router.navigate(['/scene/1']);
   }
 
-  loadGame() {
-    this.restoreGame();
-  }
-
+  // restoreGame déplacé dans le homepage pour corriger les circular dependancies
   restoreGame() {
     this.storage.get('stateGame').then((state)=>{
       this.sauvegardeService.setStateGame(state.hero,state.scene); // on récupère l'état du jeu
@@ -46,7 +43,9 @@ export class HomePage implements OnInit{
       this.restoreAlert();    
     });
     this.storage.get('story').then((story)=>{
+      console.log(story);
       this.sauvegardeService.setStory(story);
+      console.log(this.sauvegardeService.getStory());
     });
   }
 
