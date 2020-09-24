@@ -88,7 +88,11 @@ export const SCENES: Scene[] = [
      description: 'Vous criez de toutes vos forces pour appeler à l\'aide, c\'est à dire que vous ne faites quasiment aucun bruit. Mais contre toute attente, le lama toujours aussi nonchalant tourne la tête vers le chat avec un air agacé. Le chat lui est agacé par votre comportement commence à faire le dos rond hérisse son poil. Ça ne fait pas un pli, le lama envoie un crachat si puissant et si fourni qu\'il balaye le chat et divise par deux son volume, tout mouillé qu\'il est par la bave du ruminant.',
      picture: '../assets/fond-rencontre.png',
      encounter: null,
-     bonusObject: null,
+     bonusObject: {
+      description: 'bière',
+      image: '',
+      bonusPower: ['strength', 1]
+    },
      bonusPower: [null, null],
      isBattle: false,
      battleWon: false,
