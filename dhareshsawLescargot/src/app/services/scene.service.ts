@@ -11,11 +11,11 @@ import { Scene } from '../classes/scene';
 export class SceneService {
 
 
-  constructor(private characterService : CharacterService, private sauvegardeService : SauvegardeService,private router: Router) { }
+  constructor(private characterService: CharacterService, private sauvegardeService: SauvegardeService, private router: Router) { }
 
-  //----------------------------------------------------------------------------------------------------
-  //METHODS
-  //----------------------------------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------------------------------
+  // METHODS
+  // ----------------------------------------------------------------------------------------------------
 
   /**
    * Obtention de la scene par son numéro id
@@ -29,7 +29,7 @@ export class SceneService {
   }
 
   newGame() {
-    this.router.navigate(['scene/','1']);
+    this.router.navigate(['scene/', '1']);
   }
 
 }
