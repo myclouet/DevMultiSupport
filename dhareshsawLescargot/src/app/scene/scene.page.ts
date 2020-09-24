@@ -12,6 +12,7 @@ import { SauvegardeService } from '../services/sauvegarde.service';
 import { HistoryModalPage } from '../history-modal/history-modal.page';
 import { AudioService } from '../services/audio.service';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { ObjectInventory } from '../classes/object';
 
 
 
@@ -66,6 +67,7 @@ export class ScenePage implements OnInit {
     this.progressionBar = this.scene.progressionIndex / 100;
     this.progressionBuffer = this.scene.progressionIndex / 100;
     console.log(this.progressionBar);
+    this.getObject(this.scene.bonusObject);
   }
 
   // ----------------------------------------------------------------------------------------------------
@@ -77,13 +79,16 @@ export class ScenePage implements OnInit {
     this.router.navigate(['scene/',this.scene.nextScenes[indice]]);
     console.log(this.scene);
     this.sauvegardeService.saveStory(this.scene, action);
-    
-    
   }
 
   prevScene() {
     this.router.navigate(['scene/',this.scene.previousScene]);
-    
+  }
+
+  getObject(object: ObjectInventory) {
+    if (object !== null) {
+        this.heros.items.push(object);
+    }
   }
 
   // ----------------------------------------------------------------------------------------------------
