@@ -1,6 +1,6 @@
 import { Character, Hero } from '../classes/personnage';
 
-export const HERO: Hero = 
+export const HERO: Hero =   
  {
   _id: '0',
   name: 'Dhareshsaw l\'escargot',
