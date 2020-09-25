@@ -79,8 +79,11 @@ export class ScenePage implements OnInit {
 
   }
 
-  ionViewDidEnter() { // initialisation d'un element dans cette méthode pour corriger le bug d'un routage d'une scene précédente
-    this.sauvegardeService.saveScene(this.scene);
+  ionViewDidEnter() { // utilisation de ionViewDidEnter pour corriger le bug lors d'un routage d'une scene précédente
+    if (this.sauvegardeService.getRestore())  // correction bug ajout de la scene dans l'historique a la restauration
+      this.sauvegardeService.setRestore(false);
+    else  
+      this.sauvegardeService.saveScene(this.scene);
   }
 
   // ----------------------------------------------------------------------------------------------------

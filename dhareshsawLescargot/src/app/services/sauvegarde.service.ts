@@ -10,6 +10,7 @@ import { AlertController } from '@ionic/angular';
 export class SauvegardeService {
   private stateGame: {hero: Hero, scene: Scene}
   private story:{scene:Scene, actions:string[]}[]=[];
+  private restore:boolean=false;
 
   constructor(public storage: Storage,
               public alertController: AlertController) { }
@@ -59,6 +60,13 @@ export class SauvegardeService {
 
   getStory() {
     return this.story;
+  }
+
+  setRestore(state:boolean) {
+    this.restore=state;
+  }
+  getRestore() {
+    return this.restore;
   }
 
 }

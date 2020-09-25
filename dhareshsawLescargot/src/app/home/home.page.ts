@@ -38,6 +38,7 @@ export class HomePage implements OnInit{
       this.sauvegardeService.setStateGame(state.hero,state.scene); // on récupère l'état du jeu
       this.characterService.heros=this.sauvegardeService.getStateGame().hero;  // on affecte le héro du service character avec le héro récupéré
       //console.log(this.characterService.heros);
+      this.sauvegardeService.setRestore(true);
       const idSceneToRestore=this.sauvegardeService.getStateGame().scene._id;  // on récupère l'id de la scène à restaurer
       this.router.navigate(['/scene/'+idSceneToRestore]); // on restaure la scène
       this.restoreAlert();    
