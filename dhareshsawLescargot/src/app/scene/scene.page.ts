@@ -35,6 +35,8 @@ export class ScenePage implements OnInit {
   audioVoiceBtn: Boolean = false;
   progressionBar: number;
   progressionBuffer: number;
+  marginVar: string;
+  marginNum: number;
 
   // ----------------------------------------------------------------------------------------------------
   // CONSTRUCTOR
@@ -65,7 +67,12 @@ export class ScenePage implements OnInit {
 
     this.progressionBar = this.scene.progressionIndex / 100;
     this.progressionBuffer = this.scene.progressionIndex / 100;
-    console.log(this.progressionBar);
+    this.marginNum = this.scene.progressionIndex - 5;
+    this.marginVar = this.marginNum + '%';
+  }
+
+  ionViewDidEnter() { // initialisation d'un element dans cette méthode pour corriger le bug d'un routage d'une scene précédente
+    this.sauvegardeService.saveScene(this.scene);
   }
 
   // ----------------------------------------------------------------------------------------------------
@@ -73,17 +80,12 @@ export class ScenePage implements OnInit {
   // ----------------------------------------------------------------------------------------------------
 
   nextScene(indice: number) {
-    const action = "tu as choisi cette direction : scène ";
-    this.router.navigate(['scene/',this.scene.nextScenes[indice]]);
-    console.log(this.scene);
-    this.sauvegardeService.saveStory(this.scene, action);
-    
-    
+    this.router.navigate(['scene/', this.scene.nextScenes[indice]]);
+
   }
 
   prevScene() {
-    this.router.navigate(['scene/',this.scene.previousScene]);
-    
+    this.router.navigate(['scene/', this.scene.previousScene]);
   }
 
   // ----------------------------------------------------------------------------------------------------
@@ -101,10 +103,10 @@ export class ScenePage implements OnInit {
   async fightSelection() {
     const value = this.heros.strength + this.heros.luck - this.adversaire.endurance;
     let message: any;
-    if(value <= 1) {
+    if (value <= 1) {
       message = "À vous de faire le meilleur choix !!!<br>L'issue d'un combat automatique est aléatoire, mais si vous désirez vous pouvez combattre avec un jet de dé. <br> Vous devez obtenir 1 pour gagner le combat";
     }
-    else if (value >6) {
+    else if (value > 6) {
       message = "À vous de faire le meilleur choix !!!<br>L'issue d'un combat automatique est aléatoire, mais si vous désirez vous pouvez combattre avec un jet de dé. <br> Vous devez obtenir 6 ou moins pour gagner le combat";
     }
     else {
@@ -147,15 +149,14 @@ this.title = 'COMBAT';
     } else {
       this.title = 'RENCONTRE';
     }
-    
+
   }
 
   // ---------------------------------------------------------------------------------------------
   // Fuite
   // ------------------------------------------------------------------------------------------------
   async escape() {
-    const action = "tu as fui vers la scène ";
-    this.sauvegardeService.saveStory(this.scene, action);
+    this.sauvegardeService.saveAction("tu as fui le combat ");
     const value = this.heros.strength + this.heros.luck - this.adversaire.endurance;
     let message: any;
     if (value <= 1) {
@@ -204,12 +205,6 @@ this.title = 'COMBAT';
     }
   }
 
-  /* Sauvegarder */
-/*   sauvegarder() {
-    this.sauvegardeService.setStateGame(this.heros,this.scene);
-    this.sauvegardeService.saveGame();
-  } */
-
   // --------------------------------------------------------------------------------------------------
   // Ouverture modale
   // --------------------------------------------------------------------------------------------------
@@ -235,11 +230,11 @@ this.title = 'COMBAT';
   async openModalHistory() {
     const modal = await this.modalController.create({
       component: HistoryModalPage,
-      componentProps: {
+      /*componentProps: {
        //"paramScene": this.scene, 
-        "paramStory": this.sauvegardeService.getStory(), 
-      }
-    });  
+        //"paramStory": this.sauvegardeService.getStory(), 
+      }*/
+    });
 
     modal.onDidDismiss().then((dataReturned) => {
       if (dataReturned !== null) {
@@ -250,17 +245,15 @@ this.title = 'COMBAT';
     return await modal.present();
   }
 
-
-
   // -----------------------------------------------------------------------------------------------
   // Sauvegarder partie
   // -----------------------------------------------------------------------------------------------
 
-   save() {      
+   save() {
     this.sauvegardeService.setStateGame(this.heros,this.scene);
     this.sauvegardeService.saveGame();
     this.saveAlert();
-  } 
+  }
 
   async saveAlert() {
     const alert = await this.alertController.create({
@@ -351,4 +344,15 @@ this.title = 'COMBAT';
       else difficulte = "normal";
       return difficulte;
     }
+
+    // ---------------------------------------------------------------------------------
+    // Barre de progression
+    // ---------------------------------------------------------------------------------
+
+    /*moveImage() {
+	    let element = document.getElementById('margin');
+      element.style.marginLeft = ;
+      let maVar = element.style.marginLeft;
+      console.log(maVar);
+	  }*/
 }
