@@ -16,8 +16,8 @@ ion-footer > ion-button {
 }
 
 ion-title{
-    margin-left:0;
-    padding-left:0;
+    // margin-left:0;
+    // padding-left:0;
     font-weight: bold;
 }
 
@@ -30,7 +30,19 @@ ion-title{
     width: 70%;
     margin-left: 20px;
 }
+.imgBush{
+    
+    width: 30%;
+    size: 20px;
+    
+}
+.powerList{
+    display: block;
+}
 
-
+.emptyInventoryText{
+    
+    font-size: 2000ch;
+}
 
 

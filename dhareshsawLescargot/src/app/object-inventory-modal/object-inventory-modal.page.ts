@@ -16,6 +16,8 @@ export class ObjectInventoryModalPage implements OnInit {
   modalItemId: number;
   modalTabWithoutKey: ObjectInventory[];
   keyToAppear: boolean;
+  // if inventory empty this boolean display a message saying it's empty 
+  emptyInventoryObject: boolean;
 
   // ---------- CONSTRUCTOR ------------ //
   constructor(
@@ -27,11 +29,17 @@ export class ObjectInventoryModalPage implements OnInit {
   // -------- LIFECYCLE METHODS --------- //
   ngOnInit() {
     this.modalHero = this.navParams.data.hero;
+    console.log(this.modalHero.items)
     // if hero has the key, it will appear in a separate ion-card otherwise it won't appear
     if (this.modalHero.key !== null) {
       this.keyToAppear = true;
     } else {
       this.keyToAppear = false;
+    }
+    if (this.modalHero.items== null) {  // a verifier mais ici on a un tableau vide et pas un null
+      this.emptyInventoryObject = true;
+    } else {
+      this.emptyInventoryObject = false;
     }
   }
 
@@ -57,8 +65,10 @@ export class ObjectInventoryModalPage implements OnInit {
         }
       }
     }
-
-    // METTRE A JOUR L INVENTAIRE DU HERO LORSQUE LA CLASSE PERSONNAGE SERA OK
+  }
+  
+  deleteItemFromObjectInventoryList(){
+      // METTRE A JOUR L INVENTAIRE DU HERO LORSQUE LA CLASSE PERSONNAGE SERA OK
     // this.modalHero.find{((items[0])) => item[] ===
     // tslint:disable-next-line: radix
     // FINIR LE CODE CI DESSOUS - modif faites le 08/09/20
@@ -76,5 +86,6 @@ export class ObjectInventoryModalPage implements OnInit {
   // method enabling to close the modal and send the pictureName to newPicturePage
   async closeObjectInventoryModal() {
     await this.modalController.dismiss(this.modalHero);
+    
   }
 }
