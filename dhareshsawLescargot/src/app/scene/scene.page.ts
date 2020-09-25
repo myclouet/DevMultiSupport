@@ -61,7 +61,7 @@ export class ScenePage implements OnInit {
     this.sceneTitle();
 
     this.heros = this.characterService.heros; // mise à jour du héro avec le héro du service
-    // console.log(this.heros);
+    //console.log(this.heros);
 
     this.adversaire = this.getAdversaire();
 
@@ -79,11 +79,13 @@ export class ScenePage implements OnInit {
 
   }
 
-  ionViewDidEnter() { // utilisation de ionViewDidEnter pour corriger le bug lors d'un routage d'une scene précédente
-    if (this.sauvegardeService.getRestore())  // correction bug ajout de la scene dans l'historique a la restauration
+  ionViewDidEnter() { // use of ionViewDidEnter to correct bugs when going more than one time in a scene
+    if (this.sauvegardeService.getRestore())
       this.sauvegardeService.setRestore(false);
     else  
       this.sauvegardeService.saveScene(this.scene);
+    //this.heros = this.characterService.heros;
+    //console.log(this.heros);
   }
 
   // ----------------------------------------------------------------------------------------------------

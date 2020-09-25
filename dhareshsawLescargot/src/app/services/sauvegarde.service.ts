@@ -65,8 +65,15 @@ export class SauvegardeService {
   setRestore(state:boolean) {
     this.restore=state;
   }
+  
   getRestore() {
     return this.restore;
+  }
+
+  resetSauvegarde() {
+    this.story=[];
+    this.storage.set('stateGame',null);
+    this.storage.set('story',null);
   }
 
 }
