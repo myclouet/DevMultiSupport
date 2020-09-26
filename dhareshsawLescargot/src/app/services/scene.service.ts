@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { CharacterService } from './character.service';
 import { SauvegardeService } from './sauvegarde.service';
 import { Scene } from '../classes/scene';
+import { AudioService } from './audio.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ import { Scene } from '../classes/scene';
 export class SceneService {
 
 
-  constructor(private characterService: CharacterService, private sauvegardeService: SauvegardeService, private router: Router) { }
+  constructor(private characterService: CharacterService, private sauvegardeService: SauvegardeService, private router: Router, private audioService: AudioService) { }
 
   // ----------------------------------------------------------------------------------------------------
   // METHODS
