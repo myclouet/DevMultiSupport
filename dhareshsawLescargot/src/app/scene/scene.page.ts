@@ -77,10 +77,14 @@ export class ScenePage implements OnInit {
       this.alertSoundButtons();
     }
 
+    
+   
+    
   }
 
   ionViewDidEnter() { // initialisation d'un element dans cette méthode pour corriger le bug d'un routage d'une scene précédente
     this.sauvegardeService.saveScene(this.scene);
+     this.startAudioCombat();
   }
 
   // ----------------------------------------------------------------------------------------------------
@@ -211,6 +215,7 @@ export class ScenePage implements OnInit {
           text: 'OK',
           handler: () => {
             this.prevScene();
+            this.startAudio();
           }
         }
       ]
@@ -334,6 +339,11 @@ export class ScenePage implements OnInit {
 
      startAudio() {
       this.audioService.startAudioService();
+      this.audioBtn = this.audioService.audio;
+    }
+
+    startAudioCombat() {
+      this.audioService.startAudioServiceCombat(this.scene);
       this.audioBtn = this.audioService.audio;
     }
 
