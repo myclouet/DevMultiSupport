@@ -11,6 +11,7 @@ import { AudioService } from './services/audio.service';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent  {
+  scene: any;
 
   constructor(
     private platform: Platform,

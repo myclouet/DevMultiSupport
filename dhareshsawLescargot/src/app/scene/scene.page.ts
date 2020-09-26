@@ -77,13 +77,20 @@ export class ScenePage implements OnInit {
       this.alertSoundButtons();
     }
 
+    
+   
+    
   }
 
+
   ionViewDidEnter() { // use of ionViewDidEnter to correct bugs when going more than one time in a scene
-    if (this.sauvegardeService.getRestore())
+    if (this.sauvegardeService.getRestore()){
       this.sauvegardeService.setRestore(false);
-    else  
+    }else{  
       this.sauvegardeService.saveScene(this.scene);
+    }
+     this.startAudioCombat();
+
   }
 
   // ----------------------------------------------------------------------------------------------------
@@ -214,6 +221,7 @@ export class ScenePage implements OnInit {
           text: 'OK',
           handler: () => {
             this.prevScene();
+            this.startAudio();
           }
         }
       ]
@@ -333,6 +341,11 @@ export class ScenePage implements OnInit {
 
      startAudio() {
       this.audioService.startAudioService();
+      this.audioBtn = this.audioService.audio;
+    }
+
+    startAudioCombat() {
+      this.audioService.startAudioServiceCombat(this.scene);
       this.audioBtn = this.audioService.audio;
     }
 
