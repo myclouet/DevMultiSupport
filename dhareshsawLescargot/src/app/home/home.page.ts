@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import { AlertController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
+import { isNullOrUndefined } from 'util';
 import { CharacterService } from '../services/character.service';
 import { SauvegardeService } from '../services/sauvegarde.service';
+import { SceneService } from '../services/scene.service';
 
 @Component({
   selector: 'app-home',
@@ -19,6 +21,7 @@ export class HomePage implements OnInit{
               private sauvegardeService: SauvegardeService,
               public storage: Storage,
               private characterService: CharacterService,
+              private sceneService: SceneService,
               public alertController: AlertController) {
   }
 
@@ -29,24 +32,36 @@ export class HomePage implements OnInit{
     }
 
   newGame() {
-    this.router.navigate(['/scene/1']);
+    this.sceneService.newGame();
   }
 
-  // restoreGame déplacé dans le homepage pour corriger les circular dependancies
+  // restoreGame moved here to avoid circular dependancies
   restoreGame() {
     this.storage.get('stateGame').then((state)=>{
-      this.sauvegardeService.setStateGame(state.hero,state.scene); // on récupère l'état du jeu
-      this.characterService.heros=this.sauvegardeService.getStateGame().hero;  // on affecte le héro du service character avec le héro récupéré
-      //console.log(this.characterService.heros);
-      const idSceneToRestore=this.sauvegardeService.getStateGame().scene._id;  // on récupère l'id de la scène à restaurer
-      this.router.navigate(['/scene/'+idSceneToRestore]); // on restaure la scène
-      this.restoreAlert();    
+      if (isNullOrUndefined(state))
+        this.noSaveAlert();
+      else {
+        this.sauvegardeService.setStateGame(state.hero,state.scene);
+        this.characterService.heros=this.sauvegardeService.getStateGame().hero;
+        this.sauvegardeService.setRestore(true);
+        const idSceneToRestore=this.sauvegardeService.getStateGame().scene._id;
+        this.router.navigate(['/scene/'+idSceneToRestore]);
+        this.storage.get('story').then((story)=>{
+          this.sauvegardeService.setStory(story);
+        });
+        this.restoreAlert();
+      }   
     });
-    this.storage.get('story').then((story)=>{
-      console.log(story);
-      this.sauvegardeService.setStory(story);
-      console.log(this.sauvegardeService.getStory());
+  }
+  
+  async noSaveAlert() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Reprise de la partie',
+      message: 'Aucune partie sauvegardée',
+      buttons: ['OK']
     });
+    await alert.present();
   }
 
   async restoreAlert() {
