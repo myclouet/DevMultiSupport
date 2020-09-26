@@ -18,15 +18,6 @@ export class SauvegardeService {
   saveGame() {
     this.storage.set('stateGame',this.stateGame);
     this.storage.set('story',this.story);
-
-    // test des clés sauvegardées
-/*     this.stateGame=null;
-    console.log(this.stateGame);
-    this.storage.get('stateGame').then((state)=>{
-      this.stateGame=state;
-      console.log(this.stateGame);
-    }); */
-    
   }
 
   saveScene(scene) {
@@ -36,7 +27,7 @@ export class SauvegardeService {
           actions: [],
       }
     );
-    console.log(this.story);
+    //console.log(this.story);
   }
 
   saveAction(action){
@@ -44,10 +35,8 @@ export class SauvegardeService {
     lastStoryElement.actions.push(action);
   }
     
-
   setStateGame(hero:Hero,scene:Scene) {
     this.stateGame={hero,scene};
-    //console.log(this.stateGame);
   }
 
   getStateGame() {

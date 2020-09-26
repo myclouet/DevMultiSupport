@@ -32,7 +32,6 @@ export class HomePage implements OnInit{
     }
 
   newGame() {
-    //this.router.navigate(['/scene/1']);
     this.sceneService.newGame();
   }
 
@@ -42,16 +41,13 @@ export class HomePage implements OnInit{
       if (isNullOrUndefined(state))
         this.noSaveAlert();
       else {
-        this.sauvegardeService.setStateGame(state.hero,state.scene); // on récupère l'état du jeu
-        this.characterService.heros=this.sauvegardeService.getStateGame().hero;  // on affecte le héro du service character avec le héro récupéré
-        //console.log(this.characterService.heros);
+        this.sauvegardeService.setStateGame(state.hero,state.scene);
+        this.characterService.heros=this.sauvegardeService.getStateGame().hero;
         this.sauvegardeService.setRestore(true);
-        const idSceneToRestore=this.sauvegardeService.getStateGame().scene._id;  // on récupère l'id de la scène à restaurer
-        this.router.navigate(['/scene/'+idSceneToRestore]); // on restaure la scène
+        const idSceneToRestore=this.sauvegardeService.getStateGame().scene._id;
+        this.router.navigate(['/scene/'+idSceneToRestore]);
         this.storage.get('story').then((story)=>{
-          console.log(story);
           this.sauvegardeService.setStory(story);
-          console.log(this.sauvegardeService.getStory());
         });
         this.restoreAlert();
       }   

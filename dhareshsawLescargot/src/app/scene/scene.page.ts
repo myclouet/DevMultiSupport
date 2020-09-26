@@ -84,8 +84,6 @@ export class ScenePage implements OnInit {
       this.sauvegardeService.setRestore(false);
     else  
       this.sauvegardeService.saveScene(this.scene);
-    //this.heros = this.characterService.heros;
-    //console.log(this.heros);
   }
 
   // ----------------------------------------------------------------------------------------------------
@@ -267,10 +265,6 @@ export class ScenePage implements OnInit {
   async openModalHistory() {
     const modal = await this.modalController.create({
       component: HistoryModalPage,
-      /*componentProps: {
-       //"paramScene": this.scene, 
-        //"paramStory": this.sauvegardeService.getStory(), 
-      }*/
     });
 
     modal.onDidDismiss().then((dataReturned) => {
