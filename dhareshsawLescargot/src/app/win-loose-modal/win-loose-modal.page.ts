@@ -10,12 +10,9 @@ import { CharacterService } from '../services/character.service';
 export class WinLooseModalPage implements OnInit {
 
   @Input() modalTitle: string;
-  modelId: number;
   resultatCombat: boolean;
   message: string;
-  //image: string = "../../assets/loose2.jpg";
-  
-
+ 
   constructor( public modalController: ModalController,
                public navParams: NavParams,
                public characterService: CharacterService
@@ -23,20 +20,18 @@ export class WinLooseModalPage implements OnInit {
 
   ngOnInit() {
     console.log(this.navParams);
-    this.modelId = this.navParams.data.paramId;
     this.modalTitle = this.navParams.data.paramTitle;
-    this.resultatCombat = this.characterService.battleWon;
+    this.resultatCombat = this.characterService.getBattleWon();
     console.log(this.characterService.battleWon);
     
 
-  //   console.log (this.modelId, this.modalTitle)
-  //   if ( this.resultatCombat ){
-  //       this.message='Vous avez gagné ! ';
-
-  // }
-  //   else {
-  //     this.message= 'Vous avez perdu !';
-  //   }
+    console.log ( this.modalTitle)
+    if ( this.resultatCombat ){
+        this.message='Vous avez gagné ! ';
+  }
+    else {
+      this.message= 'Vous avez perdu !';
+    }
     this.navParams.get('value');
   }
 

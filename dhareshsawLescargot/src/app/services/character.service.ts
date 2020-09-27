@@ -14,7 +14,7 @@ import { AudioService } from './audio.service';
 export class CharacterService {
   character: Character;
   heros: Hero;
-  battleWon: boolean;
+  battleWon: boolean = false;
   neutralFight: boolean = false;
 
   constructor(
@@ -42,6 +42,9 @@ export class CharacterService {
     return HERO;
   }
 
+  getBattleWon(){
+    return this.battleWon;
+  }
   /*
   // Liste des getters et setters communs
   public getId() {

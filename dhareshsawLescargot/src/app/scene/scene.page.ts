@@ -40,6 +40,7 @@ export class ScenePage implements OnInit {
   progressionBuffer: number;
   marginVar: string;
   marginNum: number;
+  
 
   // ----------------------------------------------------------------------------------------------------
   // CONSTRUCTOR
@@ -81,9 +82,6 @@ export class ScenePage implements OnInit {
       this.alertSoundButtons();
     }
 
-    
-   
-    
   }
 
 
