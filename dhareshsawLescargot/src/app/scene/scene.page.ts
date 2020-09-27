@@ -14,6 +14,7 @@ import { AudioService } from '../services/audio.service';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { isLoweredSymbol } from '@angular/compiler';
 import { ObjectInventory } from '../classes/object';
+import { WinLooseModalPage } from '../win-loose-modal/win-loose-modal.page';
 
 
 
@@ -56,12 +57,15 @@ export class ScenePage implements OnInit {
 
   ngOnInit() {
 
+    // Ligne à supprimer après réalisation de la modal 
+    this.openModalWinLoose();
+
     this.scene = this.sceneService.getSceneById(this.route.snapshot.paramMap.get('id'));
 
     this.sceneTitle();
 
     this.heros = this.characterService.heros; // mise à jour du héro avec le héro du service
-    // console.log(this.heros);
+    //console.log(this.heros);
 
     this.adversaire = this.getAdversaire();
 
@@ -77,10 +81,20 @@ export class ScenePage implements OnInit {
       this.alertSoundButtons();
     }
 
+    
+   
+    
   }
 
-  ionViewDidEnter() { // initialisation d'un element dans cette méthode pour corriger le bug d'un routage d'une scene précédente
-    this.sauvegardeService.saveScene(this.scene);
+
+  ionViewDidEnter() { // use of ionViewDidEnter to correct bugs when going more than one time in a scene
+    if (this.sauvegardeService.getRestore()){
+      this.sauvegardeService.setRestore(false);
+    }else{  
+      this.sauvegardeService.saveScene(this.scene);
+    }
+     this.startAudioCombat();
+
   }
 
   // ----------------------------------------------------------------------------------------------------
@@ -211,6 +225,7 @@ export class ScenePage implements OnInit {
           text: 'OK',
           handler: () => {
             this.prevScene();
+            this.startAudio();
           }
         }
       ]
@@ -262,10 +277,6 @@ export class ScenePage implements OnInit {
   async openModalHistory() {
     const modal = await this.modalController.create({
       component: HistoryModalPage,
-      /*componentProps: {
-       //"paramScene": this.scene, 
-        //"paramStory": this.sauvegardeService.getStory(), 
-      }*/
     });
 
     modal.onDidDismiss().then((dataReturned) => {
@@ -276,6 +287,25 @@ export class ScenePage implements OnInit {
 
     return await modal.present();
   }
+
+  async openModalWinLoose(){
+    const modal = await this.modalController.create({
+      component: WinLooseModalPage,
+      cssClass: 'my-custom-modal-css',
+      componentProps:{
+        "paramId": 123,
+        "paramTitle":"test title",
+      }
+    });
+  modal.onDidDismiss()
+.then((info) => {
+  if (info !== null) {
+    this.dataReturned = info.data;
+}
+});
+
+return await modal.present(); 
+}
 
   // -----------------------------------------------------------------------------------------------
   // Sauvegarder partie
@@ -334,6 +364,11 @@ export class ScenePage implements OnInit {
 
      startAudio() {
       this.audioService.startAudioService();
+      this.audioBtn = this.audioService.audio;
+    }
+
+    startAudioCombat() {
+      this.audioService.startAudioServiceCombat(this.scene);
       this.audioBtn = this.audioService.audio;
     }
 

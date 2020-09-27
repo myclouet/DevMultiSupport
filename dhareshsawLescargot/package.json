@@ -27,6 +27,7 @@
     "@ionic/storage": "^2.2.0",
     "cordova-browser": "^6.0.0",
     "cordova-ios": "^5.1.1",
+    "cordova-res": "^0.15.1",
     "core-js": "^2.5.4",
     "lint": "^0.7.0",
     "rxjs": "~6.5.1",
@@ -79,7 +80,8 @@
     },
     "platforms": [
       "browser",
-      "ios"
+      "ios",
+      "android"
     ]
   }
 }
