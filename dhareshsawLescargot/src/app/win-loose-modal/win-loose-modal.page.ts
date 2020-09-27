@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ModalController, NavParams } from '@ionic/angular';
 
 @Component({
@@ -8,11 +8,11 @@ import { ModalController, NavParams } from '@ionic/angular';
 })
 export class WinLooseModalPage implements OnInit {
 
-  modalTitle: string;
+  @Input() modalTitle: string;
   modelId: number;
-  resultatCombat: boolean = false;
+  resultatCombat: boolean = true;
   message: string;
-  image: string = "../../assets/loose2.jpg";
+  //image: string = "../../assets/loose2.jpg";
   
 
   constructor( public modalController: ModalController,
@@ -24,16 +24,18 @@ export class WinLooseModalPage implements OnInit {
     this.modelId = this.navParams.data.paramId;
     this.modalTitle= this.navParams.data.paramTitle;
 
-    console.log (this.modelId, this.modalTitle)
-    if ( this.resultatCombat ){
-        this.message='Vous avez gagné ! ';
+  //   console.log (this.modelId, this.modalTitle)
+  //   if ( this.resultatCombat ){
+  //       this.message='Vous avez gagné ! ';
 
-  }
-    else {
-      this.message= 'Vous avez perdu !';
-    }
+  // }
+  //   else {
+  //     this.message= 'Vous avez perdu !';
+  //   }
+    this.navParams.get('value');
   }
 
+  
   
 
   async closeModal(){

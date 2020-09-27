@@ -1,9 +1,15 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>winLoose-modal</ion-title>
+    <ion-title>{{ modalTitle }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <div *ngIf="resultatCombat">
+    
+    <img src="../../assets/gagne4.png" alt="gagne" id="win">
+  </div>
+  <div *ngIf="!resultatCombat">
+    <img src="../../assets/knock out.PNG" alt="perdu" id="loose">
+  </div>
 </ion-content>

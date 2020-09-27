@@ -150,10 +150,10 @@ export class ScenePage implements OnInit {
     const value = this.heros.strength + this.heros.luck - this.adversaire.endurance;
     let message: any;
     if (value <= 1) {
-      message = "À vous de faire le meilleur choix !!!<br>L'issue d'un combat automatique est aléatoire, mais si vous désirez vous pouvez combattre avec un jet de dé. <br> Vous devez obtenir 1 pour gagner le combat";
+      message = 'À vous de faire le meilleur choix !!!<br>L\'issue d\'un combat automatique est aléatoire, mais si vous désirez vous pouvez combattre avec un jet de dé. <br> Vous devez obtenir 1 pour gagner le combat';
     }
     else if (value > 6) {
-      message = "À vous de faire le meilleur choix !!!<br>L'issue d'un combat automatique est aléatoire, mais si vous désirez vous pouvez combattre avec un jet de dé. <br> Vous devez obtenir 6 ou moins pour gagner le combat";
+      message = 'À vous de faire le meilleur choix !!!<br>L\'issue d\'un combat automatique est aléatoire, mais si vous désirez vous pouvez combattre avec un jet de dé. <br> Vous devez obtenir 6 ou moins pour gagner le combat';
     }
     else {
       message = `À vous de faire le meilleur choix !!!<br>L'issue d'un combat automatique est aléatoire, mais si vous désirez vous pouvez combattre avec un jet de dé. <br> Vous devez obtenir moins que ${value} pour gagner le combat`;
@@ -202,14 +202,14 @@ export class ScenePage implements OnInit {
   // Fuite
   // ------------------------------------------------------------------------------------------------
   async escape() {
-    this.sauvegardeService.saveAction("tu as fui le combat ");
+    this.sauvegardeService.saveAction('tu as fui le combat ');
     const value = this.heros.strength + this.heros.luck - this.adversaire.endurance;
     let message: any;
     if (value <= 1) {
-      message = "Tu n'as pas bavé assez pour fuir !!! Le combat est inévitable <br> Tu dois obtenir 1 pour gagner le combat";
+      message = 'Tu n\'as pas bavé assez pour fuir !!! Le combat est inévitable <br> Tu dois obtenir 1 pour gagner le combat';
     }
     else if (value > 6) {
-      message = "Tu n'as pas bavé assez pour fuir !!! Le combat est inévitable <br>Tu dois obtenir 6 ou moins pour gagner le combat";
+      message = 'Tu n\'as pas bavé assez pour fuir !!! Le combat est inévitable <br>Tu dois obtenir 6 ou moins pour gagner le combat';
     }
     else {
       message = `Tu n'as pas bavé assez pour fuir !!! Le combat est inévitable <br> Tu dois obtenir moins que ${value} pour gagner le combat`;
@@ -289,13 +289,18 @@ export class ScenePage implements OnInit {
   }
 
   async openModalWinLoose(){
+    let resultatCombat = this.characterService.battleWon;
     const modal = await this.modalController.create({
       component: WinLooseModalPage,
       cssClass: 'my-custom-modal-css',
-      componentProps:{
-        "paramId": 123,
-        "paramTitle":"test title",
+      componentProps:{ value: 'resultatCombat '
+
       }
+
+      // componentProps:{
+      //   'modalTitle' : '123',
+      //   'paramTitle':'test title',
+      // }
     });
   modal.onDidDismiss()
 .then((info) => {
@@ -403,12 +408,12 @@ return await modal.present();
       let difficulte: String;
       let value: number = this.heros.strength + this.heros.luck - this.adversaire.endurance;
       if (value <=1) {
-          difficulte = "hard";
+          difficulte = 'hard';
         }
       else if  (value > 6) {
-        difficulte = "easy";
+        difficulte = 'easy';
       }
-      else difficulte = "normal";
+      else difficulte = 'normal';
       return difficulte;
     }
 
