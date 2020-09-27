@@ -27,6 +27,7 @@
     "@ionic/storage": "^2.2.0",
     "cordova-browser": "6.0.0",
     "cordova-ios": "^5.1.1",
+    "cordova-res": "^0.15.1",
     "core-js": "^2.5.4",
     "lint": "^0.7.0",
     "rxjs": "~6.5.1",
@@ -39,7 +40,7 @@
     "@angular/compiler": "~8.2.14",
     "@angular/compiler-cli": "~8.2.14",
     "@angular/language-service": "~8.2.14",
-    "@ionic/angular-toolkit": "^2.1.1",
+    "@ionic/angular-toolkit": "^2.3.3",
     "@ionic/lab": "3.1.6",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
@@ -79,7 +80,8 @@
     },
     "platforms": [
       "browser",
-      "ios"
+      "ios",
+      "android"
     ]
   }
 }

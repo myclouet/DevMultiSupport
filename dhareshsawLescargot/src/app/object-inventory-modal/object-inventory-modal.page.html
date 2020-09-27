@@ -1,42 +1,61 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Tes infos persos</ion-title>
+  <ion-toolbar style="text-align: center;">
+    <ion-grid>
+      <ion-row>
+        <ion-title>ARSENAL</ion-title>
+      </ion-row>
+    </ion-grid>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <h3>Caractéristiques</h3>
-    <p>
-      force: {{ this.modalHero.strength}}
-    </p>
-    <p>
-      endurance: {{ this.modalHero.endurance}}
-    </p>
-    <p>
-      chance: {{ this.modalHero.luck}}
-    </p>
-  </ion-card>
+  <ion-grid style="padding: 0; margin: 0; height: 90%">
+    <ion-row size="4">
+      <ion-col size="6">
+        <img src="/assets/shell-less-snail.png" class="imgSnail"/>
+      </ion-col>
 
-  <ion-card>
-    <h3>Inventaire</h3>
-    <div *ngFor="let heroObjectInventory of modalHero.items">
-      <p (click)="updateHeroInventory(heroObjectInventory.description)">
-        {{ heroObjectInventory.description}}
-      </p>
-      <!-- comment isoler la clé pour qu'elle n'apparaisse que si *ngIf='keyToAppear'-->
-    </div>
-  </ion-card>
+      <ion-col size="6">
+        <ion-title>Pouvoirs:</ion-title>
 
-  <ion-card *ngIf="keyToAppear">
-    <h3>Le Graal</h3>
-    <div>
-      <p>Clé du champ</p>
-    </div>
-  </ion-card>
+        <ion-label>
+          force: {{ this.modalHero.strength}}
+        </ion-label>
+        <ion-label>
+          endurance: {{ this.modalHero.endurance}}
+        </ion-label>
+        <ion-label>
+          chance: {{ this.modalHero.luck}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
 
-  <ion-footer>
-    <ion-button expand="full" (click)="closeObjectInventoryModal()">
+    <ion-row size="4">
+      <ion-col size="6">
+        <ion-title>Inventaire:</ion-title>
+        <div *ngFor="let heroObjectInventory of modalHero.items">
+          <ion-button (click)="updateHeroInventory(heroObjectInventory.description)">
+            {{ heroObjectInventory.description}}
+          </ion-button>
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <img src="/assets/snail-shell.png" class="imgShell"/>
+      </ion-col>
+    </ion-row>
+
+    <ion-row size="4">
+      <ion-col *ngIf="keyToAppear" size="12">
+        <ion-title>Le Graal:</ion-title>
+        <div>
+          <p>Clé du champ</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-footer style="background-color: #04471c;">
+    <ion-button size="small" (click)="closeObjectInventoryModal()">
       Fermer
     </ion-button>
   </ion-footer>

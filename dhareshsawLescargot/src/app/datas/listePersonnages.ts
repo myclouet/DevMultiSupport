@@ -1,17 +1,20 @@
-import { Character } from '../classes/personnage';
+import { Character, Hero } from '../classes/personnage';
+
+export const HERO: Hero =   
+ {
+  _id: '0',
+  name: 'Dhareshsaw l\'escargot',
+  avatar: './assets/avatars/dhareshsaw.png',
+  strength: 4,
+  luck: 4,
+  endurance: 3,
+  items: null,
+  key: null,
+};
 
 export const PERSONNAGES: Character[] = [
   // !!!!!!!!! ATTENTION !!!!!!! Les valeurs strength, luck et endurance ne sont que des valeurs aléatoires pour les tests !!!! A MODIFIER
-  {
-    _id: '0',
-    name: 'Dhareshsaw l\'escargot',
-    avatar: './assets/avatars/dhareshsaw.png',
-    strength: 4,
-    luck: 4,
-    endurance: 3,
-    items: null,
-    key: null,
-  },
+    HERO,
   {
     _id: '1',
     name: 'Jojo le bourricot',
@@ -20,7 +23,7 @@ export const PERSONNAGES: Character[] = [
     luck: 5,
     endurance: 4,
     items: null,
-    key: null,
+    //key: null,
   },
   {
     _id: '2',
@@ -30,7 +33,7 @@ export const PERSONNAGES: Character[] = [
     luck: 2,
     endurance: 4,
     items: null,
-    key: null,
+    //key: {description: 'key', image: '', bonusPower: ['', 0]},
   },
   {
     _id: '3',
@@ -40,7 +43,7 @@ export const PERSONNAGES: Character[] = [
     luck: 4,
     endurance: 5,
     items: null,
-    key: null,
+    //key: null,
   },
   {
     _id: '4',
@@ -50,7 +53,7 @@ export const PERSONNAGES: Character[] = [
     luck: 6,
     endurance: 4,
     items: null,
-    key: null,
+    //key: null,
   },
   {
     _id: '5',
@@ -60,7 +63,7 @@ export const PERSONNAGES: Character[] = [
     luck: 5,
     endurance: 5,
     items: null,
-    key: null,
+    //key: null,
   },
   {
     _id: '6',
@@ -70,7 +73,7 @@ export const PERSONNAGES: Character[] = [
     luck: 3,
     endurance: 4,
     items: null,
-    key: null,
+    //key: null,
   },
   {
     _id: '7',
@@ -80,7 +83,7 @@ export const PERSONNAGES: Character[] = [
     luck: 3,
     endurance: 4,
     items: null,
-    key: null,
+    //key: null,
   },
   {
     _id: '8',
@@ -90,7 +93,7 @@ export const PERSONNAGES: Character[] = [
     luck: 4,
     endurance: 4,
     items: null,
-    key: null,
+    //key: null,
   },
   {
     _id: '9',
@@ -100,7 +103,7 @@ export const PERSONNAGES: Character[] = [
     luck: 4,
     endurance: 5,
     items: null,
-    key: null,
+    //key: null,
   },
   {
     _id: '10',
@@ -110,7 +113,7 @@ export const PERSONNAGES: Character[] = [
     luck: 3,
     endurance: 4,
     items: null,
-    key: null,
+    //key: null,
   },
   {
     _id: '11',
@@ -120,7 +123,7 @@ export const PERSONNAGES: Character[] = [
     luck: 4,
     endurance: 4,
     items: null,
-    key: null,
+    //key: null,
   },
   {
     _id: '12',
@@ -130,7 +133,7 @@ export const PERSONNAGES: Character[] = [
     luck: 5,
     endurance: 4,
     items: null,
-    key: null,
+    //key: null,
   },
   {
     _id: '13',
@@ -140,6 +143,6 @@ export const PERSONNAGES: Character[] = [
     luck: 4,
     endurance: 5,
     items: null,
-    key: null,
+    //key: null,
   }
 ];
