@@ -14,6 +14,7 @@ import { AudioService } from '../services/audio.service';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { isLoweredSymbol } from '@angular/compiler';
 import { ObjectInventory } from '../classes/object';
+import { WinLooseModalPage } from '../win-loose-modal/win-loose-modal.page';
 
 
 
@@ -55,6 +56,9 @@ export class ScenePage implements OnInit {
     private audioService: AudioService) { }
 
   ngOnInit() {
+
+    // Ligne à supprimer après réalisation de la modal 
+    this.openModalWinLoose();
 
     this.scene = this.sceneService.getSceneById(this.route.snapshot.paramMap.get('id'));
 
@@ -283,6 +287,25 @@ export class ScenePage implements OnInit {
 
     return await modal.present();
   }
+
+  async openModalWinLoose(){
+    const modal = await this.modalController.create({
+      component: WinLooseModalPage,
+      cssClass: 'my-custom-modal-css',
+      componentProps:{
+        "paramId": 123,
+        "paramTitle":"test title",
+      }
+    });
+  modal.onDidDismiss()
+.then((info) => {
+  if (info !== null) {
+    this.dataReturned = info.data;
+}
+});
+
+return await modal.present(); 
+}
 
   // -----------------------------------------------------------------------------------------------
   // Sauvegarder partie

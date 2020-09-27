@@ -21,7 +21,8 @@ export class CharacterService {
     private alertController: AlertController,
     private router: Router,
     private sauvegardeService: SauvegardeService,
-    private audioService: AudioService
+    private audioService: AudioService,
+    
   ) {
     this.heros = this.getHero(); // initialisation du héro
   }
