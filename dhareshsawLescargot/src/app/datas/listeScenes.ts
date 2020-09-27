@@ -140,7 +140,7 @@ export const SCENES: Scene[] = [
      description: 'Vous vous retournez vers lui, des larmes dans les yeux...Lui vous répond toujours aussi nonchalant : -"Salut, moi c\'est Rapha". -"Moi c\'est Dhareshsaw" répondez-vous. -"Allez on trinque" dit-il en vous tendant une canette de bière. "C\'est de la bonne, en plus ça chasse les limaces !" continue-t-il avant de s\'endormir dans un rot ravageur. Vous continuez votre route avec une canette en plus, tout chamboulé par les évènements.',
      picture: '../assets/fond-rencontre.png',
      encounter: '10',
-     bonusObject: null,
+     bonusObject: {description: 'bière', image:'', bonusPower:['strength', 1]},
      bonusPower: [null, null],
      isBattle: false,
      battleWon: false,

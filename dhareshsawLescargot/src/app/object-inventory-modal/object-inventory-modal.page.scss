@@ -1,0 +1,36 @@
+ion-content {
+    height: 100%;
+    font-size: 20px;
+    --background :#a7c957;
+}
+
+ion-footer {
+    display:flex;
+}
+
+ion-footer > ion-button {
+    display:flex;
+    margin-left: auto;
+    margin-right: auto;
+    --background:#a7c957;
+}
+
+ion-title{
+    margin-left:0;
+    padding-left:0;
+    font-weight: bold;
+}
+
+.imgShell {
+    width: 70%;
+    margin-right: 20px;
+}
+
+.imgSnail {
+    width: 70%;
+    margin-left: 20px;
+}
+
+
+
+

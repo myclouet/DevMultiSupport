@@ -61,7 +61,7 @@ export class ScenePage implements OnInit {
     this.sceneTitle();
 
     this.heros = this.characterService.heros; // mise à jour du héro avec le héro du service
-    // console.log(this.heros);
+    //console.log(this.heros);
 
     this.adversaire = this.getAdversaire();
 
@@ -77,10 +77,20 @@ export class ScenePage implements OnInit {
       this.alertSoundButtons();
     }
 
+    
+   
+    
   }
 
-  ionViewDidEnter() { // initialisation d'un element dans cette méthode pour corriger le bug d'un routage d'une scene précédente
-    this.sauvegardeService.saveScene(this.scene);
+
+  ionViewDidEnter() { // use of ionViewDidEnter to correct bugs when going more than one time in a scene
+    if (this.sauvegardeService.getRestore()){
+      this.sauvegardeService.setRestore(false);
+    }else{  
+      this.sauvegardeService.saveScene(this.scene);
+    }
+     this.startAudioCombat();
+
   }
 
   // ----------------------------------------------------------------------------------------------------
@@ -211,6 +221,7 @@ export class ScenePage implements OnInit {
           text: 'OK',
           handler: () => {
             this.prevScene();
+            this.startAudio();
           }
         }
       ]
@@ -262,10 +273,6 @@ export class ScenePage implements OnInit {
   async openModalHistory() {
     const modal = await this.modalController.create({
       component: HistoryModalPage,
-      /*componentProps: {
-       //"paramScene": this.scene, 
-        //"paramStory": this.sauvegardeService.getStory(), 
-      }*/
     });
 
     modal.onDidDismiss().then((dataReturned) => {
@@ -334,6 +341,11 @@ export class ScenePage implements OnInit {
 
      startAudio() {
       this.audioService.startAudioService();
+      this.audioBtn = this.audioService.audio;
+    }
+
+    startAudioCombat() {
+      this.audioService.startAudioServiceCombat(this.scene);
       this.audioBtn = this.audioService.audio;
     }
 
