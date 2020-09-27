@@ -10,7 +10,7 @@ export class WinLooseModalPage implements OnInit {
 
   @Input() modalTitle: string;
   modelId: number;
-  resultatCombat: boolean = true;
+  resultatCombat: boolean = false;
   message: string;
   //image: string = "../../assets/loose2.jpg";
   

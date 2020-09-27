@@ -4,12 +4,33 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div *ngIf="resultatCombat">
-    
-    <img src="../../assets/gagne4.png" alt="gagne" id="win">
+<ion-content class="bgImageWL">
+  <style>
+    .bgImageWL {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;}
+  </style>
+  <div *ngIf="resultatCombat">  
+      <img src="../../assets/gagne4.png" alt="gagne" id="win">
   </div>
   <div *ngIf="!resultatCombat">
-    <img src="../../assets/knock out.PNG" alt="perdu" id="loose">
+      <img src="../../assets/knock-out.png" alt="perdu" id="loose">
   </div>
+  <div id="snail">
+    <div id="shell">
+    </div>
+    <div id="slug"></div>
+  </div>
+  <div id="slime"></div>
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+   <ion-button (click)="closeModal()" expand="block" fill="clear" shape="round">
+    Continuer le jeu
+   </ion-button>
+  </ion-toolbar>
+</ion-footer>
+<!-- <ion-content *ngIf="scene.isBattle===true" class="bgImage" [ngStyle]="{'background-image': 'url('+ scene.picture +')'}"> -->
+
+ 

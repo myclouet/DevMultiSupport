@@ -1,57 +1,14 @@
  @media all and (max-width: 600px) {
  } 
-
-ion-toolbar {
-  --background:#f2e8cf;
-  font-family: 'Segoe Print';
-}
-
-ion-content {
- //  --background: transparent url("../../assets/champCombat.jpg");
-  --background:#c7df8e;
-  display: flex;
-  justify-content: center;
-}
-
-// ion-card {
-//    background-color: rgba(255, 255, 255, 0.9);
-// //  --background: center / no-repeat url("../../assets/confetti_PNG87061.png");
-//   display: flex;
-//  background-color: transparent;
-//   justify-content: center;
-// }
-
-// ion-card-content {
-//  // --background : transparent;
-// }
-
-    
-// background-color:#c7df8e;
-
-#win{
-    background: center no-repeat transparent url("../../assets/fond-combat\ gagne.jpg");
-}
-#loose{
-    background: center no-repeat transparent url("../../assets/fond-combat-perdu.jpg")
-}
-
-  h1 {
-    text-align:center;
-    font-size:65px;
-    font-weight:100;
-    padding:55px;
-    color:#4e4644;
-    font-family: 'Segoe Print';
-  }
-  
-  #snail {
+ #snail {
     height:75px;
     width:120px;
     position:absolute;
     z-index:1;
-    top:500px;
+    top:400px;
     left:-120px;
-    animation:25s snailCrawl linear infinite;
+    animation: 25s snailCrawl linear infinite;
+   // animation: 50s snailCrawl linear infinite;
     #shell {
       height:64px;
       width:74px;
@@ -92,7 +49,9 @@ ion-content {
       right:0;
       background:green;
       border-radius:0 15px 5px 0;
-      animation: 1.25s slugSquish ease-in-out infinite;
+      animation: 0.50s slugSquish ease-in-out infinite;
+     // animation: 1.25s slugSquish ease-in-out infinite;
+
       &:before { /* creates antennae */
         content:'.';
         font-size:50px;
@@ -135,9 +94,10 @@ ion-content {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b7df2d', endColorstr='#b7df2d',GradientType=1 ); /* IE6-9 */
     position:absolute;
     z-index:0;
-    top:572px;
+    top:472px;
     left:-50%;
     animation: 25s slimeSpread linear infinite;
+   // animation: 25s slimeSpread linear infinite;
     border-radius:3px;
   }
   
@@ -179,6 +139,12 @@ ion-content {
     }
   }
 
+  img
+  {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
   ion-icon {
     font-size: 80px;
     color :#a7c957;
@@ -189,7 +155,57 @@ ion-card {
    
    
 }
+ion-toolbar {
+  --background:#f2e8cf;
+  font-family: 'Segoe Print';
+}
 
+ion-content {
+  //--background:#c7df8e;
+  display: flex;
+  justify-content: center; 
+  
+}
+#loose{
+    background: center url("../../assets/fond-combat\ perdu.jpg"); 
+  }
+  
+  #win{
+      background: center no-repeat transparent url("../../assets/fond-combat\ gagne.jpg");
+  }
+  
+  
+    h1 {
+      text-align:center;
+      font-size:65px;
+      font-weight:100;
+      padding:55px;
+      color:#4e4644;
+      font-family: 'Segoe Print';
+    }
+    
+
+
+
+
+
+
+// ion-card {
+//    background-color: rgba(255, 255, 255, 0.9);
+// //  --background: center / no-repeat url("../../assets/confetti_PNG87061.png");
+//   display: flex;
+//  background-color: transparent;
+//   justify-content: center;
+// }
+
+// ion-card-content {
+//  // --background : transparent;
+// }
+
+    
+// background-color:#c7df8e;
+
+ 
 
 // .fightCard {
 //     height: 25%;
