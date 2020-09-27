@@ -5,7 +5,7 @@
     width:120px;
     position:absolute;
     z-index:1;
-    top:400px;
+    top:300px;
     left:-120px;
     animation: 25s snailCrawl linear infinite;
    // animation: 50s snailCrawl linear infinite;
@@ -94,7 +94,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b7df2d', endColorstr='#b7df2d',GradientType=1 ); /* IE6-9 */
     position:absolute;
     z-index:0;
-    top:472px;
+    top:372px;
     left:-50%;
     animation: 25s slimeSpread linear infinite;
    // animation: 25s slimeSpread linear infinite;
@@ -149,29 +149,63 @@
     font-size: 80px;
     color :#a7c957;
 }
-
-ion-card {
-    opacity: 0.9;
-   
-   
+ion-button {
+    font-family: 'Segoe Print';
+    color: black;
+    --background:#c7df8e;
+    --color: black;
+    --opacity: 1;
+    --padding-bottom: 4px;
+    --padding-end: 4px;
+    --padding-start: 4px;
+    --padding-top: 4px;
+    --ripple-color:#bc4749;
+    --transition: background-color 15ms linear;
 }
+
 ion-toolbar {
   --background:#f2e8cf;
   font-family: 'Segoe Print';
 }
 
 ion-content {
-  //--background:#c7df8e;
-  display: flex;
-  justify-content: center; 
+  //--background:#c7df8e;  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   
 }
-#loose{
-    background: center url("../../assets/fond-combat\ perdu.jpg"); 
-  }
+ion-card {
+   background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+ background-color: transparent;
+  justify-content: center;
+}
+  
+#loose{ 
+     /* Fixe l'image en haut à gauche de la page */
+   position: fixed; 
+   top: 0; 
+   left: 0; 
+   /* Préserve le ratio de l'image */
+   min-width: 80%;
+   min-height: 100%;
+   background-position: center;
+   background-size: cover;
+    background: center url("../../assets/fond-combat\ perdu.jpg");
+ } 
   
   #win{
-      background: center no-repeat transparent url("../../assets/fond-combat\ gagne.jpg");
+   /* Fixe l'image en haut à gauche de la page */
+   position: fixed; 
+   top: 0; 
+   left: 0; 
+   /* Préserve le ratio de l'image */
+   min-width: 100%;
+   min-height: 100%;
+   background-position: center;
+   background-size: cover;
+   background: center no-repeat transparent url("../../assets/fond-combat\ gagne.jpg");
   }
   
   
@@ -184,23 +218,13 @@ ion-content {
       font-family: 'Segoe Print';
     }
     
+   
 
 
 
 
 
 
-// ion-card {
-//    background-color: rgba(255, 255, 255, 0.9);
-// //  --background: center / no-repeat url("../../assets/confetti_PNG87061.png");
-//   display: flex;
-//  background-color: transparent;
-//   justify-content: center;
-// }
-
-// ion-card-content {
-//  // --background : transparent;
-// }
 
     
 // background-color:#c7df8e;

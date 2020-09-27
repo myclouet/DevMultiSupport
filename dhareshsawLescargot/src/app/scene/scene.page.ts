@@ -289,25 +289,20 @@ export class ScenePage implements OnInit {
   }
 
   async openModalWinLoose(){
-    let resultatCombat = this.characterService.battleWon;
+   // const resultatCombat = this.characterService.battleWon;
     const modal = await this.modalController.create({
       component: WinLooseModalPage,
       cssClass: 'my-custom-modal-css',
-      componentProps:{ value: 'resultatCombat '
-
+      componentProps:{ 
+        paramTitle : 'Resultat du Combat'
       }
-
-      // componentProps:{
-      //   'modalTitle' : '123',
-      //   'paramTitle':'test title',
-      // }
     });
-  modal.onDidDismiss()
-.then((info) => {
-  if (info !== null) {
-    this.dataReturned = info.data;
-}
-});
+      modal.onDidDismiss()
+    .then((info) => {
+      if (info !== null) {
+        this.dataReturned = info.data;
+    }
+    });
 
 return await modal.present(); 
 }
