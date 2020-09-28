@@ -14,7 +14,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['2'],
      previousScene: null,
-     audioText: 'assets/audio/prologue.mp3',
+     audioText: 'assets/audio/scene01.mp3',
      progressionIndex: 0
    },
    {
@@ -30,7 +30,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['3'],
      previousScene: '1',
-     audioText: 'assets/audio/introduction.mp3',
+     audioText: 'assets/audio/scene02.mp3',
      progressionIndex: 5
    },
    {
@@ -46,7 +46,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['4', '5', '6'],
      previousScene: '2',
-     audioText: null,
+     audioText: 'assets/audio/scene03.mp3',
      progressionIndex: 10
    },
    {
@@ -62,7 +62,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['7'],
      previousScene: '3',
-     audioText: null,
+     audioText: 'assets/audio/scene04.mp3',
      progressionIndex: 12
    },
    {
@@ -78,7 +78,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['3'],
      previousScene: '3',
-     audioText: null,
+     audioText: 'assets/audio/scene05.mp3',
      progressionIndex: 14
    },
    {
@@ -98,7 +98,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['9'],
      previousScene: '3',
-     audioText: null,
+     audioText: 'assets/audio/scene06.mp3',
      progressionIndex: 15
    },
    {
@@ -114,7 +114,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['8', '10', '11'],
      previousScene: '4',
-     audioText: null,
+     audioText: 'assets/audio/scene07.mp3',
      progressionIndex: 14
    },
    {
@@ -130,7 +130,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['14'],
      previousScene: null,
-     audioText: null,
+     audioText: 'assets/audio/scene08.mp3',
      progressionIndex: 18
    },
    {
@@ -146,7 +146,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['19'],
      previousScene: '6',
-     audioText: null,
+     audioText: 'assets/audio/scene09.mp3',
      progressionIndex: 20
    },
    {
@@ -162,7 +162,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['16'],
      previousScene: '7',
-     audioText: null,
+     audioText: 'assets/audio/scene10.mp3',
      progressionIndex: 16
    },
    {
@@ -178,7 +178,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['12', '13'],
      previousScene: '7',
-     audioText: null,
+     audioText: 'assets/audio/scene11.mp3',
      progressionIndex: 16
    },
    {
@@ -194,7 +194,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['23'],
      previousScene: '11',
-     audioText: null,
+     audioText: 'assets/audio/scene12.mp3',
      progressionIndex: 100
    },
    {
@@ -210,7 +210,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['8'],
      previousScene: '11',
-     audioText: null,
+     audioText: 'assets/audio/scene13.mp3',
      progressionIndex: 17
    },
    {
@@ -226,7 +226,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['15', '17', '18'],
      previousScene: '8',
-     audioText: null,
+     audioText: 'assets/audio/scene14.mp3',
      progressionIndex: 25
    },
    {
@@ -242,7 +242,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['23'],
      previousScene: '14',
-     audioText: null,
+     audioText: 'assets/audio/scene15.mp3',
      progressionIndex: 100
    },
    {
@@ -258,7 +258,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['20'],
      previousScene: null,
-     audioText: null,
+     audioText: 'assets/audio/scene16.mp3',
      progressionIndex: 20
    },
    {
@@ -274,7 +274,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['16'],
      previousScene: '14',
-     audioText: null,
+     audioText: 'assets/audio/scene17.mp3',
      progressionIndex: 22
    },
    {
@@ -290,7 +290,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['19'],
      previousScene: '14',
-     audioText: null,
+     audioText: 'assets/audio/scene18.mp3',
      progressionIndex: 30
    },
    {
@@ -306,7 +306,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['22'],
      previousScene: null,
-     audioText: null,
+     audioText: 'assets/audio/scene19.mp3',
      progressionIndex: 35
    },
    {
@@ -322,7 +322,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['23', '21'],
      previousScene: '16',
-     audioText: null,
+     audioText: 'assets/audio/scene20.mp3',
      progressionIndex: 30
    },
    {
@@ -338,7 +338,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['22'],
      previousScene: '20',
-     audioText: null,
+     audioText: 'assets/audio/scene21.mp3',
      progressionIndex: 40
    },
    {
@@ -354,7 +354,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['23', '25'],
      previousScene: '21',
-     audioText: null,
+     audioText: 'assets/audio/scene22.mp3',
      progressionIndex: 50
    },
    {
@@ -370,7 +370,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: [],
      previousScene: null,
-     audioText: null,
+     audioText: 'assets/audio/scene23.mp3',
      progressionIndex: 100
    },
    {
@@ -405,7 +405,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['26'],
      previousScene: '22',
-     audioText: null,
+     audioText: 'assets/audio/scene25.mp3',
      progressionIndex: 60
    },
    {
@@ -421,7 +421,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['27', '29'],
      previousScene: null,
-     audioText: null,
+     audioText: 'assets/audio/scene26.mp3',
      progressionIndex: 63
    },
    {
@@ -437,7 +437,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['28', '30'],
      previousScene: '26',
-     audioText: null,
+     audioText: 'assets/audio/scene27.mp3',
      progressionIndex: 66
    },
    {
@@ -453,7 +453,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['23', '31'],
      previousScene: '27',
-     audioText: null,
+     audioText: 'assets/audio/scene28.mp3',
      progressionIndex: 70
    },
    {
@@ -469,7 +469,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['33', '34'],
      previousScene: '26',
-     audioText: null,
+     audioText: 'assets/audio/scene29.mp3',
      progressionIndex: 70
    },
    {
@@ -485,7 +485,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['23', '31'],
      previousScene: '27',
-     audioText: null,
+     audioText: 'assets/audio/scene30.mp3',
      progressionIndex: 70
    },
    {
@@ -501,7 +501,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['36'],
      previousScene: '28',
-     audioText: null,
+     audioText: 'assets/audio/scene31.mp3',
      progressionIndex: 80
    },
    {
@@ -517,7 +517,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['23', '36'],
      previousScene: '33',
-     audioText: null,
+     audioText: 'assets/audio/scene32.mp3',
      progressionIndex: 80
    },
    {
@@ -533,7 +533,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['32', '36'],
      previousScene: '29',
-     audioText: null,
+     audioText: 'assets/audio/scene33.mp3',
      progressionIndex: 75
    },
    {
@@ -553,7 +553,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['36'],
      previousScene: '29',
-     audioText: null,
+     audioText: 'assets/audio/scene34.mp3',
      progressionIndex: 80
    },
    {
@@ -568,7 +568,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['39'],
      previousScene: '36',
-     audioText: null,
+     audioText: 'assets/audio/scene35.mp3',
      progressionIndex: 75
    },
    {
@@ -583,7 +583,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['35', '37'],
      previousScene: null, //les scènes 34, 32 et 31 mènent ici
-     audioText: null,
+     audioText: 'assets/audio/scene36.mp3',
      progressionIndex: 85
    },
    {
@@ -598,7 +598,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: ['38'],
      previousScene: '36',
-     audioText: null,
+     audioText: 'assets/audio/scene37.mp3',
      progressionIndex: 90
    },
    {
@@ -613,7 +613,7 @@ export const SCENES: Scene[] = [
      battleWon: false,
      nextScenes: [],
      previousScene: '37',
-     audioText: null,
+     audioText: 'assets/audio/scene38.mp3',
      progressionIndex: 100
    },
    {
@@ -628,7 +628,7 @@ export const SCENES: Scene[] = [
     battleWon: false,
     nextScenes: ['27', '29'],
     previousScene: '35',
-    audioText: null,
+    audioText: 'assets/audio/scene39.mp3',
     progressionIndex: 63
   },
  ];
