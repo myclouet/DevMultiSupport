@@ -5,10 +5,10 @@
 </ion-header>
 
 <ion-content>
-  <div *ngIf="resultatCombat" class="imageBg">  
+  <div *ngIf="resultatCombat" id="fonDecran" > 
     <img src="../../assets/gagne4.png" alt="gagne" id="win">
   </div>
-  <div *ngIf="!resultatCombat">
+  <div *ngIf="!resultatCombat" id="fonDecran" >
     <img src="../../assets/knock-out.png" alt="perdu" id="loose">
   </div>  
   <div id="snail">
@@ -17,6 +17,18 @@
   </div>
   <div id="slime"></div>
 </ion-content>
+
+
+<ion-content *ngIf="resultatCombat" class="bgImage" [ngStyle]="{'background-image': 'url('+ scene.picture +')'}">
+  <style>
+    .bgImage {
+      --background: none;
+      --background-image: url("scene.picture") no-repeat center center fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
 
 <ion-footer>
   <ion-toolbar>

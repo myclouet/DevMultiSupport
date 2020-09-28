@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { Scene } from '../classes/scene';
 import { SauvegardeService } from './sauvegarde.service';
 import { AudioService } from './audio.service';
+import { Subject } from 'rxjs/internal/Subject';
 
 
 @Injectable({
@@ -16,13 +17,17 @@ export class CharacterService {
   heros: Hero;
   battleWon: boolean = false;
   neutralFight: boolean = false;
+  battleSubject = new Subject<boolean>();
+
+  // Kevin
+  private messager = new Subject<string>();
+  message$ = this.messager.asObservable();
 
   constructor(
     private alertController: AlertController,
     private router: Router,
     private sauvegardeService: SauvegardeService,
-    private audioService: AudioService,
-    
+    private audioService: AudioService
   ) {
     this.heros = this.getHero(); // initialisation du héro
   }
@@ -87,6 +92,9 @@ export class CharacterService {
     this.character.endurance = endurance;
   }
   */
+emitBattleSubject(){
+  this.battleSubject.next();
+}
 
   // Méthodes spécifiques au héro
   public die() {
@@ -100,6 +108,8 @@ export class CharacterService {
   public winGame(scene) {
     console.log('Vous avez gagné !');
     this.battleWon = true;
+    // this.emitBattleSubject();
+    this.messager.next();
     this.sauvegardeService.saveAction("tu as gagné le combat !");
     //TMP jusqu'à modale réalisée - uniquement pour tests
     if (scene._id !== '37') {
@@ -114,6 +124,8 @@ export class CharacterService {
   public looseGame(scene) {
     console.log('Vous avez perdu !');
     this.battleWon = false;
+    // this.emitBattleSubject();
+    this.messager.next();
     this.sauvegardeService.saveAction("tu as perdu le combat !")
     //TMP jusqu'à modale réalisée - uniquement pour tests
     this.router.navigate(['scene/', scene.nextScenes[0]]);

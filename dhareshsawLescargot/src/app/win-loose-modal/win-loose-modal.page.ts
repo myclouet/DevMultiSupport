@@ -19,10 +19,10 @@ export class WinLooseModalPage implements OnInit {
                ) { }
 
   ngOnInit() {
-    console.log(this.navParams);
+    // console.log(this.navParams);
     this.modalTitle = this.navParams.data.paramTitle;
     this.resultatCombat = this.characterService.getBattleWon();
-    console.log(this.characterService.battleWon);
+    // console.log(this.characterService.battleWon);
     
 
     console.log ( this.modalTitle)
@@ -35,10 +35,7 @@ export class WinLooseModalPage implements OnInit {
     this.navParams.get('value');
   }
 
-  
-  
-
-  async closeModal(){
+     async closeModal(){
     const onCloseData:string = "Wrapped Up !";
     await this.modalController.dismiss(onCloseData);
   }

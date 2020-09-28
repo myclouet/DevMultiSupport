@@ -1,4 +1,4 @@
-import { Component, OnInit, ɵCodegenComponentFactoryResolver } from '@angular/core';
+import { Component, OnDestroy, OnInit, ɵCodegenComponentFactoryResolver } from '@angular/core';
 import { CharacterService } from '../services/character.service';
 import { Hero, Character } from '../classes/personnage';
 import { Scene } from '../classes/scene';
@@ -15,6 +15,12 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { isLoweredSymbol } from '@angular/compiler';
 import { ObjectInventory } from '../classes/object';
 import { WinLooseModalPage } from '../win-loose-modal/win-loose-modal.page';
+import { Subscription } from 'rxjs';
+
+
+
+
+
 
 
 
@@ -24,6 +30,27 @@ import { WinLooseModalPage } from '../win-loose-modal/win-loose-modal.page';
   styleUrls: ['./scene.page.scss'],
 })
 export class ScenePage implements OnInit {
+  
+
+  // ----------------------------------------------------------------------------------------------------
+  // CONSTRUCTOR
+  // ----------------------------------------------------------------------------------------------------
+
+  constructor(
+    private characterService: CharacterService,
+    private sceneService: SceneService,
+    private route: ActivatedRoute,
+    private sauvegardeService: SauvegardeService,
+    private router: Router,
+    public modalController: ModalController,
+    public alertController: AlertController,
+    private audioService: AudioService) { }
+  
+  //   ngOnDestroy(): void {
+  //   throw new Error('Method not implemented.');
+  // }
+  
+  
 
   // ----------------------------------------------------------------------------------------------------
   // ATTRIBUTS
@@ -40,27 +67,31 @@ export class ScenePage implements OnInit {
   progressionBuffer: number;
   marginVar: string;
   marginNum: number;
-  
-
-  // ----------------------------------------------------------------------------------------------------
-  // CONSTRUCTOR
-  // ----------------------------------------------------------------------------------------------------
-
-  constructor(
-    private characterService: CharacterService,
-    private sceneService: SceneService,
-    private route: ActivatedRoute,
-    private sauvegardeService: SauvegardeService,
-    private router: Router,
-    public modalController: ModalController,
-    public alertController: AlertController,
-    private audioService: AudioService) { }
+ //-------------------------------------------------------------------------------
+ // VAR
+ //-------------------------------------------------------------------------------
+    battleInfoSubscription: Subscription;
+    resultatCombat;
 
   ngOnInit() {
 
     // Ligne à supprimer après réalisation de la modal 
-    this.openModalWinLoose();
+    // this.openModalWinLoose();
 
+    // this.resultatCombat = this.characterService.emitBattleSubject();
+    // console.log('RESULTAT ICI');
+    // console.log(this.resultatCombat);
+
+    this.characterService.message$.subscribe(data => {
+      this.resultatCombat = this.characterService.battleWon;
+      console.log('YOOOOOOOOOOOOOOOOOOOO');
+      console.log(this.resultatCombat);
+      if(this.resultatCombat || !this.resultatCombat) {
+        this.openModalWinLoose();
+        this.resultatCombat = undefined;
+      }
+    });
+  
     this.scene = this.sceneService.getSceneById(this.route.snapshot.paramMap.get('id'));
 
     this.sceneTitle();
@@ -78,12 +109,11 @@ export class ScenePage implements OnInit {
     this.marginVar = this.marginNum + '%';
 
     this.getObject();
-    if(this.scene._id === '1'){
-      this.alertSoundButtons();
-    }
+    // if(this.scene._id === '1'){
+    //   this.alertSoundButtons();
+    // }
 
   }
-
 
   ionViewDidEnter() { // use of ionViewDidEnter to correct bugs when going more than one time in a scene
     if (this.sauvegardeService.getRestore()){

@@ -168,32 +168,22 @@ ion-toolbar {
   font-family: 'Segoe Print';
 }
 
-ion-content {
-  //--background:#c7df8e;  
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  
-}
-ion-card {
-   background-color: rgba(255, 255, 255, 0.9);
-  display: flex;
- background-color: transparent;
-  justify-content: center;
-}
-  
-#loose{ 
-     /* Fixe l'image en haut à gauche de la page */
-   position: fixed; 
-   top: 0; 
-   left: 0; 
-   /* Préserve le ratio de l'image */
-   min-width: 80%;
-   min-height: 100%;
-   background-position: center;
+   #loose{
+    /* Fixe l'image en haut à gauche de la page */
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    /* Préserve le ratio de l'image */
+    min-width: 80%;
+    min-height: 100%;
+   /* L'image est positionnée en fond et est centrée */
+   background:no-repeat center url("../../assets/fond-combat\ perdu.jpg"); 
+   /* Ajout de la propriété avec les préfixes pour tous les moteurs de rendu */
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
    background-size: cover;
-    background: center url("../../assets/fond-combat\ perdu.jpg");
- } 
+}
   
   #win{
    /* Fixe l'image en haut à gauche de la page */
