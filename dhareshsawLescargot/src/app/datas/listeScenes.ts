@@ -88,7 +88,11 @@ export const SCENES: Scene[] = [
      description: 'Vous criez de toutes vos forces pour appeler à l\'aide, c\'est à dire que vous ne faites quasiment aucun bruit. Contre toute attente, le lama toujours aussi nonchalant tourne la tête vers le chat avec un air agacé. Il envoie un crachat si puissant et si fourni qu\'il balaye le chat. Celui-ci s\'enfuit a toute vitesse.',
      picture: '../assets/fond-rencontre.png',
      encounter: null,
-     bonusObject: null,
+     bonusObject: {
+      description: 'bière',
+      image: '',
+      bonusPower: ['strength', 1]
+    },
      bonusPower: [null, null],
      isBattle: false,
      battleWon: false,
@@ -136,11 +140,7 @@ export const SCENES: Scene[] = [
      description: 'Vous vous retournez vers lui, des larmes dans les yeux...il vous, nonchalant : \n -"Salut, moi c\'est Rapha". -"Moi c\'est Dhareshsaw" répondez-vous. -"Allez on trinque" dit-il en vous tendant une canette de bière. "C\'est bon et ça chasse les limaces !" continue-t-il avant de s\'endormir dans un rot ravageur. Vous continuez votre route.',
      picture: '../assets/fond-rencontre.png',
      encounter: '10',
-     bonusObject: {
-        description: 'bière',
-        image: '',
-        bonusPower: ['strength', 1]
-      },
+     bonusObject: {description: 'bière', image:'', bonusPower:['strength', 1]},
      bonusPower: [null, null],
      isBattle: false,
      battleWon: false,
