@@ -15,6 +15,7 @@ export class ObjectInventoryModalPage implements OnInit {
   // Hero item's id selected by the player
   modalItemId: number;
   modalTabWithoutKey: ObjectInventory[];
+  modalSplicedItemDeleted: ObjectInventory[];
   keyToAppear: boolean;
   // if inventory empty this boolean display a message saying it's empty 
   emptyInventoryObject: boolean;
@@ -65,23 +66,32 @@ export class ObjectInventoryModalPage implements OnInit {
         }
       }
     }
+    this.deleteItemFromObjectInventoryList(this.modalItemSelected)
   }
+
+  // Delete the item selected for use from the object inventory list
+  deleteItemFromObjectInventoryList(modalItemSelected:ObjectInventory){
+      const startIndex = 0;
+      const numberOfitemToDelete = 1;
+      this.modalSplicedItemDeleted = // on recupere ce qui a ete supprime pour faire un console.log et verifier
+        this.modalHero.items.splice(startIndex,numberOfitemToDelete, modalItemSelected )
+      console.log( "élément supprimé "+ this.modalSplicedItemDeleted[0].description)  
+       
+   }
   
-  deleteItemFromObjectInventoryList(){
-      // METTRE A JOUR L INVENTAIRE DU HERO LORSQUE LA CLASSE PERSONNAGE SERA OK
+   // METTRE A JOUR L INVENTAIRE DU HERO LORSQUE LA CLASSE PERSONNAGE SERA OK
     // this.modalHero.find{((items[0])) => item[] ===
     // tslint:disable-next-line: radix
     // FINIR LE CODE CI DESSOUS - modif faites le 08/09/20
-    // this.modalItemId = parseInt(this.modalHero._id);
+    // this.modalItemId = parseInt(this.modalHero._id); ==> le splice s'en moque du type on a pas besoin de parser :)
     // this.modalHero.items.splice(this.modalItemId , 1);
 
     // METHODE FRIGO DES FOURMIS POUR SUPPRIMER UN ELEMENT DU TABLEAU
     // addToCart(i, id_member: number, id_ingredient: number, qty: number) {
-    //   this.tableauPossesseurs.splice(i, 1);
+    //   this.tableauPossesseurs.splice(i, 1); ==> la en fait ça ajoute au tableau
     //   this.cartService.addToCart(id_member, id_ingredient, qty);
     // }
     // }
-  }
 
   // method enabling to close the modal and send the pictureName to newPicturePage
   async closeObjectInventoryModal() {

@@ -15,9 +15,14 @@ ion-footer > ion-button {
     --background:#a7c957;
 }
 
+ion-button {
+    display:flex;
+    margin-left: 10%;
+    margin-right: auto;
+    --background:#a7c957;
+}
+
 ion-title{
-    // margin-left:0;
-    // padding-left:0;
     font-weight: bold;
 }
 
@@ -30,19 +35,17 @@ ion-title{
     width: 70%;
     margin-left: 20px;
 }
+
 .imgBush{
-    
-    width: 30%;
+    width: 40%;
     size: 20px;
-    
 }
+
 .powerList{
     display: block;
 }
 
 .emptyInventoryText{
-    
     font-size: 2000ch;
 }
-
 

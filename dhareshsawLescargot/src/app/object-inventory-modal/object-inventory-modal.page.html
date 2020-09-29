@@ -62,9 +62,9 @@
             <ion-card-subtitle> <br> Allez au boulot petit escargot<br><br> tu vas finir en persillade!<br><br></ion-card-subtitle>
           </ion-item>
         </div>
+
         <div *ngFor="let heroObjectInventory of modalHero.items">
           <ion-item>
-            
             <ion-button (click)="updateHeroInventory(heroObjectInventory.description)">
               {{ heroObjectInventory.description}}
             </ion-button>
@@ -80,15 +80,16 @@
       <ion-col *ngIf="keyToAppear" size="12">
         <ion-title>Le Graal:</ion-title>
         <div>
-          <p>Clé du champ</p>
+          <p>Clé du champ de salade</p>
         </div>
       </ion-col>
     </ion-row>
-  </ion-grid>
+  
 
   <ion-footer style="background-color: #04471c;">
     <ion-button size="small" (click)="closeObjectInventoryModal()" style="float: right;">
       Fermer
     </ion-button>
   </ion-footer>
+</ion-grid>
 </ion-content>
