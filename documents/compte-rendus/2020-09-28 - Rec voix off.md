@@ -11,8 +11,10 @@
 
 ***
 ### Points marquants :
-:one: Toutes les voix ont été enregistrées, éditées et mixées  
+:one: Toutes les voix ont été enregistrées, éditées et mixées dans le studio d'enregistrement de Johann  
 :two: Le fichier listeScenes.ts a été modifié afin d'y renseigner les liens vers les fichiers audio
+
+![](https://github.com/myclouet/DevMultiSupport/blob/develop/documents/Session-StudioOne.jpg)
 
 ***
 ### Prochain point :
