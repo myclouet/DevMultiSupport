@@ -54,12 +54,14 @@
     
     <ion-row size="4">
       <ion-col size="6">
-        <ion-title>Inventaire:</ion-title>
-        <ion-item >
+        <ion-item>
+          <ion-title>Inventaire:</ion-title>
+        </ion-item>
         <div *ngIf="emptyInventoryObject">
-          <ion-card-subtitle> <br> Allez au boulot petit escargot<br><br> tu vas finir en persillade!<br><br></ion-card-subtitle>
+          <ion-item >
+            <ion-card-subtitle> <br> Allez au boulot petit escargot<br><br> tu vas finir en persillade!<br><br></ion-card-subtitle>
+          </ion-item>
         </div>
-      </ion-item>
         <div *ngFor="let heroObjectInventory of modalHero.items">
           <ion-item>
             
