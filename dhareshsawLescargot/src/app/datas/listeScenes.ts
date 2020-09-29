@@ -431,7 +431,7 @@ export const SCENES: Scene[] = [
      bonusPower: [null, null],
      isBattle: true,
      battleWon: false,
-     nextScenes: ['28', '30'],
+     nextScenes: ['23', '30'],
      previousScene: '26',
      audioText: null,
      progressionIndex: 66
@@ -588,7 +588,7 @@ export const SCENES: Scene[] = [
      bonusPower: [null, null],
      isBattle: true,
      battleWon: false,
-     nextScenes: ['38'],
+     nextScenes: ['23', '38'],
      previousScene: '36',
      audioText: null,
      progressionIndex: 90

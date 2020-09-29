@@ -73,6 +73,7 @@ export class ScenePage implements OnInit {
     this.marginVar = this.marginNum + '%';
 
     this.getObject();
+
     if(this.scene._id === '1'){
       this.alertSoundButtons();
     }
@@ -90,6 +91,8 @@ export class ScenePage implements OnInit {
       this.sauvegardeService.saveScene(this.scene);
     }
      this.startAudioCombat();
+
+     this.audioService.unloadVoice();
 
   }
 
@@ -350,12 +353,12 @@ export class ScenePage implements OnInit {
     }
 
     restartAudio() {
-      this.audioService.restartAudioService();
+      this.audioService.restartAudioService(this.scene);
       this.audioBtn = this.audioService.audio;
     }
 
     stopAudio() {
-      this.audioService.stopAudioService();
+      this.audioService.stopAudioService(this.scene);
       this.audioBtn = this.audioService.audio;
     }
 

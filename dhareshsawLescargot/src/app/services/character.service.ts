@@ -98,13 +98,7 @@ export class CharacterService {
     this.battleWon = true;
     this.sauvegardeService.saveAction("tu as gagné le combat !");
     //TMP jusqu'à modale réalisée - uniquement pour tests
-    if (scene._id !== '37') {
-      this.router.navigate(['scene/', scene.nextScenes[1]]);
-    }
-    else {
-      this.router.navigate(['scene/', scene.nextScenes[0]]);
-    }
-
+    this.router.navigate(['scene/', scene.nextScenes[1]]);
   }
 
   public looseGame(scene) {
