@@ -15,6 +15,7 @@ export class ObjectInventoryModalPage implements OnInit {
   // Hero item's id selected by the player
   modalItemId: number;
   modalTabWithoutKey: ObjectInventory[];
+  // object to delete from the inventory list
   modalSplicedItemDeleted: ObjectInventory[];
   keyToAppear: boolean;
   // if inventory empty this boolean display a message saying it's empty 
@@ -30,14 +31,15 @@ export class ObjectInventoryModalPage implements OnInit {
   // -------- LIFECYCLE METHODS --------- //
   ngOnInit() {
     this.modalHero = this.navParams.data.hero;
-    console.log(this.modalHero.items)
+    console.log(JSON.stringify(this.modalHero.items))
     // if hero has the key, it will appear in a separate ion-card otherwise it won't appear
     if (this.modalHero.key !== null) {
       this.keyToAppear = true;
     } else {
       this.keyToAppear = false;
     }
-    if (this.modalHero.items== null) {  // a verifier mais ici on a un tableau vide et pas un null
+    //if hero has empty inventory
+    if (this.modalHero.items== null) {  
       this.emptyInventoryObject = true;
     } else {
       this.emptyInventoryObject = false;
@@ -50,7 +52,6 @@ export class ObjectInventoryModalPage implements OnInit {
     this.modalItemSelected = this.modalHero.items.find(
       ({ description }) => description === nameItemSelected
     );
-
     // update of the hero's bonusPower
     if (this.modalItemSelected.bonusPower[0] === 'endurance') {
       this.modalHero.endurance =
@@ -62,11 +63,13 @@ export class ObjectInventoryModalPage implements OnInit {
       } else {
         if (this.modalItemSelected.bonusPower[0] === 'strength') {
           this.modalHero.strength =
-            this.modalHero.strength + this.modalItemSelected.bonusPower[1];
-        }
+            this.modalHero.strength + this.modalItemSelected.bonusPower[1];    
+            
+        }  
       }
-    }
-    this.deleteItemFromObjectInventoryList(this.modalItemSelected)
+    } 
+    this.deleteItemFromObjectInventoryList(this.modalItemSelected);
+  
   }
 
   // Delete the item selected for use from the object inventory list
@@ -74,12 +77,22 @@ export class ObjectInventoryModalPage implements OnInit {
       const startIndex = 0;
       const numberOfitemToDelete = 1;
       this.modalSplicedItemDeleted = // on recupere ce qui a ete supprime pour faire un console.log et verifier
-        this.modalHero.items.splice(startIndex,numberOfitemToDelete, modalItemSelected )
-      console.log( "élément supprimé "+ this.modalSplicedItemDeleted[0].description)  
-       
+        this.modalHero.items.splice(startIndex,numberOfitemToDelete, this.modalHero.items[this.modalItemSelected.description] );
+        if (this.modalHero.items == null)
+          this.emptyInventoryObject = true;
+      //console.log( "élément supprimé :  "+ this.modalSplicedItemDeleted[0].description); 
+      console.log("mon inventaire restant : " + JSON.stringify(this.modalHero.items));
    }
   
-   // METTRE A JOUR L INVENTAIRE DU HERO LORSQUE LA CLASSE PERSONNAGE SERA OK
+  // method enabling to close the modal and send the pictureName to newPicturePage
+  async closeObjectInventoryModal() {
+    await this.modalController.dismiss(this.modalHero);
+    
+  }
+}
+
+
+// METTRE A JOUR L INVENTAIRE DU HERO LORSQUE LA CLASSE PERSONNAGE SERA OK
     // this.modalHero.find{((items[0])) => item[] ===
     // tslint:disable-next-line: radix
     // FINIR LE CODE CI DESSOUS - modif faites le 08/09/20
@@ -88,14 +101,7 @@ export class ObjectInventoryModalPage implements OnInit {
 
     // METHODE FRIGO DES FOURMIS POUR SUPPRIMER UN ELEMENT DU TABLEAU
     // addToCart(i, id_member: number, id_ingredient: number, qty: number) {
-    //   this.tableauPossesseurs.splice(i, 1); ==> la en fait ça ajoute au tableau
+    //   this.tableauPossesseurs.splice(i, 1); 
     //   this.cartService.addToCart(id_member, id_ingredient, qty);
     // }
     // }
-
-  // method enabling to close the modal and send the pictureName to newPicturePage
-  async closeObjectInventoryModal() {
-    await this.modalController.dismiss(this.modalHero);
-    
-  }
-}
