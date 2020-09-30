@@ -12,68 +12,66 @@
  
   <ion-grid style="padding: 0; margin: 0; height: 90%">
     
-    <ion-row size="4">
-      <ion-col size="6">
-        <img src="/assets/shell-less-snail.png" class="imgSnail"/>
+    <ion-row size="4" class="container">
+      <ion-col size="6" class="imgContainer">
+        <img src="/assets/shell-less-snail.png" class="img"/>
       </ion-col>
       
 
-      <ion-col size="6" class="powerList">
+      <ion-col size="6">
         <ion-grid>
-          <ion-item>
-            <ion-title style="text-align: center;">Pouvoirs:</ion-title>
-          </ion-item>
+          <!-- <ion-item> -->
+            <ion-title >Pouvoirs:</ion-title>
+          <!-- </ion-item>
           
-          <ion-item style="display: block;" >
+          <ion-item> -->
             <ion-label>
               force: {{ this.modalHero.strength}}
             </ion-label>
-            <ion-icon style="color: white;" slot="icon-only"name="fitness"></ion-icon>
-        </ion-item>
-        <ion-item>
+            <!-- <ion-icon style="color: white;" slot="icon-only"name="fitness"></ion-icon> -->
+        <!-- </ion-item>
+        <ion-item> -->
           <ion-label>
             endurance: {{ this.modalHero.endurance}}
           </ion-label>
-          <ion-icon style="color: white;" slot="icon-only"name="save-outline"></ion-icon>
-        </ion-item>
-        <ion-item>
+          <!-- <ion-icon style="color: white;" slot="icon-only"name="save-outline"></ion-icon> -->
+        <!-- </ion-item> -->
+        <!-- <ion-item> -->
           <ion-label>
             chance: {{ this.modalHero.luck}}
           </ion-label>
-          <ion-icon style="color: white;" slot="icon-only" name="save-outline"></ion-icon>
-        </ion-item>
+          <!-- <ion-icon style="color: white;" slot="icon-only" name="save-outline"></ion-icon> -->
+        <!-- </ion-item> -->
         </ion-grid> 
       </ion-col>
     </ion-row >
     
-      <ion-row size ="1">
-        <ion-card style="background-color: #a7c957; text-align: center;">
+      <ion-row size ="1" class="bushImgContainer">
           <img src="/assets/bush_clipart.png" class="imgBush"/>
-        </ion-card>
       </ion-row>
     
-    <ion-row size="4">
+    <ion-row size="4" class="container">
       <ion-col size="6">
-        <ion-item>
+        <!-- <ion-item> -->
           <ion-title>Inventaire:</ion-title>
-        </ion-item>
+        <!-- </ion-item> -->
         <div *ngIf="emptyInventoryObject">
-          <ion-item >
-            <ion-card-subtitle> <br> Allez au boulot petit escargot<br><br> tu vas finir en persillade!<br><br></ion-card-subtitle>
-          </ion-item>
+          <!-- <ion-item > -->
+            <ion-card-subtitle> <br> Allez au boulot petit escargot.<br><br> Tu vas finir en persillade!<br><br></ion-card-subtitle>
+          <!-- </ion-item> -->
         </div>
 
         <div *ngFor="let heroObjectInventory of modalHero.items">
-          <ion-item>
+          <!-- <ion-item> -->
             <ion-button (click)="updateHeroInventory(heroObjectInventory.description)">
               {{ heroObjectInventory.description}} : apporte 
               {{ heroObjectInventory.bonusPower}}
             </ion-button>
-          </ion-item>
+          <!-- </ion-item> -->
         </div>
       </ion-col>
-      <ion-col size="6">
-        <img src="/assets/snail-shell.png" class="imgShell"/>
+      <ion-col size="6" class="imgContainer">
+        <img src="/assets/snail-shell.png" class="img"/>
       </ion-col>
     </ion-row>
 
