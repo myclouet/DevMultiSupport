@@ -5,24 +5,26 @@ import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { Scene } from '../classes/scene';
 import { SauvegardeService } from './sauvegarde.service';
+import { AudioService } from './audio.service';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class CharacterService {
-character: Character;
-heros: Hero;
-battleWon: boolean;
-neutralFight: boolean = false;
+  character: Character;
+  heros: Hero;
+  battleWon: boolean;
+  neutralFight: boolean = false;
 
   constructor(
     private alertController: AlertController,
     private router: Router,
-    private sauvegardeService : SauvegardeService,
-    ) {
-    //this.heros = this.getHero() ; // initialisation du héro
-   }
+    private sauvegardeService: SauvegardeService,
+    private audioService: AudioService
+  ) {
+    this.heros = this.getHero(); // initialisation du héro
+  }
 
   // Liste de personnages
   getPersonnages() {
@@ -31,7 +33,7 @@ neutralFight: boolean = false;
 
   // Personnage par id
   getPersonnageById(id) {
-    return PERSONNAGES.find(({_id}) => _id === id);
+    return PERSONNAGES.find(({ _id }) => _id === id);
   }
 
   // Heros 
@@ -102,7 +104,7 @@ neutralFight: boolean = false;
     console.log('Vous êtes mort');
   }
 
-  public chooseScene(myScene) { 
+  public chooseScene(myScene) {
   }
 
   public winGame(scene) {
@@ -110,13 +112,7 @@ neutralFight: boolean = false;
     this.battleWon = true;
     this.sauvegardeService.saveAction("tu as gagné le combat !");
     //TMP jusqu'à modale réalisée - uniquement pour tests
-    if(scene._id !== '37') {
-      this.router.navigate(['scene/',scene.nextScenes[1]]);
-    }
-    else {
-      this.router.navigate(['scene/',scene.nextScenes[0]]);
-    }
-    
+    this.router.navigate(['scene/', scene.nextScenes[1]]);
   }
 
   public looseGame(scene) {
@@ -124,7 +120,7 @@ neutralFight: boolean = false;
     this.battleWon = false;
     this.sauvegardeService.saveAction("tu as perdu le combat !")
     //TMP jusqu'à modale réalisée - uniquement pour tests
-    this.router.navigate(['scene/',scene.nextScenes[0]]);
+    this.router.navigate(['scene/', scene.nextScenes[0]]);
   }
 
   public rollDice(): number {
@@ -135,7 +131,7 @@ neutralFight: boolean = false;
     console.log(res);
     return res;
   }
-
+  
   //chemmins vers png correspondant au résultat du dé
   public pathDiceIcon(res) {
     let path: string;
@@ -157,7 +153,7 @@ neutralFight: boolean = false;
         break;
       case 6:
         path = './assets/dice/dice-6.png';
-        break;         
+        break;
     }
     return path;
   }
@@ -188,9 +184,9 @@ neutralFight: boolean = false;
   }*/
 
 
-// --------------------------------------------------------------------------------------------------------------------
-// COMBAT CONDITIONNEL
-// --------------------------------------------------------------------------------------------------------------------
+  // --------------------------------------------------------------------------------------------------------------------
+  // COMBAT CONDITIONNEL
+  // --------------------------------------------------------------------------------------------------------------------
 
   // combat conditionnel
   async conditionnalFight(scene) {
@@ -205,8 +201,9 @@ neutralFight: boolean = false;
             text: 'OK',
             handler: () => {
               this.winGame(scene);
+              this.audioService.startAudioService();
             }
-          }, 
+          },
         ]
       });
       await alert.present();
@@ -221,8 +218,9 @@ neutralFight: boolean = false;
             text: 'OK',
             handler: () => {
               this.looseGame(scene);
+              this.audioService.startAudioServiceLoose();
             }
-          }, 
+          },
         ]
       });
       await alert.present();
@@ -238,21 +236,21 @@ neutralFight: boolean = false;
             text: 'Jet de dé',
             handler: () => {
               this.conditionnalFight(scene);
-           
+
             }
-          }, 
+          },
         ]
       });
       await alert.present();
     }
   }
 
-// ----------------------------------------------------------------------------------------------------------------
-// COMBAT AUTOMATIQUE
-// ----------------------------------------------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------------------------------------------
+  // COMBAT AUTOMATIQUE
+  // ----------------------------------------------------------------------------------------------------------------
 
   //alert box pour comabt automatique
-  async automaticFightAlert(value, scene){
+  async automaticFightAlert(value, scene) {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: "Blessure",
@@ -262,16 +260,17 @@ neutralFight: boolean = false;
           text: 'OK',
           handler: () => {
             this.winGame(scene);
+            this.audioService.startAudioService();
           }
-        }, 
+        },
       ]
     });
     await alert.present();
   }
-  
+
 
   // combat automatique
-  automaticFight(scene){
+  automaticFight(scene) {
     let result = 0;
     result = Math.floor(Math.random() * 4);
     let res: boolean = false;
@@ -283,17 +282,17 @@ neutralFight: boolean = false;
         res = true;
         this.automaticFightAlert("de force", scene);
         break;
-      
+
       case 1:
         this.heros.endurance = this.heros.endurance - 1;
-        console.log("endurance : " +this.heros.endurance);
+        console.log("endurance : " + this.heros.endurance);
         res = true;
         this.automaticFightAlert("d'endurance", scene);
         break;
-      
+
       case 2:
         this.heros.luck = this.heros.luck - 1;
-        console.log("luck : " +this.heros.luck);
+        console.log("luck : " + this.heros.luck);
         res = true;
         this.automaticFightAlert("de chance", scene);
         break;
@@ -301,19 +300,19 @@ neutralFight: boolean = false;
       case 3:
         this.looseGame(scene);
         break;
-    }    
+    }
     return res;
   }
 
-// ----------------------------------------------------------------------------------------------------------------
-// FUITE
-// ----------------------------------------------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------------------------------------------
+  // FUITE
+  // ----------------------------------------------------------------------------------------------------------------
 
   // fuite
   public escape() {
     const resultatDe = this.rollDice();
     if (resultatDe < this.heros.luck) {
-      console.log('Je me suis échappé');  
+      console.log('Je me suis échappé');
       console.log('Dé : ' + resultatDe);
       console.log('Luck : ' + this.heros.luck);
       return true;
@@ -323,7 +322,7 @@ neutralFight: boolean = false;
       console.log('Luck : ' + this.heros.luck);
       return false;
     }
- }
+  }
 
   public addObject(item: number) {
   }

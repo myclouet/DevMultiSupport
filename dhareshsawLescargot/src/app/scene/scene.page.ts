@@ -89,6 +89,8 @@ export class ScenePage implements OnInit {
       this.sauvegardeService.saveScene(this.scene);
       this.getObject(); // getobject() déplacé ici pour corriger bug ajout de l'objet à la restauration
     }
+    this.startAudioCombat();
+    this.audioService.unloadVoice();
     console.log(this.heros);
 
   }
@@ -221,6 +223,7 @@ export class ScenePage implements OnInit {
           text: 'OK',
           handler: () => {
             this.prevScene();
+            this.startAudio();
           }
         }
       ]
@@ -342,14 +345,19 @@ export class ScenePage implements OnInit {
       this.audioService.startAudioService();
       this.audioBtn = this.audioService.audio;
     }
+    
+    startAudioCombat() {
+      this.audioService.startAudioServiceCombat(this.scene);
+      this.audioBtn = this.audioService.audio;
+    }
 
     restartAudio() {
-      this.audioService.restartAudioService();
+      this.audioService.restartAudioService(this.scene);
       this.audioBtn = this.audioService.audio;
     }
 
     stopAudio() {
-      this.audioService.stopAudioService();
+      this.audioService.stopAudioService(this.scene);
       this.audioBtn = this.audioService.audio;
     }
 
