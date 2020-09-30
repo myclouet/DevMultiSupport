@@ -21,7 +21,7 @@ neutralFight: boolean = false;
     private router: Router,
     private sauvegardeService : SauvegardeService,
     ) {
-    this.heros = this.getHero() ; // initialisation du héro
+    //this.heros = this.getHero() ; // initialisation du héro
    }
 
   // Liste de personnages
@@ -37,6 +37,20 @@ neutralFight: boolean = false;
   // Heros 
   getHero() {
     return HERO;
+  }
+
+  initHero() {
+    this.heros =
+    {
+      _id: '0',
+      name: 'Dhareshsaw l\'escargot',
+      avatar: './assets/avatars/dhareshsaw.png',
+      strength: 4,
+      luck: 4,
+      endurance: 3,
+      items: null,
+      key: null,
+    };
   }
 
   /*

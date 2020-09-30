@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { CharacterService } from './character.service';
 import { SauvegardeService } from './sauvegarde.service';
 import { Scene } from '../classes/scene';
+import { PERSONNAGES, HERO } from '../datas/listePersonnages';
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +31,7 @@ export class SceneService {
 
   newGame() {
     this.sauvegardeService.resetSauvegarde();
-    this.characterService.heros=this.characterService.getHero();
+    this.characterService.initHero();   
     this.router.navigate(['scene/', '1']);
   }
 

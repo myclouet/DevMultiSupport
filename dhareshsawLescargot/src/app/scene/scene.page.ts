@@ -57,11 +57,11 @@ export class ScenePage implements OnInit {
   ngOnInit() {
 
     this.scene = this.sceneService.getSceneById(this.route.snapshot.paramMap.get('id'));
+    console.log("ngOnInit scene "+this.scene._id)
 
     this.sceneTitle();
 
     this.heros = this.characterService.heros; // mise à jour du héro avec le héro du service
-    //console.log(this.heros);
 
     this.adversaire = this.getAdversaire();
 
@@ -72,7 +72,7 @@ export class ScenePage implements OnInit {
     this.marginNum = this.scene.progressionIndex - 5;
     this.marginVar = this.marginNum + '%';
 
-    this.getObject();
+
     if(this.scene._id === '1'){
       this.alertSoundButtons();
     }
@@ -80,10 +80,17 @@ export class ScenePage implements OnInit {
   }
 
   ionViewDidEnter() { // use of ionViewDidEnter to correct bugs when going more than one time in a scene
-    if (this.sauvegardeService.getRestore())
+    console.log("ionViewDidEnter scene "+this.scene._id)
+    this.heros = this.characterService.heros; // réinitialisation du héros pour l'affichage lors d'une nouvelle partie
+    if (this.sauvegardeService.getRestore()) {
       this.sauvegardeService.setRestore(false);
-    else  
+    }
+    else {
       this.sauvegardeService.saveScene(this.scene);
+      this.getObject(); // getobject() déplacé ici pour corriger bug ajout de l'objet à la restauration
+    }
+    console.log(this.heros);
+
   }
 
   // ----------------------------------------------------------------------------------------------------
