@@ -64,11 +64,13 @@ export class ObjectInventoryModalPage implements OnInit {
           break; 
         } 
         case 'strength': { 
-          this.modalHero.strength +=this.modalItemSelected.bonusPower[1];;
+          this.modalHero.strength +=this.modalItemSelected.bonusPower[1];
           break; 
-        } 
-    } 
+        }
+        
+    }
     this.deleteItemFromObjectInventoryList(this.modalItemSelected);
+    
    }
 
   // Delete the item selected for use from the object inventory list
@@ -77,10 +79,8 @@ export class ObjectInventoryModalPage implements OnInit {
       var numberOfItemToDelete = 1;
       this.modalSplicedItemDeleted =
         this.modalHero.items.splice(startIndex,numberOfItemToDelete, this.modalHero.items[modalItemSelected.description] );
-      if (this.modalHero.items == [null])
-        this.emptyInventoryObject = true;
-      //console.log( "élément supprimé :  "+ this.modalSplicedItemDeleted[0].description); 
-      console.log("mon inventaire restant : " + JSON.stringify(this.modalHero.items));
+        if ((JSON.stringify(this.modalHero.items)) == "[null]")
+          this.emptyInventoryObject = true;
    }
   
   // method enabling to close the modal and send the pictureName to newPicturePage
