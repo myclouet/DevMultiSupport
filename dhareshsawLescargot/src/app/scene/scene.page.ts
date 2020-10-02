@@ -322,7 +322,7 @@ export class ScenePage implements OnInit {
       component: WinLooseModalPage,
       cssClass: 'my-custom-modal-css',
       componentProps:{ 
-        paramTitle : 'Resultat du Combat'
+        paramTitle : 'RESULTAT'
       }
     });
       modal.onDidDismiss()
