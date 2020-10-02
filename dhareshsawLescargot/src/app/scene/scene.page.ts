@@ -76,7 +76,7 @@ export class ScenePage implements OnInit {
   ngOnInit() {
 
     // Ligne à supprimer après réalisation de la modal 
-    // this.openModalWinLoose();
+    this.openModalWinLoose();
 
     // this.resultatCombat = this.characterService.emitBattleSubject();
     // console.log('RESULTAT ICI');

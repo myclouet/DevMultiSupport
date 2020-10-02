@@ -11,32 +11,39 @@ export class WinLooseModalPage implements OnInit {
 
   @Input() modalTitle: string;
   resultatCombat: boolean;
-  message: string;
+  messageWin = 'Vous avez gagné !';
+  messageLoose = 'Vous avez perdu !';
+  fondEcranWin = '../../assets/fondCombatGagne.jpg';
+  fondEcranLoose = '../../assets/fondCombatPerdu.jpg';
+  imageWin = '../../assets/gagne4.png';
+  imageLoose = '../../assets/knock-out.png';
  
   constructor( public modalController: ModalController,
                public navParams: NavParams,
                public characterService: CharacterService
-               ) { }
+  ) { }
 
   ngOnInit() {
     // console.log(this.navParams);
     this.modalTitle = this.navParams.data.paramTitle;
     this.resultatCombat = this.characterService.getBattleWon();
+      console.log('ICIIII' + this.resultatCombat);
+    
     // console.log(this.characterService.battleWon);
     
 
-    console.log ( this.modalTitle)
-    if ( this.resultatCombat ){
-        this.message='Vous avez gagné ! ';
-  }
-    else {
-      this.message= 'Vous avez perdu !';
-    }
-    this.navParams.get('value');
-  }
+  //   console.log ( this.modalTitle)
+  //   if ( this.resultatCombat ){
+  //       this.message='Vous avez gagné ! ';
+  // }
+  //   else {
+  //     this.message= 'Vous avez perdu !';
+  //   }
+  //   this.navParams.get('value');
+   }
 
      async closeModal(){
-    const onCloseData:string = "Wrapped Up !";
+    const onCloseData:string = 'Wrapped Up !';
     await this.modalController.dismiss(onCloseData);
   }
 

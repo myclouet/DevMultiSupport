@@ -5,30 +5,28 @@
 </ion-header>
 
 <ion-content>
-  <div *ngIf="resultatCombat" id="fonDecran" > 
-    <img src="../../assets/gagne4.png" alt="gagne" id="win">
+  <div *ngIf="resultatCombat" class="fonDecran" style=" background-image: url(../../assets/fondCombatGagne.jpg);">
+   <h3>{{messageWin}}</h3>
+    <img [src]="imageWin" id="win">  
   </div>
-  <div *ngIf="!resultatCombat" id="fonDecran" >
-    <img src="../../assets/knock-out.png" alt="perdu" id="loose">
-  </div>  
+  <div *ngIf="!resultatCombat" class="fonDecran" style=" background-image: url(../../assets/fondCombatPerdu.jpg);">  
+    <h3>{{messageLoose}}</h3>
+    <img [src]="imageLoose" alt="perdu" id="loose">
+  </div> 
+
   <div id="snail">
     <div id="shell"></div>
     <div id="slug"></div>
   </div>
   <div id="slime"></div>
+
 </ion-content>
 
-
+<!-- 
 <ion-content *ngIf="resultatCombat" class="bgImage" [ngStyle]="{'background-image': 'url('+ scene.picture +')'}">
   <style>
-    .bgImage {
-      --background: none;
-      --background-image: url("scene.picture") no-repeat center center fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-  </style>
+    
+  </style> -->
 
 <ion-footer>
   <ion-toolbar>
@@ -37,6 +35,3 @@
    </ion-button>
   </ion-toolbar>
 </ion-footer>
-
-
- 

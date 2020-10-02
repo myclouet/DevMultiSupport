@@ -139,12 +139,6 @@
     }
   }
 
-  img
-  {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
   ion-icon {
     font-size: 80px;
     color :#a7c957;
@@ -168,43 +162,91 @@ ion-toolbar {
   font-family: 'Segoe Print';
 }
 
-   #loose{
+.fondEcran
+{
     /* Fixe l'image en haut à gauche de la page */
-    position: fixed; 
-    top: 0; 
-    left: 0; 
+     position: fixed; 
+     top: 0; 
+     left: 0; 
     /* Préserve le ratio de l'image */
-    min-width: 80%;
-    min-height: 100%;
+     min-width: 80%;
+     min-height: 100%;
    /* L'image est positionnée en fond et est centrée */
-   background:no-repeat center url("../../assets/fond-combat\ perdu.jpg"); 
-   /* Ajout de la propriété avec les préfixes pour tous les moteurs de rendu */
-   -webkit-background-size: cover;
-   -moz-background-size: cover;
-   -o-background-size: cover;
-   background-size: cover;
-}
-  
-  #win{
-   /* Fixe l'image en haut à gauche de la page */
-   position: fixed; 
-   top: 0; 
-   left: 0; 
-   /* Préserve le ratio de l'image */
-   min-width: 100%;
-   min-height: 100%;
+   //--background-image: url("scene.picture") no-repeat center center fixed;
    background-position: center;
+   background-repeat: no-repeat;
    background-size: cover;
-   background: center no-repeat transparent url("../../assets/fond-combat\ gagne.jpg");
+   
+#win{
+/* Fixe l'image en haut à gauche de la page */
+    position: fixed; 
+     top: 50; 
+     left: 50; 
+     /* Préserve le ratio de l'image */
+     min-width: 80%;
+     min-height: 100%;
+  }
+
+  #loose{
+   
   }
   
+   //background: no-repeat center fixed url("fondEcran");
+  // 
+   /* Ajout de la propriété avec les préfixes pour tous les moteurs de rendu */
+  //  -webkit-background-size: cover;
+  //  -moz-background-size: cover;
+  //  -o-background-size: cover;
+  //  background-size: cover;--background-image : url(+"choixFondEcran"+);
+}
   
-    h1 {
+  
+  
+  
+  // --background: none;
+  //   --background-image: url("fondEcran") no-repeat center center fixed;
+  //   background-position: center;
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
+  
+
+//    #loose{
+//     /* Fixe l'image en haut à gauche de la page */
+//     position: fixed; 
+//     top: 0; 
+//     left: 0; 
+//     /* Préserve le ratio de l'image */
+//     min-width: 80%;
+//     min-height: 100%;
+//    /* L'image est positionnée en fond et est centrée */
+//    background:no-repeat center url("../../assets/fond-combat\ perdu.jpg"); 
+//    /* Ajout de la propriété avec les préfixes pour tous les moteurs de rendu */
+//    -webkit-background-size: cover;
+//    -moz-background-size: cover;
+//    -o-background-size: cover;
+//    background-size: cover;
+// }
+  
+//   #win{
+//    /* Fixe l'image en haut à gauche de la page */
+//    position: fixed; 
+//    top: 0; 
+//    left: 0; 
+//    /* Préserve le ratio de l'image */
+//    min-width: 100%;
+//    min-height: 100%;
+//    background-position: center;
+//    background-size: cover;
+//    background: center no-repeat transparent url("../../assets/fond-combat\ gagne.jpg");
+//   }
+  
+  
+    h3 {
       text-align:center;
       font-size:65px;
       font-weight:100;
       padding:55px;
-      color:#4e4644;
+      color:blanchedalmond;
       font-family: 'Segoe Print';
     }
     
