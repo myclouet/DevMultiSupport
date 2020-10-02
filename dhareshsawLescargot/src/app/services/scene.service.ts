@@ -31,7 +31,7 @@ export class SceneService {
 
   newGame() {
     this.sauvegardeService.resetSauvegarde();
-    this.characterService.heros=this.characterService.getHero();
+    this.characterService.initHero();   
     this.router.navigate(['scene/', '1']);
     this.audioService.startAudioService();
   }
