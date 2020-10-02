@@ -41,6 +41,20 @@ export class CharacterService {
     return HERO;
   }
 
+  initHero() {
+    this.heros =
+    {
+      _id: '0',
+      name: 'Dhareshsaw l\'escargot',
+      avatar: './assets/avatars/dhareshsaw.png',
+      strength: 4,
+      luck: 4,
+      endurance: 3,
+      items: null,
+      key: null,
+    };
+  }
+
   /*
   // Liste des getters et setters communs
   public getId() {
