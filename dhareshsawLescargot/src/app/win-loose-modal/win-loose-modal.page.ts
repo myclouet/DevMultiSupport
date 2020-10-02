@@ -11,8 +11,12 @@ export class WinLooseModalPage implements OnInit {
 
   @Input() modalTitle: string;
   resultatCombat: boolean;
+
+  
   messageWin = 'Vous avez gagné !';
   messageLoose = 'Vous avez perdu !';
+
+  // Images à afficher selon la victoire ou la défaite du héro
   fondEcranWin = '../../assets/fondCombatGagne.jpg';
   fondEcranLoose = '../../assets/fondCombatPerdu.jpg';
   imageWin = '../../assets/gagne4.png';
@@ -24,27 +28,12 @@ export class WinLooseModalPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    // console.log(this.navParams);
     this.modalTitle = this.navParams.data.paramTitle;
     this.resultatCombat = this.characterService.getBattleWon();
-      console.log('ICIIII' + this.resultatCombat);
-    
-    // console.log(this.characterService.battleWon);
-    
+  }
 
-  //   console.log ( this.modalTitle)
-  //   if ( this.resultatCombat ){
-  //       this.message='Vous avez gagné ! ';
-  // }
-  //   else {
-  //     this.message= 'Vous avez perdu !';
-  //   }
-  //   this.navParams.get('value');
-   }
-
-     async closeModal(){
+  async closeModal() {
     const onCloseData:string = 'Wrapped Up !';
     await this.modalController.dismiss(onCloseData);
   }
-
 }

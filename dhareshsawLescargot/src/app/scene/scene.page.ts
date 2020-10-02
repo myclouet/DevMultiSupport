@@ -78,14 +78,9 @@ export class ScenePage implements OnInit {
     // Ligne à supprimer après réalisation de la modal 
     this.openModalWinLoose();
 
-    // this.resultatCombat = this.characterService.emitBattleSubject();
-    // console.log('RESULTAT ICI');
-    // console.log(this.resultatCombat);
-
     this.characterService.message$.subscribe(data => {
       this.resultatCombat = this.characterService.battleWon;
-      console.log('YOOOOOOOOOOOOOOOOOOOO');
-      console.log(this.resultatCombat);
+
       if(this.resultatCombat || !this.resultatCombat) {
         this.openModalWinLoose();
         this.resultatCombat = undefined;
