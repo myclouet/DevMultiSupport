@@ -5,7 +5,7 @@
     width:120px;
     position:absolute;
     z-index:1;
-    top:300px;
+    top:400px;
     left:-120px;
     animation: 25s snailCrawl linear infinite;
    // animation: 50s snailCrawl linear infinite;
@@ -94,7 +94,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b7df2d', endColorstr='#b7df2d',GradientType=1 ); /* IE6-9 */
     position:absolute;
     z-index:0;
-    top:372px;
+    top:472px;
     left:-50%;
     animation: 25s slimeSpread linear infinite;
    // animation: 25s slimeSpread linear infinite;
@@ -238,7 +238,7 @@ ion-toolbar {
   
     h1 {
       text-align:center;
-      font-size:50px;
+      font-size:40px;
       font-weight:100;
       padding:55px;
       color:blanchedalmond;

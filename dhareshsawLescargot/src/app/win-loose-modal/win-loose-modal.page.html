@@ -3,7 +3,6 @@
     <ion-title>{{ modalTitle }}</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
   <div *ngIf="resultatCombat" class="fondEcran" style=" background-image: url(../../assets/fondCombatGagne.jpg);">
    <h1>{{messageWin}}</h1>
@@ -20,8 +19,25 @@
   </div>
   <div id="slime"></div>
 
-</ion-content>
+</ion-content> 
 
+<!-- 
+
+<ion-content>
+  <div class="fondEcran" [style.background]="fondEcranWin"
+      *ngIf="resultatCombat ;else modalContent">
+      <h1>{{messageWin}}</h1>
+      <img [src]="imageWin" id="win"> 
+  </div>
+  style="background-image: url(../../assets/fondCombatGagne.jpg);"
+      
+  <ng-template #modalContent>
+    <h1>{{messageLoose}}</h1> 
+    <img [src]="imageLoose" alt="perdu" id="loose">
+  </ng-template >
+</ion-content>  -->
+
+ 
 <!-- 
 <ion-content *ngIf="resultatCombat" class="bgImage" [ngStyle]="{'background-image': 'url('+ scene.picture +')'}">
   <style>
