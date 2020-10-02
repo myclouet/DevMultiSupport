@@ -5,12 +5,12 @@
 </ion-header>
 
 <ion-content>
-  <div *ngIf="resultatCombat" class="fonDecran" style=" background-image: url(../../assets/fondCombatGagne.jpg);">
-   <h3>{{messageWin}}</h3>
+  <div *ngIf="resultatCombat" class="fondEcran" style=" background-image: url(../../assets/fondCombatGagne.jpg);">
+   <h1>{{messageWin}}</h1>
     <img [src]="imageWin" id="win">  
   </div>
-  <div *ngIf="!resultatCombat" class="fonDecran" style=" background-image: url(../../assets/fondCombatPerdu.jpg);">  
-    <h3>{{messageLoose}}</h3>
+  <div *ngIf="!resultatCombat" class="fondEcran" style=" background-image: url(../../assets/fondCombatPerdu.jpg);">  
+    <h1>{{messageLoose}}</h1>
     <img [src]="imageLoose" alt="perdu" id="loose">
   </div> 
 
