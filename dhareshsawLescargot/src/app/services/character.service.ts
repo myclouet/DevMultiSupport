@@ -50,6 +50,21 @@ export class CharacterService {
   getBattleWon(){
     return this.battleWon;
   }
+  
+  initHero() {
+    this.heros =
+    {
+      _id: '0',
+      name: 'Dhareshsaw l\'escargot',
+      avatar: './assets/avatars/dhareshsaw.png',
+      strength: 4,
+      luck: 4,
+      endurance: 3,
+      items: null,
+      key: null,
+    };
+  }
+
   /*
   // Liste des getters et setters communs
   public getId() {
@@ -112,13 +127,7 @@ emitBattleSubject(){
     this.messager.next();
     this.sauvegardeService.saveAction("tu as gagné le combat !");
     //TMP jusqu'à modale réalisée - uniquement pour tests
-    if (scene._id !== '37') {
-      this.router.navigate(['scene/', scene.nextScenes[1]]);
-    }
-    else {
-      this.router.navigate(['scene/', scene.nextScenes[0]]);
-    }
-
+    this.router.navigate(['scene/', scene.nextScenes[1]]);
   }
 
   public looseGame(scene) {
