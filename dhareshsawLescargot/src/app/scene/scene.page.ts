@@ -66,15 +66,16 @@ export class ScenePage implements OnInit {
  // VAR
  //-------------------------------------------------------------------------------
     battleInfoSubscription: Subscription;
+    etatEnCours
     resultatCombat;
 
   ngOnInit() {
 
     // Ligne à supprimer après réalisation de la modal 
-    this.openModalWinLoose();
+    // this.openModalWinLoose();
 
     this.characterService.message$.subscribe(data => {
-      this.resultatCombat = this.characterService.battleWon;
+      this.etatEnCours = this.characterService.battleWon;
 
       if(this.resultatCombat || !this.resultatCombat) {
         this.openModalWinLoose();
@@ -318,7 +319,7 @@ export class ScenePage implements OnInit {
       component: WinLooseModalPage,
       cssClass: 'my-custom-modal-css',
       componentProps:{ 
-        paramTitle : 'RESULTAT'
+        paramTitle : 'RÉSULTAT'
       }
     });
       modal.onDidDismiss()
