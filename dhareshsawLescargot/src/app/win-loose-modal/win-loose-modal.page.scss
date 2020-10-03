@@ -49,7 +49,7 @@
       right:0;
       background:green;
       border-radius:0 15px 5px 0;
-      animation: 0.50s slugSquish ease-in-out infinite;
+      animation: 50s slugSquish ease-in-out infinite;
      // animation: 1.25s slugSquish ease-in-out infinite;
 
       &:before { /* creates antennae */
@@ -57,7 +57,7 @@
         font-size:50px;
         line-height:0px;
         color:transparent;
-        text-shadow: -7px -12px 0 rgb(183,223,45), -1px -7px 0 rgb(183,223,45);
+        text-shadow: -7px -12px 0 rgb(192, 236, 34), -1px -7px 0 rgb(183,223,45);
         display:block;
         position:absolute;
         height:30px;
@@ -138,187 +138,58 @@
       right:-5px;
     }
   }
+  ion-content {
+    height: 100%;
+    --background : transparent;
+   }
 
-  ion-icon {
-    font-size: 80px;
-    color :#a7c957;
-}
-ion-button {
-    font-family: 'Segoe Print';
-    color: black;
-    --background:#c7df8e;
-    --color: black;
-    --opacity: 1;
-    --padding-bottom: 4px;
-    --padding-end: 4px;
-    --padding-start: 4px;
-    --padding-top: 4px;
-    --ripple-color:#bc4749;
-    --transition: background-color 15ms linear;
-}
+  ion-title{
+    text-align: center;
+    color: black  
+  }
 
-ion-toolbar {
-  --background:#f2e8cf;
-  font-family: 'Segoe Print';
-}
+  ion-button {
+      font-family: 'Calibri';
+      color:#bc4749;
+      --background:#c7df8e;
+      --color: black;
+      --padding-bottom: 4px;
+      --padding-end: 4px;
+      --padding-start: 4px;
+      --padding-top: 4px;
+      --ripple-color:#bc4749;
+      --transition: background-color 15ms linear;
+  }
 
-.fondEcran
-{
-    /* Fixe l'image en haut à gauche de la page 
-     position: fixed;*/
-     top: 0; 
-     left: 0;  
+  ion-toolbar {
+    --background:#f2e8cf;
+  }
+
+  .fondEcran {
     /* Préserve le ratio de l'image */
-     min-width: 80%;
-     min-height: 100%;
-   /* L'image est positionnée en fond et est centrée */
-   //--background-image: url("scene.picture") no-repeat center center fixed;
-   background-position: center;
-   background-repeat: no-repeat;
-   background-size: cover;
-   
-#win{
-/* Fixe l'image en haut à gauche de la page */
-  
+    min-width: 80%;
+    min-height: 100%;
+    /* L'image est positionnée en fond et est centrée */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
-  #loose{
-   
+  #loose {
+  /* Fixe l'image en haut à gauche de la page */
+    position: fixed; 
+    top: 0.5; 
+    left: 2; 
+    /* Préserve le ratio de l'image */
+    min-width: 30%;
+    min-height: 50%;
   }
-  
-   //background: no-repeat center fixed url("fondEcran");
-  // 
-   /* Ajout de la propriété avec les préfixes pour tous les moteurs de rendu */
-  //  -webkit-background-size: cover;
-  //  -moz-background-size: cover;
-  //  -o-background-size: cover;
-  //  background-size: cover;--background-image : url(+"choixFondEcran"+);
-}
-  
-  
-  
-  
-  // --background: none;
-  //   --background-image: url("fondEcran") no-repeat center center fixed;
-  //   background-position: center;
-  //   background-repeat: no-repeat;
-  //   background-size: cover;
-  
 
-//    #loose{
-//     /* Fixe l'image en haut à gauche de la page */
-//     position: fixed; 
-//     top: 0; 
-//     left: 0; 
-//     /* Préserve le ratio de l'image */
-//     min-width: 80%;
-//     min-height: 100%;
-//    /* L'image est positionnée en fond et est centrée */
-//    background:no-repeat center url("../../assets/fond-combat\ perdu.jpg"); 
-//    /* Ajout de la propriété avec les préfixes pour tous les moteurs de rendu */
-//    -webkit-background-size: cover;
-//    -moz-background-size: cover;
-//    -o-background-size: cover;
-//    background-size: cover;
-// }
-  
-//   #win{
-//    /* Fixe l'image en haut à gauche de la page */
-//    position: fixed; 
-//    top: 0; 
-//    left: 0; 
-//    /* Préserve le ratio de l'image */
-//    min-width: 100%;
-//    min-height: 100%;
-//    background-position: center;
-//    background-size: cover;
-//    background: center no-repeat transparent url("../../assets/fond-combat\ gagne.jpg");
-//   }
-  
-  
     h1 {
       text-align:center;
-      font-size:40px;
+      font-size:35px;
       font-weight:100;
       padding:55px;
-      color:blanchedalmond;
-      font-family: 'Segoe Print';
+      font-family: 'komika';
+      color: #04471c;
     }
-    
-   
-
-
-
-
-
-
-
-    
-// background-color:#c7df8e;
-
- 
-
-// .fightCard {
-//     height: 25%;
-// }
-
-// .arrowsArea {
-//     display: flex;
-//     justify-content: space-around;
-//     padding: 5px;
-
-// }
-// .arrowsAreaText {
-//     text-align: center;
-//     padding-bottom: 5px;
-// }
-
-// .description {
-//      height: 41%;
-//     padding-bottom: 11px;
-// }
-
-// .imgScene {
-//     float: left;
-//     width: 20%;
-//     margin-right: 10px;
-//     padding-bottom: 20px
-// }
-
-// .imgFight {
-//     width: 100%;
-// }
-
-// .fightArea {
-//     display: flex;
-//     justify-content: space-around;
-//     margin-top: 5%;
-
-//     ion-card {
-//         width: 40%;
-//         --background: rgba(0, 0, 0, 0.8);
-//         padding-top: 10px;
-//         padding-bottom: 10px;
-
-//         ion-card-title {
-//             text-align: center;
-//             margin-bottom: 10px;
-//             color: #bc4749;
-//         }
-
-//         ion-card-subtitle {
-//             margin-left: 10px;
-//             color: #f2e8cf;
-//         }
-//     }
-// }
-
-
-// .buttonsArea {
-//     display: flex;
-//     justify-content: space-around;
-
-//     ion-button {
-//        --background: #bc4749;
-//     }
-// }

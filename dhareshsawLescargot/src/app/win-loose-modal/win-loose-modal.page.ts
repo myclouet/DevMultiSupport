@@ -19,8 +19,8 @@ export class WinLooseModalPage implements OnInit {
   // Images à afficher selon la victoire ou la défaite du héro
   fondEcranWin = '../../assets/fondCombatGagne.jpg';
   fondEcranLoose = '../../assets/fondCombatPerdu.jpg';
-  imageWin = '../../assets/gagne4.png';
-  imageLoose = '../../assets/knock-out.png';
+  imageWin = '../../assets/gagne8.png';
+  imageLoose = '../../assets/knockOut2.png';
  
   constructor( public modalController: ModalController,
                public navParams: NavParams,
