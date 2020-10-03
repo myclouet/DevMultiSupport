@@ -10,11 +10,11 @@ import { CharacterService } from '../services/character.service';
 export class WinLooseModalPage implements OnInit {
 
   @Input() modalTitle: string;
-  resultatCombat: boolean;
+  combatGagne: boolean = false;
 
   
-  messageWin = 'Vous avez gagné !';
-  messageLoose = 'Vous avez perdu !';
+  messageWin = 'Tu as gagné !';
+  messageLoose = 'Tu as perdu !';
 
   // Images à afficher selon la victoire ou la défaite du héro
   fondEcranWin = '../../assets/fondCombatGagne.jpg';
@@ -29,7 +29,7 @@ export class WinLooseModalPage implements OnInit {
 
   ngOnInit() {
     this.modalTitle = this.navParams.data.paramTitle;
-    this.resultatCombat = this.characterService.getBattleWon();
+    // this.combatGagne = this.characterService.getBattleWon();
   }
 
   async closeModal() {

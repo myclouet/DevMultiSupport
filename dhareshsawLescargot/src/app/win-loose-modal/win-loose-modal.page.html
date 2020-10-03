@@ -4,11 +4,11 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <div *ngIf="resultatCombat" class="fondEcran" style=" background-image: url(../../assets/fondCombatGagne.jpg);">
-   <h1>{{messageWin}}</h1>
+  <div *ngIf="combatGagne" class="fondEcran" style=" background-image: url(../../assets/fondCombatGagne.jpg);">
+    <h1>{{messageWin}}</h1>
     <img [src]="imageWin" id="win">  
   </div>
-  <div *ngIf="!resultatCombat" class="fondEcran" style=" background-image: url(../../assets/fondCombatPerdu.jpg);">  
+  <div *ngIf="!combatGagne" class="fondEcran" style=" background-image: url(../../assets/fondCombatPerdu.jpg);">  
     <h1>{{messageLoose}}</h1>
     <img [src]="imageLoose" alt="perdu" id="loose">
   </div> 
@@ -18,8 +18,17 @@
     <div id="slug"></div>
   </div>
   <div id="slime"></div>
-
+  
 </ion-content> 
+
+<ion-footer>
+  <ion-toolbar>
+   <ion-button (click)="closeModal()" expand="block" fill="clear" shape="round">
+    Continuer le jeu
+   </ion-button>
+  </ion-toolbar>
+</ion-footer>
+
 
 <!-- 
 
@@ -44,10 +53,3 @@
     
   </style> -->
 
-<ion-footer>
-  <ion-toolbar>
-   <ion-button (click)="closeModal()" expand="block" fill="clear" shape="round">
-    Continuer le jeu
-   </ion-button>
-  </ion-toolbar>
-</ion-footer>
