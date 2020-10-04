@@ -9,28 +9,28 @@ import { CharacterService } from '../services/character.service';
 })
 export class WinLooseModalPage implements OnInit {
 
-  @Input() modalTitle: string;
+  modalTitle = 'RÉSULTAT';
   resultatCombat: boolean;
-  messageWin = 'Vous avez gagné !';
-  messageLoose = 'Vous avez perdu !';
+  messageWin = 'Tu as gagné !';
+  messageLoose = 'Tu as perdu !';
   fondEcranWin = '../../assets/fondCombatGagne.jpg';
   fondEcranLoose = '../../assets/fondCombatPerdu.jpg';
-  imageWin = '../../assets/gagne8.png';
-  imageLoose = '../../assets/knockOut2.png';
- 
+  imageWin = '../../assets/modalGagne.png';
+  imageLoose = '../../assets/modalKnockOut.png';
+
   constructor( public modalController: ModalController,
-               public navParams: NavParams,
+              // public navParams: NavParams,
                public characterService: CharacterService
   ) { }
 
   ngOnInit() {
     // console.log(this.navParams);
-    this.modalTitle = this.navParams.data.paramTitle;
+   // this.modalTitle = this.navParams.data.paramTitle;
     this.resultatCombat = this.characterService.getBattleWon();
-      console.log('ICIIII' + this.resultatCombat);
-    
+    console.log('ICIIII' + this.resultatCombat);
+
     // console.log(this.characterService.battleWon);
-    
+
 
   //   console.log ( this.modalTitle)
   //   if ( this.resultatCombat ){
@@ -42,8 +42,8 @@ export class WinLooseModalPage implements OnInit {
   //   this.navParams.get('value');
    }
 
-     async closeModal(){
-    const onCloseData:string = 'Wrapped Up !';
+     async closeModal() {
+    const onCloseData = 'Wrapped Up !';
     await this.modalController.dismiss(onCloseData);
   }
 

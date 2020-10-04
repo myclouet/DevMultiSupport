@@ -32,3 +32,5 @@ npm-debug.log*
 
 #Perso
 config.xml
+../.vscode/
+vscode/

@@ -3,14 +3,14 @@
     <ion-title>{{ modalTitle }}</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content>
+<ion-content class="ion-no-padding">
   <div *ngIf="resultatCombat" class="fondEcran" style=" background-image: url(../../assets/fondCombatGagne.jpg);">
    <h1 class="colorWin">{{messageWin}}</h1>
-    <img [src]="imageWin" id="win">  
+    <img [src]="imageWin" id="winLoose">  
   </div>
   <div *ngIf="!resultatCombat" class="fondEcran" style=" background-image: url(../../assets/fondCombatPerdu.jpg);">  
     <h1 class="colorLoose">{{messageLoose}}</h1>
-    <img [src]="imageLoose" alt="perdu" id="loose">
+    <img [src]="imageLoose" alt="perdu" id="winLoose">
   </div> 
 
   <div id="snail">

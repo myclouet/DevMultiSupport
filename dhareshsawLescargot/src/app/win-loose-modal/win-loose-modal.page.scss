@@ -1,13 +1,13 @@
  @media all and (max-width: 600px) {
  } 
- #snail {
+ #snail { 
     height:75px;
     width:120px;
     position:absolute;
     z-index:1;
-    top:400px;
+    top:450px;
     left:-120px;
-    animation: 25s snailCrawl linear infinite;
+    animation: 10s snailCrawl linear infinite;//escargot
    // animation: 50s snailCrawl linear infinite;
     #shell {
       height:64px;
@@ -85,16 +85,16 @@
   #slime {
     height:5px;
     width:50%;
-    background: -moz-linear-gradient(left,  rgba(183,223,45,0) 0%, rgba(183,223,45,1) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(183,223,45,0)), color-stop(100%,rgba(183,223,45,1))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(left,  rgba(183,223,45,0) 0%,rgba(183,223,45,1) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(left,  rgba(183,223,45,0) 0%,rgba(183,223,45,1) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(left,  rgba(183,223,45,0) 0%,rgba(183,223,45,1) 100%); /* IE10+ */
-  background: linear-gradient(to right,  rgba(183,223,45,0) 0%,rgba(183,223,45,1) 100%); /* W3C */
+    background: -moz-linear-gradient(left,  rgba(185, 223, 45, 0.87) 0%, rgb(154, 194, 10,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(185, 223, 45, 0.938)), color-stop(100%,rgba(154, 194, 10,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left,  rgba(201, 251, 20, 0.842) 100%,rgb(154, 194, 10) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left,  rgba(185, 223, 45, 0.876) 0%,rgb(154, 194, 10,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left,  rgba(185, 223, 45, 0.959) 0%,rgb(154, 194, 10,1) 100%); /* IE10+ */
+  background: linear-gradient(to right,  rgba(154, 194, 10, 0.794) 0%,rgb(195, 243, 19)100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b7df2d', endColorstr='#b7df2d',GradientType=1 ); /* IE6-9 */
     position:absolute;
     z-index:0;
-    top:472px;
+    top:522px;
     left:-50%;
     animation: 25s slimeSpread linear infinite;
    // animation: 25s slimeSpread linear infinite;
@@ -113,7 +113,7 @@
   @keyframes slimeSpread {
     0% {
       left:-50%;
-      opacity:.5;
+    //  opacity:.;
     }
     95% {
       opacity:.5;
@@ -141,24 +141,18 @@
   ion-content {
     height: 100%;
     --background : transparent;
-   }
+  }
 
   ion-title{
+    font-family: 'Segoe Print';
     text-align: center;
-    color: black  
+    color:#04471c
   }
 
   ion-button {
-      font-family: 'Calibri';
-      color:#bc4749;
-      --background:#c7df8e;
-      --color: black;
-      --padding-bottom: 4px;
-      --padding-end: 4px;
-      --padding-start: 4px;
-      --padding-top: 4px;
-      --ripple-color:#bc4749;
-      --transition: background-color 15ms linear;
+    --background:#a7c957;
+    --font-family: 'Calibri';
+    --color:black;
   }
 
   ion-toolbar {
@@ -175,11 +169,11 @@
     background-repeat: no-repeat;
   }
 
-  #loose {
+  #winLoose {
   /* Fixe l'image en haut à gauche de la page */
     position: fixed; 
     top: 0.5; 
-    left: 2; 
+    left: 3; 
     /* Préserve le ratio de l'image */
     min-width: 30%;
     min-height: 50%;
@@ -189,7 +183,8 @@
       text-align:center;
       font-size:35px;
       font-weight:100;
-      padding:55px;
-      font-family: 'komika';
+      padding:30px;
+      margin: 0%;
+      font-family: 'Komika';
       color: #04471c;
     }

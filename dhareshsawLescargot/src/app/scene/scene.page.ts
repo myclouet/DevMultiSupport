@@ -167,7 +167,7 @@ export class ScenePage implements OnInit {
           }
         ]
     });
-    await alert.present();
+      await alert.present();
   }
 
 
@@ -286,7 +286,7 @@ export class ScenePage implements OnInit {
         }
       ]
     });
-    await alert.present();
+           await alert.present();
     }
   }
 
@@ -330,19 +330,14 @@ export class ScenePage implements OnInit {
    // const resultatCombat = this.characterService.battleWon;
     const modal = await this.modalController.create({
       component: WinLooseModalPage,
-      cssClass: 'my-custom-modal-css',
-      componentProps:{ 
-        paramTitle : 'RESULTAT'
-      }
     });
-      modal.onDidDismiss()
-    .then((info) => {
+    modal.onDidDismiss().then((info) => {
       if (info !== null) {
         this.dataReturned = info.data;
     }
     });
 
-return await modal.present(); 
+    return await modal.present(); 
 }
 
   // -----------------------------------------------------------------------------------------------
