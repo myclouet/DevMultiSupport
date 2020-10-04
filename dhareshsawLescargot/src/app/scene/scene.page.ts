@@ -93,11 +93,11 @@ export class ScenePage implements OnInit {
     });
   
     this.scene = this.sceneService.getSceneById(this.route.snapshot.paramMap.get('id'));
+    console.log("ngOnInit scene "+this.scene._id)
 
     this.sceneTitle();
 
     this.heros = this.characterService.heros; // mise à jour du héro avec le héro du service
-    //console.log(this.heros);
 
     this.adversaire = this.getAdversaire();
 
@@ -113,15 +113,25 @@ export class ScenePage implements OnInit {
     //   this.alertSoundButtons();
     // }
 
+    if(this.scene._id === '1'){
+      this.alertSoundButtons();
+    }
+
   }
 
   ionViewDidEnter() { // use of ionViewDidEnter to correct bugs when going more than one time in a scene
-    if (this.sauvegardeService.getRestore()){
+    console.log("ionViewDidEnter scene "+this.scene._id)
+    this.heros = this.characterService.heros; // réinitialisation du héros pour l'affichage lors d'une nouvelle partie
+    if (this.sauvegardeService.getRestore()) {
       this.sauvegardeService.setRestore(false);
-    }else{  
-      this.sauvegardeService.saveScene(this.scene);
     }
-     this.startAudioCombat();
+    else {
+      this.sauvegardeService.saveScene(this.scene);
+      this.getObject(); // getobject() déplacé ici pour corriger bug ajout de l'objet à la restauration
+    }
+    this.startAudioCombat();
+    this.audioService.unloadVoice();
+    console.log(this.heros);
 
   }
 
@@ -394,19 +404,19 @@ return await modal.present();
       this.audioService.startAudioService();
       this.audioBtn = this.audioService.audio;
     }
-
+    
     startAudioCombat() {
       this.audioService.startAudioServiceCombat(this.scene);
       this.audioBtn = this.audioService.audio;
     }
 
     restartAudio() {
-      this.audioService.restartAudioService();
+      this.audioService.restartAudioService(this.scene);
       this.audioBtn = this.audioService.audio;
     }
 
     stopAudio() {
-      this.audioService.stopAudioService();
+      this.audioService.stopAudioService(this.scene);
       this.audioBtn = this.audioService.audio;
     }
 

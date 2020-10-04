@@ -51,13 +51,21 @@ export class AudioService {
     });
   }
 
-  stopAudioService() {
-    this.nativeAudio.stop('uniqueKey1');
+  stopAudioService(scene) {
+    if(scene.isBattle === true){
+      this.nativeAudio.stop('uniqueKey3');
+    } else {
+      this.nativeAudio.stop('uniqueKey1');
+    }
     this.audio = false;
   }
 
-  restartAudioService() {
-    this.nativeAudio.loop('uniqueKey1');
+  restartAudioService(scene) {
+    if(scene.isBattle === true){
+      this.nativeAudio.loop('uniqueKey3');
+    } else {
+      this.nativeAudio.loop('uniqueKey1');
+    }
     this.audio = true;
   }
 
