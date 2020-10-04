@@ -50,6 +50,7 @@ export class CharacterService {
   getBattleWon(){
     return this.battleWon;
   }
+  
   initHero() {
     this.heros =
     {

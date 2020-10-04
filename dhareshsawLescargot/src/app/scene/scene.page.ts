@@ -19,11 +19,6 @@ import { Subscription } from 'rxjs';
 
 
 
-
-
-
-
-
 @Component({
   selector: 'app-scene',
   templateUrl: './scene.page.html',
@@ -71,21 +66,17 @@ export class ScenePage implements OnInit {
  // VAR
  //-------------------------------------------------------------------------------
     battleInfoSubscription: Subscription;
+    etatEnCours
     resultatCombat;
 
   ngOnInit() {
 
     // Ligne à supprimer après réalisation de la modal 
-    this.openModalWinLoose();
-
-    // this.resultatCombat = this.characterService.emitBattleSubject();
-    // console.log('RESULTAT ICI');
-    // console.log(this.resultatCombat);
+    // this.openModalWinLoose();
 
     this.characterService.message$.subscribe(data => {
-      this.resultatCombat = this.characterService.battleWon;
-      console.log('YOOOOOOOOOOOOOOOOOOOO');
-      console.log(this.resultatCombat);
+      this.etatEnCours = this.characterService.battleWon;
+
       if(this.resultatCombat || !this.resultatCombat) {
         this.openModalWinLoose();
         this.resultatCombat = undefined;

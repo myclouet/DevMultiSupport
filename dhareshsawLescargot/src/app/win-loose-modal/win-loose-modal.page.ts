@@ -46,5 +46,4 @@ export class WinLooseModalPage implements OnInit {
     const onCloseData = 'Wrapped Up !';
     await this.modalController.dismiss(onCloseData);
   }
-
 }
