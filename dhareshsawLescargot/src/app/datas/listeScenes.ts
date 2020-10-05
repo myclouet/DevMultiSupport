@@ -88,11 +88,7 @@ export const SCENES: Scene[] = [
      description: 'Vous criez de toutes vos forces pour appeler à l\'aide, c\'est à dire que vous ne faites quasiment aucun bruit. Contre toute attente, le lama toujours aussi nonchalant tourne la tête vers le chat avec un air agacé. Il envoie un crachat si puissant et si fourni qu\'il balaye le chat. Celui-ci s\'enfuit a toute vitesse.',
      picture: '../assets/fond-rencontre.png',
      encounter: null,
-     bonusObject: {
-      description: 'bière',
-      image: '',
-      bonusPower: ['strength', 1]
-    },
+     bonusObject: null,
      bonusPower: [null, null],
      isBattle: false,
      battleWon: false,
@@ -140,7 +136,7 @@ export const SCENES: Scene[] = [
      description: 'Vous vous retournez vers lui, des larmes dans les yeux...il vous, nonchalant : \n -"Salut, moi c\'est Rapha". -"Moi c\'est Dhareshsaw" répondez-vous. -"Allez on trinque" dit-il en vous tendant une canette de bière. "C\'est bon et ça chasse les limaces !" continue-t-il avant de s\'endormir dans un rot ravageur. Vous continuez votre route.',
      picture: '../assets/fond-rencontre.png',
      encounter: '10',
-     bonusObject: {description: 'bière', image:'', bonusPower:['strength', 1]},
+     bonusObject: {description: 'Bière', image:'', bonusPower:['strength', 1]},
      bonusPower: [null, null],
      isBattle: false,
      battleWon: false,
@@ -301,7 +297,7 @@ export const SCENES: Scene[] = [
      picture: '../assets/fond-rencontre.png',
      encounter: '11',
      bonusObject: null,
-     bonusPower: ["force", 2],
+     bonusPower: ['force', 2],
      isBattle: false,
      battleWon: false,
      nextScenes: ['22'],
@@ -396,7 +392,7 @@ export const SCENES: Scene[] = [
      picture: '../assets/fond-rencontre.png',
      encounter: '9',
      bonusObject: {
-        description: 'potion de chance',
+        description: 'Potion de chance',
         image: '',
         bonusPower: ['luck', 2]
       },
@@ -495,7 +491,11 @@ export const SCENES: Scene[] = [
      description: 'Dhareshsaw l\'escargot voit un truc qui bouge au sol -> c\'est Anabelle la sauterelle qui agonise, elle a mangé trop de salade. Anabelle ne veut plus vivre cela et elle remet à Dhareshsaw la clé du champ de salade pour ne plus céder à la tentation.',
      picture: '../assets/fond-rencontre.png',
      encounter: '2',
-     bonusObject: null,
+     bonusObject: {
+      description: 'Clé',
+      image: '',
+      bonusPower: [null, null]
+    },
      bonusPower: [null, null],
      isBattle: false,
      battleWon: false,
@@ -544,7 +544,7 @@ export const SCENES: Scene[] = [
      picture: '../assets/fond-rencontre.png',
      encounter: '8',
      bonusObject: {
-        description: 'potion d\'endurance',
+        description: 'Potion d\'endurance',
         image: '',
         bonusPower: ['endurance', 2]
       },
