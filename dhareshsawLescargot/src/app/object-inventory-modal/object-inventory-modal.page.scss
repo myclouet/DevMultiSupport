@@ -1,7 +1,24 @@
+ion-button {
+    display:flex;
+    margin-left: 10%;
+    margin-right: auto;
+    --background:#a7c957;
+}
+
+ion-col > ul {
+    color: #04471c;
+    font-weight: bold;
+    font-size: 120%;
+}
+
+ion-col > ion-title{
+    font-weight: bold;
+    font-size: 140%;
+}
+
 ion-content {
     height: 100%;
-    font-size: 20px;
-    --background :#a7c957;
+    --background: #a7c957;
 }
 
 ion-footer {
@@ -15,14 +32,11 @@ ion-footer > ion-button {
     --background:#a7c957;
 }
 
-ion-button {
-    display:flex;
-    margin-left: 10%;
-    margin-right: auto;
-    --background:#a7c957;
+ion-toolbar {
+    text-align: center;
 }
 
-ion-title{
+ion-toolbar > ion-title {
     font-weight: bold;
 }
 
@@ -33,14 +47,19 @@ ion-title{
 .bushImgContainer{
     justify-content: center;  
     width: 100%;
+    margin:0;
 }
+
+// .columnDisplay {
+//     align-items: center;
+// }
 
 .container{
     display: flex;
 }
 
 .img {
-    width: 50%;
+    width: 70%;
 }
 
 .imgBush{
@@ -56,9 +75,5 @@ ion-title{
 
 .powerList{
     display: list-item;
-}
-
-.emptyInventoryText{
-    font-size: 2000ch;
 }
 
