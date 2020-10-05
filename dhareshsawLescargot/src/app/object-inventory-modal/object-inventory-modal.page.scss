@@ -5,6 +5,12 @@ ion-button {
     --background:#a7c957;
 }
 
+ion-col > div {
+    color: #04471c;
+    font-weight: bold;
+    font-size: 120%;
+}
+
 ion-col > ul {
     color: #04471c;
     font-weight: bold;
@@ -13,7 +19,7 @@ ion-col > ul {
 
 ion-col > ion-title{
     font-weight: bold;
-    font-size: 140%;
+    font-size: 140% !important;
 }
 
 ion-content {

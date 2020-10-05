@@ -34,6 +34,7 @@ export class ObjectInventoryModalPage implements OnInit {
     } else {
       this.keyToAppear = false;
     }
+    
     // if hero has empty inventory a message is displayed
     if (this.modalHero.items === null) {
       this.emptyInventoryObject = true;
