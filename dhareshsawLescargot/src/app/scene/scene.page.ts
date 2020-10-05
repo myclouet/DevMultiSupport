@@ -24,7 +24,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './scene.page.html',
   styleUrls: ['./scene.page.scss'],
 })
-export class ScenePage implements OnInit {
+export class ScenePage implements OnInit, OnDestroy {
   
 
   // ----------------------------------------------------------------------------------------------------
@@ -62,52 +62,41 @@ export class ScenePage implements OnInit {
   progressionBuffer: number;
   marginVar: string;
   marginNum: number;
+
+  battleInfoSubscription: Subscription;
  //-------------------------------------------------------------------------------
  // VAR
  //-------------------------------------------------------------------------------
-    battleInfoSubscription: Subscription;
-    etatEnCours
-    resultatCombat;
+    
+    ngOnInit() {
+      this.battleInfoSubscription = this.characterService.battleWonObservable$.subscribe(() => {
+       this.openModalWinLoose();
+      });
+    
+      this.scene = this.sceneService.getSceneById(this.route.snapshot.paramMap.get('id'));
+      console.log("ngOnInit scene "+this.scene._id)
 
-  ngOnInit() {
+      this.sceneTitle();
 
-    // Ligne à supprimer après réalisation de la modal 
-    // this.openModalWinLoose();
+      this.heros = this.characterService.heros; // mise à jour du héro avec le héro du service
 
-    this.characterService.message$.subscribe(data => {
-      this.etatEnCours = this.characterService.battleWon;
+      this.adversaire = this.getAdversaire();
 
-      if(this.resultatCombat || !this.resultatCombat) {
-        this.openModalWinLoose();
-        this.resultatCombat = undefined;
+      this.characterService.character = this.adversaire;
+
+      this.progressionBar = this.scene.progressionIndex / 100;
+      this.progressionBuffer = this.scene.progressionIndex / 100;
+      this.marginNum = this.scene.progressionIndex - 5;
+      this.marginVar = this.marginNum + '%';
+
+
+      if(this.scene._id === '1'){
+        this.alertSoundButtons();
       }
-    });
-  
-    this.scene = this.sceneService.getSceneById(this.route.snapshot.paramMap.get('id'));
-    console.log("ngOnInit scene "+this.scene._id)
+  }
 
-    this.sceneTitle();
-
-    this.heros = this.characterService.heros; // mise à jour du héro avec le héro du service
-
-    this.adversaire = this.getAdversaire();
-
-    this.characterService.character = this.adversaire;
-
-    this.progressionBar = this.scene.progressionIndex / 100;
-    this.progressionBuffer = this.scene.progressionIndex / 100;
-    this.marginNum = this.scene.progressionIndex - 5;
-    this.marginVar = this.marginNum + '%';
-
-    this.getObject();
-    // if(this.scene._id === '1'){
-    //   this.alertSoundButtons();
-    // }
-
-    if(this.scene._id === '1'){
-      this.alertSoundButtons();
-    }
-
+  ngOnDestroy() {
+    this.battleInfoSubscription.unsubscribe();  
   }
 
   ionViewDidEnter() { // use of ionViewDidEnter to correct bugs when going more than one time in a scene
@@ -158,7 +147,7 @@ export class ScenePage implements OnInit {
           }
         ]
     });
-      await alert.present();
+    await alert.present();
   }
 
 
@@ -277,7 +266,7 @@ export class ScenePage implements OnInit {
         }
       ]
     });
-           await alert.present();
+    await alert.present();
     }
   }
 
@@ -318,17 +307,20 @@ export class ScenePage implements OnInit {
   }
 
   async openModalWinLoose(){
-   // const resultatCombat = this.characterService.battleWon;
     const modal = await this.modalController.create({
       component: WinLooseModalPage,
+      // cssClass: 'my-custom-modal-css',
+      componentProps:{ 
+        paramTitle : 'RÉSULTAT'
+      }
     });
-    modal.onDidDismiss().then((info) => {
+      modal.onDidDismiss()
+    .then((info) => {
       if (info !== null) {
         this.dataReturned = info.data;
     }
     });
-
-    return await modal.present(); 
+  return await modal.present(); 
 }
 
   // -----------------------------------------------------------------------------------------------

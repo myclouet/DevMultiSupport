@@ -3,7 +3,6 @@ import { Character, Hero } from '../classes/personnage';
 import { PERSONNAGES, HERO } from '../datas/listePersonnages';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
-import { Scene } from '../classes/scene';
 import { SauvegardeService } from './sauvegarde.service';
 import { AudioService } from './audio.service';
 import { Subject } from 'rxjs/internal/Subject';
@@ -15,13 +14,12 @@ import { Subject } from 'rxjs/internal/Subject';
 export class CharacterService {
   character: Character;
   heros: Hero;
-  battleWon: boolean = false;
+  battleWon: boolean;
   neutralFight: boolean = false;
   battleSubject = new Subject<boolean>();
 
-  // Kevin
-  private messager = new Subject<string>();
-  message$ = this.messager.asObservable();
+  private battleWonSubject = new Subject<boolean>();
+  public battleWonObservable$ = this.battleWonSubject.asObservable();
 
   constructor(
     private alertController: AlertController,
@@ -123,20 +121,18 @@ emitBattleSubject(){
   public winGame(scene) {
     console.log('Vous avez gagné !');
     this.battleWon = true;
-    // this.emitBattleSubject();
-    this.messager.next();
     this.sauvegardeService.saveAction("tu as gagné le combat !");
     //TMP jusqu'à modale réalisée - uniquement pour tests
+    this.battleWonSubject.next(this.battleWon);
     this.router.navigate(['scene/', scene.nextScenes[1]]);
   }
 
   public looseGame(scene) {
     console.log('Vous avez perdu !');
     this.battleWon = false;
-    // this.emitBattleSubject();
-    this.messager.next();
     this.sauvegardeService.saveAction("tu as perdu le combat !")
     //TMP jusqu'à modale réalisée - uniquement pour tests
+    this.battleWonSubject.next(this.battleWon);
     this.router.navigate(['scene/', scene.nextScenes[0]]);
   }
 
