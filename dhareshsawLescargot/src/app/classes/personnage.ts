@@ -10,18 +10,8 @@ export class Character {
     luck: number;
     endurance: number;
     items: ObjectInventory[];
-    // key: ObjectInventory;
-    // private dead: boolean = false;
 }
 
 export class Hero extends Character {
-    // tslint:disable-next-line: variable-name
-    // _id: string;
-    // name: string;
-    // avatar: string;
-    // strength: number;
-    // luck: number;
-    // endurance: number;
-    // items: ObjectInventory[];
     key: ObjectInventory;
 }
