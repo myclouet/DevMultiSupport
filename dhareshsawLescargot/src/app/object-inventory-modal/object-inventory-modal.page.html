@@ -14,19 +14,13 @@
           <ion-title>Pouvoirs:</ion-title>
           <ul>
             <li>
-              <!-- <ion-label> -->
               Force {{ this.modalHero.strength}}
-              <!-- </ion-label> -->
             </li>
             <li>
-              <!-- <ion-label> -->
               Endurance {{ this.modalHero.endurance}}
-              <!-- </ion-label> -->
             </li>
             <li>
-              <!-- <ion-label> -->
               Chance {{ this.modalHero.luck}}
-              <!-- </ion-label> -->
             </li>
           </ul>
       </ion-col>
@@ -47,16 +41,10 @@
         </div>
         <div *ngIf="!emptyInventoryObject">
           <ul *ngFor="let heroObjectInventory of modalHero.items">
-            <!-- <div *ngFor="let heroObjectInventory of modalHero.items"> -->
-              <li>
-                <ion-button
-                  (click)="updateHeroInventory(heroObjectInventory.description)"
-                >
+              <li (click)="updateHeroInventory(heroObjectInventory.description)">
                   {{ heroObjectInventory.description}} : {{
                   heroObjectInventory.bonusPower}}
-                </ion-button>
               </li>
-            <!-- </div> -->
           </ul>
         </div>
       </ion-col>
@@ -64,8 +52,9 @@
         <img src="/assets/snail-shell.png" class="img" />
       </ion-col>
     </ion-row>
-    <ion-row size="4">
-      <ion-col *ngIf="keyToAppear" size="12">
+
+    <ion-row size="4" *ngIf="keyToAppear">
+      <ion-col size="12">
         <ion-title>Le Graal:</ion-title>
         <div>
           <p>Clé du champ de salade</p>
