@@ -2,11 +2,11 @@
   <ion-toolbar style="text-align: center;">
     <ion-grid>
       <ion-row>
-        <ion-title>{{title}}</ion-title>
+        <ion-label style="margin: auto; text-align: center; font-weight: bolder">{{title}}</ion-label>
       </ion-row>
       <ion-row>
-      <ion-img *ngIf="marginNum >= 0" id="margin" src="./assets/icon/snail_logo.png" [style.marginLeft]=marginVar></ion-img>
-          <ion-progress-bar color="primary" value="{{progressionBar}}" buffer="{{progressionBuffer}}"></ion-progress-bar>
+        <ion-img *ngIf="marginNum >= 0" id="margin" src="./assets/icon/snail_logo.png" [style.marginLeft]=marginVar></ion-img>
+        <ion-progress-bar color="primary" value="{{progressionBar}}" buffer="{{progressionBuffer}}"></ion-progress-bar>
       </ion-row>
       <ion-row>
         <ion-label style="margin: auto">Avancement : {{scene.progressionIndex}} %</ion-label>
