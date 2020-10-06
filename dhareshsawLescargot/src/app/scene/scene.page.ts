@@ -387,6 +387,7 @@ export class ScenePage implements OnInit {
 
     difficulte() {
       let difficulte: String;
+      // let difficulte: string; --> évite les erreurs
       let value: number = this.heros.strength + this.heros.luck - this.adversaire.endurance;
       if (value <=1) {
           difficulte = "hard";
