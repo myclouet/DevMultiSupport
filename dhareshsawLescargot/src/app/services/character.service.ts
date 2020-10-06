@@ -124,9 +124,6 @@ emitBattleSubject(){
     console.log('Vous avez gagné !');
     this.battleWon = true;
     this.sauvegardeService.saveAction("tu as gagné le combat !");
-    console.log('Début');
-    console.log(this.battleWon);
-    console.log('Fin');
     //TMP jusqu'à modale réalisée - uniquement pour tests
     this.openModalWinLoose(WinLooseModalPage);
     this.battleWonSubject.next(this.battleWon);
