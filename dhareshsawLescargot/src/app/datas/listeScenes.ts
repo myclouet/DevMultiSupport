@@ -297,7 +297,7 @@ export const SCENES: Scene[] = [
      picture: '../assets/fond-rencontre.png',
      encounter: '11',
      bonusObject: null,
-     bonusPower: ['force', 2],
+     bonusPower: [null, null],
      isBattle: false,
      battleWon: false,
      nextScenes: ['22'],
