@@ -1,24 +1,20 @@
 <ion-header>
-  <ion-toolbar style="text-align: center;">
-    <ion-grid>
+  <ion-toolbar>
+<ion-grid>
       <ion-row>
-        <ion-title>{{title}}</ion-title>
+        <ion-label style="margin: auto; text-align: center; font-family: segoe print; font-size: larger; font-weight: bolder; color:#04471c">{{title}}</ion-label>
       </ion-row>
       <ion-row>
-      <ion-img *ngIf="marginNum >= 0" id="margin" src="./assets/icon/snail_logo.png" [style.marginLeft]=marginVar></ion-img>
-          <ion-progress-bar color="primary" value="{{progressionBar}}" buffer="{{progressionBuffer}}"></ion-progress-bar>
+        <ion-img *ngIf="marginNum >= 0" id="margin" src="./assets/icon/snail_logo.png" [style.marginLeft]=marginVar></ion-img>
+        <ion-progress-bar color="primary" value="{{progressionBar}}" buffer="{{progressionBuffer}}"></ion-progress-bar>
       </ion-row>
       <ion-row>
-        <ion-label style="margin: auto">Avancement : {{scene.progressionIndex}} %</ion-label>
+        <ion-label style="margin: auto; color:#04471c; font-family: segoe print">Avancement : {{scene.progressionIndex}} %</ion-label>
       </ion-row>
-    </ion-grid> 
+    </ion-grid>
   </ion-toolbar>
 
 </ion-header>
-    
-
-
-
 
 <ion-content *ngIf="scene.isBattle===false" class="bgImage"
   [ngStyle]="{'background-image': 'url('+ scene.picture +')'}">
@@ -115,28 +111,28 @@
         <ion-col style="padding: 0; height: 100%">
           <ion-buttons style="background-color: #04471c;">
             <ion-button (click)="save()">
-              <ion-icon style="color: white;" slot="icon-only" name="save-outline"></ion-icon>
+              <ion-icon style="color: #f2e8cf;" slot="icon-only" name="save-outline"></ion-icon>
             </ion-button>
             <ion-button (click)="openModal()">
-              <ion-icon style="color: white;" slot="icon-only" name="person-circle"></ion-icon>
+              <ion-icon style="color: #f2e8cf;" slot="icon-only" name="construct"></ion-icon>
             </ion-button>
             <ion-button	(click)="openModalHistory()">
-              <ion-icon style="color: white;" slot="icon-only" name="git-network"></ion-icon>
+              <ion-icon style="color: #f2e8cf;" slot="icon-only" name="git-network"></ion-icon>
             </ion-button>
             <ion-button>
-              <ion-icon style="color: white;" slot="icon-only" name="document"></ion-icon>
+              <ion-icon style="color: #f2e8cf;" slot="icon-only" name="document"></ion-icon>
             </ion-button>
             <ion-button (click)="stopAudio()" *ngIf="audioBtn === true">
-              <ion-icon style="color: white;" slot="icon-only" name="volume-mute-outline"></ion-icon>
+              <ion-icon style="color: #f2e8cf;" slot="icon-only" name="volume-mute-outline"></ion-icon>
             </ion-button>
             <ion-button (click)="restartAudio()" *ngIf="audioBtn === false">
-              <ion-icon style="color: white;" slot="icon-only" name="volume-high-outline"></ion-icon>
+              <ion-icon style="color: #f2e8cf;" slot="icon-only" name="volume-high-outline"></ion-icon>
             </ion-button>
             <ion-button (click)="stopVoice()" *ngIf="audioVoiceBtn === true">
-              <ion-icon style="color: white;" slot="icon-only" name="stop-circle-outline"></ion-icon>
+              <ion-icon style="color: #f2e8cf;" slot="icon-only" name="stop-circle-outline"></ion-icon>
             </ion-button>
             <ion-button (click)="startVoice()" *ngIf="audioVoiceBtn === false">
-              <ion-icon style="color: white;" slot="icon-only" name="play-circle-outline"></ion-icon>
+              <ion-icon style="color: #f2e8cf;" slot="icon-only" name="play-circle-outline"></ion-icon>
             </ion-button>
           </ion-buttons>
         </ion-col>
@@ -146,5 +142,3 @@
     </ion-grid>
   </ion-toolbar>
 </ion-footer>
-
- 

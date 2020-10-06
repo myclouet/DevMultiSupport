@@ -15,7 +15,7 @@ export const SCENES: Scene[] = [
      nextScenes: ['2'],
      previousScene: null,
      audioText: 'assets/audio/scene01.mp3',
-     progressionIndex: 0
+     progressionIndex: 0,
    },
    {
      _id: '2',
@@ -76,7 +76,7 @@ export const SCENES: Scene[] = [
      bonusPower: [null, null],
      isBattle: false,
      battleWon: false,
-     nextScenes: ['3'],
+     nextScenes: ['8'],
      previousScene: '3',
      audioText: 'assets/audio/scene05.mp3',
      progressionIndex: 14
@@ -88,11 +88,7 @@ export const SCENES: Scene[] = [
      description: 'Vous criez de toutes vos forces pour appeler à l\'aide, c\'est à dire que vous ne faites quasiment aucun bruit. Contre toute attente, le lama toujours aussi nonchalant tourne la tête vers le chat avec un air agacé. Il envoie un crachat si puissant et si fourni qu\'il balaye le chat. Celui-ci s\'enfuit a toute vitesse.',
      picture: '../assets/fond-rencontre.png',
      encounter: null,
-     bonusObject: {
-      description: 'bière',
-      image: '',
-      bonusPower: ['strength', 1]
-    },
+     bonusObject: null,
      bonusPower: [null, null],
      isBattle: false,
      battleWon: false,
@@ -140,7 +136,7 @@ export const SCENES: Scene[] = [
      description: 'Vous vous retournez vers lui, des larmes dans les yeux...il vous, nonchalant : \n -"Salut, moi c\'est Rapha". -"Moi c\'est Dhareshsaw" répondez-vous. -"Allez on trinque" dit-il en vous tendant une canette de bière. "C\'est bon et ça chasse les limaces !" continue-t-il avant de s\'endormir dans un rot ravageur. Vous continuez votre route.',
      picture: '../assets/fond-rencontre.png',
      encounter: '10',
-     bonusObject: {description: 'bière', image:'', bonusPower:['strength', 1]},
+     bonusObject: {description: 'Bière', image:'', bonusPower:['strength', 1]},
      bonusPower: [null, null],
      isBattle: false,
      battleWon: false,
@@ -301,7 +297,7 @@ export const SCENES: Scene[] = [
      picture: '../assets/fond-rencontre.png',
      encounter: '11',
      bonusObject: null,
-     bonusPower: ["force", 2],
+     bonusPower: [null, null],
      isBattle: false,
      battleWon: false,
      nextScenes: ['22'],
@@ -396,7 +392,7 @@ export const SCENES: Scene[] = [
      picture: '../assets/fond-rencontre.png',
      encounter: '9',
      bonusObject: {
-        description: 'potion de chance',
+        description: 'Potion de chance',
         image: '',
         bonusPower: ['luck', 2]
       },
@@ -439,6 +435,7 @@ export const SCENES: Scene[] = [
      previousScene: '26',
      audioText: 'assets/audio/scene27.mp3',
      progressionIndex: 66
+     
    },
    {
      _id: '28',
@@ -470,7 +467,7 @@ export const SCENES: Scene[] = [
      nextScenes: ['33', '34'],
      previousScene: '26',
      audioText: 'assets/audio/scene29.mp3',
-     progressionIndex: 70
+     progressionIndex: 70     
    },
    {
      _id: '30',
@@ -486,7 +483,8 @@ export const SCENES: Scene[] = [
      nextScenes: ['23', '31'],
      previousScene: '27',
      audioText: 'assets/audio/scene30.mp3',
-     progressionIndex: 70
+     progressionIndex: 70,
+     key: true
    },
    {
      _id: '31',
@@ -495,14 +493,19 @@ export const SCENES: Scene[] = [
      description: 'Dhareshsaw l\'escargot voit un truc qui bouge au sol -> c\'est Anabelle la sauterelle qui agonise, elle a mangé trop de salade. Anabelle ne veut plus vivre cela et elle remet à Dhareshsaw la clé du champ de salade pour ne plus céder à la tentation.',
      picture: '../assets/fond-rencontre.png',
      encounter: '2',
-     bonusObject: null,
+     bonusObject: {
+      description: 'Clé',
+      image: '',
+      bonusPower: [null, null]
+    },
      bonusPower: [null, null],
      isBattle: false,
      battleWon: false,
      nextScenes: ['36'],
      previousScene: '28',
      audioText: 'assets/audio/scene31.mp3',
-     progressionIndex: 80
+     progressionIndex: 80,
+     key: true
    },
    {
      _id: '32',
@@ -544,7 +547,7 @@ export const SCENES: Scene[] = [
      picture: '../assets/fond-rencontre.png',
      encounter: '8',
      bonusObject: {
-        description: 'potion d\'endurance',
+        description: 'Potion d\'endurance',
         image: '',
         bonusPower: ['endurance', 2]
       },

@@ -35,7 +35,8 @@ export class ScenePage implements OnInit {
     private router: Router,
     public modalController: ModalController,
     public alertController: AlertController,
-    private audioService: AudioService) { }
+    private audioService: AudioService
+    ) {}
 
   // ----------------------------------------------------------------------------------------------------
   // ATTRIBUTS
@@ -70,10 +71,9 @@ export class ScenePage implements OnInit {
 
       this.characterService.character = this.adversaire;
 
-      this.progressionBar = this.scene.progressionIndex / 100;
-      this.progressionBuffer = this.scene.progressionIndex / 100;
-      this.marginNum = this.scene.progressionIndex - 5;
-      this.marginVar = this.marginNum + '%';
+    if(this.scene._id === '1'){
+      this.alertSoundButtons(); // affichage d'une alerte expliquant comment couper ou activer le son et la voix
+    }
 
       if(this.scene._id === '1'){
         this.alertSoundButtons();
@@ -97,6 +97,11 @@ export class ScenePage implements OnInit {
 
   }
 
+  
+
+
+
+
   // ----------------------------------------------------------------------------------------------------
   // METHODS SCENES
   // ----------------------------------------------------------------------------------------------------
@@ -111,10 +116,9 @@ export class ScenePage implements OnInit {
   }
 
   getObject() {
-    if(this.scene.bonusObject !== null) {
+    if(this.scene.bonusObject !== null)  {
       this.heros.items = this.heros.items || [];
       this.heros.items.push(this.scene.bonusObject);
-      console.log(this.heros.items);
     }
   }
 
@@ -122,14 +126,14 @@ export class ScenePage implements OnInit {
       const alert = await this.alertController.create({
         cssClass: '',
         header: 'Contrôle du son',
-        message: `Vous pouvez couper le fond sonore en appuyant sur </br><img class="imgSound" src="../assets/icon/volume-mute-outline.svg" alt="dice"></br></br>Vous pouvez activer la lecture audio des scènes en appuyant sur</br> <img src="../assets/icon/play-circle-outline.svg" alt="dice" style="border-radius: 2px"> `,
+        message: `Vous pouvez couper le fond sonore en appuyant sur </br><img class="imgSound" src="../assets/icon/volume-mute-outline.svg"></br></br>Vous pouvez activer la lecture audio des scènes en appuyant sur</br> <img src="../assets/icon/play-circle-outline.svg"> `,
         buttons: [
           {
             text: 'OK',
           }
         ]
     });
-    await alert.present();
+      await alert.present();
   }
 
 
@@ -250,7 +254,7 @@ export class ScenePage implements OnInit {
         }
       ]
     });
-    await alert.present();
+           await alert.present();
     }
   }
 
@@ -385,23 +389,11 @@ export class ScenePage implements OnInit {
       let difficulte: String;
       let value: number = this.heros.strength + this.heros.luck - this.adversaire.endurance;
       if (value <=1) {
-          difficulte = 'hard';
-        }
-      else if  (value > 6) {
-        difficulte = 'easy';
-      }
-      else difficulte = 'normal';
+          difficulte = "hard";
+        } else if  (value > 6) {
+        difficulte = "easy";
+      } else 
+      difficulte = "normal";
       return difficulte;
     }
-
-    // ---------------------------------------------------------------------------------
-    // Barre de progression
-    // ---------------------------------------------------------------------------------
-
-    /*moveImage() {
-	    let element = document.getElementById('margin');
-      element.style.marginLeft = ;
-      let maVar = element.style.marginLeft;
-      console.log(maVar);
-	  }*/
 }
