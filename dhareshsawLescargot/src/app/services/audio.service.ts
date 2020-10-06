@@ -84,6 +84,7 @@ export class AudioService {
 
   stopAudioVoiceService() {
     this.nativeAudio.stop('uniqueKey2');
+    this.nativeAudio.unload('uniqueKey2');
     this.nativeAudio.setVolumeForComplexAsset('uniqueKey1', 1);
   }
 

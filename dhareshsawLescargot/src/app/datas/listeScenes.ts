@@ -15,7 +15,7 @@ export const SCENES: Scene[] = [
      nextScenes: ['2'],
      previousScene: null,
      audioText: 'assets/audio/scene01.mp3',
-     progressionIndex: 0
+     progressionIndex: 0,
    },
    {
      _id: '2',
@@ -76,7 +76,7 @@ export const SCENES: Scene[] = [
      bonusPower: [null, null],
      isBattle: false,
      battleWon: false,
-     nextScenes: ['3'],
+     nextScenes: ['8'],
      previousScene: '3',
      audioText: 'assets/audio/scene05.mp3',
      progressionIndex: 14
@@ -297,7 +297,7 @@ export const SCENES: Scene[] = [
      picture: '../assets/fond-rencontre.png',
      encounter: '11',
      bonusObject: null,
-     bonusPower: ['force', 2],
+     bonusPower: [null, null],
      isBattle: false,
      battleWon: false,
      nextScenes: ['22'],
@@ -435,6 +435,7 @@ export const SCENES: Scene[] = [
      previousScene: '26',
      audioText: 'assets/audio/scene27.mp3',
      progressionIndex: 66
+     
    },
    {
      _id: '28',
@@ -466,7 +467,7 @@ export const SCENES: Scene[] = [
      nextScenes: ['33', '34'],
      previousScene: '26',
      audioText: 'assets/audio/scene29.mp3',
-     progressionIndex: 70
+     progressionIndex: 70     
    },
    {
      _id: '30',
@@ -482,7 +483,8 @@ export const SCENES: Scene[] = [
      nextScenes: ['23', '31'],
      previousScene: '27',
      audioText: 'assets/audio/scene30.mp3',
-     progressionIndex: 70
+     progressionIndex: 70,
+     key: true
    },
    {
      _id: '31',
@@ -502,7 +504,8 @@ export const SCENES: Scene[] = [
      nextScenes: ['36'],
      previousScene: '28',
      audioText: 'assets/audio/scene31.mp3',
-     progressionIndex: 80
+     progressionIndex: 80,
+     key: true
    },
    {
      _id: '32',
