@@ -74,7 +74,7 @@ export class ScenePage implements OnInit {
 
 
     if(this.scene._id === '1'){
-      this.alertSoundButtons();
+      this.alertSoundButtons(); // affichage d'une alerte expliquant comment couper ou activer le son et la voix
     }
 
   }
@@ -119,7 +119,7 @@ export class ScenePage implements OnInit {
       const alert = await this.alertController.create({
         cssClass: '',
         header: 'Contrôle du son',
-        message: `Vous pouvez couper le fond sonore en appuyant sur </br><img class="imgSound" src="../assets/icon/volume-mute-outline.svg" alt="dice"></br></br>Vous pouvez activer la lecture audio des scènes en appuyant sur</br> <img src="../assets/icon/play-circle-outline.svg" alt="dice" style="border-radius: 2px"> `,
+        message: `Vous pouvez couper le fond sonore en appuyant sur </br><img class="imgSound" src="../assets/icon/volume-mute-outline.svg"></br></br>Vous pouvez activer la lecture audio des scènes en appuyant sur</br> <img src="../assets/icon/play-circle-outline.svg"> `,
         buttons: [
           {
             text: 'OK',
