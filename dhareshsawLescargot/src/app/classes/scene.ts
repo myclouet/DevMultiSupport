@@ -15,5 +15,5 @@ export class Scene {
     previousScene: string;
     audioText: string;
     progressionIndex: number;
-    key?: boolean;
+    key?: boolean = false;
 }
