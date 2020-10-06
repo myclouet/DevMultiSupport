@@ -52,7 +52,8 @@ export class ScenePage implements OnInit {
     private router: Router,
     public modalController: ModalController,
     public alertController: AlertController,
-    private audioService: AudioService) { }
+    private audioService: AudioService
+    ) {}
 
   ngOnInit() {
 
@@ -95,6 +96,11 @@ export class ScenePage implements OnInit {
 
   }
 
+  
+
+
+
+
   // ----------------------------------------------------------------------------------------------------
   // METHODS SCENES
   // ----------------------------------------------------------------------------------------------------
@@ -126,7 +132,7 @@ export class ScenePage implements OnInit {
           }
         ]
     });
-    await alert.present();
+      await alert.present();
   }
 
 
@@ -245,7 +251,7 @@ export class ScenePage implements OnInit {
         }
       ]
     });
-    await alert.present();
+           await alert.present();
     }
   }
 
@@ -382,22 +388,10 @@ export class ScenePage implements OnInit {
       let value: number = this.heros.strength + this.heros.luck - this.adversaire.endurance;
       if (value <=1) {
           difficulte = "hard";
-        }
-      else if  (value > 6) {
+        } else if  (value > 6) {
         difficulte = "easy";
-      }
-      else difficulte = "normal";
+      } else 
+      difficulte = "normal";
       return difficulte;
     }
-
-    // ---------------------------------------------------------------------------------
-    // Barre de progression
-    // ---------------------------------------------------------------------------------
-
-    /*moveImage() {
-	    let element = document.getElementById('margin');
-      element.style.marginLeft = ;
-      let maVar = element.style.marginLeft;
-      console.log(maVar);
-	  }*/
 }
