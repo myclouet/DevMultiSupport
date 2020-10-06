@@ -124,7 +124,11 @@ emitBattleSubject(){
     console.log('Vous avez gagné !');
     this.battleWon = true;
     this.sauvegardeService.saveAction("tu as gagné le combat !");
+    console.log('Début');
+    console.log(this.battleWon);
+    console.log('Fin');
     //TMP jusqu'à modale réalisée - uniquement pour tests
+    this.openModalWinLoose(WinLooseModalPage);
     this.battleWonSubject.next(this.battleWon);
     this.router.navigate(['scene/', scene.nextScenes[1]]);
   }
@@ -134,6 +138,7 @@ emitBattleSubject(){
     this.battleWon = false;
     this.sauvegardeService.saveAction("tu as perdu le combat !")
     //TMP jusqu'à modale réalisée - uniquement pour tests
+    this.openModalWinLoose(WinLooseModalPage);
     this.battleWonSubject.next(this.battleWon);
     this.router.navigate(['scene/', scene.nextScenes[0]]);
   }
@@ -215,7 +220,6 @@ emitBattleSubject(){
           {
             text: 'OK',
             handler: () => {
-              this.openModalWinLoose(WinLooseModalPage);
               this.winGame(scene);
               this.audioService.startAudioService();
             }
@@ -233,7 +237,6 @@ emitBattleSubject(){
           {
             text: 'OK',
             handler: () => {
-              this.openModalWinLoose(WinLooseModalPage);
               this.looseGame(scene);
               this.audioService.startAudioServiceLoose();
             }
@@ -253,7 +256,6 @@ emitBattleSubject(){
             text: 'Jet de dé',
             handler: () => {
               this.conditionnalFight(scene);
-
             }
           },
         ]
@@ -352,20 +354,24 @@ emitBattleSubject(){
 
   }
 
+  /**
+   * 
+   * @param modalPage WinLooseModalPage modal to display when the player win or loose
+   */
   async openModalWinLoose(modalPage: typeof WinLooseModalPage){
     const modal = await this.modalController.create({
       component: modalPage,
-      // cssClass: 'my-custom-modal-css',
       componentProps:{ 
-        paramTitle : 'RÉSULTAT'
+        paramTitle : 'RÉSULTAT',
+        paramBattleWin: this.battleWon
       }
     });
-      modal.onDidDismiss()
+    modal.onDidDismiss()
     .then((info) => {
       if (info !== null) {
-        // this.dataReturned = info.data;
-    }
+        console.log('Error in openModalWinLoose method ' + info);
+      }
     });
-  return await modal.present(); 
-}
+    return await modal.present(); 
+  }
 }

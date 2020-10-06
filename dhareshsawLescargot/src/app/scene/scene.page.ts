@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, ɵCodegenComponentFactoryResolver } from '@angular/core';
+import { Component, OnInit, ɵCodegenComponentFactoryResolver } from '@angular/core';
 import { CharacterService } from '../services/character.service';
 import { Hero, Character } from '../classes/personnage';
 import { Scene } from '../classes/scene';
@@ -14,15 +14,13 @@ import { AudioService } from '../services/audio.service';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { isLoweredSymbol } from '@angular/compiler';
 import { ObjectInventory } from '../classes/object';
-import { WinLooseModalPage } from '../win-loose-modal/win-loose-modal.page';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-scene',
   templateUrl: './scene.page.html',
   styleUrls: ['./scene.page.scss'],
 })
-export class ScenePage implements OnInit, OnDestroy {
+export class ScenePage implements OnInit {
   
 
   // ----------------------------------------------------------------------------------------------------
@@ -38,12 +36,6 @@ export class ScenePage implements OnInit, OnDestroy {
     public modalController: ModalController,
     public alertController: AlertController,
     private audioService: AudioService) { }
-  
-  //   ngOnDestroy(): void {
-  //   throw new Error('Method not implemented.');
-  // }
-  
-  
 
   // ----------------------------------------------------------------------------------------------------
   // ATTRIBUTS
@@ -61,15 +53,11 @@ export class ScenePage implements OnInit, OnDestroy {
   marginVar: string;
   marginNum: number;
 
-  battleInfoSubscription: Subscription;
  //-------------------------------------------------------------------------------
  // VAR
  //-------------------------------------------------------------------------------
     
     ngOnInit() {
-      // this.battleInfoSubscription = this.characterService.battleWonObservable$.subscribe(() => {
-      //  this.openModalWinLoose();
-      // });
     
       this.scene = this.sceneService.getSceneById(this.route.snapshot.paramMap.get('id'));
       console.log("ngOnInit scene "+this.scene._id)
@@ -86,7 +74,6 @@ export class ScenePage implements OnInit, OnDestroy {
       this.progressionBuffer = this.scene.progressionIndex / 100;
       this.marginNum = this.scene.progressionIndex - 5;
       this.marginVar = this.marginNum + '%';
-
 
       if(this.scene._id === '1'){
         this.alertSoundButtons();
@@ -194,11 +181,6 @@ export class ScenePage implements OnInit, OnDestroy {
       ]
     });
     await alert.present();
-    // await alert.onclose()
-    await alert.onDidDismiss() //= (() => console.log('The alert has been closed.'));
-    // this.openModalWinLoose();
-    //onDidDismiss={() => setShowAlert4(false)}
-    console.log('dismiss terminé');
   }
 
 
@@ -283,7 +265,6 @@ export class ScenePage implements OnInit, OnDestroy {
       }
     });
 
-
     modal.onDidDismiss().then((dataReturned) => {
       if (dataReturned !== null) {
         this.dataReturned = dataReturned.data;
@@ -307,23 +288,6 @@ export class ScenePage implements OnInit, OnDestroy {
 
     return await modal.present();
   }
-
-  async openModalWinLoose(){
-    const modal = await this.modalController.create({
-      component: WinLooseModalPage,
-      // cssClass: 'my-custom-modal-css',
-      componentProps:{ 
-        paramTitle : 'RÉSULTAT'
-      }
-    });
-      modal.onDidDismiss()
-    .then((info) => {
-      if (info !== null) {
-        this.dataReturned = info.data;
-    }
-    });
-  return await modal.present(); 
-}
 
   // -----------------------------------------------------------------------------------------------
   // Sauvegarder partie

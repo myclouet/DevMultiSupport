@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
-import { CharacterService } from '../services/character.service';
+import { ModalController, NavParams } from '@ionic/angular';
 
 @Component({
   selector: 'app-win-loose-modal',
@@ -9,7 +8,7 @@ import { CharacterService } from '../services/character.service';
 })
 export class WinLooseModalPage implements OnInit {
 
-  modalTitle = 'RÉSULTAT';
+  modalTitle;
   resultatCombat: boolean;
 
   // Texte à afficher
@@ -22,15 +21,16 @@ export class WinLooseModalPage implements OnInit {
   imageWin = '../../assets/modalGagne.png';
   imageLoose = '../../assets/modalKnockOut.png';
 
-  constructor( public modalController: ModalController
-  ) { }
+  constructor(public modalController: ModalController,
+              public navParams: NavParams) {}
 
   ngOnInit() {
-    // this.resultatCombat = this.characterService.getBattleWon();
-   }
+    this.modalTitle = this.navParams.data.paramTitle;
+    this.resultatCombat = this.navParams.data.paramBattleWin;
+  }
 
   async closeModal() {
-    const onCloseData = 'Wrapped Up !';
+    const onCloseData = 'Close !';
     await this.modalController.dismiss(onCloseData);
   }
 }
