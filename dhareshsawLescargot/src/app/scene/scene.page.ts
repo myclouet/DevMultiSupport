@@ -17,8 +17,6 @@ import { ObjectInventory } from '../classes/object';
 import { WinLooseModalPage } from '../win-loose-modal/win-loose-modal.page';
 import { Subscription } from 'rxjs';
 
-
-
 @Component({
   selector: 'app-scene',
   templateUrl: './scene.page.html',
@@ -69,9 +67,9 @@ export class ScenePage implements OnInit, OnDestroy {
  //-------------------------------------------------------------------------------
     
     ngOnInit() {
-      this.battleInfoSubscription = this.characterService.battleWonObservable$.subscribe(() => {
-       this.openModalWinLoose();
-      });
+      // this.battleInfoSubscription = this.characterService.battleWonObservable$.subscribe(() => {
+      //  this.openModalWinLoose();
+      // });
     
       this.scene = this.sceneService.getSceneById(this.route.snapshot.paramMap.get('id'));
       console.log("ngOnInit scene "+this.scene._id)
@@ -95,9 +93,6 @@ export class ScenePage implements OnInit, OnDestroy {
       }
   }
 
-  ngOnDestroy() {
-    this.battleInfoSubscription.unsubscribe();  
-  }
 
   ionViewDidEnter() { // use of ionViewDidEnter to correct bugs when going more than one time in a scene
     console.log("ionViewDidEnter scene "+this.scene._id)
@@ -199,6 +194,11 @@ export class ScenePage implements OnInit, OnDestroy {
       ]
     });
     await alert.present();
+    // await alert.onclose()
+    await alert.onDidDismiss() //= (() => console.log('The alert has been closed.'));
+    // this.openModalWinLoose();
+    //onDidDismiss={() => setShowAlert4(false)}
+    console.log('dismiss terminé');
   }
 
 
@@ -257,10 +257,12 @@ export class ScenePage implements OnInit, OnDestroy {
       buttons: [
         {
           text: 'Jet de dé',
-          handler: () => {
+          handler: async () => {
             this.adversaire = this.getAdversaire();
             this.characterService.character = this.adversaire;
-            this.characterService.conditionnalFight(this.scene);
+            const fin = await this.characterService.conditionnalFight(this.scene);
+            console.log('TEST !' + fin);
+            
             this.scene.battleWon = this.characterService.battleWon;
           }
         }

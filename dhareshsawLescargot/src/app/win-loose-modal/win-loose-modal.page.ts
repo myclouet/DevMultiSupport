@@ -22,12 +22,11 @@ export class WinLooseModalPage implements OnInit {
   imageWin = '../../assets/modalGagne.png';
   imageLoose = '../../assets/modalKnockOut.png';
 
-  constructor( public modalController: ModalController,
-               public characterService: CharacterService
+  constructor( public modalController: ModalController
   ) { }
 
   ngOnInit() {
-    this.resultatCombat = this.characterService.getBattleWon();
+    // this.resultatCombat = this.characterService.getBattleWon();
    }
 
   async closeModal() {

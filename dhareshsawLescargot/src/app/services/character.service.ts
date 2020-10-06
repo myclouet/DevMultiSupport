@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Character, Hero } from '../classes/personnage';
 import { PERSONNAGES, HERO } from '../datas/listePersonnages';
-import { AlertController } from '@ionic/angular';
+import { AlertController, ModalController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { SauvegardeService } from './sauvegarde.service';
 import { AudioService } from './audio.service';
 import { Subject } from 'rxjs/internal/Subject';
+import { WinLooseModalPage } from '../win-loose-modal/win-loose-modal.page';
 
 
 @Injectable({
@@ -25,6 +26,7 @@ export class CharacterService {
     private alertController: AlertController,
     private router: Router,
     private sauvegardeService: SauvegardeService,
+    public modalController: ModalController,
     private audioService: AudioService
   ) {
     this.heros = this.getHero(); // initialisation du héro
@@ -213,6 +215,7 @@ emitBattleSubject(){
           {
             text: 'OK',
             handler: () => {
+              this.openModalWinLoose(WinLooseModalPage);
               this.winGame(scene);
               this.audioService.startAudioService();
             }
@@ -230,6 +233,7 @@ emitBattleSubject(){
           {
             text: 'OK',
             handler: () => {
+              this.openModalWinLoose(WinLooseModalPage);
               this.looseGame(scene);
               this.audioService.startAudioServiceLoose();
             }
@@ -347,4 +351,21 @@ emitBattleSubject(){
   public removeObj(myObj: number) {
 
   }
+
+  async openModalWinLoose(modalPage: typeof WinLooseModalPage){
+    const modal = await this.modalController.create({
+      component: modalPage,
+      // cssClass: 'my-custom-modal-css',
+      componentProps:{ 
+        paramTitle : 'RÉSULTAT'
+      }
+    });
+      modal.onDidDismiss()
+    .then((info) => {
+      if (info !== null) {
+        // this.dataReturned = info.data;
+    }
+    });
+  return await modal.present(); 
+}
 }
