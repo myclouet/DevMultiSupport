@@ -109,10 +109,9 @@ export class ScenePage implements OnInit {
   }
 
   getObject() {
-    if(this.scene.bonusObject !== null) {
+    if(this.scene.bonusObject !== null)  {
       this.heros.items = this.heros.items || [];
       this.heros.items.push(this.scene.bonusObject);
-      console.log(this.heros.items);
     }
   }
 
