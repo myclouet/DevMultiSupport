@@ -28,9 +28,7 @@ export class ObjectInventoryModalPage implements OnInit {
   // -------- LIFECYCLE METHODS --------- //
   ngOnInit() {
     this.modalHero = this.navParams.data.hero;
-    //console.log(JSON.stringify(this.modalHero.items[0].description));
-    // if (JSON.stringify(this.modalHero.items[0].description)=== undefined)
-    //   this.emptyInventoryObject = true;
+
     // if hero has the key, it will appear in a separate ion-card otherwise it won't appear
     if (this.modalHero.hasKey !== null) {
       this.keyToAppear = true;
@@ -67,23 +65,20 @@ export class ObjectInventoryModalPage implements OnInit {
           this.modalHero.strength += this.modalItemSelected.bonusPower[1];
           break;
         }
-
     }
-    this.deleteItemFromObjectInventoryList(this.modalItemSelected);
-
+    this.deleteItemFromObjectInventoryList(this.modalItemSelected.description, nameItemSelected)
    }
 
   // Delete the item selected for use from the object inventory list
-  deleteItemFromObjectInventoryList(modalItemSelected: ObjectInventory) {
-      const startIndex = 0;
-      const numberOfItemToDelete = 1;
-      this.modalSplicedItemDeleted =
-        this.modalHero.items.splice(startIndex, numberOfItemToDelete, this.modalHero.items[modalItemSelected.description] );
-      if ((JSON.stringify(this.modalHero.items)) === '[null]') {
+  deleteItemFromObjectInventoryList(modalItemSelected: any, nameItemSelected : string) {
+     var startIndex : number; 
+     startIndex = this.modalHero.items.findIndex(
+        ({ description}) => description === nameItemSelected
+          );
+      this.modalHero.items.splice(this.modalHero[startIndex], 1 );
+      if ((this.modalHero.items == null) || (this.modalHero.items.length == 0)) {
           this.emptyInventoryObject = true;
           this.modalHero.items = null;
-          console.log(this.modalHero.items);
-          
         }
    }
 
