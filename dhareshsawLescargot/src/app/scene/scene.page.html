@@ -1,15 +1,15 @@
 <ion-header>
-  <ion-toolbar style="text-align: center;">
+  <ion-toolbar>
     <ion-grid>
       <ion-row>
-        <ion-label style="margin: auto; text-align: center; font-weight: bolder">{{title}}</ion-label>
+        <ion-label class="title" >{{title}}</ion-label>
       </ion-row>
       <ion-row>
         <ion-img *ngIf="marginNum >= 0" id="margin" src="./assets/icon/snail_logo.png" [style.marginLeft]=marginVar></ion-img>
         <ion-progress-bar color="primary" value="{{progressionBar}}" buffer="{{progressionBuffer}}"></ion-progress-bar>
       </ion-row>
       <ion-row>
-        <ion-label style="margin: auto">Avancement : {{scene.progressionIndex}} %</ion-label>
+        <ion-label class="progressionTitle" >Avancement : {{scene.progressionIndex}} %</ion-label>
       </ion-row>
     </ion-grid> 
   </ion-toolbar>
@@ -108,42 +108,34 @@
 <!--Footer de l'application-->
 <ion-footer color="secondary">
   <ion-toolbar color="secondary" style="text-align: center">
-    <ion-grid style="padding: 0; margin: 0; height: 100%">
-      <ion-row style="height: 100%">
-        <ion-col style="padding: 0; height: 100%">
-        </ion-col>
-        <ion-col style="padding: 0; height: 100%">
-          <ion-buttons style="background-color: #04471c;">
-            <ion-button (click)="save()" *ngIf="saveBtn === true">
-              <ion-icon style="color: white;" slot="icon-only" name="save-outline"></ion-icon>
-            </ion-button>
-            <ion-button (click)="openModal()">
-              <ion-icon style="color: white;" slot="icon-only" name="construct"></ion-icon>
-            </ion-button>
-            <ion-button	(click)="openModalHistory()">
-              <ion-icon style="color: white;" slot="icon-only" name="git-network"></ion-icon>
-            </ion-button>
-            <ion-button>
-              <ion-icon style="color: white;" slot="icon-only" name="document"></ion-icon>
-            </ion-button>
-            <ion-button (click)="stopAudio()" *ngIf="audioBtn === true">
-              <ion-icon style="color: white;" slot="icon-only" name="volume-high-outline"></ion-icon>
-            </ion-button>
-            <ion-button (click)="restartAudio()" *ngIf="audioBtn === false">
-              <ion-icon style="color: white;" slot="icon-only" name="volume-mute-outline"></ion-icon>
-            </ion-button>
-            <ion-button (click)="stopVoice()" *ngIf="audioVoiceBtn === true">
-              <ion-icon style="color: white;" slot="icon-only" name="stop-circle-outline"></ion-icon>
-            </ion-button>
-            <ion-button (click)="startVoice()" *ngIf="audioVoiceBtn === false">
-              <ion-icon style="color: white;" slot="icon-only" name="play-circle-outline"></ion-icon>
-            </ion-button>
-          </ion-buttons>
-        </ion-col>
-        <ion-col style="padding: 0; height: 100%">
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+    <ion-buttons class="footerButtons">
+      <div style=" margin: auto; text-align: center">
+        <ion-button (click)="save()">
+          <ion-icon class="buttonIcons" slot="icon-only" name="save-outline"></ion-icon>
+        </ion-button>
+        <ion-button (click)="openModal()">
+          <ion-icon class="buttonIcons" slot="icon-only" name="construct"></ion-icon>
+        </ion-button>
+        <ion-button	(click)="openModalHistory()">
+          <ion-icon class="buttonIcons" slot="icon-only" name="git-network"></ion-icon>
+        </ion-button>
+        <ion-button>
+          <ion-icon class="buttonIcons" slot="icon-only" name="document"></ion-icon>
+        </ion-button>
+        <ion-button (click)="stopAudio()" *ngIf="audioBtn === true">
+          <ion-icon class="buttonIcons" slot="icon-only" name="volume-mute-outline"></ion-icon>
+        </ion-button>
+        <ion-button (click)="restartAudio()" *ngIf="audioBtn === false">
+          <ion-icon class="buttonIcons" slot="icon-only" name="volume-high-outline"></ion-icon>
+        </ion-button>
+        <ion-button (click)="stopVoice()" *ngIf="audioVoiceBtn === true">
+          <ion-icon class="buttonIcons" slot="icon-only" name="stop-circle-outline"></ion-icon>
+        </ion-button>
+        <ion-button (click)="startVoice()" *ngIf="audioVoiceBtn === false">
+          <ion-icon class="buttonIcons" slot="icon-only" name="play-circle-outline"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-buttons>
   </ion-toolbar>
 </ion-footer>
 
