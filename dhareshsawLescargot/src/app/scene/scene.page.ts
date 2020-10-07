@@ -39,6 +39,7 @@ export class ScenePage implements OnInit {
   progressionBuffer: number;
   marginVar: string;
   marginNum: number;
+  saveBtn: Boolean = true;
 
   // ----------------------------------------------------------------------------------------------------
   // CONSTRUCTOR
@@ -88,6 +89,7 @@ export class ScenePage implements OnInit {
     else {
       this.sauvegardeService.saveScene(this.scene);
       this.getObject(); // getobject() déplacé ici pour corriger bug ajout de l'objet à la restauration
+      this.saveBtn=true;
     }
     this.startAudioCombat();
     this.audioService.unloadVoice();
@@ -144,6 +146,7 @@ export class ScenePage implements OnInit {
 
   /* Choix combat */
   async fightSelection() {
+    this.saveBtn=false;
     const value = this.heros.strength + this.heros.luck - this.adversaire.endurance;
     let message: any;
     if (value <= 1) {
@@ -200,6 +203,7 @@ export class ScenePage implements OnInit {
   // ------------------------------------------------------------------------------------------------
   async escape() {
     this.sauvegardeService.saveAction("tu as fui le combat ");
+    this.saveBtn=false;
     const value = this.heros.strength + this.heros.luck - this.adversaire.endurance;
     let message: any;
     if (value <= 1) {
