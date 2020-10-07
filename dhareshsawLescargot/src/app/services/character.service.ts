@@ -266,6 +266,11 @@ emitBattleSubject(){
   // ----------------------------------------------------------------------------------------------------------------
 
   //alert box pour comabt automatique
+  /**
+   * Alert box for automatic fight
+   * @param value 
+   * @param scene 
+   */
   async automaticFightAlert(value, scene) {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
@@ -324,7 +329,10 @@ emitBattleSubject(){
   // FUITE
   // ----------------------------------------------------------------------------------------------------------------
 
-  // fuite
+  
+  /**
+   * method which allows the player to escape
+   */
   public escape() {
     const resultatDe = this.rollDice();
     if (resultatDe < this.heros.luck) {

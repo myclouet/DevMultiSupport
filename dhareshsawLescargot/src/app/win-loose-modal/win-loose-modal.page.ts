@@ -11,11 +11,15 @@ export class WinLooseModalPage implements OnInit {
   modalTitle;
   resultatCombat: boolean;
 
-  // Texte à afficher
+  /**
+   * messages to be displayed on the modal in case of victory or defeat of the player
+   */
   messageWin = 'Tu as gagné !';
   messageLoose = 'Tu as perdu !';
 
-  // Images à afficher
+  /**
+   * Images to display on the modal in case of victory or defeat of the player
+   */
   fondEcranWin = '../../assets/fondCombatGagne.jpg';
   fondEcranLoose = '../../assets/fondCombatPerdu.jpg';
   imageWin = '../../assets/modalGagne.png';

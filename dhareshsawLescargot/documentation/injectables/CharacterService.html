@@ -1,0 +1,2143 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>dhareshsawLescargot documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">dhareshsawLescargot documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li>CharacterService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/services/character.service.ts</code>
+        </p>
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#battleSubject">battleSubject</a>
+                            </li>
+                            <li>
+                                <a href="#battleWon">battleWon</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#battleWonObservable$">battleWonObservable$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#battleWonSubject">battleWonSubject</a>
+                            </li>
+                            <li>
+                                <a href="#character">character</a>
+                            </li>
+                            <li>
+                                <a href="#heros">heros</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#modalController">modalController</a>
+                            </li>
+                            <li>
+                                <a href="#neutralFight">neutralFight</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#addObject">addObject</a>
+                            </li>
+                            <li>
+                                <a href="#automaticFight">automaticFight</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#automaticFightAlert">automaticFightAlert</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#chooseScene">chooseScene</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#conditionnalFight">conditionnalFight</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#die">die</a>
+                            </li>
+                            <li>
+                                <a href="#emitBattleSubject">emitBattleSubject</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#escape">escape</a>
+                            </li>
+                            <li>
+                                <a href="#getBattleWon">getBattleWon</a>
+                            </li>
+                            <li>
+                                <a href="#getHero">getHero</a>
+                            </li>
+                            <li>
+                                <a href="#getPersonnageById">getPersonnageById</a>
+                            </li>
+                            <li>
+                                <a href="#getPersonnages">getPersonnages</a>
+                            </li>
+                            <li>
+                                <a href="#initHero">initHero</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#looseGame">looseGame</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#openModalWinLoose">openModalWinLoose</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#pathDiceIcon">pathDiceIcon</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#removeObj">removeObj</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#rollDice">rollDice</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#useObject">useObject</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#winGame">winGame</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(alertController: AlertController, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, sauvegardeService: <a href="../injectables/SauvegardeService.html">SauvegardeService</a>, modalController: ModalController, audioService: <a href="../injectables/AudioService.html">AudioService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/services/character.service.ts:23</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>alertController</td>
+                                                  
+                                                        <td>
+                                                                    <code>AlertController</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>sauvegardeService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SauvegardeService.html" target="_self" >SauvegardeService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>modalController</td>
+                                                  
+                                                        <td>
+                                                                    <code>ModalController</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>audioService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AudioService.html" target="_self" >AudioService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addObject"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            addObject
+                        </b>
+                        <a href="#addObject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addObject(item: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="351"
+                            class="link-to-prism">src/app/services/character.service.ts:351</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>item</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="automaticFight"></a>
+                    <span class="name">
+                        <b>
+                            automaticFight
+                        </b>
+                        <a href="#automaticFight"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>automaticFight(scene)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="294"
+                            class="link-to-prism">src/app/services/character.service.ts:294</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>scene</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="automaticFightAlert"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Async</span>
+                            automaticFightAlert
+                        </b>
+                        <a href="#automaticFightAlert"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>automaticFightAlert(value, scene)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="274"
+                            class="link-to-prism">src/app/services/character.service.ts:274</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Alert box for automatic fight</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>value</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>scene</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="chooseScene"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            chooseScene
+                        </b>
+                        <a href="#chooseScene"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>chooseScene(myScene)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="120"
+                            class="link-to-prism">src/app/services/character.service.ts:120</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>myScene</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="conditionnalFight"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Async</span>
+                            conditionnalFight
+                        </b>
+                        <a href="#conditionnalFight"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>conditionnalFight(scene)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="209"
+                            class="link-to-prism">src/app/services/character.service.ts:209</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>scene</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>{}</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="die"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            die
+                        </b>
+                        <a href="#die"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>die()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="115"
+                            class="link-to-prism">src/app/services/character.service.ts:115</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="emitBattleSubject"></a>
+                    <span class="name">
+                        <b>
+                            emitBattleSubject
+                        </b>
+                        <a href="#emitBattleSubject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>emitBattleSubject()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="110"
+                            class="link-to-prism">src/app/services/character.service.ts:110</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="escape"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            escape
+                        </b>
+                        <a href="#escape"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>escape()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="336"
+                            class="link-to-prism">src/app/services/character.service.ts:336</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>method which allows the player to escape</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getBattleWon"></a>
+                    <span class="name">
+                        <b>
+                            getBattleWon
+                        </b>
+                        <a href="#getBattleWon"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getBattleWon()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="50"
+                            class="link-to-prism">src/app/services/character.service.ts:50</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getHero"></a>
+                    <span class="name">
+                        <b>
+                            getHero
+                        </b>
+                        <a href="#getHero"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getHero()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">src/app/services/character.service.ts:46</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPersonnageById"></a>
+                    <span class="name">
+                        <b>
+                            getPersonnageById
+                        </b>
+                        <a href="#getPersonnageById"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getPersonnageById(id)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">src/app/services/character.service.ts:41</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPersonnages"></a>
+                    <span class="name">
+                        <b>
+                            getPersonnages
+                        </b>
+                        <a href="#getPersonnages"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getPersonnages()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/services/character.service.ts:36</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initHero"></a>
+                    <span class="name">
+                        <b>
+                            initHero
+                        </b>
+                        <a href="#initHero"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>initHero()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="54"
+                            class="link-to-prism">src/app/services/character.service.ts:54</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="looseGame"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            looseGame
+                        </b>
+                        <a href="#looseGame"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>looseGame(scene)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="133"
+                            class="link-to-prism">src/app/services/character.service.ts:133</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>scene</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openModalWinLoose"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Async</span>
+                            openModalWinLoose
+                        </b>
+                        <a href="#openModalWinLoose"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>openModalWinLoose(modalPage)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="366"
+                            class="link-to-prism">src/app/services/character.service.ts:366</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>modalPage</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>WinLooseModalPage modal to display when the player win or loose</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>{}</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pathDiceIcon"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            pathDiceIcon
+                        </b>
+                        <a href="#pathDiceIcon"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>pathDiceIcon(res)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="153"
+                            class="link-to-prism">src/app/services/character.service.ts:153</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>res</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeObj"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            removeObj
+                        </b>
+                        <a href="#removeObj"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>removeObj(myObj: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="358"
+                            class="link-to-prism">src/app/services/character.service.ts:358</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>myObj</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="rollDice"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            rollDice
+                        </b>
+                        <a href="#rollDice"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>rollDice()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="143"
+                            class="link-to-prism">src/app/services/character.service.ts:143</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="useObject"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            useObject
+                        </b>
+                        <a href="#useObject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>useObject(myObj: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="354"
+                            class="link-to-prism">src/app/services/character.service.ts:354</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>myObj</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="winGame"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            winGame
+                        </b>
+                        <a href="#winGame"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>winGame(scene)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="123"
+                            class="link-to-prism">src/app/services/character.service.ts:123</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>scene</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="battleSubject"></a>
+                        <span class="name">
+                            <b>
+                            battleSubject</b>
+                            <a href="#battleSubject"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new Subject&lt;boolean&gt;()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/services/character.service.ts:20</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="battleWon"></a>
+                        <span class="name">
+                            <b>
+                            battleWon</b>
+                            <a href="#battleWon"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/services/character.service.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="battleWonObservable$"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            battleWonObservable$</b>
+                            <a href="#battleWonObservable$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.battleWonSubject.asObservable()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/services/character.service.ts:23</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="battleWonSubject"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            battleWonSubject</b>
+                            <a href="#battleWonSubject"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new Subject&lt;boolean&gt;()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/services/character.service.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="character"></a>
+                        <span class="name">
+                            <b>
+                            character</b>
+                            <a href="#character"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Character.html" target="_self" >Character</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/services/character.service.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="heros"></a>
+                        <span class="name">
+                            <b>
+                            heros</b>
+                            <a href="#heros"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Hero.html" target="_self" >Hero</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/services/character.service.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="modalController"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            modalController</b>
+                            <a href="#modalController"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>ModalController</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/services/character.service.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="neutralFight"></a>
+                        <span class="name">
+                            <b>
+                            neutralFight</b>
+                            <a href="#neutralFight"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/services/character.service.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { Character, Hero } from &#x27;../classes/personnage&#x27;;
+import { PERSONNAGES, HERO } from &#x27;../datas/listePersonnages&#x27;;
+import { AlertController, ModalController } from &#x27;@ionic/angular&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { SauvegardeService } from &#x27;./sauvegarde.service&#x27;;
+import { AudioService } from &#x27;./audio.service&#x27;;
+import { Subject } from &#x27;rxjs/internal/Subject&#x27;;
+import { WinLooseModalPage } from &#x27;../win-loose-modal/win-loose-modal.page&#x27;;
+
+
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+export class CharacterService {
+  character: Character;
+  heros: Hero;
+  battleWon: boolean;
+  neutralFight: boolean &#x3D; false;
+  battleSubject &#x3D; new Subject&lt;boolean&gt;();
+
+  private battleWonSubject &#x3D; new Subject&lt;boolean&gt;();
+  public battleWonObservable$ &#x3D; this.battleWonSubject.asObservable();
+
+  constructor(
+    private alertController: AlertController,
+    private router: Router,
+    private sauvegardeService: SauvegardeService,
+    public modalController: ModalController,
+    private audioService: AudioService
+  ) {
+    this.heros &#x3D; this.getHero(); // initialisation du héro
+  }
+
+  // Liste de personnages
+  getPersonnages() {
+    return PERSONNAGES;
+  }
+
+  // Personnage par id
+  getPersonnageById(id) {
+    return PERSONNAGES.find(({ _id }) &#x3D;&gt; _id &#x3D;&#x3D;&#x3D; id);
+  }
+
+  // Heros 
+  getHero() {
+    return HERO;
+  }
+
+  getBattleWon(){
+    return this.battleWon;
+  }
+  
+  initHero() {
+    this.heros &#x3D;
+    {
+      _id: &#x27;0&#x27;,
+      name: &#x27;Dhareshsaw l\&#x27;escargot&#x27;,
+      avatar: &#x27;./assets/avatars/dhareshsaw.png&#x27;,
+      strength: 4,
+      luck: 4,
+      endurance: 3,
+      items: null,
+      hasKey: null,
+    };
+  }
+
+  /*
+  // Liste des getters et setters communs
+  public getId() {
+    return this.character._id;
+  }
+
+  public getName() {
+    return this.character.name;
+  }
+
+  public getAvatar() {
+    return this.character.avatar;
+  }
+
+  public getStrength() {
+    return this.character.strength;
+  }
+
+  public getLuck() {
+    return this.character.luck;
+  }
+
+  public getEndurance() {
+    return this.character.endurance;
+  }
+
+  public getItems() {
+    return this.character.items;
+  }
+
+  public setStrength(strength: number) {
+    this.character.strength &#x3D; strength;
+  }
+
+  public setLuck(luck: number) {
+    this.character.luck &#x3D; luck;
+  }
+
+  public setEndurance(endurance: number) {
+    this.character.endurance &#x3D; endurance;
+  }
+  */
+emitBattleSubject(){
+  this.battleSubject.next();
+}
+
+  // Méthodes spécifiques au héro
+  public die() {
+    // this.dead &#x3D; true;
+    console.log(&#x27;Vous êtes mort&#x27;);
+  }
+
+  public chooseScene(myScene) {
+  }
+
+  public winGame(scene) {
+    console.log(&#x27;Vous avez gagné !&#x27;);
+    this.battleWon &#x3D; true;
+    this.sauvegardeService.saveAction(&quot;tu as gagné le combat !&quot;);
+    //TMP jusqu&#x27;à modale réalisée - uniquement pour tests
+    this.openModalWinLoose(WinLooseModalPage);
+    this.battleWonSubject.next(this.battleWon);
+    this.router.navigate([&#x27;scene/&#x27;, scene.nextScenes[1]]);
+  }
+
+  public looseGame(scene) {
+    console.log(&#x27;Vous avez perdu !&#x27;);
+    this.battleWon &#x3D; false;
+    this.sauvegardeService.saveAction(&quot;tu as perdu le combat !&quot;)
+    //TMP jusqu&#x27;à modale réalisée - uniquement pour tests
+    this.openModalWinLoose(WinLooseModalPage);
+    this.battleWonSubject.next(this.battleWon);
+    this.router.navigate([&#x27;scene/&#x27;, scene.nextScenes[0]]);
+  }
+
+  public rollDice(): number {
+    // tslint:disable-next-line: prefer-const
+    let res &#x3D; 0;
+    let path: string;
+    res &#x3D; Math.floor(Math.random() * 6) + 1;
+    console.log(res);
+    return res;
+  }
+  
+  //chemmins vers png correspondant au résultat du dé
+  public pathDiceIcon(res) {
+    let path: string;
+    switch (res) {
+      case 1:
+        path &#x3D; &#x27;./assets/dice/dice-1-salade.png&#x27;;
+        break;
+      case 2:
+        path &#x3D; &#x27;./assets/dice/dice-2.png&#x27;;
+        break;
+      case 3:
+        path &#x3D; &#x27;./assets/dice/dice-3.png&#x27;;
+        break;
+      case 4:
+        path &#x3D; &#x27;./assets/dice/dice-4.png&#x27;;
+        break;
+      case 5:
+        path &#x3D; &#x27;./assets/dice/dice-5.png&#x27;;
+        break;
+      case 6:
+        path &#x3D; &#x27;./assets/dice/dice-6.png&#x27;;
+        break;
+    }
+    return path;
+  }
+
+
+  // prise de decision du combat
+  /*public fight() {
+    let result &#x3D; 0;
+    result &#x3D; Math.floor(Math.random() * 2);
+    let res: boolean &#x3D; false;
+
+    switch (result) {
+      case 0:
+        console.log(&#x27;Automatic Fight&#x27;);
+        if (this.automaticFight() &#x3D;&#x3D; true) {
+        res &#x3D; true;
+      }
+        break;
+
+      case 1:
+        console.log(&#x27;Conditional Fight&#x27;);
+        if (this.conditionnalFight() &#x3D;&#x3D;&#x3D; true) { 
+        res &#x3D; true;
+        }
+        break;
+    }
+    return res;
+  }*/
+
+
+  // --------------------------------------------------------------------------------------------------------------------
+  // COMBAT CONDITIONNEL
+  // --------------------------------------------------------------------------------------------------------------------
+
+  // combat conditionnel
+  async conditionnalFight(scene) {
+    let value &#x3D; this.rollDice();
+    if ((this.heros.strength + (this.heros.luck - value) &gt; this.character.endurance) || value &#x3D;&#x3D;&#x3D; 1) {
+      const alert &#x3D; await this.alertController.create({
+        cssClass: &#x27;my-custom-class&#x27;,
+        header: &#x60;${value}&#x60;,
+        message: &#x60;&lt;img src&#x3D;&quot;${this.pathDiceIcon(value)}&quot; alt&#x3D;&quot;dice&quot; style&#x3D;&quot;border-radius: 2px&quot;&gt;&#x60;,
+        buttons: [
+          {
+            text: &#x27;OK&#x27;,
+            handler: () &#x3D;&gt; {
+              this.winGame(scene);
+              this.audioService.startAudioService();
+            }
+          },
+        ]
+      });
+      await alert.present();
+      return true;
+    } else if (this.character.strength + (this.character.luck - value) &gt;&#x3D; this.heros.endurance) {
+      const alert &#x3D; await this.alertController.create({
+        cssClass: &#x27;my-custom-class&#x27;,
+        header: &#x60;${value}&#x60;,
+        message: &#x60;&lt;img src&#x3D;&quot;${this.pathDiceIcon(value)}&quot; alt&#x3D;&quot;dice&quot; style&#x3D;&quot;border-radius: 2px&quot;&gt;&#x60;,
+        buttons: [
+          {
+            text: &#x27;OK&#x27;,
+            handler: () &#x3D;&gt; {
+              this.looseGame(scene);
+              this.audioService.startAudioServiceLoose();
+            }
+          },
+        ]
+      });
+      await alert.present();
+      return false;
+    }
+    else {
+      const alert &#x3D; await this.alertController.create({
+        cssClass: &#x27;my-custom-class&#x27;,
+        header: &#x60;${value}&#x60;,
+        message: &#x60;&lt;img src&#x3D;&quot;${this.pathDiceIcon(value)}&quot; alt&#x3D;&quot;dice&quot; style&#x3D;&quot;border-radius: 2px&quot;&gt; &lt;/br&gt; Vous vous défendez tous les 2 correctement, continuez !&#x60;,
+        buttons: [
+          {
+            text: &#x27;Jet de dé&#x27;,
+            handler: () &#x3D;&gt; {
+              this.conditionnalFight(scene);
+            }
+          },
+        ]
+      });
+      await alert.present();
+    }
+  }
+
+  // ----------------------------------------------------------------------------------------------------------------
+  // COMBAT AUTOMATIQUE
+  // ----------------------------------------------------------------------------------------------------------------
+
+  //alert box pour comabt automatique
+  /**
+   * Alert box for automatic fight
+   * @param value 
+   * @param scene 
+   */
+  async automaticFightAlert(value, scene) {
+    const alert &#x3D; await this.alertController.create({
+      cssClass: &#x27;my-custom-class&#x27;,
+      header: &quot;Blessure&quot;,
+      message: &#x60;Tu perds 1 point ${value} !&#x60;,
+      buttons: [
+        {
+          text: &#x27;OK&#x27;,
+          handler: () &#x3D;&gt; {
+            this.winGame(scene);
+            this.audioService.startAudioService();
+          }
+        },
+      ]
+    });
+    await alert.present();
+  }
+
+
+  // combat automatique
+  automaticFight(scene) {
+    let result &#x3D; 0;
+    result &#x3D; Math.floor(Math.random() * 4);
+    let res: boolean &#x3D; false;
+
+    switch (result) {
+      case 0:
+        this.heros.strength &#x3D; this.heros.strength - 1;
+        console.log(&quot;strength : &quot; + this.heros.strength);
+        res &#x3D; true;
+        this.automaticFightAlert(&quot;de force&quot;, scene);
+        break;
+
+      case 1:
+        this.heros.endurance &#x3D; this.heros.endurance - 1;
+        console.log(&quot;endurance : &quot; + this.heros.endurance);
+        res &#x3D; true;
+        this.automaticFightAlert(&quot;d&#x27;endurance&quot;, scene);
+        break;
+
+      case 2:
+        this.heros.luck &#x3D; this.heros.luck - 1;
+        console.log(&quot;luck : &quot; + this.heros.luck);
+        res &#x3D; true;
+        this.automaticFightAlert(&quot;de chance&quot;, scene);
+        break;
+
+      case 3:
+        this.looseGame(scene);
+        break;
+    }
+    return res;
+  }
+
+  // ----------------------------------------------------------------------------------------------------------------
+  // FUITE
+  // ----------------------------------------------------------------------------------------------------------------
+
+  
+  /**
+   * method which allows the player to escape
+   */
+  public escape() {
+    const resultatDe &#x3D; this.rollDice();
+    if (resultatDe &lt; this.heros.luck) {
+      console.log(&#x27;Je me suis échappé&#x27;);
+      console.log(&#x27;Dé : &#x27; + resultatDe);
+      console.log(&#x27;Luck : &#x27; + this.heros.luck);
+      return true;
+    } else {
+      console.log(&#x27;tu n\&#x27;as pas assez bavé, viens te battre mauviette&#x27;);
+      console.log(&#x27;Dé : &#x27; + resultatDe);
+      console.log(&#x27;Luck : &#x27; + this.heros.luck);
+      return false;
+    }
+  }
+
+  public addObject(item: number) {
+  }
+
+  public useObject(myObj: number) {
+
+  }
+
+  public removeObj(myObj: number) {
+
+  }
+
+  /**
+   * 
+   * @param modalPage WinLooseModalPage modal to display when the player win or loose
+   */
+  async openModalWinLoose(modalPage: typeof WinLooseModalPage){
+    const modal &#x3D; await this.modalController.create({
+      component: modalPage,
+      componentProps:{ 
+        paramTitle : &#x27;RÉSULTAT&#x27;,
+        paramBattleWin: this.battleWon
+      }
+    });
+    modal.onDidDismiss()
+    .then((info) &#x3D;&gt; {
+      if (info !&#x3D;&#x3D; null) {
+        console.log(&#x27;Error in openModalWinLoose method &#x27; + info);
+      }
+    });
+    return await modal.present(); 
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'CharacterService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
