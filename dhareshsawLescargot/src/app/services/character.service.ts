@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Character, Hero } from '../classes/personnage';
 import { PERSONNAGES, HERO } from '../datas/listePersonnages';
-import { AlertController } from '@ionic/angular';
+import { AlertController, ModalController } from '@ionic/angular';
 import { Router } from '@angular/router';
-import { Scene } from '../classes/scene';
 import { SauvegardeService } from './sauvegarde.service';
 import { AudioService } from './audio.service';
+import { Subject } from 'rxjs/internal/Subject';
+import { WinLooseModalPage } from '../win-loose-modal/win-loose-modal.page';
 
 
 @Injectable({
@@ -16,11 +17,16 @@ export class CharacterService {
   heros: Hero;
   battleWon: boolean;
   neutralFight: boolean = false;
+  battleSubject = new Subject<boolean>();
+
+  private battleWonSubject = new Subject<boolean>();
+  public battleWonObservable$ = this.battleWonSubject.asObservable();
 
   constructor(
     private alertController: AlertController,
     private router: Router,
     private sauvegardeService: SauvegardeService,
+    public modalController: ModalController,
     private audioService: AudioService
   ) {
     this.heros = this.getHero(); // initialisation du héro
@@ -41,6 +47,10 @@ export class CharacterService {
     return HERO;
   }
 
+  getBattleWon(){
+    return this.battleWon;
+  }
+  
   initHero() {
     this.heros =
     {
@@ -97,6 +107,9 @@ export class CharacterService {
     this.character.endurance = endurance;
   }
   */
+emitBattleSubject(){
+  this.battleSubject.next();
+}
 
   // Méthodes spécifiques au héro
   public die() {
@@ -112,6 +125,8 @@ export class CharacterService {
     this.battleWon = true;
     this.sauvegardeService.saveAction("tu as gagné le combat !");
     //TMP jusqu'à modale réalisée - uniquement pour tests
+    this.openModalWinLoose(WinLooseModalPage);
+    this.battleWonSubject.next(this.battleWon);
     this.router.navigate(['scene/', scene.nextScenes[1]]);
   }
 
@@ -120,6 +135,8 @@ export class CharacterService {
     this.battleWon = false;
     this.sauvegardeService.saveAction("tu as perdu le combat !")
     //TMP jusqu'à modale réalisée - uniquement pour tests
+    this.openModalWinLoose(WinLooseModalPage);
+    this.battleWonSubject.next(this.battleWon);
     this.router.navigate(['scene/', scene.nextScenes[0]]);
   }
 
@@ -236,7 +253,6 @@ export class CharacterService {
             text: 'Jet de dé',
             handler: () => {
               this.conditionnalFight(scene);
-
             }
           },
         ]
@@ -333,5 +349,26 @@ export class CharacterService {
 
   public removeObj(myObj: number) {
 
+  }
+
+  /**
+   * 
+   * @param modalPage WinLooseModalPage modal to display when the player win or loose
+   */
+  async openModalWinLoose(modalPage: typeof WinLooseModalPage){
+    const modal = await this.modalController.create({
+      component: modalPage,
+      componentProps:{ 
+        paramTitle : 'RÉSULTAT',
+        paramBattleWin: this.battleWon
+      }
+    });
+    modal.onDidDismiss()
+    .then((info) => {
+      if (info !== null) {
+        console.log('Error in openModalWinLoose method ' + info);
+      }
+    });
+    return await modal.present(); 
   }
 }

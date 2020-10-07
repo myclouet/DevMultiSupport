@@ -15,8 +15,6 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { isLoweredSymbol } from '@angular/compiler';
 import { ObjectInventory } from '../classes/object';
 
-
-
 @Component({
   selector: 'app-scene',
   templateUrl: './scene.page.html',
@@ -55,30 +53,32 @@ export class ScenePage implements OnInit {
     public alertController: AlertController,
     private audioService: AudioService) { }
 
-  ngOnInit() {
+ //-------------------------------------------------------------------------------
+ // VAR
+ //-------------------------------------------------------------------------------
+    
+    ngOnInit() {
+    
+      this.scene = this.sceneService.getSceneById(this.route.snapshot.paramMap.get('id'));
+      console.log("ngOnInit scene "+this.scene._id)
 
-    this.scene = this.sceneService.getSceneById(this.route.snapshot.paramMap.get('id'));
-    console.log("ngOnInit scene "+this.scene._id)
+      this.sceneTitle();
 
-    this.sceneTitle();
+      this.heros = this.characterService.heros; // mise à jour du héro avec le héro du service
 
-    this.heros = this.characterService.heros; // mise à jour du héro avec le héro du service
+      this.adversaire = this.getAdversaire();
 
-    this.adversaire = this.getAdversaire();
-
-    this.characterService.character = this.adversaire;
-
-    this.progressionBar = this.scene.progressionIndex / 100;
-    this.progressionBuffer = this.scene.progressionIndex / 100;
-    this.marginNum = this.scene.progressionIndex - 5;
-    this.marginVar = this.marginNum + '%';
-
+      this.characterService.character = this.adversaire;
 
     if (this.scene._id === '1') {
       this.alertSoundButtons(); // affichage d'une alerte expliquant comment couper ou activer le son et la voix
     }
 
+      if(this.scene._id === '1'){
+        this.alertSoundButtons();
+      }
   }
+
 
   ionViewDidEnter() { // use of ionViewDidEnter to correct bugs when going more than one time in a scene
     console.log("ionViewDidEnter scene "+this.scene._id)
@@ -150,10 +150,10 @@ export class ScenePage implements OnInit {
     const value = this.heros.strength + this.heros.luck - this.adversaire.endurance;
     let message: any;
     if (value <= 1) {
-      message = "À vous de faire le meilleur choix !!!<br>L'issue d'un combat automatique est aléatoire, mais si vous désirez vous pouvez combattre avec un jet de dé. <br> Vous devez obtenir 1 pour gagner le combat";
+      message = 'À vous de faire le meilleur choix !!!<br>L\'issue d\'un combat automatique est aléatoire, mais si vous désirez vous pouvez combattre avec un jet de dé. <br> Vous devez obtenir 1 pour gagner le combat';
     }
     else if (value > 6) {
-      message = "À vous de faire le meilleur choix !!!<br>L'issue d'un combat automatique est aléatoire, mais si vous désirez vous pouvez combattre avec un jet de dé. <br> Vous devez obtenir 6 ou moins pour gagner le combat";
+      message = 'À vous de faire le meilleur choix !!!<br>L\'issue d\'un combat automatique est aléatoire, mais si vous désirez vous pouvez combattre avec un jet de dé. <br> Vous devez obtenir 6 ou moins pour gagner le combat';
     }
     else {
       message = `À vous de faire le meilleur choix !!!<br>L'issue d'un combat automatique est aléatoire, mais si vous désirez vous pouvez combattre avec un jet de dé. <br> Vous devez obtenir moins que ${value} pour gagner le combat`;
@@ -207,10 +207,10 @@ export class ScenePage implements OnInit {
     const value = this.heros.strength + this.heros.luck - this.adversaire.endurance;
     let message: any;
     if (value <= 1) {
-      message = "Tu n'as pas bavé assez pour fuir !!! Le combat est inévitable <br> Tu dois obtenir 1 pour gagner le combat";
+      message = 'Tu n\'as pas bavé assez pour fuir !!! Le combat est inévitable <br> Tu dois obtenir 1 pour gagner le combat';
     }
     else if (value > 6) {
-      message = "Tu n'as pas bavé assez pour fuir !!! Le combat est inévitable <br>Tu dois obtenir 6 ou moins pour gagner le combat";
+      message = 'Tu n\'as pas bavé assez pour fuir !!! Le combat est inévitable <br>Tu dois obtenir 6 ou moins pour gagner le combat';
     }
     else {
       message = `Tu n'as pas bavé assez pour fuir !!! Le combat est inévitable <br> Tu dois obtenir moins que ${value} pour gagner le combat`;
@@ -240,10 +240,12 @@ export class ScenePage implements OnInit {
       buttons: [
         {
           text: 'Jet de dé',
-          handler: () => {
+          handler: async () => {
             this.adversaire = this.getAdversaire();
             this.characterService.character = this.adversaire;
-            this.characterService.conditionnalFight(this.scene);
+            const fin = await this.characterService.conditionnalFight(this.scene);
+            console.log('TEST !' + fin);
+            
             this.scene.battleWon = this.characterService.battleWon;
           }
         }
@@ -263,7 +265,6 @@ export class ScenePage implements OnInit {
         hero: this.heros
       }
     });
-
 
     modal.onDidDismiss().then((dataReturned) => {
       if (dataReturned !== null) {
@@ -382,7 +383,7 @@ export class ScenePage implements OnInit {
     //-----------------------------------------------------------------------------------
 
     difficulte() {
-      let difficulte: String;
+      let difficulte: string;
       let value: number = this.heros.strength + this.heros.luck - this.adversaire.endurance;
       if (value <=1) {
           difficulte = "hard";
