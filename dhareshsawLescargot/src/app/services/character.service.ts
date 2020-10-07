@@ -107,6 +107,7 @@ export class CharacterService {
   public chooseScene(myScene) {
   }
 
+  // combat gagné
   public winGame(scene) {
     console.log('Vous avez gagné !');
     this.battleWon = true;
@@ -115,6 +116,7 @@ export class CharacterService {
     this.router.navigate(['scene/', scene.nextScenes[1]]);
   }
 
+  // combat perdu
   public looseGame(scene) {
     console.log('Vous avez perdu !');
     this.battleWon = false;
@@ -123,6 +125,7 @@ export class CharacterService {
     this.router.navigate(['scene/', scene.nextScenes[0]]);
   }
 
+  // jet de dé
   public rollDice(): number {
     // tslint:disable-next-line: prefer-const
     let res = 0;
@@ -309,7 +312,7 @@ export class CharacterService {
   // ----------------------------------------------------------------------------------------------------------------
 
   // fuite
-  public escape() {
+  async escape() {
     const resultatDe = this.rollDice();
     if (resultatDe < this.heros.luck) {
       console.log('Je me suis échappé');
