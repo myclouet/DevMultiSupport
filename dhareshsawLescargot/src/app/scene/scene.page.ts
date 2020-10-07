@@ -348,7 +348,7 @@ export class ScenePage implements OnInit {
       this.audioService.startAudioService();
       this.audioBtn = this.audioService.audio;
     }
-    
+
     startAudioCombat() {
       this.audioService.startAudioServiceCombat(this.scene);
       this.audioBtn = this.audioService.audio;
@@ -394,14 +394,4 @@ export class ScenePage implements OnInit {
       return difficulte;
     }
 
-    // ---------------------------------------------------------------------------------
-    // Barre de progression
-    // ---------------------------------------------------------------------------------
-
-    /*moveImage() {
-	    let element = document.getElementById('margin');
-      element.style.marginLeft = ;
-      let maVar = element.style.marginLeft;
-      console.log(maVar);
-	  }*/
 }
