@@ -435,7 +435,6 @@ export const SCENES: Scene[] = [
      previousScene: '26',
      audioText: 'assets/audio/scene27.mp3',
      progressionIndex: 66
-     
    },
    {
      _id: '28',
