@@ -6,6 +6,7 @@ ion-icon {
 ion-toolbar {
     --background: #f2e8cf;
     color: #04471c;
+    font-family: 'Segoe';
 }
 
 ion-card {
@@ -19,11 +20,16 @@ ion-content {
 
 ion-card-content {
     --background: transparent;
+    font-family: 'Komika';
+}
+
+ion-button {
+    font-family: Calibri;
 }
 
 .sceneDescription {
     font-size: 20px;
-    font-family: 'Komika';
+    //font-family: 'Komika';
 }
 
 .fightCard {

@@ -28,8 +28,11 @@ export class ObjectInventoryModalPage implements OnInit {
   // -------- LIFECYCLE METHODS --------- //
   ngOnInit() {
     this.modalHero = this.navParams.data.hero;
+    //console.log(JSON.stringify(this.modalHero.items[0].description));
+    // if (JSON.stringify(this.modalHero.items[0].description)=== undefined)
+    //   this.emptyInventoryObject = true;
     // if hero has the key, it will appear in a separate ion-card otherwise it won't appear
-    if (this.modalHero.key !== null) {
+    if (this.modalHero.hasKey !== null) {
       this.keyToAppear = true;
     } else {
       this.keyToAppear = false;
@@ -78,11 +81,15 @@ export class ObjectInventoryModalPage implements OnInit {
         this.modalHero.items.splice(startIndex, numberOfItemToDelete, this.modalHero.items[modalItemSelected.description] );
       if ((JSON.stringify(this.modalHero.items)) === '[null]') {
           this.emptyInventoryObject = true;
+          this.modalHero.items = null;
+          console.log(this.modalHero.items);
+          
         }
    }
 
   // method enabling to close the modal and send the pictureName to newPicturePage
   async closeObjectInventoryModal() {
+    console.log(JSON.stringify(this.modalHero));
     await this.modalController.dismiss(this.modalHero);
 
   }
