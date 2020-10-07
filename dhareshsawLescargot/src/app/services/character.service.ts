@@ -51,7 +51,7 @@ export class CharacterService {
       luck: 4,
       endurance: 3,
       items: null,
-      key: null,
+      hasKey: null,
     };
   }
 

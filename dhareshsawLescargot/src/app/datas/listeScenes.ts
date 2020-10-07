@@ -15,7 +15,7 @@ export const SCENES: Scene[] = [
      nextScenes: ['2'],
      previousScene: null,
      audioText: 'assets/audio/scene01.mp3',
-     progressionIndex: 0
+     progressionIndex: 0,
    },
    {
      _id: '2',
@@ -76,7 +76,7 @@ export const SCENES: Scene[] = [
      bonusPower: [null, null],
      isBattle: false,
      battleWon: false,
-     nextScenes: ['3'],
+     nextScenes: ['8'],
      previousScene: '3',
      audioText: 'assets/audio/scene05.mp3',
      progressionIndex: 14
@@ -297,7 +297,7 @@ export const SCENES: Scene[] = [
      picture: '../assets/fond-rencontre.png',
      encounter: '11',
      bonusObject: null,
-     bonusPower: ['force', 2],
+     bonusPower: [null, null],
      isBattle: false,
      battleWon: false,
      nextScenes: ['22'],
@@ -466,7 +466,7 @@ export const SCENES: Scene[] = [
      nextScenes: ['33', '34'],
      previousScene: '26',
      audioText: 'assets/audio/scene29.mp3',
-     progressionIndex: 70
+     progressionIndex: 70     
    },
    {
      _id: '30',
@@ -482,7 +482,8 @@ export const SCENES: Scene[] = [
      nextScenes: ['23', '31'],
      previousScene: '27',
      audioText: 'assets/audio/scene30.mp3',
-     progressionIndex: 70
+     progressionIndex: 70,
+     hasKey: true
    },
    {
      _id: '31',
@@ -491,18 +492,15 @@ export const SCENES: Scene[] = [
      description: 'Dhareshsaw l\'escargot voit un truc qui bouge au sol -> c\'est Anabelle la sauterelle qui agonise, elle a mangé trop de salade. Anabelle ne veut plus vivre cela et elle remet à Dhareshsaw la clé du champ de salade pour ne plus céder à la tentation.',
      picture: '../assets/fond-rencontre.png',
      encounter: '2',
-     bonusObject: {
-      description: 'Clé',
-      image: '',
-      bonusPower: [null, null]
-    },
+     bonusObject: null,
      bonusPower: [null, null],
      isBattle: false,
      battleWon: false,
      nextScenes: ['36'],
      previousScene: '28',
      audioText: 'assets/audio/scene31.mp3',
-     progressionIndex: 80
+     progressionIndex: 80,
+     hasKey: true
    },
    {
      _id: '32',
