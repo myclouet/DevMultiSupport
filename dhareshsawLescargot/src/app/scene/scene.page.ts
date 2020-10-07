@@ -220,7 +220,7 @@ export class ScenePage implements OnInit {
             this.affichageEscape();
           }
         }
-
+      ]
     });
     await alert.present();
   };
