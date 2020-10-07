@@ -32,7 +32,7 @@ export class ObjectInventoryModalPage implements OnInit {
     // if (JSON.stringify(this.modalHero.items[0].description)=== undefined)
     //   this.emptyInventoryObject = true;
     // if hero has the key, it will appear in a separate ion-card otherwise it won't appear
-    if (this.modalHero.key !== null) {
+    if (this.modalHero.hasKey !== null) {
       this.keyToAppear = true;
     } else {
       this.keyToAppear = false;
