@@ -74,7 +74,7 @@ export class ScenePage implements OnInit {
     this.marginVar = this.marginNum + '%';
 
 
-    if(this.scene._id === '1'){
+    if (this.scene._id === '1') {
       this.alertSoundButtons(); // affichage d'une alerte expliquant comment couper ou activer le son et la voix
     }
 
