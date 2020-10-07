@@ -53,7 +53,7 @@ export const SCENES: Scene[] = [
      _id: '4',
      title: 'La balance',
      // tslint:disable-next-line: max-line-length
-     description: '« On peut faire un marché ? » glapissez-vous \n - « Quel genre ? » \n - « Si je t’explique où se trouve un beau trou de souris avec toute la famille dedans ? » \n - « Combien de souris ? »\n - « Trois et peut-être plus » \n - « Marché conclu »> En échange de l’adresse de la famille de rongeurs. Vous déguerpissez avant qu\'il change d\'avis en courant si vite que vous gagnez de l\'endurance',
+     description: '« On peut faire un marché ? » \n - « Quel genre ? » \n - « Si je t’explique où se trouve un beau trou de souris avec toute la famille dedans ? » \n - « Combien de souris ? »\n - « Trois et peut-être plus » \n - « Marché conclu »> En échange de l’adresse de la famille de rongeurs. Vous déguerpissez avant qu\'il change d\'avis en courant si vite que vous gagnez de l\'endurance',
      picture: '../assets/fond-rencontre.png',
      encounter: null,
      bonusObject: null,
@@ -133,7 +133,7 @@ export const SCENES: Scene[] = [
      _id: '9',
      title: 'Rapha le lama',
      // tslint:disable-next-line: max-line-length
-     description: 'Vous vous retournez vers lui, des larmes dans les yeux...il vous, nonchalant : \n -"Salut, moi c\'est Rapha". -"Moi c\'est Dhareshsaw" répondez-vous. -"Allez on trinque" dit-il en vous tendant une canette de bière. "C\'est bon et ça chasse les limaces !" continue-t-il avant de s\'endormir dans un rot ravageur. Vous continuez votre route.',
+     description: 'Vous vous retournez vers lui, des larmes dans les yeux...toujours aussi nonchalant, il vous dit : \n -"Salut, moi c\'est Rapha". -"Moi c\'est Dhareshsaw" répondez-vous. -"Allez on trinque" dit-il en vous tendant une canette de bière. "C\'est bon et ça chasse les limaces !" continue-t-il avant de s\'endormir dans un rot ravageur. Vous continuez votre route.',
      picture: '../assets/fond-rencontre.png',
      encounter: '10',
      bonusObject: {description: 'Bière', image:'', bonusPower:['strength', 1]},
@@ -165,7 +165,7 @@ export const SCENES: Scene[] = [
      _id: '11',
      title: 'Gang des rats',
      // tslint:disable-next-line: max-line-length
-     description: 'Ils ne sont pas vraiment rassurants, mais vous décidez d\'affronter votre destinée. L\'un d\'entre eux, qui a l\'air plus costaud que les autres, s\'avance vers vous. -"Qu\'est-ce que tu viens faire ici ? microbe." -"Je...je suis en route vers le champ des salades" répondez-vous d\'une voix tremblante. -"Passe par un autre chemin, par ici ça va pas le faire". Deux solutions: Forcer le passage, en passant par la droite ou écouter ce gros rat menaçant en allant à gauche.',
+     description: 'Ils ne sont pas vraiment rassurants, mais vous décidez d\'affronter votre destinée. L\'un d\'entre eux, qui a l\'air plus costaud que les autres, s\'avance vers vous. -"Qu\'est-ce que tu viens faire ici ? microbe." -"Je...je suis en route vers le champ des salades"  -"Passe par un autre chemin, par ici ça va pas le faire". Deux solutions: Forcer le passage, en passant par la droite ou écouter ce gros rat menaçant en allant à gauche.',
      picture: '../assets/fond-rencontre.png',
      encounter: null,
      bonusObject: null,
@@ -245,9 +245,9 @@ export const SCENES: Scene[] = [
      _id: '16',
      title: 'Le marais',
      // tslint:disable-next-line: max-line-length
-     description: 'Boum! Vous avez atterri dans un jardin. Vous réalisez en vous rétablissant que c\'est humide. Un crapaud vous regarde l\'air amusé \n - " Qui êtes-vous ?" vous demande-t-il en se dirigeant vers vous \n - " Un escargot " \n - " Vous êtes chez moi, l\'escargot ? Et vous allez partir !" \n - " Je n\'ai pas fait exprès d\'atterrir ici et je dois en sortir" \n - " Pas si vite, ça se mérite ! Un petit concours de bave avant de partir". \n JC le crapaud est bien sûr de lui... Vous envoyez le batracien se faire voir.',
+     description: 'Vous avez atterri dans un jardin. Vous réalisez en vous rétablissant que c\'est humide. Un crapaud vous regarde l\'air amusé \n - " Qui êtes-vous ?" \n - " Un escargot " \n - " Vous êtes chez moi, l\'escargot! Et vous allez partir !" \n - " Je n\'ai pas fait exprès d\'atterrir ici et je dois en sortir" \n - " Pas si vite, ça se mérite ! Un petit concours de bave avant de partir". \n Demande t-il en se dirigeant vers vous. JC le crapaud est bien sûr de lui... Vous envoyez le batracien se faire voir.',
      picture: '../assets/fond-rencontre.png',
-     encounter: '10',
+     encounter: '6',
      bonusObject: null,
      bonusPower: [null, null],
      isBattle: false,
@@ -408,7 +408,7 @@ export const SCENES: Scene[] = [
      _id: '26',
      title: 'Après le koala',
      // tslint:disable-next-line: max-line-length
-     description: 'C\'est tout de même étrange de rencontrer un koala ici, pensez-vous. Le champ de salades est encore loin. A droite, il y a la route, dangereuse à cause des voitures mais praticable et le chemin le plus rapide. En suivant le ruisseau à gauche, vous pouvez arriver assez rapidement à bon port sans risque de vous perdre.',
+     description: 'C\'est tout de même étrange de rencontrer un koala ici, pensez-vous. Le champ de salades est encore loin. A droite, il y a la route, dangereuse à cause des voitures mais praticable et qui reste le chemin le plus rapide. En suivant le ruisseau à gauche, vous pouvez arriver assez rapidement à bon port sans risque de vous perdre.',
      picture: '../assets/fond-rencontre.png',
      encounter: null,
      bonusObject: null,
@@ -424,14 +424,14 @@ export const SCENES: Scene[] = [
      _id: '27',
      title: 'La route',
      // tslint:disable-next-line: max-line-length
-     description: 'Vous avez choisi la route. \n Il faut que vous récupèriez la clé du champ auprès d\'Annabelle la sauterelle ! \n Préparez-vous au combat !',
-     picture: '../assets/fond-combat.png',
-     encounter: '2',
+     description: 'Vous avez choisi la route. Prenez à droite ou à gauche',
+     picture: '../assets/fond-rencontre.png',
+     encounter: null,
      bonusObject: null,
      bonusPower: [null, null],
-     isBattle: true,
+     isBattle: false,
      battleWon: false,
-     nextScenes: ['23', '30'],
+     nextScenes: ['28', '30'],
      previousScene: '26',
      audioText: 'assets/audio/scene27.mp3',
      progressionIndex: 66
@@ -457,7 +457,7 @@ export const SCENES: Scene[] = [
      _id: '29',
      title: 'Chassé',
      // tslint:disable-next-line: max-line-length
-     description: 'Vous prenez le chemin du ruisseau. Le chemin est agréable, cependant régulièrement une ombre assombrit les alentours. Vous accélérez, conscient que de nombreux oiseaux raffolent des escargots. Soudain, un bec s\'enfonce juste à côté de vous ! La chasse a commencé. La seule solution c\'est de rentrer dans votre coquille et de rouler. Vous avez deux possibilités : rouler vers un épais buisson de framboise ou rouler vers la rivière.',
+     description: 'Vous prenez le chemin du ruisseau. Le chemin est agréable, cependant régulièrement une ombre assombrit les alentours. Vous accélérez, conscient que de nombreux oiseaux raffolent des escargots. Soudain, un bec s\'enfonce juste à côté de vous ! La chasse a commencé. La seule solution c\'est de rentrer dans votre coquille et de rouler. Vous avez deux possibilités : rouler vers un épais buisson de framboise vers la droite ou rouler vers la rivière à gauche.',
      picture: '../assets/fond-rencontre.png',
      encounter: null,
      bonusObject: null,
@@ -473,7 +473,7 @@ export const SCENES: Scene[] = [
      _id: '30',
      title: 'Élodie la pie',
      // tslint:disable-next-line: max-line-length
-     description: 'Préparez-vous à livrer un combat épique face à Elodie la pie \n Elle fait beaucoup de bruit et vas vous casser les oreilles à vous désorienter.\n Bonne chance (taken)',
+     description: 'Préparez-vous à livrer un combat épique face à Elodie la pie \n Elle fait beaucoup de bruit et vas vous casser les oreilles à vous désorienter.\n Bonne chance.',
      picture: '../assets/fond-combat.png',
      encounter: '4',
      bonusObject: null,
@@ -483,29 +483,24 @@ export const SCENES: Scene[] = [
      nextScenes: ['23', '31'],
      previousScene: '27',
      audioText: 'assets/audio/scene30.mp3',
-     progressionIndex: 70,
-     key: true
+     progressionIndex: 70
    },
    {
      _id: '31',
      title: 'Anabelle la sauterelle',
      // tslint:disable-next-line: max-line-length
-     description: 'Dhareshsaw l\'escargot voit un truc qui bouge au sol -> c\'est Anabelle la sauterelle qui agonise, elle a mangé trop de salade. Anabelle ne veut plus vivre cela et elle remet à Dhareshsaw la clé du champ de salade pour ne plus céder à la tentation.',
+     description: 'Dhareshsaw l\'escargot voit un truc qui bouge au sol -> c\'est Anabelle la sauterelle qui agonise, elle a mangé trop de salade. Anabelle ne veut plus vivre cela et elle vous remet la clé du champ de salade pour ne plus céder à la tentation.',
      picture: '../assets/fond-rencontre.png',
      encounter: '2',
-     bonusObject: {
-      description: 'Clé',
-      image: '',
-      bonusPower: [null, null]
-    },
+     bonusObject: null,
      bonusPower: [null, null],
      isBattle: false,
      battleWon: false,
      nextScenes: ['36'],
-     previousScene: '28',
+     previousScene: null,
      audioText: 'assets/audio/scene31.mp3',
      progressionIndex: 80,
-     key: true
+     hasKey: true
    },
    {
      _id: '32',
@@ -543,7 +538,7 @@ export const SCENES: Scene[] = [
      _id: '34',
      title: 'Noémie la fourmi',
      // tslint:disable-next-line: max-line-length
-     description: 'Vers la rivière! Avec le courant, impossible que ces satanés volatiles vous attrapent. Par contre il va falloir ne pas se noyer. L\'eau rentre dans votre carapace. Vous priez quand tout à coup, tout s\'arrête. Vous sortez un œil, vous tombez œil à mandibules sur une fourmi rouge. \n - "Salut, moi c\'est Noémie, si tu veux aller au champ des salades, c\'est par là. Sinon j\'ai une potion qui augmente l\'endurance, tiens. Allez à un de ces jours." \n Et elle part sans demander son reste. Puis vous prenez la direction du champ de salade indiquée par la fourmi',
+     description: 'Vers la rivière! Avec le courant, impossible que ces satanés volatiles vous attrapent. Par contre il va falloir ne pas se noyer. L\'eau rentre dans votre carapace. Vous priez quand tout à coup, tout s\'arrête. Vous sortez un œil, vous tombez œil à mandibules sur une fou rouge. \n - rmi"Salut, moi c\'est Noémie, si tu veux aller au champ des salades, c\'est par là. Sinon j\'ai une potion qui augmente l\'endurance, tiens. Allez à un de ces jours." \n Et elle part sans demander son reste. Puis vous prenez la direction du champ de salade indiquée par la fourmi',
      picture: '../assets/fond-rencontre.png',
      encounter: '8',
      bonusObject: {
