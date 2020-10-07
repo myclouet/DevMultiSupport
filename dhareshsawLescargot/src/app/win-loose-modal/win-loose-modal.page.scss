@@ -96,7 +96,7 @@
     z-index:0;
     top:522px;
     left:-50%;
-    animation: 25s slimeSpread linear infinite;
+    animation: 12s slimeSpread linear infinite;
    // animation: 25s slimeSpread linear infinite;
     border-radius:3px;
   }
@@ -139,14 +139,14 @@
     }
   }
   ion-content {
-    height: 100%;
+    --height: 100%;
     --background : transparent;
   }
 
   ion-title{
-    font-family: 'Segoe Print';
-    text-align: center;
-    color:#04471c
+   --font-family: 'Segoe Print';
+   --text-align: center;
+   --color:#04471c
   }
 
   ion-button {
@@ -188,3 +188,4 @@
       font-family: 'Komika';
       color: #04471c;
     }
+   
