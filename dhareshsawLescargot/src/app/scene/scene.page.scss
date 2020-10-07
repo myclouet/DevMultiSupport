@@ -117,7 +117,51 @@ ion-progress-bar {
     width: 5%;
   }
 
-ion-toolbar {
-    --background: #f2e8cf;
- }
+.footerButtons {
+    background-color: #04471c;
+    margin: auto;
+    text-align: center;
+}
 
+.buttonIcons {
+    color: #f2e8cf;
+}
+
+.title {
+    margin: auto;
+    text-align: center;
+    font-family: segoe print;
+    font-size: larger;
+    font-weight: bolder;
+    color:#04471c;
+}
+
+.progressionTitle {
+    margin: auto;
+    color:#04471c;
+    font-family: segoe print;
+}
+
+@media only screen and (min-width: 1000px) {
+    #margin {
+        width: 2%;
+    }
+  }
+
+  @media only screen and (min-width: 600px) {
+    #margin {
+        width: 4%;
+    }
+  }
+
+  @media only screen and (min-width: 800px) {
+    #margin {
+        width: 3%;
+    }
+  }
+
+  @media only screen and (min-width: 1000px) {
+    #margin {
+        width: 2%;
+    }
+  }
