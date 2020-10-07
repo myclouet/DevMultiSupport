@@ -13,5 +13,5 @@ export class Character {
 }
 
 export class Hero extends Character {
-    key: ObjectInventory;
+    hasKey: boolean;
 }

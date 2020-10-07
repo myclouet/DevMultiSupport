@@ -435,7 +435,6 @@ export const SCENES: Scene[] = [
      previousScene: '26',
      audioText: 'assets/audio/scene27.mp3',
      progressionIndex: 66
-     
    },
    {
      _id: '28',
@@ -484,7 +483,7 @@ export const SCENES: Scene[] = [
      previousScene: '27',
      audioText: 'assets/audio/scene30.mp3',
      progressionIndex: 70,
-     key: true
+     hasKey: true
    },
    {
      _id: '31',
@@ -493,11 +492,7 @@ export const SCENES: Scene[] = [
      description: 'Dhareshsaw l\'escargot voit un truc qui bouge au sol -> c\'est Anabelle la sauterelle qui agonise, elle a mangé trop de salade. Anabelle ne veut plus vivre cela et elle remet à Dhareshsaw la clé du champ de salade pour ne plus céder à la tentation.',
      picture: '../assets/fond-rencontre.png',
      encounter: '2',
-     bonusObject: {
-      description: 'Clé',
-      image: '',
-      bonusPower: [null, null]
-    },
+     bonusObject: null,
      bonusPower: [null, null],
      isBattle: false,
      battleWon: false,
@@ -505,7 +500,7 @@ export const SCENES: Scene[] = [
      previousScene: '28',
      audioText: 'assets/audio/scene31.mp3',
      progressionIndex: 80,
-     key: true
+     hasKey: true
    },
    {
      _id: '32',
