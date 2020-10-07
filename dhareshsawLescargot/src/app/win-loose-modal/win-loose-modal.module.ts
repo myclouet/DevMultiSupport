@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { WinLooseModalPageRoutingModule } from './win-loose-modal-routing.module';
 
 import { WinLooseModalPage } from './win-loose-modal.page';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    WinLooseModalPageRoutingModule
+    WinLooseModalPageRoutingModule,
+    TranslateModule
   ],
   declarations: [WinLooseModalPage]
 })

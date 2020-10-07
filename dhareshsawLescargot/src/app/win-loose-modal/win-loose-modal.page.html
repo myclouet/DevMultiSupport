@@ -24,32 +24,7 @@
 <ion-footer>
   <ion-toolbar>
    <ion-button (click)="closeModal()" expand="block" fill="clear" shape="round">
-    Continuer le jeu
+    {{ messageContinuerJeu }}
    </ion-button>
   </ion-toolbar>
 </ion-footer>
-
-
-<!-- 
-
-<ion-content>
-  <div class="fondEcran" [style.background]="fondEcranWin"
-      *ngIf="resultatCombat ;else modalContent">
-      <h1>{{messageWin}}</h1>
-      <img [src]="imageWin" id="win"> 
-  </div>
-  style="background-image: url(../../assets/fondCombatGagne.jpg);"
-      
-  <ng-template #modalContent>
-    <h1>{{messageLoose}}</h1> 
-    <img [src]="imageLoose" alt="perdu" id="loose">
-  </ng-template >
-</ion-content>  -->
-
- 
-<!-- 
-<ion-content *ngIf="resultatCombat" class="bgImage" [ngStyle]="{'background-image': 'url('+ scene.picture +')'}">
-  <style>
-    
-  </style> -->
-
