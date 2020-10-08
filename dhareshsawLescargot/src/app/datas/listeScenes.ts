@@ -519,7 +519,7 @@ export const SCENES: Scene[] = [
    },
    {
      _id: '33',
-     title: 'Framboises',
+     title: 'Framboises', //problème avec la scène, pas de droite ni de gauche
      // tslint:disable-next-line: max-line-length
      description: 'Vous visez le buisson de framboises. Formidable, ça marche !!! Vous passez sous les ronces et entendez les cris de rage des oiseaux qui n\'ont pu faire de vous leur encas. Le terrain est en pente. Vous allez trop vite !!! Souhaitez-vous sortir de votre coquille pour ralentir votre course ou laisser le hasard décider?',
      picture: '../assets/fond-rencontre.png',
