@@ -16,13 +16,14 @@ import { IonicStorageModule } from '@ionic/storage';
 import { ObjectInventoryModalPageModule } from './object-inventory-modal/object-inventory-modal.module';
 import {HistoryModalPageModule} from './history-modal/history-modal.module';
 import { NativeAudio } from '@ionic-native/native-audio/ngx';
+import { WinLooseModalPageModule } from './win-loose-modal/win-loose-modal.module';
 
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ObjectInventoryModalPageModule, 
-    IonicStorageModule.forRoot(), HistoryModalPageModule],
+    IonicStorageModule.forRoot(), HistoryModalPageModule, WinLooseModalPageModule],
   providers: [
     StatusBar,
     SplashScreen,
