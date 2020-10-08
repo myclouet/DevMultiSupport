@@ -107,7 +107,7 @@
   <ion-toolbar color="secondary" style="text-align: center">
     <ion-buttons class="footerButtons">
       <div style=" margin: auto; text-align: center">
-        <ion-button (click)="save()">
+        <ion-button (click)="save()" *ngIf="saveBtn === true">
           <ion-icon class="buttonIcons" slot="icon-only" name="save-outline"></ion-icon>
         </ion-button>
         <ion-button (click)="openModal()">
