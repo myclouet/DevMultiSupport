@@ -37,7 +37,6 @@ export class ScenePage implements OnInit {
   progressionBuffer: number;
   marginVar: string;
   marginNum: number;
-  saveBtn: Boolean = true;
 
   // ----------------------------------------------------------------------------------------------------
   // CONSTRUCTOR
@@ -94,6 +93,7 @@ export class ScenePage implements OnInit {
       this.sauvegardeService.saveScene(this.scene);
       this.getObject(); // getobject() déplacé ici pour corriger bug ajout de l'objet à la restauration
       this.saveBtn = true;
+
     }
     this.startAudioCombat();
     this.audioService.unloadVoice();
@@ -118,6 +118,7 @@ export class ScenePage implements OnInit {
     if (this.scene.bonusObject !== null)  {
       this.heros.items = this.heros.items || [];
       this.heros.items.push(this.scene.bonusObject);
+      console.log(this.heros.items);
     }
   }
 
@@ -241,7 +242,7 @@ export class ScenePage implements OnInit {
     } else { const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'FUITE',
-      message: `${message}`,
+      message: `${message2}`,
       buttons: [
         {
           text: 'Jet de dé',
@@ -257,6 +258,48 @@ export class ScenePage implements OnInit {
     });
              await alert.present();
     }
+    else if (value > 6) {
+      message = "Tu n'as pas bavé assez pour fuir !!! Le combat est inévitable <br>Tu dois obtenir 6 ou moins pour gagner le combat";
+    }
+    else {
+      message = `Tu n'as pas bavé assez pour fuir !!! Le combat est inévitable <br> Tu dois obtenir moins que ${value} pour gagner le combat`;
+    };
+
+    if (this.characterService.escape()) {
+      const alert = await this.alertController.create({
+        cssClass: 'my-custom-class',
+        header: 'FUITE',
+        message: 'Bravo, tu as échappé au combat, tu retournes à la scène précédente !',
+        buttons: [
+          {
+            text: 'OK',
+            handler: () => {
+              this.prevScene();
+              this.startAudio();
+            }
+          }
+        ]
+      });
+      await alert.present();
+      }
+      else { const alert = await this.alertController.create({
+        cssClass: 'my-custom-class',
+        header: 'FUITE',
+        message: `${message}`,
+        buttons: [
+          {
+            text: 'Jet de dé',
+            handler: () => {
+              this.adversaire = this.getAdversaire();
+              this.characterService.character = this.adversaire;
+              this.characterService.conditionnalFight(this.scene);
+              this.scene.battleWon = this.characterService.battleWon;
+            }
+          }
+        ]
+      });
+      await alert.present();
+      }
   }
 
   // --------------------------------------------------------------------------------------------------
