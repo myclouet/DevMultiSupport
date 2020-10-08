@@ -37,6 +37,7 @@ export class ScenePage implements OnInit {
   progressionBuffer: number;
   marginVar: string;
   marginNum: number;
+  saveBtn: Boolean = true;
 
   // ----------------------------------------------------------------------------------------------------
   // CONSTRUCTOR
@@ -242,7 +243,7 @@ export class ScenePage implements OnInit {
     } else { const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'FUITE',
-      message: `${message2}`,
+      message: `${message}`,
       buttons: [
         {
           text: 'Jet de dé',
@@ -258,48 +259,6 @@ export class ScenePage implements OnInit {
     });
              await alert.present();
     }
-    else if (value > 6) {
-      message = "Tu n'as pas bavé assez pour fuir !!! Le combat est inévitable <br>Tu dois obtenir 6 ou moins pour gagner le combat";
-    }
-    else {
-      message = `Tu n'as pas bavé assez pour fuir !!! Le combat est inévitable <br> Tu dois obtenir moins que ${value} pour gagner le combat`;
-    };
-
-    if (this.characterService.escape()) {
-      const alert = await this.alertController.create({
-        cssClass: 'my-custom-class',
-        header: 'FUITE',
-        message: 'Bravo, tu as échappé au combat, tu retournes à la scène précédente !',
-        buttons: [
-          {
-            text: 'OK',
-            handler: () => {
-              this.prevScene();
-              this.startAudio();
-            }
-          }
-        ]
-      });
-      await alert.present();
-      }
-      else { const alert = await this.alertController.create({
-        cssClass: 'my-custom-class',
-        header: 'FUITE',
-        message: `${message}`,
-        buttons: [
-          {
-            text: 'Jet de dé',
-            handler: () => {
-              this.adversaire = this.getAdversaire();
-              this.characterService.character = this.adversaire;
-              this.characterService.conditionnalFight(this.scene);
-              this.scene.battleWon = this.characterService.battleWon;
-            }
-          }
-        ]
-      });
-      await alert.present();
-      }
   }
 
   // --------------------------------------------------------------------------------------------------
