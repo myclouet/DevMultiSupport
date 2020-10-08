@@ -29,8 +29,3 @@ npm-debug.log*
 /platforms
 /plugins
 /www
-
-#Perso
-config.xml
-../.vscode/
-vscode/
