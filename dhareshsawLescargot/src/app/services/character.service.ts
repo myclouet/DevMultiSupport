@@ -330,17 +330,19 @@ emitBattleSubject(){
   // fuite
   async escape() {
     const resultatDe = this.rollDice();
+    let result: Boolean;
     if (resultatDe < this.heros.luck) {
       console.log('Je me suis échappé');
       console.log('Dé : ' + resultatDe);
       console.log('Luck : ' + this.heros.luck);
-      return true;
+      result = true;
     } else {
       console.log('tu n\'as pas assez bavé, viens te battre mauviette');
       console.log('Dé : ' + resultatDe);
       console.log('Luck : ' + this.heros.luck);
-      return false;
+      result = false;
     }
+    return result;
   }
 
   public addObject(item: number) {
