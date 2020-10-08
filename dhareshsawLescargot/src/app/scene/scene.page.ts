@@ -53,14 +53,14 @@ export class ScenePage implements OnInit {
     public alertController: AlertController,
     private audioService: AudioService) { }
 
- //-------------------------------------------------------------------------------
+ // -------------------------------------------------------------------------------
  // VAR
- //-------------------------------------------------------------------------------
-    
+ // -------------------------------------------------------------------------------
+
     ngOnInit() {
-    
+
       this.scene = this.sceneService.getSceneById(this.route.snapshot.paramMap.get('id'));
-      console.log("ngOnInit scene "+this.scene._id)
+      console.log('ngOnInit scene '+ this.scene._id);
 
       this.sceneTitle();
 
@@ -70,26 +70,30 @@ export class ScenePage implements OnInit {
 
       this.characterService.character = this.adversaire;
 
-    if (this.scene._id === '1') {
-      this.alertSoundButtons(); // affichage d'une alerte expliquant comment couper ou activer le son et la voix
-    }
+      this.progressionBar = this.scene.progressionIndex / 100;
+      this.progressionBuffer = this.scene.progressionIndex / 100;
+      this.marginNum = this.scene.progressionIndex - 5;
+      this.marginVar = this.marginNum + '%';
 
-      if(this.scene._id === '1'){
+      if (this.scene._id === '1') {
+      this.alertSoundButtons(); // affichage d'une alerte expliquant comment couper ou activer le son et la voix
+      }
+
+      if (this.scene._id === '1') {
         this.alertSoundButtons();
       }
   }
 
 
   ionViewDidEnter() { // use of ionViewDidEnter to correct bugs when going more than one time in a scene
-    console.log("ionViewDidEnter scene "+this.scene._id)
+    console.log('ionViewDidEnter scene ' + this.scene._id);
     this.heros = this.characterService.heros; // réinitialisation du héros pour l'affichage lors d'une nouvelle partie
     if (this.sauvegardeService.getRestore()) {
       this.sauvegardeService.setRestore(false);
-    }
-    else {
+    } else {
       this.sauvegardeService.saveScene(this.scene);
       this.getObject(); // getobject() déplacé ici pour corriger bug ajout de l'objet à la restauration
-      this.saveBtn=true;
+      this.saveBtn = true;
     }
     this.startAudioCombat();
     this.audioService.unloadVoice();
@@ -111,7 +115,7 @@ export class ScenePage implements OnInit {
   }
 
   getObject() {
-    if(this.scene.bonusObject !== null)  {
+    if (this.scene.bonusObject !== null)  {
       this.heros.items = this.heros.items || [];
       this.heros.items.push(this.scene.bonusObject);
     }
@@ -121,6 +125,7 @@ export class ScenePage implements OnInit {
       const alert = await this.alertController.create({
         cssClass: '',
         header: 'Contrôle du son',
+        // tslint:disable-next-line: max-line-length
         message: `Vous pouvez couper le fond sonore en appuyant sur </br><img class="imgSound" src="../assets/icon/volume-mute-outline.svg"></br></br>Vous pouvez activer la lecture audio des scènes en appuyant sur</br> <img src="../assets/icon/play-circle-outline.svg"> `,
         buttons: [
           {
@@ -128,7 +133,7 @@ export class ScenePage implements OnInit {
           }
         ]
     });
-    await alert.present();
+      await alert.present();
   }
 
 
@@ -146,16 +151,17 @@ export class ScenePage implements OnInit {
 
   /* Choix combat */
   async fightSelection() {
-    this.saveBtn=false;
+    this.saveBtn = false;
     const value = this.heros.strength + this.heros.luck - this.adversaire.endurance;
     let message: any;
     if (value <= 1) {
+      // tslint:disable-next-line: max-line-length
       message = 'À vous de faire le meilleur choix !!!<br>L\'issue d\'un combat automatique est aléatoire, mais si vous désirez vous pouvez combattre avec un jet de dé. <br> Vous devez obtenir 1 pour gagner le combat';
-    }
-    else if (value > 6) {
+    } else if (value > 6) {
+      // tslint:disable-next-line: max-line-length
       message = 'À vous de faire le meilleur choix !!!<br>L\'issue d\'un combat automatique est aléatoire, mais si vous désirez vous pouvez combattre avec un jet de dé. <br> Vous devez obtenir 6 ou moins pour gagner le combat';
-    }
-    else {
+    } else {
+      // tslint:disable-next-line: max-line-length
       message = `À vous de faire le meilleur choix !!!<br>L'issue d'un combat automatique est aléatoire, mais si vous désirez vous pouvez combattre avec un jet de dé. <br> Vous devez obtenir moins que ${value} pour gagner le combat`;
     }
     const alert = await this.alertController.create({
@@ -187,6 +193,7 @@ export class ScenePage implements OnInit {
   /**
    * Affichage du Header
   **/
+
   sceneTitle() {
     if (this.scene.encounter === null) {
       this.title = 'EN CHEMIN';
@@ -202,19 +209,18 @@ export class ScenePage implements OnInit {
   // Fuite
   // ------------------------------------------------------------------------------------------------
   async escape() {
-    this.sauvegardeService.saveAction("tu as fui le combat ");
-    this.saveBtn=false;
+    this.sauvegardeService.saveAction('tu as fui le combat ');
+    this.saveBtn = false;
     const value = this.heros.strength + this.heros.luck - this.adversaire.endurance;
     let message: any;
     if (value <= 1) {
       message = 'Tu n\'as pas bavé assez pour fuir !!! Le combat est inévitable <br> Tu dois obtenir 1 pour gagner le combat';
-    }
-    else if (value > 6) {
+    } else if (value > 6) {
       message = 'Tu n\'as pas bavé assez pour fuir !!! Le combat est inévitable <br>Tu dois obtenir 6 ou moins pour gagner le combat';
-    }
-    else {
+    } else {
+      // tslint:disable-next-line: max-line-length
       message = `Tu n'as pas bavé assez pour fuir !!! Le combat est inévitable <br> Tu dois obtenir moins que ${value} pour gagner le combat`;
-    };
+    }
 
     if (this.characterService.escape()) {
     const alert = await this.alertController.create({
@@ -232,8 +238,7 @@ export class ScenePage implements OnInit {
       ]
     });
     await alert.present();
-    }
-    else { const alert = await this.alertController.create({
+    } else { const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'FUITE',
       message: `${message}`,
@@ -245,13 +250,12 @@ export class ScenePage implements OnInit {
             this.characterService.character = this.adversaire;
             const fin = await this.characterService.conditionnalFight(this.scene);
             console.log('TEST !' + fin);
-            
             this.scene.battleWon = this.characterService.battleWon;
           }
         }
       ]
     });
-    await alert.present();
+             await alert.present();
     }
   }
 
@@ -315,7 +319,7 @@ export class ScenePage implements OnInit {
   // Quitter l'application
   // -----------------------------------------------------------------------------------------------
 
-  async quitter() {
+  /* async quitter() {
       const alert = await this.alertController.create({
         cssClass: 'my-custom-class',
         header: 'Quitter',
@@ -331,15 +335,15 @@ export class ScenePage implements OnInit {
           }, {
             text: 'Quitter',
             handler: () => {
-              //this.sauvegarde.saveGame(); // code Boris
+              // this.sauvegarde.saveGame(); // code Boris
               console.log('Je quitte!');
-              //App.exitApp();
+              // App.exitApp();
             }
           }
         ]
       });
       await alert.present();
-    }
+    } */
 
      // -----------------------------------------------------------------------------------------------
      // AUDIO
@@ -378,20 +382,20 @@ export class ScenePage implements OnInit {
     }
 
 
-    //-----------------------------------------------------------------------------------
+    // -----------------------------------------------------------------------------------
     // DIFFICULTE DU COMBAT
-    //-----------------------------------------------------------------------------------
+    // -----------------------------------------------------------------------------------
 
     difficulte() {
       let difficulte: string;
-      let value: number = this.heros.strength + this.heros.luck - this.adversaire.endurance;
-      if (value <=1) {
-          difficulte = "hard";
-        }
-      else if  (value > 6) {
-        difficulte = "easy";
+      const value: number = this.heros.strength + this.heros.luck - this.adversaire.endurance;
+      if (value <= 1) {
+          difficulte = 'hard';
+        } else if  (value > 6) {
+        difficulte = 'easy';
+      } else {
+        difficulte = 'normal';
       }
-      else difficulte = "normal";
       return difficulte;
     }
 
