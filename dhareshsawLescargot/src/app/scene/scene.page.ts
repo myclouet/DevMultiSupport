@@ -217,7 +217,7 @@ export class ScenePage implements OnInit {
         {
           text: 'Jet de dé',
           handler: () => {
-            this.characterService.affichageEscape(this.adversaire, this.scene);
+            this.affichageEscape();
           }
         }
       ]
@@ -225,7 +225,6 @@ export class ScenePage implements OnInit {
     await alert.present();
   };
 
-  /*
   async affichageEscape() {
     const value = this.heros.strength + this.heros.luck - this.adversaire.endurance;
     let message: any;
@@ -274,8 +273,8 @@ export class ScenePage implements OnInit {
       });
       await alert.present();
       }
-    }
-    */
+  }
+
   // --------------------------------------------------------------------------------------------------
   // Ouverture modale
   // --------------------------------------------------------------------------------------------------

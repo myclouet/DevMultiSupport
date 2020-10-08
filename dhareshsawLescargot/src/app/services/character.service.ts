@@ -311,56 +311,9 @@ export class CharacterService {
   // FUITE
   // ----------------------------------------------------------------------------------------------------------------
 
-  async affichageEscape(adversaire, scene) {
-    const resultatDe = this.rollDice();
-    const value = this.heros.strength + this.heros.luck - adversaire.endurance;
-    let message: any;
-    if (value <= 1) {
-      message = `<img src="${this.pathDiceIcon(resultatDe)}" alt="dice" style="border-radius: 2px"> </br>"Tu n'as pas bavé assez pour fuir !!! Le combat est inévitable <br> Tu dois obtenir 1 pour gagner le combat`;
-    }
-    else if (value > 6) {
-      message = `<img src="${this.pathDiceIcon(value)}" alt="dice" style="border-radius: 2px"> </br>Tu n'as pas bavé assez pour fuir !!! Le combat est inévitable <br>Tu dois obtenir 6 ou moins pour gagner le combat`;
-    }
-    else {
-      message = `<img src="${this.pathDiceIcon(value)}" alt="dice" style="border-radius: 2px"> </br>Tu n'as pas bavé assez pour fuir !!! Le combat est inévitable <br> Tu dois obtenir moins que ${value} pour gagner le combat`;
-    };
-
-    if (this.escape(resultatDe)) {
-      const alert = await this.alertController.create({
-        cssClass: 'my-custom-class',
-        header: 'FUITE',
-        message: `<img src="${this.pathDiceIcon(value)}" alt="dice" style="border-radius: 2px"> </br>Bravo, tu as échappé au combat, tu retournes à la scène précédente !`,
-        buttons: [
-          {
-            text: 'OK',
-            handler: () => {
-              this.router.navigate(['scene/', scene.previousScene]);
-              //this.startAudio();
-            }
-          }
-        ]
-      });
-      await alert.present();
-      }
-      else { const alert = await this.alertController.create({
-        cssClass: 'my-custom-class',
-        header: 'FUITE',
-        message: `${message}`,
-        buttons: [
-          {
-            text: 'Jet de dé',
-            handler: () => {
-              this.conditionnalFight(scene);
-            }
-          }
-        ]
-      });
-      await alert.present();
-      }
-    }
   // fuite
-  async escape(resultatDe) {
-    //const resultatDe = this.rollDice();
+  async escape() {
+    const resultatDe = this.rollDice();
     if (resultatDe < this.heros.luck) {
       console.log('Je me suis échappé');
       console.log('Dé : ' + resultatDe);
