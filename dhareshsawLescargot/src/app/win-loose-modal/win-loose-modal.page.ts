@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, NavParams } from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-win-loose-modal',
@@ -8,12 +9,14 @@ import { ModalController, NavParams } from '@ionic/angular';
 })
 export class WinLooseModalPage implements OnInit {
 
-  modalTitle;
-  resultatCombat: boolean;
 
-  // Texte à afficher
-  messageWin = 'Tu as gagné !';
-  messageLoose = 'Tu as perdu !';
+  resultatCombat: boolean;
+  
+  // Texte à afficher dans la modale
+  modalTitle;
+  messageWin: string;
+  messageLoose: string;
+  messageContinuerJeu: string;
 
   // Images à afficher
   fondEcranWin = '../../assets/fondCombatGagne.jpg';
@@ -22,15 +25,30 @@ export class WinLooseModalPage implements OnInit {
   imageLoose = '../../assets/modalKnockOut.png';
 
   constructor(public modalController: ModalController,
-              public navParams: NavParams) {}
+              private translateService: TranslateService,
+              public navParams: NavParams) {
+    this.translateService.use('fr');
+
+    this.translateService.get( 
+      ['WinLooseModalPage.winMessage',
+       'WinLooseModalPage.looseMessage',
+       'WinLooseModalPage.continueGameMessage'
+    ])
+    .subscribe(res => { 
+      this.messageWin = res['WinLooseModalPage.winMessage'];
+      this.messageLoose = res['WinLooseModalPage.looseMessage'];
+      this.messageContinuerJeu = res['WinLooseModalPage.continueGameMessage'];
+   });
+  }
 
   ngOnInit() {
     this.modalTitle = this.navParams.data.paramTitle;
     this.resultatCombat = this.navParams.data.paramBattleWin;
   }
 
-  async closeModal() {
+  // async closeModal() {
+  closeModal() {
     const onCloseData = 'Close !';
-    await this.modalController.dismiss(onCloseData);
+    this.modalController.dismiss(onCloseData);
   }
 }

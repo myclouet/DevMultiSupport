@@ -363,15 +363,10 @@ emitBattleSubject(){
       component: modalPage,
       componentProps:{ 
         paramTitle : 'RÉSULTAT',
-        paramBattleWin: this.battleWon
+        paramBattleWin:  this.battleWon
       }
     });
     modal.onDidDismiss()
-    .then((info) => {
-      if (info !== null) {
-        console.log('Error in openModalWinLoose method ' + info);
-      }
-    });
     return await modal.present(); 
   }
 }
