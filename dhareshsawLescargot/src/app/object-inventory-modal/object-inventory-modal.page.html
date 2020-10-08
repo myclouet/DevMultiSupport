@@ -40,10 +40,10 @@
           </ion-label>
         </div>
         <div *ngIf="!emptyInventoryObject">
-          <ul *ngFor="let heroObjectInventory of modalHero.items">
+          <ul *ngFor="let heroObjectInventory of this.modalItemsDisplay">
               <li (click)="updateHeroInventory(heroObjectInventory.description)">
-                  {{ heroObjectInventory.description}} : {{
-                  heroObjectInventory.bonusPower}}
+                  {{ heroObjectInventory.description}} : {{ heroObjectInventory.bonusPower[0] }} = {{
+                  heroObjectInventory.bonusPower[1]}}
               </li>
           </ul>
         </div>
@@ -53,7 +53,11 @@
       </ion-col>
     </ion-row>
 
-    <ion-row size="4" *ngIf="keyToAppear">
+    <ion-row size="1" *ngIf="keyToAppear" class="bushImgContainer">
+      <img src="/assets/bush_clipart.png" class="imgBush" />
+    </ion-row>
+
+    <ion-row size="3" *ngIf="keyToAppear" class="graalDisplay">
       <ion-col size="12">
         <ion-title>Le Graal:</ion-title>
         <div>

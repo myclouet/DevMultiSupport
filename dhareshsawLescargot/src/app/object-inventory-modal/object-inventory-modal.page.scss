@@ -8,18 +8,18 @@ ion-button {
 ion-col > div {
     color: #04471c;
     font-weight: bold;
-    font-size: 120%;
+    // font-size: 120%;
 }
 
 ion-col > ul {
     color: #04471c;
     font-weight: bold;
-    font-size: 120%;
+    // font-size: 120%;
 }
 
 ion-col > ion-title{
     font-weight: bold;
-    font-size: 140% !important;
+    // font-size: 140% !important;
 }
 
 ion-content {
@@ -41,13 +41,13 @@ ion-footer > ion-button {
 
 ion-toolbar {
     text-align: center;
+    --background:#f2e8cf;    
 }
 
 ion-toolbar > ion-title {
     font-weight: bold;
+    --font-family: 'Segoe Print';
 }
-
-
 
 .bulletPoints{
     list-style-type: circle;
@@ -59,12 +59,12 @@ ion-toolbar > ion-title {
     margin:0;
 }
 
-// .columnDisplay {
-//     align-items: center;
-// }
-
 .container{
     display: flex;
+}
+
+.graalDisplay {
+    text-align: center;
 }
 
 .img {
@@ -86,7 +86,7 @@ ion-toolbar > ion-title {
     display: list-item;
 }
 
-.titleHeader{
-    --font-family: 'Segoe Print';
-}
+// .titleHeader{
+//     --font-family: 'Segoe Print';
+// }
 
