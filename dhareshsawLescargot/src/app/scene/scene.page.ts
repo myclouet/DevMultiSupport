@@ -209,52 +209,8 @@ export class ScenePage implements OnInit {
   async escape() {
     this.sauvegardeService.saveAction('tu as fui le combat ');
     this.saveBtn = false;
-    const value = this.heros.strength + this.heros.luck - this.adversaire.endurance;
-    let message: any;
-    if (value <= 1) {
-      message = 'Tu n\'as pas bavé assez pour fuir !!! Le combat est inévitable <br> Tu dois obtenir 1 pour gagner le combat';
-    } else if (value > 6) {
-      message = 'Tu n\'as pas bavé assez pour fuir !!! Le combat est inévitable <br>Tu dois obtenir 6 ou moins pour gagner le combat';
-    } else {
-      // tslint:disable-next-line: max-line-length
-      message = `Tu n'as pas bavé assez pour fuir !!! Le combat est inévitable <br> Tu dois obtenir moins que ${value} pour gagner le combat`;
-    }
-
-    if (this.characterService.escape()) {
-    const alert = await this.alertController.create({
-      cssClass: 'my-custom-class',
-      header: 'FUITE',
-      message: 'Bravo, tu as échappé au combat, tu retournes à la scène précédente !',
-      buttons: [
-        {
-          text: 'OK',
-          handler: () => {
-            this.prevScene();
-            this.startAudio();
-          }
-        }
-      ]
-    });
-    await alert.present();
-    } else { const alert = await this.alertController.create({
-      cssClass: 'my-custom-class',
-      header: 'FUITE',
-      message: `${message}`,
-      buttons: [
-        {
-          text: 'Jet de dé',
-          handler: async () => {
-            this.adversaire = this.getAdversaire();
-            this.characterService.character = this.adversaire;
-            const fin = await this.characterService.conditionnalFight(this.scene);
-            console.log('TEST !' + fin);
-            this.scene.battleWon = this.characterService.battleWon;
-          }
-        }
-      ]
-    });
-             await alert.present();
-    }
+    await this.characterService.escape(this.adversaire, this.scene);
+    this.audioBtn = this.audioService.audio;
   }
 
   // --------------------------------------------------------------------------------------------------
