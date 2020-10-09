@@ -13,22 +13,15 @@ export class ModalLanguagesPage implements OnInit {
               private languageService: LanguageService,
              ) { }
 
-  langue: string;
+   ngOnInit() {
 
-  ngOnInit() {
   }
 
   closeModal() {
     this.modalController.dismiss();
   }
 
-  languageSelectedFr() {
-    this.langue = 'fr';
-    this.languageService.setLanguage('fr');
-  }
-
-  languageSelectedEn() {
-    this.langue = 'en';
-    this.languageService.setLanguage('en');
+  languageSelected(langue: string) {
+    this.languageService.setLanguage(langue);
   }
 }
