@@ -1,7 +1,9 @@
 ion-toolbar {
     --background: #ffffff;
     font-family: 'Segoe';
-    color: #04471c;
+    color: #04471c; 
+    display: flex;
+    justify-content: center;
 
 }
 ion-title{
@@ -20,8 +22,13 @@ ion-content {
 }
 
 ion-footer{
+    margin: auto;
+    padding: auto;
    ion-toolbar {
     --background: #04471c;
+    display: flex;
+    justify-content: center;
+  
 } 
 }
 
@@ -33,12 +40,12 @@ ion-button {
 }
 
 ion-grid {
-    --ion-grid-padding: 20px;
-    --ion-grid-padding-xs: 20px;
-    --ion-grid-padding-sm: 20px;
-    --ion-grid-padding-md: 20px;
-    --ion-grid-padding-lg: 20px;
-    --ion-grid-padding-xl: 20px;
+    --ion-grid-padding: 5px;
+    --ion-grid-padding-xs: 5px;
+    --ion-grid-padding-sm: 5px;
+    --ion-grid-padding-md: 5px;
+    --ion-grid-padding-lg: 5px;
+    --ion-grid-padding-xl: 5px;
     --ion-grid-width: 100%;
     --ion-grid-width-xs: 100%;
     --ion-grid-width-sm: 540px;
@@ -49,27 +56,22 @@ ion-grid {
     justify-content: center;
 }
 
-.flags{
-    display: flex;
-    justify-content: space-between;
-}
+// .flags{
+//     display: flex;
+//     justify-content: space-between;
+//}
 .flag{ 
   height: 80%;
   width: 80%;
  
 }
 
+.flagBtn{
+    height:100%;
+    width:100%;
+    --background: #a7c957;
+}
 
-// .buttonsArea {
-//     display: flex;
-//     justify-content: space-around;
-//#img2::-moz-selection{
-//     ion-button {
-//         --background: #bc4749;
-//         width: 150px;
-
-//         img {
-//             max-height: 100%;
-//         }
-//   }
-//}
+.btnValider{
+    width: 150px; 
+}

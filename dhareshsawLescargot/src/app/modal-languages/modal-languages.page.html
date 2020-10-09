@@ -6,34 +6,26 @@
 
 <ion-content class="ion-padding">
   <div class="flags">
-    <ion-grid fixed>
+     <img class="deco" src="../../assets/montagne.jpg" alt="anglais" >
+    <ion-grid >
       <ion-row>
         <ion-col size="6"> 
-            <img class="flag" src="../../assets/drapeauFrancais.png" alt="français" (click)="languageSelected('fr')">
-            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-              <label class="btn btn-primary">
-                <input type="radio"> Français
-              </label>
-            </div>
-        </ion-col>
-        <ion-col size="6">   
-            <img class="flag" src="../../assets/drapeauAnglais.png" alt="anglais" (click)="languageSelected('en')">
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
-  <div> 
-    <ion-grid fixed>
-      <ion-row>
-          <ion-button size="large" shape="round" expand="bloc" (click)="closeModal()" >Valider le choix 
+          <ion-button class="flagBtn" (click)="languageSelected('fr')" >
+            <img class="flag" src="../../assets/drapeauFrancais.png" alt="français">
           </ion-button>
+            <!-- <img class="flag" src="../../assets/drapeauFrancais.png" alt="français" (click)="languageSelected('fr')"> -->
+        </ion-col>
+        <ion-col size="6">  
+          <ion-button class="flagBtn" (click)="languageSelected('fr')" >
+            <img class="flag" src="../../assets/drapeauAnglais.png" alt="anglais" (click)="languageSelected('en')">
+          </ion-button>      
+        </ion-col>
       </ion-row>
     </ion-grid>
   </div>
-</ion-content>
+ </ion-content>
 
 <ion-footer>
   <ion-toolbar>
-
   </ion-toolbar>
 </ion-footer>

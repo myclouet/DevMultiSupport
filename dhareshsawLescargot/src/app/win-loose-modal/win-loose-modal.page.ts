@@ -21,9 +21,9 @@ export class WinLooseModalPage implements OnInit {
   // Images à afficher
   fondEcranWin = '../../assets/fondCombatGagne.jpg';
   fondEcranLoose = '../../assets/fondCombatPerdu.jpg';
-  imageWin = '../../assets/modalGagne.png';
+  imageWin = '../../assets/bravo.png';
   imageLoose = '../../assets/modalKnockOut.png';
-
+ 
   constructor(public modalController: ModalController,
               private translateService: TranslateService,
               private languageService: LanguageService,
