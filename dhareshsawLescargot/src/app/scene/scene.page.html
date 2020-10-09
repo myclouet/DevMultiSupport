@@ -51,7 +51,7 @@
       <ion-button *ngIf="scene.nextScenes.length === 0" expand="block" color="success" (click)="sceneService.newGame()">
         Nouvelle Partie</ion-button>
     </ion-card-header>
-    <ion-card-content *ngIf="scene.nextScenes.length > 1" class="arrowsAreaText">Choisis une direction
+    <ion-card-content *ngIf="scene.nextScenes.length > 1" class="arrowsAreaText">{{ chooseDirection }}
     </ion-card-content>
   </ion-card>
 </ion-content>

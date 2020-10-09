@@ -11,7 +11,8 @@
         "fight": "COMBAT",
         "fightButon": "ATTAQUER",
         "escapeButton": "FUIR",
-        "progression": "Avancement"
+        "progression": "Avancement",
+        "chooseDirection": "Choisis une direction"
     },
     "HomePage": {
         "newGameMessage": "Nouvelle Partie",

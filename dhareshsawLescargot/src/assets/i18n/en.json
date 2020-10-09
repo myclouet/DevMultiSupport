@@ -11,7 +11,8 @@
         "fight": "FIGHT",
         "fightButon": "FIGHT",
         "escapeButton": "ESCAPE",
-        "progression": "Progression"
+        "progression": "Progression",
+        "chooseDirection": "Choose a direction"
     },
     "HomePage": {
         "newGameMessage": "New Game",

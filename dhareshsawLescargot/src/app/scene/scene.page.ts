@@ -42,9 +42,12 @@ export class ScenePage implements OnInit {
   marginNum: number;
   saveBtn: Boolean = true;
   muteSound: string;
+
+  // Message to display
   fightMessage: string;
   escapeMessage: string;
   progressionMessage: string;
+  chooseDirection: string;
 
   // ----------------------------------------------------------------------------------------------------
   // CONSTRUCTOR
@@ -67,12 +70,14 @@ export class ScenePage implements OnInit {
       this.translateService.get(
         ['ScenePage.fightButon',
          'ScenePage.escapeButton',
-         'ScenePage.progression'
+         'ScenePage.progression',
+         'ScenePage.chooseDirection',
         ])
       .subscribe(res => {
         this.fightMessage = res['ScenePage.fightButon'];
         this.escapeMessage = res['ScenePage.escapeButton'];
-        this.escapeMessage = res['ScenePage.progression'];
+        this.progressionMessage = res['ScenePage.progression'];
+        this.chooseDirection = res['ScenePage.chooseDirection'];
      });
     }
 
