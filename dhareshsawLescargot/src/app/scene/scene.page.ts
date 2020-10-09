@@ -42,7 +42,9 @@ export class ScenePage implements OnInit {
   marginNum: number;
   saveBtn: Boolean = true;
   muteSound: string;
-  toto: string;
+  fightMessage: string;
+  escapeMessage: string;
+  progressionMessage: string;
 
   // ----------------------------------------------------------------------------------------------------
   // CONSTRUCTOR
@@ -61,6 +63,17 @@ export class ScenePage implements OnInit {
     private languageService: LanguageService) {
       const language = this.languageService.getLanguage();
       this.translateService.use(language);
+
+      this.translateService.get(
+        ['ScenePage.fightButon',
+         'ScenePage.escapeButton',
+         'ScenePage.progression'
+        ])
+      .subscribe(res => {
+        this.fightMessage = res['ScenePage.fightButon'];
+        this.escapeMessage = res['ScenePage.escapeButton'];
+        this.escapeMessage = res['ScenePage.progression'];
+     });
     }
 
  // -------------------------------------------------------------------------------

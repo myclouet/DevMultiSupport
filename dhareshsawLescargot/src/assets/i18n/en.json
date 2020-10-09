@@ -9,7 +9,9 @@
         "onMyWay": "ON MY WAY",
         "meet": "MEET",
         "fight": "FIGHT",
-        "muteSound": "You can mute the background sound by pressing "
+        "fightButon": "FIGHT",
+        "escapeButton": "ESCAPE",
+        "progression": "Progression"
     },
     "HomePage": {
         "newGameMessage": "New Game",

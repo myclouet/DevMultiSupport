@@ -9,7 +9,9 @@
         "onMyWay": "EN CHEMIN",
         "meet": "RENCONTRE",
         "fight": "COMBAT",
-        "muteSound": "Vous pouvez couper le fond sonore en appuyant sur "
+        "fightButon": "ATTAQUER",
+        "escapeButton": "FUIR",
+        "progression": "Avancement"
     },
     "HomePage": {
         "newGameMessage": "Nouvelle Partie",

@@ -10,7 +10,8 @@
         <ion-progress-bar color="primary" value="{{progressionBar}}" buffer="{{progressionBuffer}}"></ion-progress-bar>
       </ion-row>
       <ion-row>
-        <ion-label class="progressionTitle" >Avancement : {{scene.progressionIndex}} %</ion-label>
+        <!-- <ion-label class="progressionTitle">Avancement : {{scene.progressionIndex}} %</ion-label> -->
+        <ion-label class="progressionTitle">{{ progressionMessage }} : {{scene.progressionIndex}} %</ion-label>
       </ion-row>
     </ion-grid> 
   </ion-toolbar>
@@ -96,8 +97,8 @@
 
 
   <div class="buttonsArea">
-    <ion-button (click)="fightSelection()">Attaquer<img src="assets/icon/crossedSwords.png" /></ion-button>
-    <ion-button (click)="escape()">Fuir<img src="assets/icon/turboSnail.png" /></ion-button>
+    <ion-button (click)="fightSelection()">{{ fightMessage }}<img src="assets/icon/crossedSwords.png" /></ion-button>
+    <ion-button (click)="escape()">{{ escapeMessage }}<img src="assets/icon/turboSnail.png" /></ion-button>
   </div>
   <!--<button *ngIf = "characterService.conditionnalFightBool === true">Jeter le dé</button>-->
 </ion-content>
