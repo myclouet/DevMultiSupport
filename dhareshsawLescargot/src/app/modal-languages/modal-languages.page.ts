@@ -27,11 +27,8 @@ export class ModalLanguagesPage implements OnInit {
 
    ngOnInit() { }
 
-  closeModal() {
-    this.modalController.dismiss();
-  }
-
-  languageSelected(langue: string) {
+    languageSelected(langue: string) {
     this.languageService.setLanguage(langue);
+    this.modalController.dismiss();
   }
 }
