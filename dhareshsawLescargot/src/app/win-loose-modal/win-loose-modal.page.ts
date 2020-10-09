@@ -9,11 +9,10 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class WinLooseModalPage implements OnInit {
 
-
   resultatCombat: boolean;
-  
+
   // Texte à afficher dans la modale
-  modalTitle;
+  modalTitle: string;
   messageWin: string;
   messageLoose: string;
   messageContinuerJeu: string;
@@ -29,24 +28,24 @@ export class WinLooseModalPage implements OnInit {
               public navParams: NavParams) {
     this.translateService.use('fr');
 
-    this.translateService.get( 
+    this.translateService.get(
       ['WinLooseModalPage.winMessage',
        'WinLooseModalPage.looseMessage',
-       'WinLooseModalPage.continueGameMessage'
+       'WinLooseModalPage.continueGameMessage',
+       'WinLooseModalPage.modalTitle',
     ])
-    .subscribe(res => { 
+    .subscribe(res => {
       this.messageWin = res['WinLooseModalPage.winMessage'];
       this.messageLoose = res['WinLooseModalPage.looseMessage'];
       this.messageContinuerJeu = res['WinLooseModalPage.continueGameMessage'];
+      this.modalTitle = res['WinLooseModalPage.modalTitle'];
    });
   }
 
   ngOnInit() {
-    this.modalTitle = this.navParams.data.paramTitle;
     this.resultatCombat = this.navParams.data.paramBattleWin;
   }
 
-  // async closeModal() {
   closeModal() {
     const onCloseData = 'Close !';
     this.modalController.dismiss(onCloseData);

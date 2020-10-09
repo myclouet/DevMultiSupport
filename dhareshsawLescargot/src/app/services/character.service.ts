@@ -357,18 +357,17 @@ emitBattleSubject(){
   }
 
   /**
-   * 
+   *
    * @param modalPage WinLooseModalPage modal to display when the player win or loose
    */
-  async openModalWinLoose(modalPage: typeof WinLooseModalPage){
+  async openModalWinLoose(modalPage: typeof WinLooseModalPage) {
     const modal = await this.modalController.create({
       component: modalPage,
-      componentProps:{ 
-        paramTitle : 'RÉSULTAT',
+      componentProps: {
         paramBattleWin:  this.battleWon
       }
     });
-    modal.onDidDismiss()
-    return await modal.present(); 
+    modal.onDidDismiss ();
+    return await modal.present();
   }
 }

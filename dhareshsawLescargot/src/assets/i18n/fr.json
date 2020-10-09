@@ -2,6 +2,7 @@
     "WinLooseModalPage": {
         "winMessage": "Tu as gagné !",
         "looseMessage": "Tu as perdu !",
-        "continueGameMessage": "Continuer le jeu"
+        "continueGameMessage": "Continuer le jeu",
+        "modalTitle": "RÉSULTAT"
     }
 }
