@@ -11,8 +11,8 @@ describe('LanguageService', () => {
   });
 
   it('should be created', () => {
-    const service: LanguageService = TestBed.get(LanguageService);
-    expect(service).toBeTruthy();
+    const languageService: LanguageService = TestBed.get(LanguageService);
+    expect(languageService).toBeTruthy();
   });
 
   it('should set and get the language', () => {

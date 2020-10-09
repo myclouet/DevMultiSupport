@@ -17,7 +17,6 @@ ion-title{
 
 ion-content {
     height: 100%;
-   // --background:#c7df8e;
     --background: #a7c957;
 }
 
@@ -56,10 +55,6 @@ ion-grid {
     justify-content: center;
 }
 
-// .flags{
-//     display: flex;
-//     justify-content: space-between;
-//}
 .flag{ 
   height: 80%;
   width: 80%;
@@ -72,6 +67,3 @@ ion-grid {
     --background: #a7c957;
 }
 
-.btnValider{
-    width: 150px; 
-}
