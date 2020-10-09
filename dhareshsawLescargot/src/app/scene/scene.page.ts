@@ -41,7 +41,6 @@ export class ScenePage implements OnInit {
   marginVar: string;
   marginNum: number;
   saveBtn: Boolean = true;
-  muteSound: string;
 
   // Message to display
   fightMessage: string;

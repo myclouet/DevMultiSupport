@@ -24,7 +24,6 @@
         "resumeCurrentGameMessage": "Reprendre Partie en cours"
     },
     "ModalLanguagesPage": {
-        "modalTitle": "Langue"
-    }
-    
+        "modalTitle": "Langues"
+    }  
 }

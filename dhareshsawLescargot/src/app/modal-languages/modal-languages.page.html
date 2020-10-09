@@ -11,12 +11,11 @@
       <ion-row>
         <ion-col size="6"> 
           <ion-button class="flagBtn" (click)="languageSelected('fr')" >
-            <img class="flag" src="../../assets/drapeauFrancais.png" alt="français">
+            <img class="flag" src="../../assets/drapeauFrancais.png" alt="français" (click)="languageSelected('fr')">
           </ion-button>
-            <!-- <img class="flag" src="../../assets/drapeauFrancais.png" alt="français" (click)="languageSelected('fr')"> -->
         </ion-col>
         <ion-col size="6">  
-          <ion-button class="flagBtn" (click)="languageSelected('fr')" >
+          <ion-button class="flagBtn" (click)="languageSelected('en')" >
             <img class="flag" src="../../assets/drapeauAnglais.png" alt="anglais" (click)="languageSelected('en')">
           </ion-button>      
         </ion-col>
