@@ -4,5 +4,15 @@
         "looseMessage": "You lose !",
         "continueGameMessage": "Continue the game",
         "modalTitle": "Result"
+    },
+    "ScenePage": {
+        "onMyWay": "ON MY WAY",
+        "meet": "MEET",
+        "fight": "FIGHT",
+        "muteSound": "You can mute the background sound by pressing "
+    },
+    "HomePage": {
+        "newGameMessage": "New Game",
+        "resumeCurrentGameMessage": "Resume Current game"
     }
 }

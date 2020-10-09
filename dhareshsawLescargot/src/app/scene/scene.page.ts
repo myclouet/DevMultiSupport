@@ -15,6 +15,8 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { isLoweredSymbol } from '@angular/compiler';
 import { ObjectInventory } from '../classes/object';
 import { ModalLanguagesPage } from '../modal-languages/modal-languages.page';
+import { TranslateService } from '@ngx-translate/core';
+import { LanguageService } from '../services/language.service';
 
 @Component({
   selector: 'app-scene',
@@ -39,6 +41,8 @@ export class ScenePage implements OnInit {
   marginVar: string;
   marginNum: number;
   saveBtn: Boolean = true;
+  muteSound: string;
+  toto: string;
 
   // ----------------------------------------------------------------------------------------------------
   // CONSTRUCTOR
@@ -52,7 +56,12 @@ export class ScenePage implements OnInit {
     private router: Router,
     public modalController: ModalController,
     public alertController: AlertController,
-    private audioService: AudioService) { }
+    private audioService: AudioService,
+    private translateService: TranslateService,
+    private languageService: LanguageService) {
+      const language = this.languageService.getLanguage();
+      this.translateService.use(language);
+    }
 
  // -------------------------------------------------------------------------------
  // VAR
@@ -126,6 +135,7 @@ export class ScenePage implements OnInit {
         header: 'Contrôle du son',
         // tslint:disable-next-line: max-line-length
         message: `Vous pouvez couper le fond sonore en appuyant sur </br><img class="imgSound" src="../assets/icon/volume-mute-outline.svg"></br></br>Vous pouvez activer la lecture audio des scènes en appuyant sur</br> <img src="../assets/icon/play-circle-outline.svg"> `,
+
         buttons: [
           {
             text: 'OK',
@@ -192,16 +202,14 @@ export class ScenePage implements OnInit {
   /**
    * Affichage du Header
   **/
-
   sceneTitle() {
     if (this.scene.encounter === null) {
-      this.title = 'EN CHEMIN';
+      // this.translateService.get('ScenePage.onMyWay').subscribe(message => { this.title = message; });
     } else if (this.scene.isBattle === true) {
-      this.title = 'COMBAT';
+      // this.translateService.get('ScenePage.fight').subscribe(message => { this.title = message; });
     } else {
-      this.title = 'RENCONTRE';
+      // this.translateService.get('ScenePage.meet').subscribe(message => { this.title = message; });
     }
-
   }
 
   // ---------------------------------------------------------------------------------------------

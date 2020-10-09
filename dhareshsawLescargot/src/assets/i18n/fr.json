@@ -4,5 +4,15 @@
         "looseMessage": "Tu as perdu !",
         "continueGameMessage": "Continuer le jeu",
         "modalTitle": "Résultat"
+    },
+    "ScenePage": {
+        "onMyWay": "EN CHEMIN",
+        "meet": "RENCONTRE",
+        "fight": "COMBAT",
+        "muteSound": "Vous pouvez couper le fond sonore en appuyant sur "
+    },
+    "HomePage": {
+        "newGameMessage": "Nouvelle Partie",
+        "resumeCurrentGameMessage": "Reprendre Partie en cours"
     }
 }

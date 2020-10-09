@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import { AlertController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
+import { TranslateService } from '@ngx-translate/core';
 import { isNullOrUndefined } from 'util';
 import { CharacterService } from '../services/character.service';
+import { LanguageService } from '../services/language.service';
 import { SauvegardeService } from '../services/sauvegarde.service';
 import { SceneService } from '../services/scene.service';
 
@@ -15,6 +17,8 @@ import { SceneService } from '../services/scene.service';
 export class HomePage implements OnInit{
 
   splash = true;
+  newGameMessage: string;
+  resumeCurrentGameMessage: string;
 
 
   constructor(private router: Router,
@@ -22,7 +26,20 @@ export class HomePage implements OnInit{
               public storage: Storage,
               private characterService: CharacterService,
               private sceneService: SceneService,
+              private translateService: TranslateService,
+              private languageService: LanguageService,
               public alertController: AlertController) {
+    const language = this.languageService.getLanguage();
+    this.translateService.use(language);
+
+    this.translateService.get(
+      ['HomePage.newGameMessage',
+       'HomePage.resumeCurrentGameMessage'
+    ])
+    .subscribe(res => {
+      this.newGameMessage = res['HomePage.newGameMessage'];
+      this.resumeCurrentGameMessage = res['HomePage.resumeCurrentGameMessage'];
+   });
   }
 
   ngOnInit() {

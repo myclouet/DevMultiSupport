@@ -10,10 +10,7 @@ import { LanguageService } from '../services/language.service';
 export class ModalLanguagesPage implements OnInit {
 
   constructor(private modalController: ModalController,
-              private languageService: LanguageService
-             ) { }
-
-  langue: string;
+              private languageService: LanguageService) {}
 
   ngOnInit() {}
 
@@ -21,13 +18,7 @@ export class ModalLanguagesPage implements OnInit {
     this.modalController.dismiss();
   }
 
-  languageSelectedFr() {
-    this.langue = 'fr';
-    this.languageService.setLanguage('fr');
-  }
-
-  languageSelectedEn() {
-    this.langue = 'en';
-    this.languageService.setLanguage('en');
+  languageSelected(langue: string) {
+    this.languageService.setLanguage(langue);
   }
 }
