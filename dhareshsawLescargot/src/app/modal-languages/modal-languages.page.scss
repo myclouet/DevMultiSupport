@@ -11,10 +11,10 @@ ion-footer{
 }
 
 ion-button {
-    background: #bc4749;
-    width: 150px;
-    color: #ffffff;
-    font-family: 'Calibri';
+    --background: #bc4749;
+  //  width: 150px;
+    --color: #ffffff;
+    --font-family: 'Calibri';   
 }
 
 
