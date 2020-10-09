@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController, NavParams } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
 import { LanguageService } from '../services/language.service';
 
 @Component({
@@ -11,30 +11,24 @@ export class ModalLanguagesPage implements OnInit {
 
   constructor(private modalController: ModalController,
               private languageService: LanguageService,
-              private navParams: NavParams) { }
+             ) { }
 
   langue: string;
 
   ngOnInit() {
-
   }
 
   closeModal() {
-    this.modalController.dismiss({
-      langue: this.langue
-    });
+    this.modalController.dismiss();
   }
 
   languageSelectedFr() {
-    this.langue = 'Français';
-    console.log(' Vous avez choisi ' + this.langue);
-    this.languageService.setLanguage('français');
-
+    this.langue = 'fr';
+    this.languageService.setLanguage('fr');
   }
 
   languageSelectedEn() {
-    this.langue = 'Anglais';
-    this.languageService.setLanguage('anglais');
-    console.log(' Vous avez choisi ' + this.langue);
+    this.langue = 'en';
+    this.languageService.setLanguage('en');
   }
 }

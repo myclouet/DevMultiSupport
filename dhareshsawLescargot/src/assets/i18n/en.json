@@ -3,6 +3,6 @@
         "winMessage": "You win !",
         "looseMessage": "You lose !",
         "continueGameMessage": "Continue the game",
-        "modalTitle": "RESULT"
+        "modalTitle": "Result"
     }
 }

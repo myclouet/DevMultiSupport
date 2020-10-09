@@ -404,21 +404,6 @@ export class ScenePage implements OnInit {
     const modal = await this.modalController.create({
       component: ModalLanguagesPage,
     });
-
     return await modal.present();
-
-    const { data } = await modal.onDidDismiss();
-    console.log(data);
- 
-
-    // modal.onDidDismiss().then((dataReturned) => {
-    //   if (dataReturned !== null) {
-    //     this.dataReturned = dataReturned.data;
-    //   }
-    //   console.log(dataReturned);
-      
-    // });
-
-   
-}
+  }
 }
