@@ -47,7 +47,12 @@ export class ScenePage implements OnInit {
   fightMessage: string;
   escapeMessage: string;
   progressionMessage: string;
-  chooseDirection: string;
+  chooseDirectionMessage: string;
+  enduranceMessage: string;
+  strengthMessage: string;
+  luckMessage: string;
+  difficultyMessage: string;
+  newGameMessage: string;
 
   // ----------------------------------------------------------------------------------------------------
   // CONSTRUCTOR
@@ -72,12 +77,22 @@ export class ScenePage implements OnInit {
          'ScenePage.escapeButton',
          'ScenePage.progression',
          'ScenePage.chooseDirection',
+         'ScenePage.endurance',
+         'ScenePage.strength',
+         'ScenePage.luck',
+         'ScenePage.difficulty',
+         'ScenePage.newGameMessage'
         ])
       .subscribe(res => {
         this.fightMessage = res['ScenePage.fightButon'];
         this.escapeMessage = res['ScenePage.escapeButton'];
         this.progressionMessage = res['ScenePage.progression'];
-        this.chooseDirection = res['ScenePage.chooseDirection'];
+        this.chooseDirectionMessage = res['ScenePage.chooseDirection'];
+        this.enduranceMessage = res['ScenePage.endurance'];
+        this.strengthMessage = res['ScenePage.strength'];
+        this.luckMessage = res['ScenePage.luck'];
+        this.difficultyMessage = res['ScenePage.difficulty'];
+        this.newGameMessage = res['ScenePage.newGameMessage'];
      });
     }
 

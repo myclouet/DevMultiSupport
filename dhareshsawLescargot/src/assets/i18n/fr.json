@@ -12,7 +12,12 @@
         "fightButon": "ATTAQUER",
         "escapeButton": "FUIR",
         "progression": "Avancement",
-        "chooseDirection": "Choisis une direction"
+        "chooseDirection": "Choisis une direction",
+        "endurance": "Endurance",
+        "strength": "Force",
+        "luck": "Chance",
+        "difficulty": "Difficulté",
+        "newGameMessage": "Nouvelle Partie"
     },
     "HomePage": {
         "newGameMessage": "Nouvelle Partie",

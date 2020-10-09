@@ -12,7 +12,12 @@
         "fightButon": "FIGHT",
         "escapeButton": "ESCAPE",
         "progression": "Progression",
-        "chooseDirection": "Choose a direction"
+        "chooseDirection": "Choose a direction",
+        "endurance": "Endurance",
+        "strength": "Strength",
+        "luck": "Luck",
+        "difficulty": "Difficulty",
+        "newGameMessage": "New Game"
     },
     "HomePage": {
         "newGameMessage": "New Game",
