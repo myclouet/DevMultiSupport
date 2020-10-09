@@ -10,13 +10,12 @@ import { LanguageService } from '../services/language.service';
 export class ModalLanguagesPage implements OnInit {
 
   constructor(private modalController: ModalController,
-              private languageService: LanguageService,
+              private languageService: LanguageService
              ) { }
 
   langue: string;
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   closeModal() {
     this.modalController.dismiss();
