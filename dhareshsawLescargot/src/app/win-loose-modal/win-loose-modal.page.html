@@ -5,11 +5,11 @@
 </ion-header>
 <ion-content class="ion-no-padding">
   <div *ngIf="resultatCombat" class="fondEcran" style=" background-image: url(../../assets/fondCombatGagne.jpg);">
-   <h1 class="colorWin">{{messageWin}}</h1>
+   <h1 class="colorWin">{{ messageWin }}</h1>
     <img [src]="imageWin" id="winLoose">  
   </div>
   <div *ngIf="!resultatCombat" class="fondEcran" style=" background-image: url(../../assets/fondCombatPerdu.jpg);">  
-    <h1 class="colorLoose">{{messageLoose}}</h1>
+    <h1 class="colorLoose">{{ messageLoose }}</h1>
     <img [src]="imageLoose" alt="perdu" id="winLoose">
   </div> 
 
@@ -23,7 +23,7 @@
 
 <ion-footer>
   <ion-toolbar>
-   <ion-button (click)="closeModal()" expand="block" fill="clear" shape="round">
+   <ion-button (click)="closeModal()" size="default" shape="round">
     {{ messageContinuerJeu }}
    </ion-button>
   </ion-toolbar>

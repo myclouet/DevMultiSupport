@@ -14,6 +14,9 @@ import { AudioService } from '../services/audio.service';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { isLoweredSymbol } from '@angular/compiler';
 import { ObjectInventory } from '../classes/object';
+import { ModalLanguagesPage } from '../modal-languages/modal-languages.page';
+import { TranslateService } from '@ngx-translate/core';
+import { LanguageService } from '../services/language.service';
 
 @Component({
   selector: 'app-scene',
@@ -39,6 +42,17 @@ export class ScenePage implements OnInit {
   marginNum: number;
   saveBtn: Boolean = true;
 
+  // Message to display
+  fightMessage: string;
+  escapeMessage: string;
+  progressionMessage: string;
+  chooseDirectionMessage: string;
+  enduranceMessage: string;
+  strengthMessage: string;
+  luckMessage: string;
+  difficultyMessage: string;
+  newGameMessage: string;
+
   // ----------------------------------------------------------------------------------------------------
   // CONSTRUCTOR
   // ----------------------------------------------------------------------------------------------------
@@ -51,7 +65,35 @@ export class ScenePage implements OnInit {
     private router: Router,
     public modalController: ModalController,
     public alertController: AlertController,
-    private audioService: AudioService) { }
+    private audioService: AudioService,
+    private translateService: TranslateService,
+    private languageService: LanguageService) {
+      const language = this.languageService.getLanguage();
+      this.translateService.use(language);
+
+      this.translateService.get(
+        ['ScenePage.fightButon',
+         'ScenePage.escapeButton',
+         'ScenePage.progression',
+         'ScenePage.chooseDirection',
+         'ScenePage.endurance',
+         'ScenePage.strength',
+         'ScenePage.luck',
+         'ScenePage.difficulty',
+         'ScenePage.newGameMessage'
+        ])
+      .subscribe(res => {
+        this.fightMessage = res['ScenePage.fightButon'];
+        this.escapeMessage = res['ScenePage.escapeButton'];
+        this.progressionMessage = res['ScenePage.progression'];
+        this.chooseDirectionMessage = res['ScenePage.chooseDirection'];
+        this.enduranceMessage = res['ScenePage.endurance'];
+        this.strengthMessage = res['ScenePage.strength'];
+        this.luckMessage = res['ScenePage.luck'];
+        this.difficultyMessage = res['ScenePage.difficulty'];
+        this.newGameMessage = res['ScenePage.newGameMessage'];
+     });
+    }
 
  // -------------------------------------------------------------------------------
  // VAR
@@ -125,6 +167,7 @@ export class ScenePage implements OnInit {
         header: 'Contrôle du son',
         // tslint:disable-next-line: max-line-length
         message: `Vous pouvez couper le fond sonore en appuyant sur </br><img class="imgSound" src="../assets/icon/volume-mute-outline.svg"></br></br>Vous pouvez activer la lecture audio des scènes en appuyant sur</br> <img src="../assets/icon/play-circle-outline.svg"> `,
+
         buttons: [
           {
             text: 'OK',
@@ -191,16 +234,14 @@ export class ScenePage implements OnInit {
   /**
    * Affichage du Header
   **/
-
   sceneTitle() {
     if (this.scene.encounter === null) {
-      this.title = 'EN CHEMIN';
+      this.translateService.get('ScenePage.onMyWay').subscribe(message => { this.title = message; });
     } else if (this.scene.isBattle === true) {
-      this.title = 'COMBAT';
+      this.translateService.get('ScenePage.fight').subscribe(message => { this.title = message; });
     } else {
-      this.title = 'RENCONTRE';
+      this.translateService.get('ScenePage.meet').subscribe(message => { this.title = message; });
     }
-
   }
 
   // ---------------------------------------------------------------------------------------------
@@ -396,5 +437,13 @@ export class ScenePage implements OnInit {
       }
       return difficulte;
     }
-
+/**
+ * Method which opens a modal page in order to choose the language of the game
+ */
+  async choixLangue() {
+    const modal = await this.modalController.create({
+      component: ModalLanguagesPage,
+    });
+    return await modal.present();
+  }
 }
