@@ -1,18 +1,23 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>modaleLangues</ion-title>
+    <ion-title>{{ titleLanguageModal }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <div>
+  <div class="flags">
     <ion-grid fixed>
       <ion-row>
         <ion-col size="6"> 
-          <img src="../../assets/drapeauFrancais.png" alt="français" (click)="languageSelected('fr')">
+            <img class="flag" src="../../assets/drapeauFrancais.png" alt="français" (click)="languageSelected('fr')">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+              <label class="btn btn-primary">
+                <input type="radio"> Français
+              </label>
+            </div>
         </ion-col>
-        <ion-col size="6">
-          <img src="../../assets/drapeauAnglais.png" alt="anglais" (click)="languageSelected('en')">
+        <ion-col size="6">   
+            <img class="flag" src="../../assets/drapeauAnglais.png" alt="anglais" (click)="languageSelected('en')">
         </ion-col>
       </ion-row>
     </ion-grid>

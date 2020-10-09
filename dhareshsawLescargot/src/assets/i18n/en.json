@@ -17,5 +17,8 @@
     "HomePage": {
         "newGameMessage": "New Game",
         "resumeCurrentGameMessage": "Resume Current game"
+    },
+    "ModalLanguagesPage": {
+        "modalTitle": "Language" 
     }
 }

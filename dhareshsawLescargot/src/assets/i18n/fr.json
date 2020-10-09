@@ -17,5 +17,9 @@
     "HomePage": {
         "newGameMessage": "Nouvelle Partie",
         "resumeCurrentGameMessage": "Reprendre Partie en cours"
+    },
+    "ModalLanguagesPage": {
+        "modalTitle": "Langue"
     }
+    
 }
