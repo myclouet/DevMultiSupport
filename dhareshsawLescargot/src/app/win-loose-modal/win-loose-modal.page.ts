@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, NavParams } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
+import { LanguageService } from '../services/language.service';
 
 @Component({
   selector: 'app-win-loose-modal',
@@ -25,8 +26,10 @@ export class WinLooseModalPage implements OnInit {
 
   constructor(public modalController: ModalController,
               private translateService: TranslateService,
+              private languageService: LanguageService,
               public navParams: NavParams) {
-    this.translateService.use('fr');
+    const language = this.languageService.getLanguage();
+    this.translateService.use(language);
 
     this.translateService.get(
       ['WinLooseModalPage.winMessage',
@@ -47,7 +50,6 @@ export class WinLooseModalPage implements OnInit {
   }
 
   closeModal() {
-    const onCloseData = 'Close !';
-    this.modalController.dismiss(onCloseData);
+    this.modalController.dismiss();
   }
 }
