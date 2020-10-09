@@ -204,11 +204,11 @@ export class ScenePage implements OnInit {
   **/
   sceneTitle() {
     if (this.scene.encounter === null) {
-      // this.translateService.get('ScenePage.onMyWay').subscribe(message => { this.title = message; });
+      this.translateService.get('ScenePage.onMyWay').subscribe(message => { this.title = message; });
     } else if (this.scene.isBattle === true) {
-      // this.translateService.get('ScenePage.fight').subscribe(message => { this.title = message; });
+      this.translateService.get('ScenePage.fight').subscribe(message => { this.title = message; });
     } else {
-      // this.translateService.get('ScenePage.meet').subscribe(message => { this.title = message; });
+      this.translateService.get('ScenePage.meet').subscribe(message => { this.title = message; });
     }
   }
 
