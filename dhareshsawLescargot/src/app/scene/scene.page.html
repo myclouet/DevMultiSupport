@@ -131,7 +131,10 @@
         <ion-button (click)="startVoice()" *ngIf="audioVoiceBtn === false">
           <ion-icon class="buttonIcons" slot="icon-only" name="play-circle-outline"></ion-icon>
         </ion-button>
-      </div>
+        <ion-button (click)="choixLangue()">
+        <ion-icon class="buttonIcons" slot="icon-only"  name="earth-outline"></ion-icon>
+      </ion-button>
+      </div>     
     </ion-buttons>
   </ion-toolbar>
 </ion-footer>

@@ -7,7 +7,7 @@ export class LanguageService {
 
   constructor() { }
 
-  language = 'en';
+  language = 'fr';
 
   public getLanguage() {
     return this.language;

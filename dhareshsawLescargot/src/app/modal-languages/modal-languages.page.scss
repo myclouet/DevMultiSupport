@@ -1,0 +1,33 @@
+ion-content {
+    height: 100%;
+   // --background:#c7df8e;
+    --background: #a7c957;
+}
+
+ion-footer{
+   ion-toolbar {
+    --background: #04471c;
+} 
+}
+
+ion-button {
+    background: #bc4749;
+    width: 150px;
+    color: #ffffff;
+    font-family: 'Calibri';
+}
+
+
+// .buttonsArea {
+//     display: flex;
+//     justify-content: space-around;
+
+//     ion-button {
+//         --background: #bc4749;
+//         width: 150px;
+
+//         img {
+//             max-height: 100%;
+//         }
+//   }
+//}

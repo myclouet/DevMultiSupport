@@ -14,6 +14,7 @@ import { AudioService } from '../services/audio.service';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { isLoweredSymbol } from '@angular/compiler';
 import { ObjectInventory } from '../classes/object';
+import { ModalLanguagesPage } from '../modal-languages/modal-languages.page';
 
 @Component({
   selector: 'app-scene',
@@ -396,5 +397,28 @@ export class ScenePage implements OnInit {
       }
       return difficulte;
     }
+/**
+ * Method which opens a modal page in order to choose the language of the game
+ */
+  async choixLangue() {
+    const modal = await this.modalController.create({
+      component: ModalLanguagesPage,
+    });
 
+    return await modal.present();
+
+    const { data } = await modal.onDidDismiss();
+    console.log(data);
+ 
+
+    // modal.onDidDismiss().then((dataReturned) => {
+    //   if (dataReturned !== null) {
+    //     this.dataReturned = dataReturned.data;
+    //   }
+    //   console.log(dataReturned);
+      
+    // });
+
+   
+}
 }
