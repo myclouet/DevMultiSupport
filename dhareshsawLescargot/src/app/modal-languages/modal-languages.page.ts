@@ -27,6 +27,10 @@ export class ModalLanguagesPage implements OnInit {
 
    ngOnInit() { }
 
+   /**
+    * Method which allows to change the app in a different language.
+    * @param langue The language chosen by the gamer
+    */
     languageSelected(langue: string) {
     this.languageService.setLanguage(langue);
     this.modalController.dismiss();

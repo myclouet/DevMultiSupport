@@ -8,17 +8,20 @@ import { LanguageService } from '../services/language.service';
   templateUrl: './win-loose-modal.page.html',
   styleUrls: ['./win-loose-modal.page.scss'],
 })
+/**
+ * This class allows to display the Win Loos Modal Page after a battle
+ */
 export class WinLooseModalPage implements OnInit {
 
   resultatCombat: boolean;
 
-  // Texte à afficher dans la modale
+  /** Texte à afficher dans la modale */
   modalTitle: string;
   messageWin: string;
   messageLoose: string;
   messageContinuerJeu: string;
 
-  // Images à afficher
+  /** Images à afficher */
   fondEcranWin = '../../assets/fondCombatGagne.jpg';
   fondEcranLoose = '../../assets/fondCombatPerdu.jpg';
   imageWin = '../../assets/bravo.png';
