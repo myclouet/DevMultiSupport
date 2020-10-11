@@ -1,0 +1,20 @@
+
+Scénarios
+
+Jean Claude DUSS prend le train à la gare du Nord pour Bourg Saint Maurice. Le trajet jusqu’au prochain arrêt dure 30 minutes, il ne pourra donc pas fumer avant. 
+Il doit pouvoir trouver une histoire qui va durer le temps de ce trajet mais pouvoir terminer sa partie avant l’arrivée du train.
+Il va dans la bibliothèque d’histoires et choisit en fonction du temps.
+Le temps idéal n’est pas une histoire déverrouillée.
+Comment l’obtenir ?
+Il en choisit une autre pour obtenir des points pour la débloquer.
+
+
+Anouk, 10 ans, a une limite de temps d’écran sur son téléphone. Il lui reste 10 minutes pour la journée mais la prochaine histoire à lire est de 20 minutes. 
+Elle doit choisir entre aller se coucher et commencer cette histoire.
+Elle se demande si un pop up apparaîtra pour lui proposer de sauvegarder la partie avant la fin de la limite d’écran journalière.
+
+
+Mathias finit une histoire, arrive sur l’écran "Roulette escargot" afin de récupérer sa clé, quand il remarque soudain que la batterie de son téléphone est à 1%.
+Le temps de brancher son téléphone sur secteur, l'écran s’est éteint. 
+Lorsqu’il rallume son téléphone, l'application a disparu et sa clé avec.
+
