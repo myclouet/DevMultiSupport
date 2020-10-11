@@ -431,8 +431,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="74"
-                            class="link-to-prism">src/app/home/home.page.ts:74</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="76"
+                            class="link-to-prism">src/app/home/home.page.ts:76</a></div>
                 </td>
             </tr>
 
@@ -472,8 +472,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="84"
-                            class="link-to-prism">src/app/home/home.page.ts:84</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="86"
+                            class="link-to-prism">src/app/home/home.page.ts:86</a></div>
                 </td>
             </tr>
 
@@ -511,14 +511,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="56"
-                            class="link-to-prism">src/app/home/home.page.ts:56</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/app/home/home.page.ts:58</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>restoreGame moved here to avoid circular dependancies</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -730,7 +732,9 @@ export class HomePage implements OnInit{
     this.sceneService.newGame();
   }
 
-  // restoreGame moved here to avoid circular dependancies
+  /**
+   * restoreGame moved here to avoid circular dependancies
+   */
   restoreGame() {
     this.storage.get(&#x27;stateGame&#x27;).then((state)&#x3D;&gt;{
       if (isNullOrUndefined(state))

@@ -42,7 +42,7 @@ export class ScenePage implements OnInit {
   marginNum: number;
   saveBtn: Boolean = true;
 
-  // Message to display
+/** Message to display */
   fightMessage: string;
   escapeMessage: string;
   progressionMessage: string;
@@ -140,9 +140,9 @@ export class ScenePage implements OnInit {
 
   }
 
-  // ----------------------------------------------------------------------------------------------------
-  // METHODS SCENES
-  // ----------------------------------------------------------------------------------------------------
+ /**
+  * METHODS SCENES
+  */
 
   nextScene(indice: number) {
     this.router.navigate(['scene/', this.scene.nextScenes[indice]]);
@@ -183,14 +183,12 @@ export class ScenePage implements OnInit {
   // METHODS COMBATS
   // ----------------------------------------------------------------------------------------------------
 
-  /**
-   * Initialisation adversaire
-  **/
+  /** Initialisation adversaire */
   getAdversaire() {
     return this.adversaire = this.characterService.getPersonnageById(this.scene.encounter); // Attention doublon idCharactere et encounter
   }
 
-  /* Choix combat */
+  /**  Choix combat */
   async fightSelection() {
     this.saveBtn = false;
     const value = this.heros.strength + this.heros.luck - this.adversaire.endurance;
@@ -230,10 +228,9 @@ export class ScenePage implements OnInit {
     await alert.present();
   }
 
-
   /**
    * Affichage du Header
-  **/
+  */
   sceneTitle() {
     if (this.scene.encounter === null) {
       this.translateService.get('ScenePage.onMyWay').subscribe(message => { this.title = message; });
@@ -244,9 +241,9 @@ export class ScenePage implements OnInit {
     }
   }
 
-  // ---------------------------------------------------------------------------------------------
-  // Fuite
-  // ------------------------------------------------------------------------------------------------
+/**
+ * Method which allos the player to escape the battle
+ */
   async escape() {
     this.sauvegardeService.saveAction('tu as fui le combat ');
     this.saveBtn = false;
@@ -333,10 +330,9 @@ export class ScenePage implements OnInit {
     return await modal.present();
   }
 
-  // -----------------------------------------------------------------------------------------------
-  // Sauvegarder partie
-  // -----------------------------------------------------------------------------------------------
-
+/**
+ * Method which allows to save the current game
+ */
    save() {
     this.sauvegardeService.setStateGame(this.heros,this.scene);
     this.sauvegardeService.saveGame();
@@ -384,10 +380,9 @@ export class ScenePage implements OnInit {
       await alert.present();
     } */
 
-     // -----------------------------------------------------------------------------------------------
-     // AUDIO
-     // -----------------------------------------------------------------------------------------------
-
+    /**
+     * AUDIO METHODS
+     */
      startAudio() {
       this.audioService.startAudioService();
       this.audioBtn = this.audioService.audio;
@@ -407,9 +402,9 @@ export class ScenePage implements OnInit {
       this.audioService.stopAudioService(this.scene);
       this.audioBtn = this.audioService.audio;
     }
-
-    // TEST AUDIO VOICE
-
+    /**
+     * TEST AUDIO VOICE
+     */
     startVoice() {
       this.audioService.startAudioVoiceService(this.scene);
       this.audioVoiceBtn = true;
@@ -420,11 +415,9 @@ export class ScenePage implements OnInit {
       this.audioVoiceBtn = false;
     }
 
-
-    // -----------------------------------------------------------------------------------
-    // DIFFICULTE DU COMBAT
-    // -----------------------------------------------------------------------------------
-
+/**
+ * BATTLE DIFFICULTY
+ */
     difficulte() {
       let difficulte: string;
       const value: number = this.heros.strength + this.heros.luck - this.adversaire.endurance;

@@ -52,7 +52,9 @@ export class HomePage implements OnInit{
     this.sceneService.newGame();
   }
 
-  // restoreGame moved here to avoid circular dependancies
+  /**
+   * restoreGame moved here to avoid circular dependancies
+   */
   restoreGame() {
     this.storage.get('stateGame').then((state)=>{
       if (isNullOrUndefined(state))
