@@ -53,6 +53,10 @@ export class ScenePage implements OnInit {
   difficultyMessage: string;
   newGameMessage: string;
 
+  /**png if death scenes 15 and 23 */
+  scene15 = '../../assets/escargotScene15.png';
+  scene23 = '../../assets/mort23.png';
+
   // ----------------------------------------------------------------------------------------------------
   // CONSTRUCTOR
   // ----------------------------------------------------------------------------------------------------
