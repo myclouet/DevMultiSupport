@@ -40,7 +40,12 @@
       <ion-card-content class="sceneDescription">{{scene.description}}</ion-card-content>
     </ion-content>
   </ion-card>
-
+<ion-card class="cardScenesFinales" >
+  <img class="imgScene23" *ngIf="scene._id === '23'" [src]= "scene23" alt="imagescene23">
+</ion-card>
+<ion-card  class="cardScenesFinales" >
+  <img class="imgScene15" *ngIf="scene._id === '15'" [src]= "scene15" alt="imagescene15">
+</ion-card>
   <ion-card>
     <ion-card-header class="arrowsArea">
       <ion-icon *ngIf="scene.nextScenes.length >= 2" (click)='nextScene(1)' name="arrow-back-circle"></ion-icon>
