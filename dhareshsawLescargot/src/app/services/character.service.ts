@@ -124,6 +124,7 @@ export class CharacterService {
     console.log('Vous avez gagné !');
     this.battleWon = true;
     this.sauvegardeService.saveAction("tu as gagné le combat !");
+    this.openModalWinLoose(WinLooseModalPage);
     //TMP jusqu'à modale réalisée - uniquement pour tests
     this.router.navigate(['scene/', scene.nextScenes[1]]);
   }
@@ -136,6 +137,7 @@ export class CharacterService {
     console.log('Vous avez perdu !');
     this.battleWon = false;
     this.sauvegardeService.saveAction("tu as perdu le combat !")
+    this.openModalWinLoose(WinLooseModalPage);
     //TMP jusqu'à modale réalisée - uniquement pour tests
     this.router.navigate(['scene/', scene.nextScenes[0]]);
   }
