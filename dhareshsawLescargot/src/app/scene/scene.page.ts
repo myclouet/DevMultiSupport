@@ -311,6 +311,8 @@ export class ScenePage implements OnInit {
     startAudioCombat() {
       this.audioService.startAudioServiceCombat(this.scene);
       this.audioBtn = this.audioService.audio;
+      console.log(this.audioBtn);
+      
     }
 
     restartAudio() {
