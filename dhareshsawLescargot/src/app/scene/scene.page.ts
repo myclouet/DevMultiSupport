@@ -135,8 +135,9 @@ export class ScenePage implements OnInit {
     } else {
       this.sauvegardeService.saveScene(this.scene);
       this.getObject(); // getobject() déplacé ici pour corriger bug ajout de l'objet à la restauration
-      this.saveBtn = true;
 
+      this.getKey();
+      this.saveBtn=true;
     }
     this.startAudioCombat();
     this.audioService.unloadVoice();
@@ -162,6 +163,14 @@ export class ScenePage implements OnInit {
       this.heros.items = this.heros.items || [];
       this.heros.items.push(this.scene.bonusObject);
       console.log(this.heros.items);
+    }
+  }
+
+  getKey() {
+    if(this.scene.hasKey === true)  {
+      this.heros.hasKey = true;
+    } else {
+      this.heros.hasKey = false;
     }
   }
 

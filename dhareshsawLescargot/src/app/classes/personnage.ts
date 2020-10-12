@@ -13,5 +13,5 @@ export class Character {
 }
 
 export class Hero extends Character {
-    hasKey: boolean;
+    hasKey: boolean = false;
 }
