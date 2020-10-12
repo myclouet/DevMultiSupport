@@ -17,13 +17,28 @@ import { ObjectInventoryModalPageModule } from './object-inventory-modal/object-
 import {HistoryModalPageModule} from './history-modal/history-modal.module';
 import { NativeAudio } from '@ionic-native/native-audio/ngx';
 import { WinLooseModalPageModule } from './win-loose-modal/win-loose-modal.module';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+export function createTranslateLoader(http: HttpClient) {
+    return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ObjectInventoryModalPageModule, 
-    IonicStorageModule.forRoot(), HistoryModalPageModule, WinLooseModalPageModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ObjectInventoryModalPageModule,
+    IonicStorageModule.forRoot(), HistoryModalPageModule, WinLooseModalPageModule, HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+    })
+  ],
+  exports: [TranslateModule],
   providers: [
     StatusBar,
     SplashScreen,

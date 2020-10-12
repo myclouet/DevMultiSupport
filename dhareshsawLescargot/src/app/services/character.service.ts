@@ -17,10 +17,6 @@ export class CharacterService {
   heros: Hero;
   battleWon: boolean;
   neutralFight: boolean = false;
-  battleSubject = new Subject<boolean>();
-
-  private battleWonSubject = new Subject<boolean>();
-  public battleWonObservable$ = this.battleWonSubject.asObservable();
 
   constructor(
     private alertController: AlertController,
@@ -32,25 +28,30 @@ export class CharacterService {
     this.heros = this.getHero(); // initialisation du héro
   }
 
-  // Liste de personnages
+  /** Liste de personnages
+   * @returns a list with all characters.
+   */
   getPersonnages() {
     return PERSONNAGES;
   }
 
-  // Personnage par id
+  /** Personnage par id */
   getPersonnageById(id) {
     return PERSONNAGES.find(({ _id }) => _id === id);
   }
 
-  // Heros 
+  /** Heros
+   * @returns the hero
+   */
   getHero() {
     return HERO;
   }
 
-  getBattleWon(){
+/** Heros */
+  getBattleWon() {
     return this.battleWon;
   }
-  
+/** initialisation of the Hero */
   initHero() {
     this.heros =
     {
@@ -107,39 +108,41 @@ export class CharacterService {
     this.character.endurance = endurance;
   }
   */
-emitBattleSubject(){
-  this.battleSubject.next();
-}
 
-  // Méthodes spécifiques au héro
+  /**  Méthodes spécifiques au héro */
   public die() {
-    // this.dead = true;
     console.log('Vous êtes mort');
   }
 
   public chooseScene(myScene) {
   }
-
+/**
+ * Battle won
+ * @param scene (current scene)
+ */
   public winGame(scene) {
     console.log('Vous avez gagné !');
     this.battleWon = true;
     this.sauvegardeService.saveAction("tu as gagné le combat !");
-    //TMP jusqu'à modale réalisée - uniquement pour tests
     this.openModalWinLoose(WinLooseModalPage);
-    this.battleWonSubject.next(this.battleWon);
+    //TMP jusqu'à modale réalisée - uniquement pour tests
     this.router.navigate(['scene/', scene.nextScenes[1]]);
   }
 
+/**
+ * Battle loose
+ * @param scene (current scene)
+ */
   public looseGame(scene) {
     console.log('Vous avez perdu !');
     this.battleWon = false;
     this.sauvegardeService.saveAction("tu as perdu le combat !")
-    //TMP jusqu'à modale réalisée - uniquement pour tests
     this.openModalWinLoose(WinLooseModalPage);
-    this.battleWonSubject.next(this.battleWon);
+    //TMP jusqu'à modale réalisée - uniquement pour tests
     this.router.navigate(['scene/', scene.nextScenes[0]]);
   }
 
+  /** jet de dé */
   public rollDice(): number {
     // tslint:disable-next-line: prefer-const
     let res = 0;
@@ -148,8 +151,8 @@ emitBattleSubject(){
     console.log(res);
     return res;
   }
-  
-  //chemmins vers png correspondant au résultat du dé
+
+  /** chemmins vers png correspondant au résultat du dé */
   public pathDiceIcon(res) {
     let path: string;
     switch (res) {
@@ -201,11 +204,7 @@ emitBattleSubject(){
   }*/
 
 
-  // --------------------------------------------------------------------------------------------------------------------
-  // COMBAT CONDITIONNEL
-  // --------------------------------------------------------------------------------------------------------------------
-
-  // combat conditionnel
+  /** conditionnalFight */
   async conditionnalFight(scene) {
     let value = this.rollDice();
     if ((this.heros.strength + (this.heros.luck - value) > this.character.endurance) || value === 1) {
@@ -261,11 +260,7 @@ emitBattleSubject(){
     }
   }
 
-  // ----------------------------------------------------------------------------------------------------------------
-  // COMBAT AUTOMATIQUE
-  // ----------------------------------------------------------------------------------------------------------------
-
-  //alert box pour comabt automatique
+  /** alert box pour comabt automatique */
   async automaticFightAlert(value, scene) {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
@@ -284,8 +279,9 @@ emitBattleSubject(){
     await alert.present();
   }
 
-
-  // combat automatique
+/** automaticFight
+ * @param scene: current scene
+ */
   automaticFight(scene) {
     let result = 0;
     result = Math.floor(Math.random() * 4);
@@ -320,24 +316,24 @@ emitBattleSubject(){
     return res;
   }
 
-  // ----------------------------------------------------------------------------------------------------------------
-  // FUITE
-  // ----------------------------------------------------------------------------------------------------------------
-
-  // fuite
-  public escape() {
+/**
+ * fuite
+ */
+  async escape() {
     const resultatDe = this.rollDice();
+    let result: Boolean;
     if (resultatDe < this.heros.luck) {
       console.log('Je me suis échappé');
       console.log('Dé : ' + resultatDe);
       console.log('Luck : ' + this.heros.luck);
-      return true;
+      result = true;
     } else {
       console.log('tu n\'as pas assez bavé, viens te battre mauviette');
       console.log('Dé : ' + resultatDe);
       console.log('Luck : ' + this.heros.luck);
-      return false;
+      result = false;
     }
+    return result;
   }
 
   public addObject(item: number) {
@@ -352,23 +348,16 @@ emitBattleSubject(){
   }
 
   /**
-   * 
    * @param modalPage WinLooseModalPage modal to display when the player win or loose
    */
-  async openModalWinLoose(modalPage: typeof WinLooseModalPage){
+  async openModalWinLoose(modalPage: typeof WinLooseModalPage) {
     const modal = await this.modalController.create({
       component: modalPage,
-      componentProps:{ 
-        paramTitle : 'RÉSULTAT',
-        paramBattleWin: this.battleWon
+      componentProps: {
+        paramBattleWin:  this.battleWon
       }
     });
-    modal.onDidDismiss()
-    .then((info) => {
-      if (info !== null) {
-        console.log('Error in openModalWinLoose method ' + info);
-      }
-    });
-    return await modal.present(); 
+    modal.onDidDismiss ();
+    return await modal.present();
   }
 }

@@ -6,6 +6,7 @@ ion-icon {
 ion-toolbar {
     --background: #f2e8cf;
     color: #04471c;
+    font-family: 'Segoe';
 }
 
 ion-card {
@@ -19,10 +20,16 @@ ion-content {
 
 ion-card-content {
     --background: transparent;
+    font-family: 'Komika';
+}
+
+ion-button {
+    font-family: Calibri;
 }
 
 .sceneDescription {
     font-size: 20px;
+    //font-family: 'Komika';
 }
 
 .fightCard {
@@ -113,6 +120,20 @@ ion-progress-bar {
     --progress-background: #04471c;
 }
 
+.cardScenesFinales{
+    display: flex;
+    justify-content: center;
+}
+.imgScene15{
+   height: 40%;
+   width: 40%;
+   padding: 10px;
+}
+.imgScene30{
+    height: 50%;
+    width: 50%;
+ }
+
 #margin {
     width: 5%;
 }
@@ -165,3 +186,4 @@ ion-progress-bar {
         width: 2%;
     }
   }
+

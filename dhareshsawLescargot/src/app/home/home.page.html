@@ -21,10 +21,10 @@
       <ion-grid>
         <ion-row>
           <ion-col>
-            <ion-button expand="block" color="success" (click)="newGame()">Nouvelle Partie</ion-button>
+            <ion-button expand="block" color="success" (click)="newGame()">{{ newGameMessage }} </ion-button>
           </ion-col>
           <ion-col>
-            <ion-button expand="block" color="success" (click)="restoreGame()" >Reprendre Partie en cours</ion-button>
+            <ion-button expand="block" color="success" (click)="restoreGame()">{{ resumeCurrentGameMessage }} </ion-button>
           </ion-col>
         </ion-row>
       </ion-grid>

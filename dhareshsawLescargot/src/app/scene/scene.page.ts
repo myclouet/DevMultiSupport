@@ -14,6 +14,9 @@ import { AudioService } from '../services/audio.service';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { isLoweredSymbol } from '@angular/compiler';
 import { ObjectInventory } from '../classes/object';
+import { ModalLanguagesPage } from '../modal-languages/modal-languages.page';
+import { TranslateService } from '@ngx-translate/core';
+import { LanguageService } from '../services/language.service';
 
 @Component({
   selector: 'app-scene',
@@ -39,6 +42,21 @@ export class ScenePage implements OnInit {
   marginNum: number;
   saveBtn: Boolean = true;
 
+/** Message to display */
+  fightMessage: string;
+  escapeMessage: string;
+  progressionMessage: string;
+  chooseDirectionMessage: string;
+  enduranceMessage: string;
+  strengthMessage: string;
+  luckMessage: string;
+  difficultyMessage: string;
+  newGameMessage: string;
+
+  /**png if death scenes 15 and 23 */
+  scene15 = '../../assets/escargotScene15.png';
+  scene23 = '../../assets/mort23.png';
+
   // ----------------------------------------------------------------------------------------------------
   // CONSTRUCTOR
   // ----------------------------------------------------------------------------------------------------
@@ -51,16 +69,44 @@ export class ScenePage implements OnInit {
     private router: Router,
     public modalController: ModalController,
     public alertController: AlertController,
-    private audioService: AudioService) { }
+    private audioService: AudioService,
+    private translateService: TranslateService,
+    private languageService: LanguageService) {
+      const language = this.languageService.getLanguage();
+      this.translateService.use(language);
 
- //-------------------------------------------------------------------------------
+      this.translateService.get(
+        ['ScenePage.fightButon',
+         'ScenePage.escapeButton',
+         'ScenePage.progression',
+         'ScenePage.chooseDirection',
+         'ScenePage.endurance',
+         'ScenePage.strength',
+         'ScenePage.luck',
+         'ScenePage.difficulty',
+         'ScenePage.newGameMessage'
+        ])
+      .subscribe(res => {
+        this.fightMessage = res['ScenePage.fightButon'];
+        this.escapeMessage = res['ScenePage.escapeButton'];
+        this.progressionMessage = res['ScenePage.progression'];
+        this.chooseDirectionMessage = res['ScenePage.chooseDirection'];
+        this.enduranceMessage = res['ScenePage.endurance'];
+        this.strengthMessage = res['ScenePage.strength'];
+        this.luckMessage = res['ScenePage.luck'];
+        this.difficultyMessage = res['ScenePage.difficulty'];
+        this.newGameMessage = res['ScenePage.newGameMessage'];
+     });
+    }
+
+ // -------------------------------------------------------------------------------
  // VAR
- //-------------------------------------------------------------------------------
-    
+ // -------------------------------------------------------------------------------
+
     ngOnInit() {
-    
+
       this.scene = this.sceneService.getSceneById(this.route.snapshot.paramMap.get('id'));
-      console.log("ngOnInit scene "+this.scene._id)
+      console.log('ngOnInit scene '+ this.scene._id);
 
       this.sceneTitle();
 
@@ -70,25 +116,26 @@ export class ScenePage implements OnInit {
 
       this.characterService.character = this.adversaire;
 
-    if (this.scene._id === '1') {
-      this.alertSoundButtons(); // affichage d'une alerte expliquant comment couper ou activer le son et la voix
-    }
+      this.progressionBar = this.scene.progressionIndex / 100;
+      this.progressionBuffer = this.scene.progressionIndex / 100;
+      this.marginNum = this.scene.progressionIndex - 5;
+      this.marginVar = this.marginNum + '%';
 
-      if(this.scene._id === '1'){
-        this.alertSoundButtons();
+      if (this.scene._id === '1') {
+      this.alertSoundButtons(); // affichage d'une alerte expliquant comment couper ou activer le son et la voix
       }
   }
 
 
   ionViewDidEnter() { // use of ionViewDidEnter to correct bugs when going more than one time in a scene
-    console.log("ionViewDidEnter scene "+this.scene._id)
+    console.log('ionViewDidEnter scene ' + this.scene._id);
     this.heros = this.characterService.heros; // réinitialisation du héros pour l'affichage lors d'une nouvelle partie
     if (this.sauvegardeService.getRestore()) {
       this.sauvegardeService.setRestore(false);
-    }
-    else {
+    } else {
       this.sauvegardeService.saveScene(this.scene);
       this.getObject(); // getobject() déplacé ici pour corriger bug ajout de l'objet à la restauration
+
       this.getKey();
       this.saveBtn=true;
     }
@@ -98,9 +145,9 @@ export class ScenePage implements OnInit {
 
   }
 
-  // ----------------------------------------------------------------------------------------------------
-  // METHODS SCENES
-  // ----------------------------------------------------------------------------------------------------
+ /**
+  * METHODS SCENES
+  */
 
   nextScene(indice: number) {
     this.router.navigate(['scene/', this.scene.nextScenes[indice]]);
@@ -112,9 +159,10 @@ export class ScenePage implements OnInit {
   }
 
   getObject() {
-    if(this.scene.bonusObject !== null)  {
+    if (this.scene.bonusObject !== null)  {
       this.heros.items = this.heros.items || [];
       this.heros.items.push(this.scene.bonusObject);
+      console.log(this.heros.items);
     }
   }
 
@@ -130,14 +178,16 @@ export class ScenePage implements OnInit {
       const alert = await this.alertController.create({
         cssClass: '',
         header: 'Contrôle du son',
+        // tslint:disable-next-line: max-line-length
         message: `Vous pouvez couper le fond sonore en appuyant sur </br><img class="imgSound" src="../assets/icon/volume-mute-outline.svg"></br></br>Vous pouvez activer la lecture audio des scènes en appuyant sur</br> <img src="../assets/icon/play-circle-outline.svg"> `,
+
         buttons: [
           {
             text: 'OK',
           }
         ]
     });
-    await alert.present();
+      await alert.present();
   }
 
 
@@ -146,25 +196,24 @@ export class ScenePage implements OnInit {
   // METHODS COMBATS
   // ----------------------------------------------------------------------------------------------------
 
-  /**
-   * Initialisation adversaire
-  **/
+  /** Initialisation adversaire */
   getAdversaire() {
     return this.adversaire = this.characterService.getPersonnageById(this.scene.encounter); // Attention doublon idCharactere et encounter
   }
 
-  /* Choix combat */
+  /**  Choix combat */
   async fightSelection() {
-    this.saveBtn=false;
+    this.saveBtn = false;
     const value = this.heros.strength + this.heros.luck - this.adversaire.endurance;
     let message: any;
     if (value <= 1) {
+      // tslint:disable-next-line: max-line-length
       message = 'À vous de faire le meilleur choix !!!<br>L\'issue d\'un combat automatique est aléatoire, mais si vous désirez vous pouvez combattre avec un jet de dé. <br> Vous devez obtenir 1 pour gagner le combat';
-    }
-    else if (value > 6) {
+    } else if (value > 6) {
+      // tslint:disable-next-line: max-line-length
       message = 'À vous de faire le meilleur choix !!!<br>L\'issue d\'un combat automatique est aléatoire, mais si vous désirez vous pouvez combattre avec un jet de dé. <br> Vous devez obtenir 6 ou moins pour gagner le combat';
-    }
-    else {
+    } else {
+      // tslint:disable-next-line: max-line-length
       message = `À vous de faire le meilleur choix !!!<br>L'issue d'un combat automatique est aléatoire, mais si vous désirez vous pouvez combattre avec un jet de dé. <br> Vous devez obtenir moins que ${value} pour gagner le combat`;
     }
     const alert = await this.alertController.create({
@@ -192,38 +241,35 @@ export class ScenePage implements OnInit {
     await alert.present();
   }
 
-
   /**
    * Affichage du Header
-  **/
+  */
   sceneTitle() {
     if (this.scene.encounter === null) {
-      this.title = 'EN CHEMIN';
+      this.translateService.get('ScenePage.onMyWay').subscribe(message => { this.title = message; });
     } else if (this.scene.isBattle === true) {
-      this.title = 'COMBAT';
+      this.translateService.get('ScenePage.fight').subscribe(message => { this.title = message; });
     } else {
-      this.title = 'RENCONTRE';
+      this.translateService.get('ScenePage.meet').subscribe(message => { this.title = message; });
     }
-
   }
 
-  // ---------------------------------------------------------------------------------------------
-  // Fuite
-  // ------------------------------------------------------------------------------------------------
+/**
+ * Method which allos the player to escape the battle
+ */
   async escape() {
-    this.sauvegardeService.saveAction("tu as fui le combat ");
-    this.saveBtn=false;
+    this.sauvegardeService.saveAction('tu as fui le combat ');
+    this.saveBtn = false;
     const value = this.heros.strength + this.heros.luck - this.adversaire.endurance;
     let message: any;
     if (value <= 1) {
       message = 'Tu n\'as pas bavé assez pour fuir !!! Le combat est inévitable <br> Tu dois obtenir 1 pour gagner le combat';
-    }
-    else if (value > 6) {
+    } else if (value > 6) {
       message = 'Tu n\'as pas bavé assez pour fuir !!! Le combat est inévitable <br>Tu dois obtenir 6 ou moins pour gagner le combat';
-    }
-    else {
+    } else {
+      // tslint:disable-next-line: max-line-length
       message = `Tu n'as pas bavé assez pour fuir !!! Le combat est inévitable <br> Tu dois obtenir moins que ${value} pour gagner le combat`;
-    };
+    }
 
     if (this.characterService.escape()) {
     const alert = await this.alertController.create({
@@ -241,8 +287,7 @@ export class ScenePage implements OnInit {
       ]
     });
     await alert.present();
-    }
-    else { const alert = await this.alertController.create({
+    } else { const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'FUITE',
       message: `${message}`,
@@ -254,13 +299,12 @@ export class ScenePage implements OnInit {
             this.characterService.character = this.adversaire;
             const fin = await this.characterService.conditionnalFight(this.scene);
             console.log('TEST !' + fin);
-            
             this.scene.battleWon = this.characterService.battleWon;
           }
         }
       ]
     });
-    await alert.present();
+             await alert.present();
     }
   }
 
@@ -299,10 +343,9 @@ export class ScenePage implements OnInit {
     return await modal.present();
   }
 
-  // -----------------------------------------------------------------------------------------------
-  // Sauvegarder partie
-  // -----------------------------------------------------------------------------------------------
-
+/**
+ * Method which allows to save the current game
+ */
    save() {
     this.sauvegardeService.setStateGame(this.heros,this.scene);
     this.sauvegardeService.saveGame();
@@ -324,7 +367,7 @@ export class ScenePage implements OnInit {
   // Quitter l'application
   // -----------------------------------------------------------------------------------------------
 
-  async quitter() {
+  /* async quitter() {
       const alert = await this.alertController.create({
         cssClass: 'my-custom-class',
         header: 'Quitter',
@@ -340,25 +383,24 @@ export class ScenePage implements OnInit {
           }, {
             text: 'Quitter',
             handler: () => {
-              //this.sauvegarde.saveGame(); // code Boris
+              // this.sauvegarde.saveGame(); // code Boris
               console.log('Je quitte!');
-              //App.exitApp();
+              // App.exitApp();
             }
           }
         ]
       });
       await alert.present();
-    }
+    } */
 
-     // -----------------------------------------------------------------------------------------------
-     // AUDIO
-     // -----------------------------------------------------------------------------------------------
-
+    /**
+     * AUDIO METHODS
+     */
      startAudio() {
       this.audioService.startAudioService();
       this.audioBtn = this.audioService.audio;
     }
-    
+
     startAudioCombat() {
       this.audioService.startAudioServiceCombat(this.scene);
       this.audioBtn = this.audioService.audio;
@@ -373,9 +415,9 @@ export class ScenePage implements OnInit {
       this.audioService.stopAudioService(this.scene);
       this.audioBtn = this.audioService.audio;
     }
-
-    // TEST AUDIO VOICE
-
+    /**
+     * TEST AUDIO VOICE
+     */
     startVoice() {
       this.audioService.startAudioVoiceService(this.scene);
       this.audioVoiceBtn = true;
@@ -386,32 +428,28 @@ export class ScenePage implements OnInit {
       this.audioVoiceBtn = false;
     }
 
-
-    //-----------------------------------------------------------------------------------
-    // DIFFICULTE DU COMBAT
-    //-----------------------------------------------------------------------------------
-
+/**
+ * BATTLE DIFFICULTY
+ */
     difficulte() {
       let difficulte: string;
-      let value: number = this.heros.strength + this.heros.luck - this.adversaire.endurance;
-      if (value <=1) {
-          difficulte = "hard";
-        }
-      else if  (value > 6) {
-        difficulte = "easy";
+      const value: number = this.heros.strength + this.heros.luck - this.adversaire.endurance;
+      if (value <= 1) {
+          difficulte = 'hard';
+        } else if  (value > 6) {
+        difficulte = 'easy';
+      } else {
+        difficulte = 'normal';
       }
-      else difficulte = "normal";
       return difficulte;
     }
-
-    // ---------------------------------------------------------------------------------
-    // Barre de progression
-    // ---------------------------------------------------------------------------------
-
-    /*moveImage() {
-	    let element = document.getElementById('margin');
-      element.style.marginLeft = ;
-      let maVar = element.style.marginLeft;
-      console.log(maVar);
-	  }*/
+/**
+ * Method which opens a modal page in order to choose the language of the game
+ */
+  async choixLangue() {
+    const modal = await this.modalController.create({
+      component: ModalLanguagesPage,
+    });
+    return await modal.present();
+  }
 }

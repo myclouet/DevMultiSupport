@@ -142,22 +142,40 @@
     --height: 100%;
     --background : transparent;
   }
-
-  ion-title{
-   --font-family: 'Segoe Print';
-   --text-align: center;
-   --color:#04471c
-  }
-
-  ion-button {
+  
+    ion-button {
     --background:#a7c957;
-    --font-family: 'Calibri';
-    --color:black;
-  }
-
+    font-family: 'Calibri';
+    color:black;
+   
+    }
+    
   ion-toolbar {
-    --background:#f2e8cf;
+   --background:#f2e8cf;
+   font-family: 'Segoe';
+   text-align: center;
+   color:#04471c;
   }
+  ion-title{
+    margin: auto;
+    text-align: center;
+    font-family: 'Segoe';
+    font-size: larger;
+    font-weight: bolder;
+    color:#04471c;
+}
+  ion-footer{
+    ion-toolbar{
+      --background:#04471c; 
+      }
+    }
+
+ ion-button {
+      --background:#a7c957;
+       font-family: 'Calibri';
+       color: black;
+        } 
+  
 
   .fondEcran {
     /* Préserve le ratio de l'image */
