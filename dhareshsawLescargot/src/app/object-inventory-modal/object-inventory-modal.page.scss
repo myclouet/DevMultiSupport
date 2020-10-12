@@ -5,27 +5,27 @@ ion-button {
     --background:#a7c957;
 }
 
+ion-col {
+    font-family: komika;
+}
+
 ion-col > div {
     color: #04471c;
     font-weight: bold;
-    // font-size: 120%;
 }
 
 ion-col > ul {
     color: #04471c;
     font-weight: bold;
-    // font-size: 120%;
 }
 
 ion-col > ion-title{
     font-weight: bold;
-    // font-size: 140% !important;
 }
 
 ion-content {
     height: 100%;
     --background: #a7c957;
-    --font-family: 'Komika';
 }
 
 ion-footer {
@@ -44,9 +44,11 @@ ion-toolbar {
     --background:#f2e8cf;    
 }
 
-ion-toolbar > ion-title {
-    font-weight: bold;
-    --font-family: 'Segoe Print';
+ion-toolbar > ion-label {
+    font-family: segoe print;
+    font-size: larger;
+    font-weight: bolder;
+    color:#04471c;
 }
 
 .bulletPoints{
@@ -85,8 +87,4 @@ ion-toolbar > ion-title {
 .powerList{
     display: list-item;
 }
-
-// .titleHeader{
-//     --font-family: 'Segoe Print';
-// }
 

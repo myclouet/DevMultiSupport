@@ -40,7 +40,7 @@ export class ObjectInventoryModalPage implements OnInit {
 
       // fullfilled modalItemsDisplay to display caracteristic name in french in html
       let i: number;
-      for (i = 0; i <= this.modalHero.items.length; i++) {
+      for (i = 0; i < this.modalHero.items.length; i++) {
         switch (this.modalHero.items[i].bonusPower[0]) {
           case 'endurance': {
             this.modalItemsDisplay.push({
@@ -71,7 +71,7 @@ export class ObjectInventoryModalPage implements OnInit {
     }
 
     // if hero has the key, it will appear in a separate ion-card otherwise it won't appear
-    if (this.modalHero.hasKey !== null) {
+    if (this.modalHero.hasKey !== false) {
       this.keyToAppear = true;
     } else {
       this.keyToAppear = false;
