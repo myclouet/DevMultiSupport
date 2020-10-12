@@ -14,6 +14,9 @@ import { AudioService } from '../services/audio.service';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { isLoweredSymbol } from '@angular/compiler';
 import { ObjectInventory } from '../classes/object';
+import { ModalLanguagesPage } from '../modal-languages/modal-languages.page';
+import { TranslateService } from '@ngx-translate/core';
+import { LanguageService } from '../services/language.service';
 
 @Component({
   selector: 'app-scene',
@@ -39,6 +42,21 @@ export class ScenePage implements OnInit {
   marginNum: number;
   saveBtn: Boolean = true;
 
+/** Message to display */
+  fightMessage: string;
+  escapeMessage: string;
+  progressionMessage: string;
+  chooseDirectionMessage: string;
+  enduranceMessage: string;
+  strengthMessage: string;
+  luckMessage: string;
+  difficultyMessage: string;
+  newGameMessage: string;
+
+  /**png if death scenes 15 and 23 */
+  scene15 = '../../assets/escargotScene15.png';
+  scene23 = '../../assets/mort23.png';
+
   // ----------------------------------------------------------------------------------------------------
   // CONSTRUCTOR
   // ----------------------------------------------------------------------------------------------------
@@ -51,7 +69,35 @@ export class ScenePage implements OnInit {
     private router: Router,
     public modalController: ModalController,
     public alertController: AlertController,
-    private audioService: AudioService) { }
+    private audioService: AudioService,
+    private translateService: TranslateService,
+    private languageService: LanguageService) {
+      const language = this.languageService.getLanguage();
+      this.translateService.use(language);
+
+      this.translateService.get(
+        ['ScenePage.fightButon',
+         'ScenePage.escapeButton',
+         'ScenePage.progression',
+         'ScenePage.chooseDirection',
+         'ScenePage.endurance',
+         'ScenePage.strength',
+         'ScenePage.luck',
+         'ScenePage.difficulty',
+         'ScenePage.newGameMessage'
+        ])
+      .subscribe(res => {
+        this.fightMessage = res['ScenePage.fightButon'];
+        this.escapeMessage = res['ScenePage.escapeButton'];
+        this.progressionMessage = res['ScenePage.progression'];
+        this.chooseDirectionMessage = res['ScenePage.chooseDirection'];
+        this.enduranceMessage = res['ScenePage.endurance'];
+        this.strengthMessage = res['ScenePage.strength'];
+        this.luckMessage = res['ScenePage.luck'];
+        this.difficultyMessage = res['ScenePage.difficulty'];
+        this.newGameMessage = res['ScenePage.newGameMessage'];
+     });
+    }
 
  // -------------------------------------------------------------------------------
  // VAR
@@ -89,8 +135,9 @@ export class ScenePage implements OnInit {
     } else {
       this.sauvegardeService.saveScene(this.scene);
       this.getObject(); // getobject() déplacé ici pour corriger bug ajout de l'objet à la restauration
-      this.saveBtn = true;
 
+      this.getKey();
+      this.saveBtn=true;
     }
     this.startAudioCombat();
     this.audioService.unloadVoice();
@@ -98,9 +145,9 @@ export class ScenePage implements OnInit {
 
   }
 
-  // ----------------------------------------------------------------------------------------------------
-  // METHODS SCENES
-  // ----------------------------------------------------------------------------------------------------
+ /**
+  * METHODS SCENES
+  */
 
   nextScene(indice: number) {
     this.router.navigate(['scene/', this.scene.nextScenes[indice]]);
@@ -119,12 +166,21 @@ export class ScenePage implements OnInit {
     }
   }
 
+  getKey() {
+    if(this.scene.hasKey === true)  {
+      this.heros.hasKey = true;
+    } else {
+      this.heros.hasKey = false;
+    }
+  }
+
   async alertSoundButtons() {
       const alert = await this.alertController.create({
         cssClass: '',
         header: 'Contrôle du son',
         // tslint:disable-next-line: max-line-length
         message: `Vous pouvez couper le fond sonore en appuyant sur </br><img class="imgSound" src="../assets/icon/volume-mute-outline.svg"></br></br>Vous pouvez activer la lecture audio des scènes en appuyant sur</br> <img src="../assets/icon/play-circle-outline.svg"> `,
+
         buttons: [
           {
             text: 'OK',
@@ -140,14 +196,12 @@ export class ScenePage implements OnInit {
   // METHODS COMBATS
   // ----------------------------------------------------------------------------------------------------
 
-  /**
-   * Initialisation adversaire
-  **/
+  /** Initialisation adversaire */
   getAdversaire() {
     return this.adversaire = this.characterService.getPersonnageById(this.scene.encounter); // Attention doublon idCharactere et encounter
   }
 
-  /* Choix combat */
+  /**  Choix combat */
   async fightSelection() {
     this.saveBtn = false;
     const value = this.heros.strength + this.heros.luck - this.adversaire.endurance;
@@ -187,25 +241,22 @@ export class ScenePage implements OnInit {
     await alert.present();
   }
 
-
   /**
    * Affichage du Header
-  **/
-
+  */
   sceneTitle() {
     if (this.scene.encounter === null) {
-      this.title = 'EN CHEMIN';
+      this.translateService.get('ScenePage.onMyWay').subscribe(message => { this.title = message; });
     } else if (this.scene.isBattle === true) {
-      this.title = 'COMBAT';
+      this.translateService.get('ScenePage.fight').subscribe(message => { this.title = message; });
     } else {
-      this.title = 'RENCONTRE';
+      this.translateService.get('ScenePage.meet').subscribe(message => { this.title = message; });
     }
-
   }
 
-  // ---------------------------------------------------------------------------------------------
-  // Fuite
-  // ------------------------------------------------------------------------------------------------
+/**
+ * Method which allos the player to escape the battle
+ */
   async escape() {
     this.sauvegardeService.saveAction('tu as fui le combat ');
     this.saveBtn = false;
@@ -248,10 +299,9 @@ export class ScenePage implements OnInit {
     return await modal.present();
   }
 
-  // -----------------------------------------------------------------------------------------------
-  // Sauvegarder partie
-  // -----------------------------------------------------------------------------------------------
-
+/**
+ * Method which allows to save the current game
+ */
    save() {
     this.sauvegardeService.setStateGame(this.heros,this.scene);
     this.sauvegardeService.saveGame();
@@ -299,10 +349,9 @@ export class ScenePage implements OnInit {
       await alert.present();
     } */
 
-     // -----------------------------------------------------------------------------------------------
-     // AUDIO
-     // -----------------------------------------------------------------------------------------------
-
+    /**
+     * AUDIO METHODS
+     */
      startAudio() {
       this.audioService.startAudioService();
       this.audioBtn = this.audioService.audio;
@@ -324,9 +373,9 @@ export class ScenePage implements OnInit {
       this.audioService.stopAudioService(this.scene);
       this.audioBtn = this.audioService.audio;
     }
-
-    // TEST AUDIO VOICE
-
+    /**
+     * TEST AUDIO VOICE
+     */
     startVoice() {
       this.audioService.startAudioVoiceService(this.scene);
       this.audioVoiceBtn = true;
@@ -337,11 +386,9 @@ export class ScenePage implements OnInit {
       this.audioVoiceBtn = false;
     }
 
-
-    // -----------------------------------------------------------------------------------
-    // DIFFICULTE DU COMBAT
-    // -----------------------------------------------------------------------------------
-
+/**
+ * BATTLE DIFFICULTY
+ */
     difficulte() {
       let difficulte: string;
       const value: number = this.heros.strength + this.heros.luck - this.adversaire.endurance;
@@ -354,5 +401,13 @@ export class ScenePage implements OnInit {
       }
       return difficulte;
     }
-
+/**
+ * Method which opens a modal page in order to choose the language of the game
+ */
+  async choixLangue() {
+    const modal = await this.modalController.create({
+      component: ModalLanguagesPage,
+    });
+    return await modal.present();
+  }
 }

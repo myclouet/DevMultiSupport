@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ titleLanguageModal }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="flags">
+     <img class="deco" src="../../assets/montagne.jpg" alt="anglais" >
+    <ion-grid >
+      <ion-row>
+        <ion-col size="6"> 
+          <ion-button class="flagBtn" (click)="languageSelected('fr')" >
+            <img class="flag" src="../../assets/drapeauFrancais.png" alt="français" (click)="languageSelected('fr')">
+          </ion-button>
+        </ion-col>
+        <ion-col size="6">  
+          <ion-button class="flagBtn" (click)="languageSelected('en')" >
+            <img class="flag" src="../../assets/drapeauAnglais.png" alt="anglais" (click)="languageSelected('en')">
+          </ion-button>      
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+ </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+  </ion-toolbar>
+</ion-footer>
