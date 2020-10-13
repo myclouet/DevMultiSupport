@@ -68,7 +68,9 @@ export class AudioService {
 
   restartAudioService(scene) {
     if(scene.isBattle === true){
-      this.nativeAudio.loop('uniqueKey3');
+      this.nativeAudio.preloadComplex('uniqueKey3', 'assets/audio/audioDhareshsawCombat.mp3', 1, 1, 0).then(() => {
+        this.nativeAudio.play('uniqueKey3');
+      });
     } else {
       this.nativeAudio.loop('uniqueKey1');
     }
