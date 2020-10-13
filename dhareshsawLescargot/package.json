@@ -9,7 +9,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "compodoc":"compodoc -p tsconfig.json"
   },
   "private": true,
   "dependencies": {
@@ -44,6 +45,7 @@
     "@angular/compiler": "~8.2.14",
     "@angular/compiler-cli": "~8.2.14",
     "@angular/language-service": "~8.2.14",
+    "@compodoc/compodoc": "^1.1.11",
     "@ionic/angular-toolkit": "^2.3.3",
     "@ionic/lab": "3.1.6",
     "@types/jasmine": "~3.3.8",

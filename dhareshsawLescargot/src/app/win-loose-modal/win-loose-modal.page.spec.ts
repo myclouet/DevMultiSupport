@@ -22,7 +22,7 @@ describe('WinLooseModalPage', () => {
     TestBed.configureTestingModule({
       declarations: [ WinLooseModalPage ],
       imports: [IonicModule.forRoot(), HttpClientModule,
-      
+
         TranslateModule.forRoot({
           loader: {
             provide: TranslateLoader,

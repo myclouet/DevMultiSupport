@@ -9,8 +9,9 @@ import { ObjectInventory } from '../classes/object';
   styleUrls: ['./object-inventory-modal.page.scss'],
 })
 export class ObjectInventoryModalPage implements OnInit {
-  
-  // ------------------------ ATTRIBUTES ------------------------ //
+  /**
+   *  ATTRIBUTES
+   */
   modalHero: Hero;
   modalItemSelected: ObjectInventory;
   // Object to delete from the inventory list when selected by the user
@@ -21,26 +22,28 @@ export class ObjectInventoryModalPage implements OnInit {
   // otherwise, it will fullfilled the below tab to display the bonusPower name in french
   modalItemsDisplay: ObjectInventory[] = [];
 
-  // ------------------------ CONSTRUCTOR ------------------------ //
+  /**
+   * CONSTRUCTOR
+   */
   constructor(
     private modalController: ModalController,
     private navParams: NavParams
   ) {}
 
-  // ------------------------ LIFECYCLE METHODS ------------------------ //
+/**
+ * LIFECYCLE METHODS
+ */
   ngOnInit() {
     this.modalHero = this.navParams.data.hero;
-
-    // if hero has empty inventory a message is displayed otherwise modalItemsDisplay is completed with
-    // the bonusPower in french
+     // if hero has empty inventory a message is displayed otherwise modalItemsDisplay is completed with
+     // the bonusPower in french
     if (this.modalHero.items === null || this.modalHero.items.length === 0) {
       this.emptyInventoryObject = true;
     } else {
       this.emptyInventoryObject = false;
-
-      // fullfilled modalItemsDisplay to display caracteristic name in french in html
+       // fullfilled modalItemsDisplay to display caracteristic name in french in html
       let i: number;
-      for (i = 0; i <= this.modalHero.items.length; i++) {
+      for (i = 0; i < this.modalHero.items.length; i++) {
         switch (this.modalHero.items[i].bonusPower[0]) {
           case 'endurance': {
             this.modalItemsDisplay.push({
@@ -71,16 +74,15 @@ export class ObjectInventoryModalPage implements OnInit {
     }
 
     // if hero has the key, it will appear in a separate ion-card otherwise it won't appear
-    if (this.modalHero.hasKey !== null) {
+    if (this.modalHero.hasKey !== false) {
       this.keyToAppear = true;
     } else {
       this.keyToAppear = false;
     }
   }
 
-  // ------------------------ METHOD ------------------------ //
-
   /**
+   * Method which updates the inventory board of the hero
    * method called by the view to update the hero's Objects Inventory
    */
   updateHeroInventory(nameItemSelected: any) {
@@ -106,8 +108,9 @@ export class ObjectInventoryModalPage implements OnInit {
   }
 
   /**
-   * Delete the item selected for use from the object inventory list, method called by updateHeroInventory()
-   */ 
+   * Method which deletes the item selected for use from the object inventory list, method called by updateHeroInventory()
+   * @param nameItemSelected :the name of the object to delete
+   */
   deleteItemFromObjectInventoryList(nameItemSelected: string) {
     let startIndex: number;
     startIndex = this.modalHero.items.findIndex(
@@ -121,7 +124,7 @@ export class ObjectInventoryModalPage implements OnInit {
   }
 
   /**
-   * method enabling to close the modal and send the pictureName to newPicturePage
+   * Method enabling to close the modal and send the pictureName to newPicturePage
    */
   async closeObjectInventoryModal() {
     await this.modalController.dismiss(this.modalHero);

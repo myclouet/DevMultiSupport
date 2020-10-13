@@ -17,6 +17,7 @@ export class AudioService {
   // -----------------------------------------------------------------------------------------------
 
   startAudioService() {
+    if(this.audio !== false){
     this.platform.ready().then(() => {
       this.nativeAudio.stop('uniqueKey3');//2 erreurs au demarrage dans la console google car ne trouve pas l'objet
       this.nativeAudio.unload('uniqueKey3');
@@ -26,8 +27,10 @@ export class AudioService {
       });
     });
   }
+  }
 
   startAudioServiceCombat(scene) {
+    if(this.audio !== false){
     if(scene.isBattle === true){
     this.platform.ready().then(() => {
       this.nativeAudio.stop('uniqueKey1');
@@ -35,10 +38,13 @@ export class AudioService {
       this.nativeAudio.preloadComplex('uniqueKey3', 'assets/audio/audioDhareshsawCombat.mp3', 1, 1, 0).then(() => {
         this.nativeAudio.play('uniqueKey3');
         this.audio = true;
+        console.log(this.audio);
+        
       });
     });
   }
   }
+}
 
   startAudioServiceLoose() {
     this.platform.ready().then(() => {
@@ -62,7 +68,9 @@ export class AudioService {
 
   restartAudioService(scene) {
     if(scene.isBattle === true){
-      this.nativeAudio.loop('uniqueKey3');
+      this.nativeAudio.preloadComplex('uniqueKey3', 'assets/audio/audioDhareshsawCombat.mp3', 1, 1, 0).then(() => {
+        this.nativeAudio.play('uniqueKey3');
+      });
     } else {
       this.nativeAudio.loop('uniqueKey1');
     }
