@@ -316,25 +316,84 @@ export class CharacterService {
     return res;
   }
 
-/**
- * fuite
- */
-  async escape() {
+  // ----------------------------------------------------------------------------------------------------------------
+  // FUITE
+  // ----------------------------------------------------------------------------------------------------------------
+
+  // fuite
+  
+  async escape(adversaire, scene) {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'FUITE',
+      message: `Obtiens moins que ta chance : ${this.heros.luck} <br> pour réussir à fuir !!!`,
+      buttons: [
+        {
+          text: 'JET DE DÉ',
+          handler: () => {
+            this.escapeDice(adversaire, scene);
+          }
+        }
+      ]
+    });
+    await alert.present();
+  }
+
+
+    async escapeDice(adversaire, scene){
+    const value = this.heros.strength + this.heros.luck - adversaire.endurance;
     const resultatDe = this.rollDice();
-    let result: Boolean;
+    let message: any;
+    if (value <= 1) {
+      message = `<img src="${this.pathDiceIcon(resultatDe)}" alt="dice"> </br>Tu n\'as pas bavé assez pour fuir<br> Le combat est inévitable <br> Tu dois obtenir 1 pour gagner le combat`;
+    } else if (value > 6) {
+      message = `<img src="${this.pathDiceIcon(resultatDe)}" alt="dice"> </br>Tu n\'as pas bavé assez pour fuir<br>  Le combat est inévitable <br>Tu dois obtenir 6 ou moins pour gagner le combat`;
+    } else {
+      // tslint:disable-next-line: max-line-length
+      message = `<img src="${this.pathDiceIcon(resultatDe)}" alt="dice"> </br>Tu n'as pas bavé assez pour fuir<br>  Le combat est inévitable <br> Tu dois obtenir moins que ${value} pour gagner le combat`;
+    }
+    
     if (resultatDe < this.heros.luck) {
-      console.log('Je me suis échappé');
-      console.log('Dé : ' + resultatDe);
-      console.log('Luck : ' + this.heros.luck);
-      result = true;
+    console.log('Je me suis échappé');
+    console.log('Dé : ' + resultatDe);
+    console.log('Luck : ' + this.heros.luck);
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'FUITE',
+      message: `<img src="${this.pathDiceIcon(resultatDe)}" alt="dice"> </br>Bravo, tu as échappé au combat, tu retournes à la scène précédente !`,
+      buttons: [
+        {
+          text: 'OK',
+          handler: () => {
+            this.router.navigate(['scene/', scene.previousScene]);
+            this.audioService.startAudioService();
+          }
+        }
+      ]
+    });
+    await alert.present();
     } else {
       console.log('tu n\'as pas assez bavé, viens te battre mauviette');
       console.log('Dé : ' + resultatDe);
-      console.log('Luck : ' + this.heros.luck);
-      result = false;
+      console.log('Luck : ' + this.heros.luck); 
+      const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'FUITE',
+      message: `${message}`,
+      buttons: [
+        {
+          text: 'Jet de dé',
+          handler: async () => {
+            const fin = await this.conditionnalFight(scene);
+            console.log('TEST !' + fin);
+          }
+        }
+      ]
+    });
+             await alert.present();
     }
-    return result;
   }
+  
 
   public addObject(item: number) {
   }
