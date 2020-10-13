@@ -168,7 +168,7 @@ export class ScenePage implements OnInit {
       message: `${message}`,
       buttons: [
         {
-          text: 'Aléatoire',
+          text: 'Automatique',
           role: 'cancel',
           cssClass: 'secondary',
           handler: () => {
@@ -343,7 +343,7 @@ export class ScenePage implements OnInit {
     difficulte() {
       let difficulte: string;
       const value: number = this.heros.strength + this.heros.luck - this.adversaire.endurance;
-      if (value <= 1) {
+      if (value < 3) {
           difficulte = 'hard';
         } else if  (value > 6) {
         difficulte = 'easy';
