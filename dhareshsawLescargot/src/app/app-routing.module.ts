@@ -20,10 +20,10 @@ const routes: Routes = [
     path: 'leaderboard',
     loadChildren: () => import('./leaderboard/leaderboard.module').then( m => m.LeaderboardPageModule)
   },
-  {
+  /*{
     path: 'history-modal',
     loadChildren: () => import('./history-modal/history-modal.module').then( m => m.HistoryModalPageModule)
-  },
+  },*/
   {
     path: 'modal-languages',
     loadChildren: () => import('./modal-languages/modal-languages.module').then( m => m.ModalLanguagesPageModule)
