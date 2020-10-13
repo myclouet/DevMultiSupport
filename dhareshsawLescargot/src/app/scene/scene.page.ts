@@ -149,9 +149,24 @@ export class ScenePage implements OnInit {
   * METHODS SCENES
   */
 
-  nextScene(indice: number) {
-    this.router.navigate(['scene/', this.scene.nextScenes[indice]]);
+  async nextScene(indice: number) {
+    if (this.scene._id === '36' && this.heros.hasKey === false && indice === 0) {
+      const alert = await this.alertController.create({
+        cssClass: '',
+        header: 'Pas de clé',
+        // tslint:disable-next-line: max-line-length
+        message: `Vous n'avez pas la clé partez dans l'autre direction`,
 
+        buttons: [
+          {
+            text: 'OK',
+          }
+        ]
+    });
+      await alert.present();
+    } else {
+    this.router.navigate(['scene/', this.scene.nextScenes[indice]]);
+    }
   }
 
   prevScene() {
@@ -169,9 +184,7 @@ export class ScenePage implements OnInit {
   getKey() {
     if(this.scene.hasKey === true)  {
       this.heros.hasKey = true;
-    } else {
-      this.heros.hasKey = false;
-    }
+    } 
   }
 
   async alertSoundButtons() {

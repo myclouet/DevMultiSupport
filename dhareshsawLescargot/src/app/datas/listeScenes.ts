@@ -578,7 +578,7 @@ export const SCENES: Scene[] = [
      bonusPower: [null, null],
      isBattle: false,
      battleWon: false,
-     nextScenes: ['35', '37'],
+     nextScenes: ['37', '35'],
      previousScene: null, //les scènes 34, 32 et 31 mènent ici
      audioText: 'assets/audio/scene36.mp3',
      progressionIndex: 85
