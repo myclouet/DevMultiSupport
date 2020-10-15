@@ -15,18 +15,18 @@ export class WinLooseModalPage implements OnInit {
 
   resultatCombat: boolean;
 
-  /** Texte à afficher dans la modale */
+  /** Texts */
   modalTitle: string;
   messageWin: string;
   messageLoose: string;
   messageContinuerJeu: string;
 
-  /** Images à afficher */
+  /** Images to display */
   fondEcranWin = '../../assets/fondCombatGagne.jpg';
   fondEcranLoose = '../../assets/fondCombatPerdu.jpg';
   imageWin = '../../assets/bravo.png';
   imageLoose = '../../assets/modalKnockOut.png';
- 
+
   constructor(public modalController: ModalController,
               private translateService: TranslateService,
               private languageService: LanguageService,

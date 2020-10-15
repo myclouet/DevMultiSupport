@@ -256,7 +256,7 @@ export class ScenePage implements OnInit {
 
   /**
    * Affichage du Header
-  */
+   */
   sceneTitle() {
     if (this.scene.encounter === null) {
       this.translateService.get('ScenePage.onMyWay').subscribe(message => { this.title = message; });
@@ -277,9 +277,7 @@ export class ScenePage implements OnInit {
     this.audioBtn = this.audioService.audio;
   }
 
-  // --------------------------------------------------------------------------------------------------
-  // Ouverture modale
-  // --------------------------------------------------------------------------------------------------
+  /** Ouverture modale Inventaire */
   async openModal() {
     const modal = await this.modalController.create({
       component: ObjectInventoryModalPage,
