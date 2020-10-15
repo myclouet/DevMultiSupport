@@ -135,8 +135,9 @@ export class ScenePage implements OnInit {
     } else {
       this.sauvegardeService.saveScene(this.scene);
       this.getObject(); // getobject() déplacé ici pour corriger bug ajout de l'objet à la restauration
-      this.saveBtn = true;
 
+      this.getKey();
+      this.saveBtn=true;
     }
     this.startAudioCombat();
     this.audioService.unloadVoice();
@@ -148,9 +149,24 @@ export class ScenePage implements OnInit {
   * METHODS SCENES
   */
 
-  nextScene(indice: number) {
-    this.router.navigate(['scene/', this.scene.nextScenes[indice]]);
+  async nextScene(indice: number) {
+    if (this.scene._id === '36' && this.heros.hasKey === false && indice === 0) {
+      const alert = await this.alertController.create({
+        cssClass: '',
+        header: 'Pas de clé',
+        // tslint:disable-next-line: max-line-length
+        message: `Vous n'avez pas la clé partez dans l'autre direction`,
 
+        buttons: [
+          {
+            text: 'OK',
+          }
+        ]
+    });
+      await alert.present();
+    } else {
+    this.router.navigate(['scene/', this.scene.nextScenes[indice]]);
+    }
   }
 
   prevScene() {
@@ -163,6 +179,12 @@ export class ScenePage implements OnInit {
       this.heros.items.push(this.scene.bonusObject);
       console.log(this.heros.items);
     }
+  }
+
+  getKey() {
+    if(this.scene.hasKey === true)  {
+      this.heros.hasKey = true;
+    } 
   }
 
   async alertSoundButtons() {
@@ -213,7 +235,7 @@ export class ScenePage implements OnInit {
       message: `${message}`,
       buttons: [
         {
-          text: 'Aléatoire',
+          text: 'Automatique',
           role: 'cancel',
           cssClass: 'secondary',
           handler: () => {
@@ -251,52 +273,8 @@ export class ScenePage implements OnInit {
   async escape() {
     this.sauvegardeService.saveAction('tu as fui le combat ');
     this.saveBtn = false;
-    const value = this.heros.strength + this.heros.luck - this.adversaire.endurance;
-    let message: any;
-    if (value <= 1) {
-      message = 'Tu n\'as pas bavé assez pour fuir !!! Le combat est inévitable <br> Tu dois obtenir 1 pour gagner le combat';
-    } else if (value > 6) {
-      message = 'Tu n\'as pas bavé assez pour fuir !!! Le combat est inévitable <br>Tu dois obtenir 6 ou moins pour gagner le combat';
-    } else {
-      // tslint:disable-next-line: max-line-length
-      message = `Tu n'as pas bavé assez pour fuir !!! Le combat est inévitable <br> Tu dois obtenir moins que ${value} pour gagner le combat`;
-    }
-
-    if (this.characterService.escape()) {
-    const alert = await this.alertController.create({
-      cssClass: 'my-custom-class',
-      header: 'FUITE',
-      message: 'Bravo, tu as échappé au combat, tu retournes à la scène précédente !',
-      buttons: [
-        {
-          text: 'OK',
-          handler: () => {
-            this.prevScene();
-            this.startAudio();
-          }
-        }
-      ]
-    });
-    await alert.present();
-    } else { const alert = await this.alertController.create({
-      cssClass: 'my-custom-class',
-      header: 'FUITE',
-      message: `${message}`,
-      buttons: [
-        {
-          text: 'Jet de dé',
-          handler: async () => {
-            this.adversaire = this.getAdversaire();
-            this.characterService.character = this.adversaire;
-            const fin = await this.characterService.conditionnalFight(this.scene);
-            console.log('TEST !' + fin);
-            this.scene.battleWon = this.characterService.battleWon;
-          }
-        }
-      ]
-    });
-             await alert.present();
-    }
+    await this.characterService.escape(this.adversaire, this.scene);
+    this.audioBtn = this.audioService.audio;
   }
 
   /** Ouverture modale Inventaire */
@@ -393,6 +371,8 @@ export class ScenePage implements OnInit {
     startAudioCombat() {
       this.audioService.startAudioServiceCombat(this.scene);
       this.audioBtn = this.audioService.audio;
+      console.log(this.audioBtn);
+      
     }
 
     restartAudio() {
@@ -423,7 +403,7 @@ export class ScenePage implements OnInit {
     difficulte() {
       let difficulte: string;
       const value: number = this.heros.strength + this.heros.luck - this.adversaire.endurance;
-      if (value <= 1) {
+      if (value < 3) {
           difficulte = 'hard';
         } else if  (value > 6) {
         difficulte = 'easy';
