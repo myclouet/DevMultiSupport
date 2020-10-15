@@ -348,7 +348,8 @@ export class CharacterService {
   }
 
   /**
-   * @param modalPage WinLooseModalPage modal to display when the player win or loose
+   * Method which creates and opens modal to display when the player win or loose
+   * @param modalPage WinLooseModalPage
    */
   async openModalWinLoose(modalPage: typeof WinLooseModalPage) {
     const modal = await this.modalController.create({
