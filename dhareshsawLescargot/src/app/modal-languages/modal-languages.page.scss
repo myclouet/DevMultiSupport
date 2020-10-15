@@ -6,6 +6,7 @@ ion-toolbar {
     justify-content: center;
 
 }
+
 ion-title{
     margin: auto;
     text-align: center;
@@ -23,19 +24,11 @@ ion-content {
 ion-footer{
     margin: auto;
     padding: auto;
-   ion-toolbar {
-    --background: #04471c;
-    display: flex;
-    justify-content: center;
-  
-} 
-}
-
-ion-button {
-    --background: #bc4749;
-  //  width: 150px;
-    --color: #ffffff;
-    --font-family: 'Calibri'; 
+    ion-toolbar {
+        --background: #04471c;
+        display: flex;
+        justify-content: center;
+    } 
 }
 
 ion-grid {
@@ -55,15 +48,20 @@ ion-grid {
     justify-content: center;
 }
 
-.flag{ 
-  height: 80%;
-  width: 80%;
+.flag { 
+    height: 80%;
+    width: 80%;
  
 }
 
-.flagBtn{
+.flagBtn {
     height:100%;
     width:100%;
     --background: #a7c957;
 }
 
+.imageBg {
+    height: 100%;
+    background-position:center;
+    background-attachment: fixed;
+  }

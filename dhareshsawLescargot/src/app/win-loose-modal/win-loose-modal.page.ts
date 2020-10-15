@@ -15,7 +15,7 @@ export class WinLooseModalPage implements OnInit {
 
   resultatCombat: boolean;
 
-  /** Texts */
+  /** Texts to display */
   modalTitle: string;
   messageWin: string;
   messageLoose: string;
