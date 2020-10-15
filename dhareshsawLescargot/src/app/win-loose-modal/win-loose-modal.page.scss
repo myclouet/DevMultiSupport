@@ -138,72 +138,70 @@
       right:-5px;
     }
   }
-  ion-content {
-    --height: 100%;
-    --background : transparent;
-  }
-  
-    ion-button {
-    --background:#a7c957;
-    font-family: 'Calibri';
-    color:black;
-   
-    }
-    
-  ion-toolbar {
-   --background:#f2e8cf;
-   font-family: 'Segoe';
-   text-align: center;
-   color:#04471c;
-  }
-  ion-title{
-    margin: auto;
-    text-align: center;
-    font-family: 'Segoe';
-    font-size: larger;
-    font-weight: bolder;
-    color:#04471c;
+
+ion-content {
+  --height: 100%;
 }
-  ion-footer{
-    ion-toolbar{
-      --background:#04471c; 
-      }
-    }
+ 
+ion-button {
+  --background:#a7c957;
+  font-family: 'Calibri';
+  color:black;
+}
+    
+ion-toolbar {
+  --background:#f2e8cf;
+  font-family: 'Segoe';
+  text-align: center;
+  color:#04471c;
+}
 
- ion-button {
-      --background:#a7c957;
-       font-family: 'Calibri';
-       color: black;
-        } 
-  
+ion-title {
+  margin: auto;
+  text-align: center;
+  font-family: 'Segoe';
+  font-size: larger;
+  font-weight: bolder;
+  color:#04471c;
+}
 
-  .fondEcran {
-    /* Préserve le ratio de l'image */
-    min-width: 80%;
-    min-height: 100%;
-    /* L'image est positionnée en fond et est centrée */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+ion-footer {
+  ion-toolbar {
+    --background:#04471c; 
   }
+}
 
-  #winLoose {
-  /* Fixe l'image en haut à gauche de la page */
-    position: fixed; 
-    top: 0.5; 
-    left: 3; 
-    /* Préserve le ratio de l'image */
-    min-width: 30%;
-    min-height: 50%;
-  }
+ion-button {
+  --background:#a7c957;
+  font-family: 'Calibri';
+  color: black;
+} 
 
-    h1 {
-      text-align:center;
-      font-size:35px;
-      font-weight:100;
-      padding:30px;
-      margin: 0%;
-      font-family: 'Komika';
-      color: #04471c;
-    }
-   
+.imageBg {
+  height: 100%;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:cover;   
+  background-attachment: fixed;
+}
+
+#winLoose {
+  /* Fixe l'image en haut à gauche de la page */ 
+  top: 0.5; 
+  left: 3; 
+  /* Préserve le ratio de l'image */
+  min-width: 30%;
+  min-height: 50%;
+  max-height: max-content;
+}
+
+h1 {
+  text-align:center;
+  font-size:35px;
+  font-weight:100;
+  padding:30px;
+  margin: 0%;
+  font-family: 'Komika';
+  color: #04471c;
+}
+ 
