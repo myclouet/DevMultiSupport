@@ -12,6 +12,16 @@ ion-content {
     --background: #a7c957;
 }
 
+.label {
+    margin: auto;
+    text-align: center;
+ // font-family: 'segoe print';
+    font-family: 'Segoe';
+    font-size: larger;
+    font-weight: bolder;
+    color:#04471c;
+}
+
 ion-footer {
     display:flex;
 }
@@ -20,6 +30,12 @@ ion-toolbar {
     text-align: center;
     --background: #f2e8cf;
 }
+
+@media (prefers-color-scheme: dark) {
+    ion-card  {
+      background: #f2e8cf;   
+    }
+  }
 
 .container{
     display: flex;
@@ -43,6 +59,7 @@ ion-card div{
     color: #303e11;
     text-align: center;
     font-family: komika; 
+ 
 }
 
 .description{
@@ -50,6 +67,8 @@ ion-card div{
     font-family: komika; 
     font-size: 15px;
 }
+
+
 
 
 
