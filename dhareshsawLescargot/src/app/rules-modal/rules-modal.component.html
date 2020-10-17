@@ -1,17 +1,61 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-label>Principe et Règles</ion-label>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-label>Principe et Règles</ion-label>
+    </ion-toolbar>
+    <style>
+        :root {
+            --ion-safe-area-top: 10px;
+            --ion-safe-area-bottom: 11px;
+        }
+    </style>
 </ion-header>
-<ion-content>
-  <ion-grid>
-  </ion-grid>
+<ion-content class="ion-padding" scroll-y="false">
+    <ion-slides>
+
+        <ion-slide>
+            <div class="slide">
+                <img src="/assets/shell-less-snail.png"/>
+                <h2>Bienvenue</h2>
+                <p><b>Les "livres dont vous êtes le héros"</b> s’inscrivent dans la droite ligne du jeu de rôle.
+                    Ils proposent à des joueurs d’interagir avec des univers imaginaires.</p>
+                <ion-icon class="nextSlidePage" name="arrow-forward"></ion-icon>
+            </div>
+        </ion-slide>
+        <ion-slide>
+            <img src="/assets/avatars/dhareshsaw.png"/>
+            <h2>Adaptation</h2>
+            <p><b>Dhareshsaw l'escargot</b> est une adaptation numérique de ces livres intéractifs proposant des quêtes
+                palpitantes.</p>
+            <p>L’aventure est un savant mélange de voyages, de survie et de parcours labyrinthiques où vous ferez des
+                rencontres plus ou moins amicales.</p>
+            <ion-icon class="nextSlidePage" name="arrow-forward"></ion-icon>
+        </ion-slide>
+        <ion-slide>
+            <img src="/assets/avatars/dhareshsaw.png"/>
+            <h2>Collectez des objets</h2>
+            <p>De-ci de-là de petites trouvailles bienvenues, dont une qui permet de contourner les inéluctables
+                retours à la case départ.</p>
+            <p><b>Et une fin épique !</b></p>
+            <ion-icon class="nextSlidePage" name="arrow-forward"></ion-icon>
+        </ion-slide>
+        <ion-slide>
+            <img src="/assets/avatars/dhareshsaw.png"/>
+            <h2>Allons-y</h2>
+            <p>L'aventure à portée de main. Voici l'occasion de devenir un escargot intrépide et courageux...
+                Vous seul déciderez de la route à suivre, des risques à courir et des créatures à combattre. Bonne
+                chance...</p>
+            <ion-button fill="clear">Comment Jouer
+                <ion-icon slot="end" name="arrow-forward"></ion-icon>
+            </ion-button>
+        </ion-slide>
+    </ion-slides>
 </ion-content>
+
 <ion-footer style="background-color: #04471c;">
-  <ion-button
-          size="small"
-          (click)="dismissRulesModal()"
-          style="float: right;"
-  >Retour au Jeu
-  </ion-button>
+    <ion-button fill="clear"
+                size="small"
+                (click)="dismissRulesModal()"
+                style="float: right;"
+    >Retour au Jeu
+    </ion-button>
 </ion-footer>
