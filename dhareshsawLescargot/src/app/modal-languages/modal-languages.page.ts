@@ -23,16 +23,16 @@ export class ModalLanguagesPage implements OnInit {
       .subscribe(res => {
         this.titleLanguageModal = res['ModalLanguagesPage.modalTitle'];
       });
-              }
+    }
 
    ngOnInit() { }
 
    /**
     * Method which allows to change the app in a different language.
-    * @param langue The language chosen by the gamer
+    * @param langue The language chosen by the player
     */
     languageSelected(langue: string) {
-    this.languageService.setLanguage(langue);
-    this.modalController.dismiss();
-  }
+      this.languageService.setLanguage(langue);
+      this.modalController.dismiss();
+    }
 }
