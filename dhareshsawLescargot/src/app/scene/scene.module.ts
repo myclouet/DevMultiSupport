@@ -9,10 +9,11 @@ import { ScenePageRoutingModule } from './scene-routing.module';
 import { ScenePage } from './scene.page';
 import { ModalLanguagesPage } from '../modal-languages/modal-languages.page';
 import { ModalLanguagesPageModule } from '../modal-languages/modal-languages.module';
+import {RulesModalComponent} from "../rules-modal/rules-modal.component";
 
 @NgModule({
    entryComponents: [
-    ModalLanguagesPage,
+    ModalLanguagesPage, RulesModalComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +23,7 @@ import { ModalLanguagesPageModule } from '../modal-languages/modal-languages.mod
     ModalLanguagesPageModule
   ],
   declarations: [
-    ScenePage,
+    ScenePage, RulesModalComponent
   ],
  
 })
