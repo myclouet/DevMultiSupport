@@ -1,0 +1,19 @@
+ion-label {
+  display: flex;
+  justify-content: center;
+  --background: #f2e8cf;
+  color: #04471c;
+  font-family: 'Segoe';
+  font-weight: bold;
+  align-items: center;
+}
+ion-content {
+  height: 100%;
+  --background: #a7c957;
+  --font-family: 'Komika';
+}
+ion-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
