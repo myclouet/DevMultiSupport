@@ -19,7 +19,7 @@ export class WinLooseModalPage implements OnInit {
   modalTitle: string;
   messageWin: string;
   messageLoose: string;
-  messageContinuerJeu: string;
+  messageContinueGame: string;
 
   /** Images to display */
   fondEcranWin = '../../assets/fondCombatGagne.jpg';
@@ -43,7 +43,7 @@ export class WinLooseModalPage implements OnInit {
     .subscribe(res => {
       this.messageWin = res['WinLooseModalPage.winMessage'];
       this.messageLoose = res['WinLooseModalPage.looseMessage'];
-      this.messageContinuerJeu = res['WinLooseModalPage.continueGameMessage'];
+      this.messageContinueGame = res['WinLooseModalPage.continueGameMessage'];
       this.modalTitle = res['WinLooseModalPage.modalTitle'];
    });
   }

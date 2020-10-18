@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Character, Hero } from '../classes/personnage';
-import { PERSONNAGES, HERO } from '../datas/listePersonnages';
-import { AlertController, ModalController } from '@ionic/angular';
 import { Router } from '@angular/router';
-import { SauvegardeService } from './sauvegarde.service';
-import { AudioService } from './audio.service';
-import { Subject } from 'rxjs/internal/Subject';
+import { AlertController, ModalController } from '@ionic/angular';
+import { Character, Hero } from '../classes/personnage';
+import { HERO, PERSONNAGES } from '../datas/listePersonnages';
 import { WinLooseModalPage } from '../win-loose-modal/win-loose-modal.page';
+import { AudioService } from './audio.service';
+import { SauvegardeService } from './sauvegarde.service';
 
 
 @Injectable({
