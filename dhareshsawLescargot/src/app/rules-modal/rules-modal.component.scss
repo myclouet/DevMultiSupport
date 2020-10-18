@@ -28,9 +28,9 @@ ion-footer {
   justify-content: center;
 }
 
- ion-slides {
-   height: 100%;
- }
+ion-slides {
+  height: 100%;
+}
 
 .swiper-slide {
   display: block;
@@ -47,7 +47,7 @@ ion-footer {
   pointer-events: none;
 }
 
-h2{
+h2 {
   font-family: Komika;
   color: #04471c;
 }
@@ -64,10 +64,14 @@ p b {
   font-weight: bold;
 }
 
-.nextSlidePage{
+.nextSlidePage {
   padding-top: 10px;
 }
+
 ion-slides {
-  --bullet-background: #f2e8cf;
+  --bullet-backround:#fafafa;
   --bullet-background-active: #04471c;
+}
+.custom-button{
+  color: #fafafa;
 }
