@@ -584,9 +584,9 @@ export const SCENES: Scene[] = [
      progressionIndex: 85
    },
    {
-     _id: '37',
-     title: 'La clé qu\'Anabelle vous a donné marche parfaitement. Le portail s\'ouvre et vous laisse nez à nez avec un énorme et musculeux sanglier. Il grogne "Moi vivant, pas un escargot ne mangera de ces salades." Vaincre ou périr sont vos deux options.',
-     description: 'Si victoire : ici',
+    _id: '37',
+     title: 'La porte s\'ouvre',
+     description: 'La clé qu\'Anabelle vous a donné marche parfaitement. Le portail s\'ouvre et vous laisse nez à nez avec un énorme et musculeux sanglier. Il grogne "Moi vivant, pas un escargot ne mangera de ces salades." Vaincre ou périr sont vos deux options.',
      picture: '../assets/fond-combat.png',
      encounter: '5',
      bonusObject: null,
@@ -600,9 +600,9 @@ export const SCENES: Scene[] = [
    },
    {
      _id: '38',
-     title: 'Après ce combat miraculeusement remporté, vous avancez dans le champ et vous vous prélassez dans un paradis de légumes infini. BRAVO! C\'est la victoire!',
-     description: '',
-     picture: '../assets/fond-rencontre.png',
+     title: 'Victoire',
+     description: 'Après ce combat miraculeusement remporté, vous avancez dans le champ et vous vous prélassez dans un paradis de légumes infini. BRAVO! C\'est la victoire!',
+     picture: '../assets/champ-salades.jpg',
      encounter: null,
      bonusObject: null,
      bonusPower: [null, null],
