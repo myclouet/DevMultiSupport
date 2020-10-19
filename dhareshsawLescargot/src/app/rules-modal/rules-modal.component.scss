@@ -60,7 +60,7 @@ p {
 }
 
 p b {
-  color: var(--ion-text-color, #000000);
+  color: var(--ion-text-color, #bc4749);
   font-weight: bold;
 }
 
@@ -69,9 +69,20 @@ p b {
 }
 
 ion-slides {
-  --bullet-backround:#fafafa;
+  --bullet-backround: #fafafa;
   --bullet-background-active: #04471c;
 }
-.custom-button{
+
+.custom-button {
   color: #fafafa;
+}
+
+ion-icon {
+  font-size: 40px;
+  color: #a7c957;
+}
+.textCard{
+  font-family: komika;
+  color: #04471c;
+  text-align: justify;
 }

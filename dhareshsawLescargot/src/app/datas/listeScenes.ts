@@ -5,7 +5,7 @@ export const SCENES: Scene[] = [
      _id: '1',
      title: 'Prologue',
      // tslint:disable-next-line: max-line-length
-     description: 'Vous etes un jeune escargot et vous vous prénommez Dhareshsaw. Vos parents sont aimants, votre foyer douillet et sur. Cependant dans 10 jours c\'est la fête du potager, et les jeunes escargots se sont tous donnés rendez-vous au champ des salades. Cet évènement marque le début de l\’âge adulte pour les escargots. Vous étendez un œil de votre trou et sortez.',
+     description: 'Vous êtes un jeune escargot et vous vous prénommez Dhareshsaw. Vos parents sont aimants, votre foyer douillet et sûr. Cependant dans 10 jours c\'est la fête du potager, et les jeunes escargots se sont tous donné rendez-vous au champ des salades. Cet évènement marque le début de l\’âge adulte pour les escargots. Vous étendez un œil de votre trou et sortez.',
      picture: '../assets/fond-rencontre.png',
      encounter: '0',
      bonusObject: null,
@@ -37,7 +37,7 @@ export const SCENES: Scene[] = [
      _id: '3',
      title: 'Vanessa le chat',
      // tslint:disable-next-line: max-line-length
-     description: 'Vous êtes en pleine progression lorsque le ciel s\'assombrit. Une immense masse vous masque l’horizon. Un chat. Votre première rencontre et vous tombez sur un chat. \n - « Bonjour, La limace ! » \n- « Je suis un escargot en fait » \n- « C’est pareil la spirale en plus. Sauf que toi on te mange ! » \n - « Oui, enfin pas tous » \n - « Je n’aime pas trop mais je peux me laisser tenter ce matin » \n Le jeu est serré, il vous faut trouver de quoi occuper ce chat. Si vous souhaitez lui donner le trou d\'une famille de souris que vous avez repéré plus tôt, c\'est par la droite. Si vous souhaitez le convaincre de ne pas vous manger grâce à votre rhétorique baveuse, c\'est par la gauche. Enfin, si vous souhaitez attirer l\'attention d\'un lama qui broute nonchalamment de l\'herbe à 2 mètres de vous. Allez tout droit.',
+     description: 'Vous êtes en pleine progression lorsque le ciel s\'assombrit. Une immense masse vous masque l’horizon. Un chat. Votre première rencontre et vous tombez sur un chat. \n - « Bonjour, La limace ! » \n- « Je suis un escargot en fait » \n- « C’est pareil la spirale en plus. Sauf que toi on te mange ! » \n - « Oui, enfin pas tous » \n - « Je n’aime pas trop mais je peux me laisser tenter ce matin » \n Le jeu est serré, il vous faut trouver de quoi occuper ce chat. Si vous souhaitez lui donner le trou d\'une famille de souris que vous avez repéré plus tôt, c\'est par la droite. Si vous souhaitez le convaincre de ne pas vous manger grâce à votre rhétorique baveuse, c\'est par la gauche. Enfin, si vous souhaitez attirer l\'attention d\'un lama qui broute nonchalamment de l\'herbe à 2 mètres de vous, allez tout droit.',
      picture: '../../assets/fond-rencontre.png',
      encounter: '12',
      bonusObject: null,
@@ -85,7 +85,7 @@ export const SCENES: Scene[] = [
      _id: '6',
      title: 'L\'aide de Rapha',
      // tslint:disable-next-line: max-line-length
-     description: 'Vous criez de toutes vos forces pour appeler à l\'aide, c\'est à dire que vous ne faites quasiment aucun bruit. Contre toute attente, le lama toujours aussi nonchalant tourne la tête vers le chat avec un air agacé. Il envoie un crachat si puissant et si fourni qu\'il balaye le chat. Celui-ci s\'enfuit a toute vitesse.',
+     description: 'Vous criez de toutes vos forces pour appeler à l\'aide, c\'est à dire que vous ne faites quasiment aucun bruit. Contre toute attente, le lama toujours aussi nonchalant tourne la tête vers le chat avec un air agacé. Il envoie un crachat si puissant et si fourni qu\'il balaye le chat. Celui-ci s\'enfuit à toute vitesse.',
      picture: '../assets/fond-rencontre.png',
      encounter: null,
      bonusObject: null,

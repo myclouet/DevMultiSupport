@@ -8,11 +8,13 @@ import {ModalController} from "@ionic/angular";
 })
 export class RulesModalComponent {
 
-    constructor(private modalCtrl: ModalController) {
+    constructor(private modalController: ModalController) {
     }
-  dismissRulesModal() {
-    this.modalCtrl.dismiss();
 
-  }
+
+    async dismissRulesModal() {
+        await this.modalController.dismiss();
+    }
 }
+
 
