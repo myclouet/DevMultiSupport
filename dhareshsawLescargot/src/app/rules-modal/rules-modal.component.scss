@@ -46,7 +46,10 @@ ion-slides {
   margin: 15px 0 10px;
   pointer-events: none;
 }
-
+ion-card-title{
+  font-family: Komika;
+  color: #04471c;
+}
 h2 {
   font-family: Komika;
   color: #04471c;
@@ -85,4 +88,8 @@ ion-icon {
   font-family: komika;
   color: #04471c;
   text-align: justify;
+}
+.difficulte{
+  height: 3em;
+
 }
