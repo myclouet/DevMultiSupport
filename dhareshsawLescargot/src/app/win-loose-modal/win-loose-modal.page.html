@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ modalTitle }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-no-padding">
+  <div *ngIf="resultatCombat" class="imageBg"
+      [ngStyle]="{'background-image': 'url('+ fondEcranWin +')'}">
+    <h1 class="colorWin">{{ messageWin }}</h1>
+    <img [src]="imageWin" id="winLoose">
+  </div>  
+  <div *ngIf="!resultatCombat" class="imageBg"
+      [ngStyle]="{'background-image': 'url('+ fondEcranLoose +')'}">
+    <h1 class="colorLoose">{{ messageLoose }}</h1>
+    <img [src]="imageLoose" alt="perdu" id="winLoose">
+  </div>
+  <div id="snail">
+    <div id="shell"></div>
+    <div id="slug"></div>
+  </div>
+  <div id="slime"></div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+   <ion-button (click)="closeModal()" size="default" shape="round">
+    {{ messageContinueGame }}
+   </ion-button>
+  </ion-toolbar>
+</ion-footer>

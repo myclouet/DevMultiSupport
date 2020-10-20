@@ -1,0 +1,280 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-label>Principe et Règles</ion-label>
+    </ion-toolbar>
+    <style>
+        :root {
+            --ion-safe-area-top: 10px;
+            --ion-safe-area-bottom: 11px;
+        }
+    </style>
+</ion-header>
+<ion-content class="ion-padding" scroll-y="false">
+    <ion-slides paginationType="bullets" slidesPerView="1" pager="true">
+
+        <ion-slide>
+            <div class="slide">
+                <img src="/assets/avatars/dhareshsaw.png"/>
+                <h2>Bienvenue</h2>
+                <p><b>Les "livres dont vous êtes le héros"</b> s’inscrivent dans la droite ligne du jeu de rôle.
+                    Ils proposent à des joueurs d’interagir avec des univers imaginaires.</p>
+            </div>
+        </ion-slide>
+        <ion-slide>
+            <img src="/assets/avatars/dhareshsaw.png"/>
+            <h2>Adaptation</h2>
+            <p><b>Dhareshsaw l'escargot</b> est une adaptation numérique de ces livres intéractifs proposant des quêtes
+                palpitantes.</p>
+            <p>L’aventure est un savant mélange de voyages, de survie et de parcours labyrinthiques où vous ferez des
+                rencontres plus ou moins amicales.</p>
+        </ion-slide>
+        <ion-slide>
+            <img src="/assets/avatars/dhareshsaw.png"/>
+            <h2>Collectez des objets</h2>
+            <p>De-ci de-là de petites trouvailles bienvenues, dont une qui permet de contourner les inéluctables
+                retours à la case départ.</p>
+            <p><b>Et une fin épique !</b></p>
+        </ion-slide>
+        <ion-slide>
+            <img src="/assets/avatars/dhareshsaw.png"/>
+            <h2>Allons-y</h2>
+            <p>L'aventure à portée de main. Voici l'occasion de devenir un escargot intrépide et courageux...
+                Vous seul déciderez de la route à suivre, des risques à courir et des créatures à combattre. Bonne
+                chance...</p>
+            <p><b>Continuez pour lire les Règles</b></p>
+        </ion-slide>
+        <ion-slide>
+            <div>
+                <ion-card>
+                    <ion-card-header>
+                        <ion-card-title>
+                            Se Déplacer
+                        </ion-card-title>
+                        <ion-card-content>
+                            <ion-icon name="arrow-back-circle"></ion-icon>
+                            <ion-icon name="arrow-up-circle"></ion-icon>
+                            <ion-icon name="arrow-forward-circle"></ion-icon>
+                        </ion-card-content>
+                    </ion-card-header>
+                </ion-card>
+            </div>
+            <ion-card>
+                <ion-card-content>
+                    <div class="textCard">Durant le jeu tu pourras te déplacer d'une scène à l'autre en cliquant sur ces
+                        icônes.
+                    </div>
+                </ion-card-content>
+            </ion-card>
+        </ion-slide>
+        <ion-slide>
+            <div>
+                <ion-card>
+                    <ion-card-header>
+                        <ion-card-title>
+                            Inventaire
+                        </ion-card-title>
+                        <ion-card-content>
+                            <ion-icon slot="icon-only" name="construct"></ion-icon>
+                        </ion-card-content>
+                    </ion-card-header>
+                </ion-card>
+            </div>
+            <ion-card>
+                <ion-card-content>
+                    <div class="textCard">Dhareshsaw est équipé d'un sac.
+                        clique sur cet icône pour accéder à ton inventaire et y utiliser un objet.
+                    </div>
+                </ion-card-content>
+            </ion-card>
+        </ion-slide>
+        <ion-slide>
+            <div>
+                <ion-card>
+                    <ion-card-header>
+                        <ion-card-title>
+                            Sauvegarde
+                        </ion-card-title>
+                        <ion-card-content>
+                            <ion-icon slot="icon-only" name="save-outline"></ion-icon>
+                        </ion-card-content>
+                    </ion-card-header>
+                </ion-card>
+            </div>
+            <ion-card>
+                <ion-card-content>
+                    <div class="textCard">Cet icône te permet de sauvegarder ta partie en cours.</div>
+                </ion-card-content>
+            </ion-card>
+        </ion-slide>
+        <ion-slide>
+            <div>
+                <ion-card>
+                    <ion-card-header>
+                        <ion-card-title>
+                            Suivi des scènes précédentes
+                        </ion-card-title>
+                        <ion-card-content>
+                            <ion-icon slot="icon-only" name="git-network"></ion-icon>
+                        </ion-card-content>
+                    </ion-card-header>
+                </ion-card>
+            </div>
+            <ion-card>
+                <ion-card-content>
+                    <div class="textCard">En cliquant sur cet icône tu as un suivi textuel des scènes précedentes.</div>
+                </ion-card-content>
+            </ion-card>
+        </ion-slide>
+        <ion-slide>
+            <div>
+                <ion-card>
+                    <ion-card-header>
+                        <ion-card-title>
+                            Musique en jeu
+                        </ion-card-title>
+                        <ion-card-content>
+                            <ion-icon name="volume-high-outline"></ion-icon>
+                            <ion-icon class="buttonIcons" slot="icon-only" name="volume-mute-outline"></ion-icon>
+                        </ion-card-content>
+                    </ion-card-header>
+                </ion-card>
+            </div>
+            <ion-card>
+                <ion-card-content>
+                    <div class="textCard">Contrôle Audio, arrête ou joue la fantastique musique du jeu.</div>
+                </ion-card-content>
+            </ion-card>
+        </ion-slide>
+        <ion-slide>
+            <div>
+                <ion-card>
+                    <ion-card-header>
+                        <ion-card-title>
+                            Narrateur Vocal
+                        </ion-card-title>
+                        <ion-card-content>
+                            <ion-icon name="stop-circle-outline"></ion-icon>
+                            <ion-icon class="buttonIcons" slot="icon-only" name="play-circle-outline"></ion-icon>
+                        </ion-card-content>
+                    </ion-card-header>
+                </ion-card>
+            </div>
+            <ion-card>
+                <ion-card-content>
+                    <div class="textCard">Pour stopper et relancer la voix du narrateur.</div>
+                </ion-card-content>
+            </ion-card>
+        </ion-slide>
+        <ion-slide>
+            <div>
+                <ion-card>
+                    <ion-card-header>
+                        <ion-card-title>
+                            Choix des langues
+                        </ion-card-title>
+                        <ion-card-content>
+                            <ion-icon name="earth-outline"></ion-icon>
+
+                        </ion-card-content>
+                    </ion-card-header>
+                </ion-card>
+            </div>
+            <ion-card>
+                <ion-card-content>
+                    <div class="textCard">Clique sur le drapeau correspondant à la langue désirée.</div>
+                </ion-card-content>
+            </ion-card>
+        </ion-slide>
+        <ion-slide>
+            <div>
+                <ion-card>
+                    <ion-card-header>
+                        <ion-card-title>
+                            Choix durant les combats
+                        </ion-card-title>
+                        <ion-card-content>
+                            <img src="/assets/fond-combat.png">
+                        </ion-card-content>
+                    </ion-card-header>
+                </ion-card>
+            </div>
+            <ion-card>
+                <ion-card-content>
+                    <div class="textCard">Ce fond d'écran indique un combat. Tu auras alors deux solutions COMBATTRE ou
+                        FUIR.
+                    </div>
+                </ion-card-content>
+            </ion-card>
+        </ion-slide>
+        <ion-slide>
+            <div>
+                <ion-card>
+                    <ion-card-header>
+                        <ion-card-title>
+                            Difficultés des combats.
+                        </ion-card-title>
+                        <ion-card-content>
+                            <img class="difficulte" src="/assets/difficulte-facile.png"> <img class="difficulte"
+                                                                                              src="/assets/difficulte-moyenne.png">
+                            <img class="difficulte" src="/assets/difficulte-difficile.png">
+                        </ion-card-content>
+                    </ion-card-header>
+                </ion-card>
+            </div>
+            <ion-card>
+                <ion-card-content>
+                    <div class="textCard">La difficulté varie selon les ennemis elle sera mentionnée par un de ces
+                        indicateurs.
+                    </div>
+                </ion-card-content>
+            </ion-card>
+        </ion-slide>
+        <ion-slide>
+            <div>
+                <ion-card>
+                    <ion-card-header>
+                        <ion-card-title>
+                        Automatique ou dé
+                        </ion-card-title>
+                        <ion-card-content>
+                            <img src="/assets/dice/dice-5.png">
+                        </ion-card-content>
+                    </ion-card-header>
+                </ion-card>
+            </div>
+            <ion-card>
+                <ion-card-content>
+                    <div class="textCard">il y a deux modes de combat: automatique ou lancé de dé.</div>
+                </ion-card-content>
+            </ion-card>
+        </ion-slide>
+        <ion-slide>
+            <div>
+                <ion-card>
+                    <ion-card-header>
+                        <ion-card-title>
+                           Bonne Chance
+                        </ion-card-title>
+                        <ion-card-content>
+                            <img src="/assets/avatars/dhareshsaw-combat.png">
+                        </ion-card-content>
+                    </ion-card-header>
+                </ion-card>
+            </div>
+            <ion-card>
+                <ion-card-content>
+                    <div class="textCard">Fin du tuto, l'aventure vous attend, bonne chance.</div>
+                </ion-card-content>
+            </ion-card>
+        </ion-slide>
+    </ion-slides>
+</ion-content>
+
+<ion-footer style="background-color: #04471c;">
+    <ion-button class="custom-button" fill="clear"
+                size="small"
+                (click)="dismissRulesModal()"
+                style="float: right;"
+    >Retour au Jeu
+    </ion-button>
+</ion-footer>

@@ -1,0 +1,95 @@
+ion-label {
+  display: flex;
+  justify-content: center;
+  --background: #f2e8cf;
+  color: #04471c;
+  font-family: 'Segoe';
+  font-weight: bold;
+  align-items: center;
+}
+
+p {
+  font-family: komika;
+  color: #04471c;
+  font-weight: bold;
+  text-align: justify;
+  margin: 0 2px 0 2px;
+}
+
+ion-content {
+  height: 100%;
+  --background: #a7c957;
+  --font-family: 'Komika';
+}
+
+ion-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+ion-slides {
+  height: 100%;
+}
+
+.swiper-slide {
+  display: block;
+}
+
+.swiper-slide h2 {
+  margin-top: 1.5rem;
+}
+
+.swiper-slide img {
+  max-height: 25%;
+  max-width: 40%;
+  margin: 15px 0 10px;
+  pointer-events: none;
+}
+ion-card-title{
+  font-family: Komika;
+  color: #04471c;
+}
+h2 {
+  font-family: Komika;
+  color: #04471c;
+}
+
+p {
+  padding: 0 40px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #04471c;
+}
+
+p b {
+  color: var(--ion-text-color, #bc4749);
+  font-weight: bold;
+}
+
+.nextSlidePage {
+  padding-top: 10px;
+}
+
+ion-slides {
+  --bullet-backround: #fafafa;
+  --bullet-background-active: #04471c;
+}
+
+.custom-button {
+  color: #fafafa;
+}
+
+ion-icon {
+  font-size: 40px;
+  color: #a7c957;
+}
+.textCard{
+  font-family: komika;
+  color: #04471c;
+  text-align: justify;
+}
+.difficulte{
+  height: 3em;
+
+}

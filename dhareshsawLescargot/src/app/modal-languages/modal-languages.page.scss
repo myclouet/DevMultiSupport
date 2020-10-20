@@ -1,0 +1,67 @@
+ion-toolbar {
+    --background: #f2e8cf;
+    font-family: 'Segoe';
+    color: #04471c; 
+    display: flex;
+    justify-content: center;
+
+}
+
+ion-title{
+    margin: auto;
+    text-align: center;
+    font-family: 'Segoe';
+    font-size: larger;
+    font-weight: bolder;
+    color:#04471c;
+}
+
+ion-content {
+    height: 100%;
+    --background: #a7c957;
+}
+
+ion-footer{
+    margin: auto;
+    padding: auto;
+    ion-toolbar {
+        --background: #04471c;
+        display: flex;
+        justify-content: center;
+    } 
+}
+
+ion-grid {
+    --ion-grid-padding: 5px;
+    --ion-grid-padding-xs: 5px;
+    --ion-grid-padding-sm: 5px;
+    --ion-grid-padding-md: 5px;
+    --ion-grid-padding-lg: 5px;
+    --ion-grid-padding-xl: 5px;
+    --ion-grid-width: 100%;
+    --ion-grid-width-xs: 100%;
+    --ion-grid-width-sm: 540px;
+    --ion-grid-width-md: 720px;
+    --ion-grid-width-lg: 960px;
+    --ion-grid-width-xl: 1140px;
+    display: flex;
+    justify-content: center;
+}
+
+.flag { 
+    height: 80%;
+    width: 80%;
+ 
+}
+
+.flagBtn {
+    height:100%;
+    width:100%;
+    --background: #a7c957;
+}
+
+.imageBg {
+    height: 100%;
+    background-position:center;
+    background-attachment: fixed;
+  }

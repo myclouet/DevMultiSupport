@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -24,3 +24,37 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+:root {
+    /**couleurs charte graphique**/
+    --ion-color-sable: #f2e8cf;
+    --ion-color-vert-tres-fonce: #04471c;
+    --ion-color-vert-pistache: #a7c957;
+    --ion-color-rouge-fonce: #bc4749;
+    --ion-color-vert-pistache-clair: #c7df8e;
+    --ion-color-blanc-semi-transparent: #ffffff;
+    --ion-color-noir: #000000;
+    --ion-color-blanc: #ffffff;
+
+    --ion-color-secondary: #04471c;
+    --ion-color-secondary-rgb: 0, 102, 0;
+    --ion-color-secondary-contrast: #ffffff;
+    --ion-color-secondary-contrast-rgb: 255, 255, 255;
+    --ion-color-secondary-shade: #005a00;
+    --ion-color-secondary-tint: #1a751a;
+}
+
+@font-face {
+    font-family: Komika;
+    src: url(assets/fonts/Komika.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: Segoe;
+    src: url(assets/fonts/Segoe.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: Calibri;
+    src: url(assets/fonts/Calibri.ttf) format("truetype");
+}

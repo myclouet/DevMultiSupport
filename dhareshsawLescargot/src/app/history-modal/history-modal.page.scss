@@ -1,0 +1,79 @@
+ion-button {
+    display:flex;
+    --background:#a7c957;
+    margin-left: 42%;
+    margin-right: auto;
+    font-family: calibri;
+    text-align:center;
+}
+
+ion-content {
+    height: 100%;
+    --background: #a7c957;
+}
+
+.label {
+    margin: auto;
+    text-align: center;
+ // font-family: 'segoe print';
+    font-family: 'Segoe';
+    font-size: larger;
+    font-weight: bolder;
+    color:#04471c;
+}
+
+ion-footer {
+    display:flex;
+}
+
+ion-toolbar {
+    text-align: center;
+    --background: #f2e8cf;
+}
+
+@media (prefers-color-scheme: dark) {
+    ion-card  {
+      background: #f2e8cf;   
+    }
+  }
+
+.container{
+    display: flex;
+}
+
+ion-card{
+    padding: 15px;
+}
+
+ion-card div{
+    padding-bottom: 18px;
+}
+
+.arrivee{
+    color: #303e11;
+    text-align: center;
+    font-family: komika; 
+}
+
+.title{
+    color: #303e11;
+    text-align: center;
+    font-family: komika; 
+ 
+}
+
+.description{
+    color: #5b5800;
+    font-family: komika; 
+    font-size: 15px;
+}
+
+
+
+
+
+
+
+
+
+

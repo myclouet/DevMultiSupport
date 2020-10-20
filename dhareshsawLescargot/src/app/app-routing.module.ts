@@ -20,9 +20,18 @@ const routes: Routes = [
     path: 'leaderboard',
     loadChildren: () => import('./leaderboard/leaderboard.module').then( m => m.LeaderboardPageModule)
   },
+  /*{
+    path: 'history-modal',
+    loadChildren: () => import('./history-modal/history-modal.module').then( m => m.HistoryModalPageModule)
+  },*/
   {
-    path: 'object-inventory-modal',
-    loadChildren: () => import('./object-inventory-modal/object-inventory-modal.module').then( m => m.ObjectInventoryModalPageModule)
+    path: 'modal-languages',
+    loadChildren: () => import('./modal-languages/modal-languages.module').then( m => m.ModalLanguagesPageModule)
+  },
+
+  {
+    path: 'win-loose-modal',
+    loadChildren: () => import('./win-loose-modal/win-loose-modal.module').then( m => m.WinLooseModalPageModule)
   },
 
 ];
@@ -34,3 +43,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

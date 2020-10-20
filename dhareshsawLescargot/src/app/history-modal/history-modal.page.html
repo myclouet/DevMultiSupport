@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>   
+  <ion-label class="label">L'histoire</ion-label>
+</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-card>
+    <div *ngFor="let element of sauvegardeService.story">
+    <!--  <p class="arrivee"> Arrivée dans la scène : {{element.scene._id}} </p>
+      <p class="title">  {{element.scene.title}} </p>  --> 
+      <p class="arrivee"> Arrivée dans la scène : {{element.scene.title}}  </p>
+      <p class="description">  {{element.scene.description}} </p>
+      <p class="description" *ngFor="let action of element.actions">  {{action}} </p>
+    
+    </div>
+  </ion-card>
+
+</ion-content>
+
+<ion-footer style="background-color: #04471c;">
+  <ion-button
+    size="small"
+    (click)="closeModalHistory()"  
+  >
+    Fermer
+  </ion-button>
+</ion-footer>

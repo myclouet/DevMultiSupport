@@ -1,0 +1,29 @@
+{
+    "WinLooseModalPage": {
+        "winMessage": "You win !",
+        "looseMessage": "You lose !",
+        "continueGameMessage": "Continue the game",
+        "modalTitle": "Result"
+    },
+    "ScenePage": {
+        "onMyWay": "ON MY WAY",
+        "meet": "ENCOUNTER",
+        "fight": "FIGHT",
+        "fightButon": "FIGHT",
+        "escapeButton": "ESCAPE",
+        "progression": "Progression",
+        "chooseDirection": "Choose a direction",
+        "endurance": "Endurance",
+        "strength": "Strength",
+        "luck": "Luck",
+        "difficulty": "Difficulty",
+        "newGameMessage": "New Game"
+    },
+    "HomePage": {
+        "newGameMessage": "New Game",
+        "resumeCurrentGameMessage": "Resume Current game"
+    },
+    "ModalLanguagesPage": {
+        "modalTitle": "Languages" 
+    }
+}
