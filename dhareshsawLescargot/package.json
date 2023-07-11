@@ -33,7 +33,7 @@
     "cordova-res": "^0.15.1",
     "core-js": "^2.5.4",
     "ionic-selectable": "^4.6.0",
-    "lint": "^0.7.0",
+    "lint": "^0.8.19",
     "rxjs": "~6.5.1",
     "rxjs-compat": "^6.6.3",
     "tslib": "^1.13.0",
